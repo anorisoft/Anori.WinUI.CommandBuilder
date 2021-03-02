@@ -23,6 +23,22 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anori.WinUI.Commands.GUITes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anori.WinUI.Commands.Tests", "..\Tests\Anori.WinUI.Commands.Tests\Anori.WinUI.Commands.Tests.csproj", "{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build Items", "Build Items", "{F09DB967-0C5A-43D2-BB43-2C3F3E71A8A9}"
+	ProjectSection(SolutionItems) = preProject
+		..\.appveyor.yml = ..\.appveyor.yml
+		..\.gitattributes = ..\.gitattributes
+		..\.gitignore = ..\.gitignore
+		..\.gitmodules = ..\.gitmodules
+		..\build.ps1 = ..\build.ps1
+		..\build.sh = ..\build.sh
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+		..\recipe.cake = ..\recipe.cake
+		..\Run.cake = ..\Run.cake
+		..\Run.cmd = ..\Run.cmd
+		..\RunAppVeyor.cmd = ..\RunAppVeyor.cmd
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug Submodules|Any CPU = Debug Submodules|Any CPU
