@@ -1,0 +1,52 @@
+#---------------------------------#
+#  Build Image                    #
+#---------------------------------#
+image: Visual Studio 2019
+
+environment:
+  MYGET_SOURCE:
+
+#---------------------------------#
+#  Build Script                   #
+#---------------------------------#
+install:
+  # Update to latest NuGet version since we require 5.3.0 for embedded icon
+  - ps: nuget update -self
+
+build_script:
+  - ps: .\build.ps1 -Target CI
+
+# Tests
+# test_script:
+#  - ps: .\demos\build.ps1
+
+# Tests
+test: off
+
+#---------------------------------#
+#  Clone Script                   #
+#---------------------------------#
+clone_script:
+  - cmd: >-
+      git clone -q --branch=%APPVEYOR_REPO_BRANCH% https://github.com/%APPVEYOR_REPO_NAME%.git %APPVEYOR_BUILD_FOLDER%
+      && cd %APPVEYOR_BUILD_FOLDER%
+      && git checkout -qf %APPVEYOR_REPO_COMMIT%
+      && git submodule update --force --recursive --init --remote
+      
+
+#---------------------------------#
+#        Branches to build        #
+#---------------------------------#
+branches:
+  # Whitelist
+  only:
+    - develop
+    - master
+    - /release/.*/
+    - /hotfix/.*/
+
+#---------------------------------#
+#  Build Cache                    #
+#---------------------------------#
+cache:
+- tools -> recipe.cake

@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net472</TargetFrameworks>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <LangVersion>8.0</LangVersion>
+    <Configurations>Debug;Release;Debug Submodules</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CanExecuteObservers\CanExecutesChangedSubject.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0003" />
+    <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)'!='Debug Submodules'">
+    <PackageReference Include="Anori.Extensions" Version="0.2.0" />
+    <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0002" />
+  </ItemGroup>
+
+  <ItemGroup>
+     <ProjectReference Include="..\Anori.WinUI.Commands.Interfaces\Anori.WinUI.Commands.Interfaces.csproj" />
+    <ProjectReference Include="..\Anori.WinUI.Common\Anori.WinUI.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\PresentationFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\ExceptionStrings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ExceptionStrings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\ExceptionStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\Commands\" />
+  </ItemGroup>
+</Project>

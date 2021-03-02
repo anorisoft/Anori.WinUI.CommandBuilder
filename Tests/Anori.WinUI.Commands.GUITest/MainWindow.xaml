@@ -1,0 +1,22 @@
+﻿<Window
+    x:Class="Anori.WinUI.Commands.GUITest.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Anori.WinUI.Commands.GUITest"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:commands="clr-namespace:Anori.WinUI.Commands;assembly=Anori.WinUI.Commands"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    d:DataContext="{d:DesignInstance local:MainViewModel}"
+    mc:Ignorable="d">
+    <StackPanel>
+        <StackPanel.Resources>
+            <commands:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+        </StackPanel.Resources>
+        <Button Command="{Binding DirectCommand}">Direct Command</Button>
+        <Button Command="{Binding PropertyObservableNullReferenceCommand}">Property Observable Null Reference Test</Button>
+        <Button Command="{Binding ConcurrencyTestCommand}">Concurrency Test Command</Button>
+    </StackPanel>
+</Window>

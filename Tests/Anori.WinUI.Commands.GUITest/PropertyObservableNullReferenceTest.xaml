@@ -1,0 +1,22 @@
+﻿<Window
+    x:Class="Anori.WinUI.Commands.GUITest.PropertyObservableNullReferenceTest"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Anori.WinUI.Commands.GUITest"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="PropertyObservableTest"
+    Width="800"
+    Height="450"
+    d:DataContext="{d:DesignInstance local:PropertyObservableNullReferenceTestViewModel}"
+    mc:Ignorable="d">
+    <StackPanel>
+        <Button Command="{Binding TestAndCommand}">And Conditions</Button>
+        <Button Command="{Binding TestOrCommand}">Or Conditions</Button>
+        <CheckBox Content="Condition 1" IsChecked="{Binding Condition1.Condition}" />
+        <CheckBox Content="Condition 2" IsChecked="{Binding Condition2.Condition}" />
+        <TextBlock Text="{Binding Condition1.Condition}" />
+        <TextBlock Text="{Binding Condition2.Condition}" />
+
+    </StackPanel>
+</Window>

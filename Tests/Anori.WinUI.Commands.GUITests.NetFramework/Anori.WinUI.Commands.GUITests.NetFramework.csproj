@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\Anori.WinUI.Commands.Interfaces\Anori.WinUI.Commands.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Source\Anori.WinUI.Commands\Anori.WinUI.Commands.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="JetBrains.Annotations">
+      <HintPath>C:\Users\ra10241a\.nuget\packages\jetbrains.annotations\2020.3.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

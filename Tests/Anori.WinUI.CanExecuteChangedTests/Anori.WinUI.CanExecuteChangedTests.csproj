@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>CanExecuteChangedTests</AssemblyName>
+    <RootNamespace>CanExecuteChangedTests</RootNamespace>
+    <LangVersion>8</LangVersion>
+    <Configurations>Debug;Release;Debug Submodules</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Annotations.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
+    <PackageReference Include="NUnit" Version="3.13.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\Anori.WinUI.Commands.Interfaces\Anori.WinUI.Commands.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Source\Anori.WinUI.Commands\Anori.WinUI.Commands.csproj" />
+    <ProjectReference Include="..\..\Source\Anori.WinUI.Common\Anori.WinUI.Common.csproj" />
+  </ItemGroup>
+</Project>
