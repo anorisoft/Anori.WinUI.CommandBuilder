@@ -6,6 +6,7 @@
     <UseWPF>true</UseWPF>
     <LangVersion>8</LangVersion>
     <Configurations>Debug;Release;Debug Submodules</Configurations>
+    <DeterministicSourcePaths Condition="'$(EnableSourceLink)' == ''">false</DeterministicSourcePaths>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,5 +15,4 @@
     <ProjectReference Include="..\..\Source\Anori.WinUI.Common\Anori.WinUI.Common.csproj" />
   </ItemGroup>
 
-    <DeterministicSourcePaths Condition="'$(EnableSourceLink)' == ''">false</DeterministicSourcePaths>
 </Project>
