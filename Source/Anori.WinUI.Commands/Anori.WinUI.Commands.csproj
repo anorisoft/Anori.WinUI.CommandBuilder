@@ -6,6 +6,13 @@
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <LangVersion>8.0</LangVersion>
     <Configurations>Debug;Release;Debug Submodules</Configurations>
+    <Copyright>Copyright (c) Anor Soft</Copyright>
+    <Product>Anori WinUI Commands</Product>
+    <Authors>Martin Egli</Authors>
+    <Company>AnoriSoft</Company>
+    <PackageIcon>Anorisoft.png</PackageIcon>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Anorisoft.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -16,6 +23,10 @@
     <Compile Remove="Interfaces\**" />
     <EmbeddedResource Remove="Interfaces\**" />
     <None Remove="Interfaces\**" />
+    <None Include="..\Anorisoft.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
