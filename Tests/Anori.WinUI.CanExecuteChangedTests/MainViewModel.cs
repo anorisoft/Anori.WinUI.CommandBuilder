@@ -15,8 +15,6 @@ namespace Anori.WinUI.CanExecuteChangedTests
 
     using Anori.WinUI.Commands;
 
-    using CanExecuteChanged.Tests;
-
     using JetBrains.Annotations;
 
     internal class MainViewModel : INotifyPropertyChanged

@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace CanExecuteChangedTests
+namespace Anori.WinUI.CanExecuteChangedTests
 {
     using System;
     using System.Threading.Tasks;

@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{3CE962
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{550E1A97-EADC-40C7-B9A4-963BB290A5E7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anori.WinUI.CanExecuteChangedTests2", "..\Tests\Anori.WinUI.CanExecuteChangedTests\Anori.WinUI.CanExecuteChangedTests2.csproj", "{1CC58647-80C8-4930-8546-FB2C3B764151}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anori.WinUI.CanExecuteChangedTests", "..\Tests\Anori.WinUI.CanExecuteChangedTests\Anori.WinUI.CanExecuteChangedTests.csproj", "{1CC58647-80C8-4930-8546-FB2C3B764151}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anori.WinUI.Commands.GUITest", "..\Tests\Anori.WinUI.Commands.GUITest\Anori.WinUI.Commands.GUITest.csproj", "{DF478F0D-3BD5-4902-A236-F0C3503D8421}"
 EndProject

@@ -15,6 +15,8 @@ namespace CanExecuteChangedTests
     using System.Threading.Tasks;
     using System.Windows.Input;
 
+    using Anori.WinUI.CanExecuteChangedTests;
+
     /// <summary>
     /// </summary>
     /// <typeparam name="T"></typeparam>

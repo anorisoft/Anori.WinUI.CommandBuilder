@@ -4,16 +4,15 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-using Anori.WinUI.Commands.Interfaces;
-using Anori.WinUI.Common;
-
-namespace CanExecuteChangedTests
+namespace Anori.WinUI.CanExecuteChangedTests
 {
-    using JetBrains.Annotations;
-
     using System;
     using System.Threading.Tasks;
-    using System.Windows.Input;
+
+    using Anori.WinUI.Commands.Interfaces;
+    using Anori.WinUI.Common;
+
+    using JetBrains.Annotations;
 
     public class AsyncRelayCommand : IAsyncCommand
     {

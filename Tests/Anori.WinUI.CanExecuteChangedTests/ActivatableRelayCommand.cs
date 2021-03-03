@@ -4,17 +4,19 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace CanExecuteChangedTests
+namespace Anori.WinUI.CanExecuteChangedTests
 {
     #region
-
-    using Anori.WinUI.Common;
-
-    using JetBrains.Annotations;
 
     using System;
     using System.Diagnostics;
     using System.Windows.Input;
+
+    using Anori.WinUI.Common;
+
+    using global::CanExecuteChangedTests;
+
+    using JetBrains.Annotations;
 
     #endregion
 

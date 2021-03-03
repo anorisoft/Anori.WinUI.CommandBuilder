@@ -4,11 +4,10 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace CanExecuteChangedTests
+namespace Anori.WinUI.CanExecuteChangedTests
 {
     using System;
     using System.Threading.Tasks;
-    using System.Windows.Input;
 
     using Anori.WinUI.Commands.Interfaces;
     using Anori.WinUI.Common;
@@ -40,8 +39,8 @@ namespace CanExecuteChangedTests
         /// <summary>
         ///     Initializes a new instance of the <see cref="AsyncRelayCommand{T}" /> class.
         /// </summary>
-        /// <param name="execute">The execute.</param>
-        /// <param name="canExecute">The can execute.</param>
+        /// <param name="canExecute">The execute.</param>
+        /// <param name="error">The can execute.</param>
         /// <param name="error">The error handler.</param>
         public AsyncCommand(
             [NotNull] Func<T, Task> execute,
