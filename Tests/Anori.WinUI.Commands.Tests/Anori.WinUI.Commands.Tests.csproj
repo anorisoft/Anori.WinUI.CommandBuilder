@@ -23,7 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Source\Anori.WinUI.Commands\Anori.WinUI.Commands.csproj" />
     <ProjectReference Include="..\..\Source\Anori.WinUI.Common\Anori.WinUI.Common.csproj" />
-    <ProjectReference Include="..\Anori.WinUI.CanExecuteChangedTests\Anori.WinUI.CanExecuteChangedTests.csproj" />
+    <ProjectReference Include="..\Anori.WinUI.CanExecuteChangedTests\Anori.WinUI.CanExecuteChangedTests2.csproj" />
   </ItemGroup>
 
   <ItemGroup>
