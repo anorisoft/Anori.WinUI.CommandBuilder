@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <Reference Include="JetBrains.Annotations">
-      <HintPath>C:\Users\ra10241a\.nuget\packages\jetbrains.annotations\2020.3.0\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
   </ItemGroup>
 

@@ -18,6 +18,8 @@ namespace Anori.WinUI.Commands.Tests
     using System.Threading.Tasks;
     using System.Windows.Input;
 
+    using global::CanExecuteChangedTests;
+
     /// <summary>
     ///     Summary description for AsyncRelayCommandFixture
     /// </summary>
@@ -38,7 +40,7 @@ namespace Anori.WinUI.Commands.Tests
         public void CanExecuteCallsPassedInCanExecuteDelegate()
         {
             var handlers = new AsyncDelegateObjectHandlers();
-            var command = new AsyncRelayCommand<object>(async o => await handlers.Execute(o), handlers.CanExecute);
+            var command = new global::Anori.WinUI.Commands.AsyncRelayCommand<object>(async o => await handlers.Execute(o), handlers.CanExecute);
             var parameter = new object();
 
             handlers.CanExecuteReturnValue = true;
@@ -52,7 +54,7 @@ namespace Anori.WinUI.Commands.Tests
         public void CanExecuteReturnsTrueWithoutCanExecuteDelegate()
         {
             var handlers = new AsyncDelegateObjectHandlers();
-            var command = new AsyncRelayCommand<object>(async o => await handlers.Execute(o));
+            var command = new global::Anori.WinUI.Commands.AsyncRelayCommand<object>(async o => await handlers.Execute(o));
 
             var condition = command.CanExecute(null);
 
@@ -62,7 +64,7 @@ namespace Anori.WinUI.Commands.Tests
         [Test]
         public void CanRemoveCanExecuteChangedHandler()
         {
-            var command = new AsyncRelayCommand<object>(async o => await Task.Yield());
+            var command = new global::Anori.WinUI.Commands.AsyncRelayCommand<object>(async o => await Task.Yield());
             var canExecuteChangedRaised = false;
 
             void Handler(object s, EventArgs e) => canExecuteChangedRaised = true;
@@ -80,7 +82,7 @@ namespace Anori.WinUI.Commands.Tests
             var handlers = new AsyncDelegateObjectHandlers();
             using var waitHandle = new EventWaitHandle(false, EventResetMode.AutoReset);
 
-            var command = new AsyncRelayCommand<object>(async o =>
+            var command = new global::Anori.WinUI.Commands.AsyncRelayCommand<object>(async o =>
             {
                 await handlers.Execute(o);
                 waitHandle.Set();
@@ -97,7 +99,7 @@ namespace Anori.WinUI.Commands.Tests
         {
             var canExecuteChangedRaised = false;
             var commandTestObject = new CommandTestObject();
-            var command = new AsyncRelayCommand<object>(async o => await Task.Yield());
+            var command = new global::Anori.WinUI.Commands.AsyncRelayCommand<object>(async o => await Task.Yield());
 
             command.CanExecuteChanged += delegate { canExecuteChangedRaised = true; };
 
@@ -227,7 +229,7 @@ namespace Anori.WinUI.Commands.Tests
         public void RaiseCanExecuteChangedNoCanExecuteNoRaiseCanExecuteChanged()
         {
             var handlers = new AsyncDelegateObjectHandlers();
-            var command = new AsyncRelayCommand<object>(async o => await handlers.Execute(o));
+            var command = new global::Anori.WinUI.Commands.AsyncRelayCommand<object>(async o => await handlers.Execute(o));
             var canExecuteChangedRaised = false;
             command.CanExecuteChanged += delegate { canExecuteChangedRaised = true; };
 
@@ -239,7 +241,7 @@ namespace Anori.WinUI.Commands.Tests
         public void RaiseCanExecuteChangedRaisesCanExecuteChanged()
         {
             var handlers = new AsyncDelegateObjectHandlers();
-            var command = new AsyncRelayCommand<object>(async o => await handlers.Execute(o), o => false);
+            var command = new global::Anori.WinUI.Commands.AsyncRelayCommand<object>(async o => await handlers.Execute(o), o => false);
             var canExecuteChangedRaised = false;
             command.CanExecuteChanged += delegate { canExecuteChangedRaised = true; };
 
@@ -252,7 +254,7 @@ namespace Anori.WinUI.Commands.Tests
         {
             var canExecuteCalled = false;
             var testClass = new MyClass();
-            ICommand command = new AsyncRelayCommand<MyClass>(
+            ICommand command = new global::Anori.WinUI.Commands.AsyncRelayCommand<MyClass>(
                 async o => await Task.Yield(),
                 delegate (MyClass parameter)
                     {
@@ -271,21 +273,21 @@ namespace Anori.WinUI.Commands.Tests
             Assert.Throws<ArgumentNullException>(
                 () =>
                     {
-                        var command = new AsyncRelayCommand<object>(null);
+                        var command = new global::Anori.WinUI.Commands.AsyncRelayCommand<object>(null);
                     });
         }
 
         [Test]
         public void WhenConstructedWithGenericTypeAndCanExecuteIsNonNullableValueType_Throws()
         {
-            ICommand command = new AsyncRelayCommand<int>(async o => await Task.Yield(), i => true, ex => { });
+            ICommand command = new global::Anori.WinUI.Commands.AsyncRelayCommand<int>(async o => await Task.Yield(), i => true, ex => { });
             Assert.Throws<InvalidCastException>(() => { command.Execute(new object()); });
         }
 
         [Test]
         public void WhenConstructedWithGenericTypeIsNonNullableValueType_Throws()
         {
-            ICommand command = new AsyncRelayCommand<int>(async o => await Task.Yield(), exception => { });
+            ICommand command = new global::Anori.WinUI.Commands.AsyncRelayCommand<int>(async o => await Task.Yield(), exception => { });
             Assert.Throws<InvalidCastException>(() => { command.Execute(new object()); });
         }
 
@@ -295,7 +297,7 @@ namespace Anori.WinUI.Commands.Tests
             // Prepare
 
             // Act
-            var actual = new AsyncRelayCommand<int?>(async o => await Task.Yield());
+            var actual = new global::Anori.WinUI.Commands.AsyncRelayCommand<int?>(async o => await Task.Yield());
 
             // verify
             Assert.NotNull(actual);
@@ -307,7 +309,7 @@ namespace Anori.WinUI.Commands.Tests
             // Prepare
 
             // Act
-            var actual = new AsyncRelayCommand<object>(async o => await Task.Yield());
+            var actual = new global::Anori.WinUI.Commands.AsyncRelayCommand<object>(async o => await Task.Yield());
 
             // verify
             Assert.NotNull(actual);
