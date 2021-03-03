@@ -5,7 +5,6 @@
     <TargetFramework>net48</TargetFramework>
     <UseWPF>true</UseWPF>
     <AssemblyName>CanExecuteChangedTests</AssemblyName>
-    <RootNamespace>CanExecuteChangedTests</RootNamespace>
     <LangVersion>8</LangVersion>
     <Configurations>Debug;Release;Debug Submodules</Configurations>
   </PropertyGroup>
