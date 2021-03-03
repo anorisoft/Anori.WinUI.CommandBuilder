@@ -13,11 +13,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Interfaces\**" />
+    <EmbeddedResource Remove="Interfaces\**" />
+    <None Remove="Interfaces\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="CanExecuteObservers\CanExecutesChangedSubject.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0003" />
+    <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0005" />
     <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
   </ItemGroup>
 
@@ -52,9 +58,5 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ExceptionStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Interfaces\Commands\" />
   </ItemGroup>
 </Project>
