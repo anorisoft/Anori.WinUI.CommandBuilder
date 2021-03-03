@@ -14,7 +14,5 @@
     <ProjectReference Include="..\..\Source\Anori.WinUI.Common\Anori.WinUI.Common.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
     <DeterministicSourcePaths Condition="'$(EnableSourceLink)' == ''">false</DeterministicSourcePaths>
-  </ItemGroup>
 </Project>
