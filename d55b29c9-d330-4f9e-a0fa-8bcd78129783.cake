@@ -1,1 +1,0 @@
-#tool dotnet:https://www.myget.org/F/gep13/api/v3/index.json?package=GitVersion.Tool&version=5.6.6
