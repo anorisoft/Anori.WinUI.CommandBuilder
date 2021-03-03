@@ -15,6 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <SourceRoot Include="$(MSBuildThisFileDirectory)/"/>
+    <DeterministicSourcePaths Condition="'$(EnableSourceLink)' == ''">false</DeterministicSourcePaths>
   </ItemGroup>
 </Project>
