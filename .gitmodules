@@ -9,3 +9,11 @@
 	path = Submodules/Source
 	url = https://github.com/anorisoft/Anori.Extensions
 	branch = master
+[submodule "Submudules/Anori.ExpressionObservers"]
+	path = Submudules/Anori.ExpressionObservers
+	url = https://github.com/anorisoft/Anori.ExpressionObservers
+	branch = develop
+[submodule "Submudules/Anori.Extensions"]
+	path = Submudules/Anori.Extensions
+	url = https://github.com/anorisoft/Anori.Extensions
+	branch = develop
