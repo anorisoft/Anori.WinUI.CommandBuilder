@@ -1,9 +1,17 @@
-﻿using Anori.WinUI.Commands.CanExecuteObservers;
+﻿// -----------------------------------------------------------------------
+// <copyright file="AsyncCommandBuilder.cs" company="Anorisoft">
+// Copyright (c) bfa solutions ltd. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
+
+using Anori.WinUI.Commands.CanExecuteObservers;
 using Anori.WinUI.Commands.Commands;
 using Anori.WinUI.Commands.Exceptions;
 using Anori.WinUI.Commands.Interfaces;
 using Anori.WinUI.Commands.Interfaces.Builders;
+
 using JetBrains.Annotations;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,41 +20,43 @@ using System.Threading.Tasks;
 
 namespace Anori.WinUI.Commands.Builder
 {
-    public sealed class AsyncCommandBuilder :
-        IAsyncCommandBuilder,
-        IAsyncCanExecuteBuilder,
-        IActivatableAsyncCommandBuilder,
-        IActivatableAsyncCanExecuteBuilder
+    public sealed class AsyncCommandBuilder : IAsyncCommandBuilder,
+                                              IAsyncCanExecuteBuilder,
+                                              IActivatableAsyncCommandBuilder,
+                                              IActivatableAsyncCanExecuteBuilder
     {
         /// <summary>
-        /// The execute
+        ///     The execute
         /// </summary>
-        [NotNull] private readonly Func<Task> execute;
+        [NotNull]
+        private readonly Func<Task> execute;
 
         /// <summary>
-        /// The observes
+        ///     The observes
         /// </summary>
         [NotNull]
         [ItemNotNull]
         private readonly List<ICanExecuteChangedSubject> observes = new List<ICanExecuteChangedSubject>();
 
         /// <summary>
-        /// The can execute expression
+        ///     The can execute function
         /// </summary>
-        [CanBeNull] private ICanExecuteSubject canExecuteSubject;
+        [CanBeNull]
+        private Func<bool> canExecuteFunction;
 
         /// <summary>
-        /// The can execute function
+        ///     The can execute expression
         /// </summary>
-        [CanBeNull] private Func<bool> canExecuteFunction;
+        [CanBeNull]
+        private ICanExecuteSubject canExecuteSubject;
 
         /// <summary>
-        /// The is automatic actiate
+        ///     The is automatic actiate
         /// </summary>
         private bool isAutoActivate = true;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SyncCommandBuilder"/> class.
+        ///     Initializes a new instance of the <see cref="SyncCommandBuilder" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <exception cref="ArgumentNullException">execute</exception>
@@ -54,79 +64,81 @@ namespace Anori.WinUI.Commands.Builder
             this.execute = execute ?? throw new ArgumentNullException(nameof(execute));
 
         /// <summary>
-        /// Builds the specified set command.
+        ///     Builds the specified set command.
         /// </summary>
         /// <param name="setCommand">The set command.</param>
         /// <returns></returns>
         IActivatableAsyncCommand IActivatableAsyncCanExecuteBuilder.
-            Build(Action<IActivatableAsyncCommand> setCommand) => BuildActivatable(setCommand);
+            Build(Action<IActivatableAsyncCommand> setCommand) =>
+            this.BuildActivatable(setCommand);
 
         /// <summary>
-        /// Observeses the property.
+        ///     Observeses the property.
         /// </summary>
         /// <typeparam name="TType">The type of the type.</typeparam>
         /// <param name="expression">The expression.</param>
         /// <returns></returns>
         IActivatableAsyncCanExecuteBuilder IActivatableAsyncCanExecuteBuilder.ObservesProperty<TType>(
-            Expression<Func<TType>> expression) => ObservesProperty(expression);
+            Expression<Func<TType>> expression) =>
+            this.ObservesProperty(expression);
 
         /// <summary>
-        /// Observeses the specified observer.
+        ///     Observeses the specified observer.
         /// </summary>
         /// <param name="observer">The observer.</param>
         /// <returns></returns>
-        IActivatableAsyncCanExecuteBuilder IActivatableAsyncCanExecuteBuilder.Observes(ICanExecuteChangedSubject observer)
+        IActivatableAsyncCanExecuteBuilder IActivatableAsyncCanExecuteBuilder.Observes(
+            ICanExecuteChangedSubject observer)
         {
-            observes.Add(observer);
+            this.observes.Add(observer);
             return this;
         }
 
         /// <summary>
-        /// Observeses the specified observer.
+        ///     Observeses the specified observer.
         /// </summary>
         /// <param name="observer">The observer.</param>
         /// <returns></returns>
         IAsyncCanExecuteBuilder IAsyncCanExecuteBuilder.Observes(ICanExecuteChangedSubject observer)
         {
-            observes.Add(observer);
+            this.observes.Add(observer);
             return this;
         }
 
         /// <summary>
-        /// Observeses the command manager.
+        ///     Observeses the command manager.
         /// </summary>
         /// <returns></returns>
         IActivatableAsyncCanExecuteBuilder IActivatableAsyncCanExecuteBuilder.ObservesCommandManager() =>
-            ObservesCommandManager();
+            this.ObservesCommandManager();
 
         /// <summary>
-        /// Automatics the activate.
+        ///     Automatics the activate.
         /// </summary>
         /// <returns></returns>
-        IActivatableAsyncCanExecuteBuilder IActivatableAsyncCanExecuteBuilder.AutoActivate() => AutoActivate();
+        IActivatableAsyncCanExecuteBuilder IActivatableAsyncCanExecuteBuilder.AutoActivate() => this.AutoActivate();
 
         /// <summary>
-        /// Builds this instance.
+        ///     Builds this instance.
         /// </summary>
         /// <returns></returns>
-        IActivatableAsyncCommand IActivatableAsyncCanExecuteBuilder.Build() => BuildActivatable();
+        IActivatableAsyncCommand IActivatableAsyncCanExecuteBuilder.Build() => this.BuildActivatable();
 
         /// <summary>
-        /// Builds the specified set command.
+        ///     Builds the specified set command.
         /// </summary>
         /// <param name="setCommand">The set command.</param>
         /// <returns></returns>
-        IActivatableAsyncCommand IActivatableAsyncCommandBuilder.Build(
-            Action<IActivatableAsyncCommand> setCommand) =>
-            BuildActivatable(setCommand);
+        IActivatableAsyncCommand IActivatableAsyncCommandBuilder.Build(Action<IActivatableAsyncCommand> setCommand) =>
+            this.BuildActivatable(setCommand);
 
         /// <summary>
-        /// Determines whether this instance can execute the specified can execute.
+        ///     Determines whether this instance can execute the specified can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
         /// <returns></returns>
         IActivatableAsyncCanExecuteBuilder IActivatableAsyncCommandBuilder.CanExecute(Func<bool> canExecute) =>
-            CanExecute(canExecute);
+            this.CanExecute(canExecute);
 
         IActivatableAsyncCanExecuteBuilder IActivatableAsyncCommandBuilder.CanExecute(ICanExecuteSubject canExecute)
         {
@@ -141,110 +153,113 @@ namespace Anori.WinUI.Commands.Builder
         }
 
         /// <summary>
-        /// Observeses the can execute.
+        ///     Observeses the can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
         /// <returns></returns>
         IActivatableAsyncCanExecuteBuilder IActivatableAsyncCommandBuilder.ObservesCanExecute(
-            Expression<Func<bool>> canExecute) => ObservesCanExecute(canExecute);
+            Expression<Func<bool>> canExecute) =>
+            this.ObservesCanExecute(canExecute);
 
         /// <summary>
-        /// Observeses the can execute.
+        ///     Observeses the can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
         /// <param name="fallback">if set to <c>true</c> [fallback].</param>
         /// <returns></returns>
         IActivatableAsyncCanExecuteBuilder IActivatableAsyncCommandBuilder.ObservesCanExecute(
-            Expression<Func<bool>> canExecute, bool fallback) => ObservesCanExecute(canExecute, fallback);
+            Expression<Func<bool>> canExecute,
+            bool fallback) =>
+            this.ObservesCanExecute(canExecute, fallback);
 
         /// <summary>
-        /// Automatics the activate.
+        ///     Automatics the activate.
         /// </summary>
         /// <returns></returns>
-        IActivatableAsyncCanExecuteBuilder IActivatableAsyncCommandBuilder.AutoActivate() => AutoActivate();
+        IActivatableAsyncCanExecuteBuilder IActivatableAsyncCommandBuilder.AutoActivate() => this.AutoActivate();
 
         /// <summary>
-        /// Builds this instance.
+        ///     Builds this instance.
         /// </summary>
         /// <returns></returns>
-        IActivatableAsyncCommand IActivatableAsyncCommandBuilder.Build() => BuildActivatable();
+        IActivatableAsyncCommand IActivatableAsyncCommandBuilder.Build() => this.BuildActivatable();
 
         /// <summary>
-        /// Builds the specified set command.
+        ///     Builds the specified set command.
         /// </summary>
         /// <param name="setCommand">The set command.</param>
         /// <returns></returns>
-        IAsyncCommand IAsyncCanExecuteBuilder.Build(Action<IAsyncCommand> setCommand) => Build(setCommand);
+        IAsyncCommand IAsyncCanExecuteBuilder.Build(Action<IAsyncCommand> setCommand) => this.Build(setCommand);
 
         /// <summary>
-        /// Observeses the property.
+        ///     Observeses the property.
         /// </summary>
         /// <typeparam name="TType">The type of the type.</typeparam>
         /// <param name="canExecute">The can execute.</param>
         /// <returns></returns>
         IAsyncCanExecuteBuilder IAsyncCanExecuteBuilder.ObservesProperty<TType>(Expression<Func<TType>> canExecute) =>
-            ObservesProperty(canExecute);
+            this.ObservesProperty(canExecute);
 
         /// <summary>
-        /// Activatables this instance.
+        ///     Activatables this instance.
         /// </summary>
         /// <returns></returns>
-        IActivatableAsyncCanExecuteBuilder IAsyncCanExecuteBuilder.Activatable() => Activatable();
+        IActivatableAsyncCanExecuteBuilder IAsyncCanExecuteBuilder.Activatable() => this.Activatable();
 
         /// <summary>
-        /// Observeses the command manager.
+        ///     Observeses the command manager.
         /// </summary>
         /// <returns></returns>
-        IAsyncCanExecuteBuilder IAsyncCanExecuteBuilder.ObservesCommandManager() => ObservesCommandManager();
+        IAsyncCanExecuteBuilder IAsyncCanExecuteBuilder.ObservesCommandManager() => this.ObservesCommandManager();
 
         /// <summary>
-        /// Builds this instance.
+        ///     Builds this instance.
         /// </summary>
         /// <returns></returns>
-        IAsyncCommand IAsyncCanExecuteBuilder.Build() => Build();
+        IAsyncCommand IAsyncCanExecuteBuilder.Build() => this.Build();
 
         /// <summary>
-        /// Builds the specified set command.
+        ///     Builds the specified set command.
         /// </summary>
         /// <param name="setCommand">The set command.</param>
         /// <returns></returns>
-        IAsyncCommand IAsyncCommandBuilder.Build(Action<IAsyncCommand> setCommand) => Build(setCommand);
+        IAsyncCommand IAsyncCommandBuilder.Build(Action<IAsyncCommand> setCommand) => this.Build(setCommand);
 
         /// <summary>
-        /// Determines whether this instance can execute the specified can execute.
+        ///     Determines whether this instance can execute the specified can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
         /// <returns></returns>
-        IAsyncCanExecuteBuilder IAsyncCommandBuilder.CanExecute(Func<bool> canExecute) => CanExecute(canExecute);
+        IAsyncCanExecuteBuilder IAsyncCommandBuilder.CanExecute(Func<bool> canExecute) => this.CanExecute(canExecute);
 
         /// <summary>
-        /// Observeses the can execute.
+        ///     Observeses the can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
         /// <returns></returns>
         IAsyncCanExecuteBuilder IAsyncCommandBuilder.ObservesCanExecute(Expression<Func<bool>> canExecute) =>
-            ObservesCanExecute(canExecute);
+            this.ObservesCanExecute(canExecute);
 
         /// <summary>
-        /// Observeses the command manager.
+        ///     Observeses the command manager.
         /// </summary>
         /// <returns></returns>
-        IAsyncCommandBuilder IAsyncCommandBuilder.ObservesCommandManager() => ObservesCommandManager();
+        IAsyncCommandBuilder IAsyncCommandBuilder.ObservesCommandManager() => this.ObservesCommandManager();
 
         /// <summary>
-        /// Builds this instance.
+        ///     Builds this instance.
         /// </summary>
         /// <returns></returns>
-        IAsyncCommand IAsyncCommandBuilder.Build() => Build();
+        IAsyncCommand IAsyncCommandBuilder.Build() => this.Build();
 
         /// <summary>
-        /// Activatables this instance.
+        ///     Activatables this instance.
         /// </summary>
         /// <returns></returns>
-        IActivatableAsyncCommandBuilder IAsyncCommandBuilder.Activatable() => Activatable();
+        IActivatableAsyncCommandBuilder IAsyncCommandBuilder.Activatable() => this.Activatable();
 
         /// <summary>
-        /// Observeses the can execute.
+        ///     Observeses the can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
         /// <param name="fallback">if set to <c>true</c> [fallback].</param>
@@ -254,7 +269,11 @@ namespace Anori.WinUI.Commands.Builder
         [NotNull]
         public AsyncCommandBuilder ObservesCanExecute([NotNull] Expression<Func<bool>> canExecute, bool fallback)
         {
-            if (canExecute == null) throw new ArgumentNullException(nameof(canExecute));
+            if (canExecute == null)
+            {
+                throw new ArgumentNullException(nameof(canExecute));
+            }
+
             if (this.canExecuteSubject != null)
             {
                 throw new CommandBuilderException(Resources.ExceptionStrings.CanExecuteExpressionAlreadyDefined);
@@ -270,7 +289,7 @@ namespace Anori.WinUI.Commands.Builder
         }
 
         /// <summary>
-        /// Determines whether this instance can execute the specified can execute.
+        ///     Determines whether this instance can execute the specified can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
         /// <returns></returns>
@@ -294,7 +313,7 @@ namespace Anori.WinUI.Commands.Builder
         }
 
         /// <summary>
-        /// Builds the specified set command.
+        ///     Builds the specified set command.
         /// </summary>
         /// <param name="setCommand">The set command.</param>
         /// <returns></returns>
@@ -307,13 +326,13 @@ namespace Anori.WinUI.Commands.Builder
                 throw new ArgumentNullException(nameof(setCommand));
             }
 
-            var command = Build();
+            var command = this.Build();
             setCommand(command);
             return command;
         }
 
         /// <summary>
-        /// Builds the specified set command.
+        ///     Builds the specified set command.
         /// </summary>
         /// <param name="setCommand">The set command.</param>
         /// <returns></returns>
@@ -327,87 +346,103 @@ namespace Anori.WinUI.Commands.Builder
                 throw new ArgumentNullException(nameof(setCommand));
             }
 
-            var command = BuildActivatable();
+            var command = this.BuildActivatable();
             setCommand(command);
             return command;
         }
 
         /// <summary>
-        /// Builds this instance.
+        ///     Builds this instance.
         /// </summary>
         /// <returns></returns>
         [NotNull]
         private ActivatableAsyncCanExecuteObserverCommand BuildActivatable()
         {
-            if (observes.Any())
+            if (this.observes.Any())
             {
-                if (canExecuteFunction != null)
+                if (this.canExecuteFunction != null)
                 {
-                    return new ActivatableAsyncCanExecuteObserverCommand(execute, isAutoActivate, canExecuteFunction,
-                        observes.ToArray());
+                    return new ActivatableAsyncCanExecuteObserverCommand(
+                        this.execute,
+                        this.isAutoActivate,
+                        this.canExecuteFunction,
+                        this.observes.ToArray());
                 }
 
-                if (canExecuteSubject != null)
+                if (this.canExecuteSubject != null)
                 {
-                    return new ActivatableAsyncCanExecuteObserverCommand(execute, isAutoActivate, canExecuteSubject,
-                        observes.ToArray());
+                    return new ActivatableAsyncCanExecuteObserverCommand(
+                        this.execute,
+                        this.isAutoActivate,
+                        this.canExecuteSubject,
+                        this.observes.ToArray());
                 }
 
                 throw new NoCanExecuteException();
             }
 
-            if (canExecuteFunction != null)
+            if (this.canExecuteFunction != null)
             {
-                return new ActivatableAsyncCanExecuteObserverCommand(execute, isAutoActivate, canExecuteFunction);
+                return new ActivatableAsyncCanExecuteObserverCommand(
+                    this.execute,
+                    this.isAutoActivate,
+                    this.canExecuteFunction);
             }
 
-            if (canExecuteSubject != null)
+            if (this.canExecuteSubject != null)
             {
-                return new ActivatableAsyncCanExecuteObserverCommand(execute, isAutoActivate, canExecuteSubject);
+                return new ActivatableAsyncCanExecuteObserverCommand(
+                    this.execute,
+                    this.isAutoActivate,
+                    this.canExecuteSubject);
             }
 
-            return new ActivatableAsyncCanExecuteObserverCommand(execute, isAutoActivate);
+            return new ActivatableAsyncCanExecuteObserverCommand(this.execute, this.isAutoActivate);
         }
 
         /// <summary>
-        /// Builds this instance.
+        ///     Builds this instance.
         /// </summary>
         /// <returns></returns>
         [NotNull]
         private AsyncCanExecuteObserverCommand Build()
         {
-            if (observes.Any())
+            if (this.observes.Any())
             {
-                if (canExecuteFunction != null)
+                if (this.canExecuteFunction != null)
                 {
-                    return new AsyncCanExecuteObserverCommand(execute, canExecuteFunction,
-                        observes.ToArray());
+                    return new AsyncCanExecuteObserverCommand(
+                        this.execute,
+                        this.canExecuteFunction,
+                        this.observes.ToArray());
                 }
 
-                if (canExecuteSubject != null)
+                if (this.canExecuteSubject != null)
                 {
-                    return new AsyncCanExecuteObserverCommand(execute, canExecuteSubject,
-                        observes.ToArray());
+                    return new AsyncCanExecuteObserverCommand(
+                        this.execute,
+                        this.canExecuteSubject,
+                        this.observes.ToArray());
                 }
 
                 throw new NoCanExecuteException();
             }
 
-            if (canExecuteFunction != null)
+            if (this.canExecuteFunction != null)
             {
-                return new AsyncCanExecuteObserverCommand(execute, canExecuteFunction);
+                return new AsyncCanExecuteObserverCommand(this.execute, this.canExecuteFunction);
             }
 
-            if (canExecuteSubject != null)
+            if (this.canExecuteSubject != null)
             {
-                return new AsyncCanExecuteObserverCommand(execute, canExecuteSubject);
+                return new AsyncCanExecuteObserverCommand(this.execute, this.canExecuteSubject);
             }
 
-            return new AsyncCanExecuteObserverCommand(execute);
+            return new AsyncCanExecuteObserverCommand(this.execute);
         }
 
         /// <summary>
-        /// Observeses the property.
+        ///     Observeses the property.
         /// </summary>
         /// <typeparam name="TType">The type of the type.</typeparam>
         /// <param name="expression">The expression.</param>
@@ -415,23 +450,27 @@ namespace Anori.WinUI.Commands.Builder
         [NotNull]
         private AsyncCommandBuilder ObservesProperty<TType>([NotNull] Expression<Func<TType>> expression)
         {
-            if (expression == null) throw new ArgumentNullException(nameof(expression));
+            if (expression == null)
+            {
+                throw new ArgumentNullException(nameof(expression));
+            }
+
             this.observes.Add(new PropertyObserverFactory().ObservesProperty(expression));
             return this;
         }
 
         /// <summary>
-        /// Activatables this instance.
+        ///     Activatables this instance.
         /// </summary>
         /// <returns></returns>
         private AsyncCommandBuilder Activatable()
         {
-            isAutoActivate = false;
+            this.isAutoActivate = false;
             return this;
         }
 
         /// <summary>
-        /// Observeses the can execute.
+        ///     Observeses the can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
         /// <returns></returns>
@@ -440,7 +479,11 @@ namespace Anori.WinUI.Commands.Builder
         [NotNull]
         private AsyncCommandBuilder ObservesCanExecute([NotNull] Expression<Func<bool>> canExecute)
         {
-            if (canExecute == null) throw new ArgumentNullException(nameof(canExecute));
+            if (canExecute == null)
+            {
+                throw new ArgumentNullException(nameof(canExecute));
+            }
+
             if (this.canExecuteSubject != null)
             {
                 throw new CommandBuilderException(Resources.ExceptionStrings.CanExecuteExpressionAlreadyDefined);
@@ -456,25 +499,25 @@ namespace Anori.WinUI.Commands.Builder
         }
 
         /// <summary>
-        /// Automatics the activate.
+        ///     Automatics the activate.
         /// </summary>
         /// <returns></returns>
         [NotNull]
         private AsyncCommandBuilder AutoActivate()
         {
-            isAutoActivate = true;
+            this.isAutoActivate = true;
             return this;
         }
 
         /// <summary>
-        /// Observeses the command manager.
+        ///     Observeses the command manager.
         /// </summary>
         /// <returns></returns>
         /// <exception cref="CommandBuilderException"></exception>
         [NotNull]
         private AsyncCommandBuilder ObservesCommandManager()
         {
-            if (observes.Contains(CommandManagerObserver.Observer))
+            if (this.observes.Contains(CommandManagerObserver.Observer))
             {
                 throw new CommandBuilderException(Resources.ExceptionStrings.CanExecuteFunctionAlreadyDefined);
             }

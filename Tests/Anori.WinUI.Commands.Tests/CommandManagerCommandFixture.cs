@@ -817,6 +817,10 @@ namespace Anori.WinUI.Commands.Tests
             var handlers = new DelegateHandlers();
             var canExecuteChangedCount = 0;
             using var waitHandle = new EventWaitHandle(false, EventResetMode.AutoReset);
+            //handlers.PropertyChanged += (sender, args) =>
+            //    {
+
+            //    };
 
             handlers.ObservableBoolean = false;
             var builder = new CommandBuilder();
@@ -832,8 +836,14 @@ namespace Anori.WinUI.Commands.Tests
             Assert.AreEqual(0, handlers.CanExecuteCount);
             Assert.AreEqual(0, handlers.ExecuteCount);
 
-            command.CanExecuteChanged += (sender, args) => command.CanExecute();
-            command.CanExecuteChanged += (sender, args) => canExecuteChangedCount++;
+            command.CanExecuteChanged += (sender, args) =>
+                {
+                    command.CanExecute();
+                };
+            command.CanExecuteChanged += (sender, args) =>
+                {
+                    canExecuteChangedCount++;
+                };
             Assert.AreEqual(0, handlers.CanExecuteCount);
             Assert.AreEqual(0, canExecuteChangedCount);
 

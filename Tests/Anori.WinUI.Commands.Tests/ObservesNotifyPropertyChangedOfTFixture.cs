@@ -67,7 +67,7 @@ namespace Anori.WinUI.Commands.Tests
                 notifyPropertyChangedTestObject,
                 o => o.IntProperty,
                 () => { });
-            Assert.True((object)observer1 == observer2);
+            Assert.True(observer1 == observer2);
         }
 
         [Test]
@@ -210,7 +210,7 @@ Assert.False(actionRaised);
             var notifyPropertyChangedTestObject = new NotifyPropertyChangedTestObject();
             using var observer = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject.IntPropertyExpression,
-                () => actionRaised = true);
+                () => actionRaised = true, false);
             Assert.False(actionRaised);
             notifyPropertyChangedTestObject.IntProperty = 2;
             Assert.False(actionRaised);
@@ -223,12 +223,12 @@ Assert.False(actionRaised);
             var notifyPropertyChangedTestObject = new NotifyPropertyChangedTestObject { IntProperty = 1 };
             using var observer = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject.IntPropertyExpression,
-                () => actionRaisedCount++);
+                () => actionRaisedCount++, false);
             Assert.AreEqual(0, actionRaisedCount);
             notifyPropertyChangedTestObject.IntProperty = 2;
             Assert.AreEqual(0, actionRaisedCount);
 
-            observer.Subscribe();
+            observer.Subscribe(true);
             notifyPropertyChangedTestObject.IntProperty = 3;
             Assert.AreEqual(1, actionRaisedCount);
             notifyPropertyChangedTestObject.IntProperty = 4;

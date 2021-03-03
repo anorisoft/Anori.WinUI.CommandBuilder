@@ -67,8 +67,16 @@ namespace Anori.WinUI.Commands.Tests
             ExecuteCount++;
         }
         public int ExecuteCount { get; private set; }
-        public event PropertyChangedEventHandler PropertyChanged;
+        private event PropertyChangedEventHandler PropertyChanged;
 
+        event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged
+        {
+            add
+            {
+                this.PropertyChanged += value;
+            }
+            remove => this.PropertyChanged -= value;
+        }
 
         public bool ObservableBoolean
         {

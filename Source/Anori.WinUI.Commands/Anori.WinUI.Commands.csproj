@@ -34,13 +34,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0005" />
     <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(Configuration)'!='Debug Submodules'">
+  <ItemGroup Condition="($(Configuration.Contains('Submodules')))">
+    <ProjectReference Include="..\..\Submudules\Anori.ExpressionObservers\Source\Anori.ExpressionObservers\Anori.ExpressionObservers.csproj" />
+    <ProjectReference Include="..\..\Submudules\Anori.Extensions\Source\Anori.Extensions\Anori.Extensions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="!($(Configuration.Contains('Submodules')))">
     <PackageReference Include="Anori.Extensions" Version="0.2.0" />
-    <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0002" />
+    <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0005" />
   </ItemGroup>
 
   <ItemGroup>
@@ -70,4 +74,6 @@
       <LastGenOutput>ExceptionStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+
+ 
 </Project>

@@ -46,7 +46,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
             }
 
             this.Parameter = parameter;
-            this.Observer = PropertyObserver.Observes(parameter, propertyExpression, () => this.Update.Raise());
+            this.Observer = PropertyObserver.Observes(parameter, propertyExpression, () => this.Update.Raise(), false);
             this.PropertyExpression = Observer.ExpressionString;
         }
 

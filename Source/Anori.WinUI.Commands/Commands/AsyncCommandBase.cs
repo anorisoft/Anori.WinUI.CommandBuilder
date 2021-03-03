@@ -132,20 +132,16 @@ namespace Anori.WinUI.Commands.Commands
         /// </summary>
         public async Task ExecuteAsync()
         {
-            //if (this.CanExecute())
-            //{
                 try
                 {
                     this.IsExecuting = true;
 
-                    // await this.execute();
                     await this.execute().ConfigureAwait(false);
                 }
                 finally
                 {
                     this.IsExecuting = false;
                 }
-            //}
         }
 
         /// <summary>

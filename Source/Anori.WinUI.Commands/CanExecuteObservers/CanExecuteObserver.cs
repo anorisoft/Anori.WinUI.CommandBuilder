@@ -12,6 +12,8 @@ using JetBrains.Annotations;
 
 namespace Anori.WinUI.Commands.CanExecuteObservers
 {
+    using System.Diagnostics;
+
     public sealed class CanExecuteObserver : CanExecuteObserverBase
     {
         /// <summary>
@@ -25,7 +27,10 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
             {
                 throw new ArgumentNullException(nameof(canExecuteExpression));
             }
-            var observesAndGet = PropertyValueObserver.ObservesAndGet(canExecuteExpression, () => this.Update.Raise(), false);
+            var observesAndGet = PropertyValueObserver.ObservesAndGet(canExecuteExpression, () =>
+                {
+                    this.Update.Raise();
+                }, false);
             this.Observer = observesAndGet;
             this.CanExecute = observesAndGet.GetValue;
         }
@@ -61,6 +66,10 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         {
             var instance = new CanExecuteObserver(canExecuteExpression);
             instance.Subscribe();
+            instance.Update += () =>
+                {
+                    Debug.WriteLine("Update");
+                };
             return instance;
         }
 

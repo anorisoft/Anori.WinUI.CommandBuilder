@@ -36,11 +36,8 @@ namespace Anori.WinUI.CanExecuteChangedTests
                 {
                     this.Text = DateTime.Now.ToLongTimeString();
                     command.RaiseCanExecuteChanged();
-                    // window.InvalidateMeasure();
-                    // window.InvalidateVisual();
                     window.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
                 };
-            //this.timer.Start();
         }
 
         public ICommand TestCommand { get; }
