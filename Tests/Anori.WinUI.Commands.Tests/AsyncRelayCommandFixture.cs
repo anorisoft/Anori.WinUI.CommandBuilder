@@ -229,7 +229,7 @@ namespace Anori.WinUI.Commands.Tests
         public void RaiseCanExecuteChangedNoCanExecuteNoRaiseCanExecuteChanged()
         {
             var handlers = new AsyncDelegateObjectHandlers();
-            var command = new global::Anori.WinUI.Commands.AsyncRelayCommand<object>(async o => await handlers.Execute(o));
+            var command = new WinUI.Commands.AsyncRelayCommand<object>(async o => await handlers.Execute(o));
             var canExecuteChangedRaised = false;
             command.CanExecuteChanged += delegate { canExecuteChangedRaised = true; };
 

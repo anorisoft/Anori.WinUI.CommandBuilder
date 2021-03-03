@@ -61,11 +61,11 @@ namespace Anori.WinUI.Commands.Tests
         {
             var notifyPropertyChangedTestObject = new NotifyPropertyChangedTestObject();
             using var observer1 = PropertyObserver.Observes(
-                notifyPropertyChangedTestObject.IntPropertyExpression,
+                notifyPropertyChangedTestObject.ComplexPropertyIntPropertyExpression,
                 () => { });
             using var observer2 = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject,
-                o => o.IntProperty,
+                o => o.ComplexProperty.IntProperty,
                 () => { });
             Assert.True(observer1 == observer2);
         }

@@ -123,7 +123,7 @@ namespace Anori.WinUI.Commands.Commands
         /// <value>
         ///     <c>true</c> if this instance has can execute; otherwise, <c>false</c>.
         /// </value>
-        protected override bool HasCanExecute => this.canExecute == null;
+        protected override bool HasCanExecute => this.canExecute != null;
 
         /// <summary>
         ///     Determines whether this instance can execute the specified parameter.

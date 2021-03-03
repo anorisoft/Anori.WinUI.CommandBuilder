@@ -35,15 +35,14 @@
 
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
+    <PackageReference Include="Anori.Extensions" Version="0.2.1-alpha0003" />
   </ItemGroup>
 
   <ItemGroup Condition="($(Configuration.Contains('Submodules')))">
     <ProjectReference Include="..\..\Submudules\Anori.ExpressionObservers\Source\Anori.ExpressionObservers\Anori.ExpressionObservers.csproj" />
-    <ProjectReference Include="..\..\Submudules\Anori.Extensions\Source\Anori.Extensions\Anori.Extensions.csproj" />
   </ItemGroup>
 
   <ItemGroup Condition="!($(Configuration.Contains('Submodules')))">
-    <PackageReference Include="Anori.Extensions" Version="0.2.0" />
     <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0005" />
   </ItemGroup>
 
