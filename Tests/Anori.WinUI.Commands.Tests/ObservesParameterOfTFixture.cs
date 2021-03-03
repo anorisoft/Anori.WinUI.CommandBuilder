@@ -288,6 +288,7 @@ namespace Anori.WinUI.Commands.Tests
             using var booleanObserver = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject.BoolPropertyExpression,
                 () => actionBooleanRaised = true);
+            booleanObserver.Subscribe();
 
             Assert.False(actionIntegerRaised);
             Assert.False(actionBooleanRaised);

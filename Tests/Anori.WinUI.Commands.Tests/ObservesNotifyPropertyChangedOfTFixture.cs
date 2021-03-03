@@ -198,7 +198,7 @@ namespace Anori.WinUI.Commands.Tests
             using var observer = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject.IntPropertyExpression,
                 () => actionRaised = true);
-            Assert.False(actionRaised);
+Assert.False(actionRaised);
             notifyPropertyChangedTestObject.IntProperty = 2;
             Assert.True(actionRaised);
         }
