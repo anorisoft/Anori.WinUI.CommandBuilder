@@ -4,14 +4,9 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CanExecuteChanged.Tests
+namespace Anori.WinUI.CanExecuteChangedTests
 {
+    using System;
     using System.ComponentModel;
     using System.Diagnostics;
     using System.Runtime.CompilerServices;
@@ -20,7 +15,7 @@ namespace CanExecuteChanged.Tests
 
     using Anori.WinUI.Commands;
 
-    using CanExecuteChangedTests;
+    using CanExecuteChanged.Tests;
 
     using JetBrains.Annotations;
 

@@ -1,5 +1,5 @@
 ﻿<Application
-    x:Class="CanExecuteChanged.Tests.App"
+    x:Class="Anori.WinUI.CanExecuteChangedTests.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:CanExecuteChanged.Tests"
