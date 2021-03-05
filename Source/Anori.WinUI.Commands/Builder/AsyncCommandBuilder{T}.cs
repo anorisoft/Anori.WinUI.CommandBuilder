@@ -20,41 +20,36 @@ namespace Anori.WinUI.Commands.Builder
 
     using JetBrains.Annotations;
 
-    /// <summary>
-    ///     Async Command Builder.
-    /// </summary>
-    /// <typeparam name="T">Parameter Type.</typeparam>
-    /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder{T}" />
-    /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder{T}" />
-    /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder{T}" />
-    /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCanExecuteBuilder{T}" />
-    public sealed class AsyncCommandBuilder<T> : IAsyncCommandBuilder<T>,
-                                                 IAsyncCanExecuteBuilder<T>,
-                                                 IActivatableAsyncCommandBuilder<T>,
-                                                 IActivatableAsyncCanExecuteBuilder<T>
+namespace Anori.WinUI.Commands.Builder
+{
+    public sealed class AsyncCommandBuilder<T> :
+        IAsyncCommandBuilder<T>,
+        IAsyncCanExecuteBuilder<T>,
+        IActivatableAsyncCommandBuilder<T>,
+        IActivatableAsyncCanExecuteBuilder<T>
     {
         /// <summary>
-        ///     The execute.
+        /// The execute
         /// </summary>
         private readonly Func<T, Task> execute;
 
         /// <summary>
-        ///     The observes.
+        /// The observes
         /// </summary>
         private readonly List<ICanExecuteChangedSubject> observes = new List<ICanExecuteChangedSubject>();
 
         /// <summary>
-        ///     The can execute function.
+        /// The can execute expression
         /// </summary>
         private Predicate<T> canExecuteFunction;
 
         /// <summary>
-        ///     The can execute expression.
+        /// The can execute function
         /// </summary>
         private ICanExecuteSubject canExecuteSubject;
 
         /// <summary>
-        ///     The is automatic actiate.
+        /// The is automatic actiate
         /// </summary>
         private bool isAutoActiate;
 

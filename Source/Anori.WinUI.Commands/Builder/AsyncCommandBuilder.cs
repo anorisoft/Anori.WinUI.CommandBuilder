@@ -323,8 +323,8 @@ namespace Anori.WinUI.Commands.Builder
         ///     Builds the specified set command.
         /// </summary>
         /// <param name="setCommand">The set command.</param>
-        /// <returns></returns>
-        /// <exception cref="ArgumentNullException">setCommand</exception>
+        /// <returns>Async CanExecute Observer Command.</returns>
+        /// <exception cref="ArgumentNullException">setCommand is null.</exception>
         [NotNull]
         private AsyncCanExecuteObserverCommand Build([NotNull] Action<AsyncCanExecuteObserverCommand> setCommand)
         {
