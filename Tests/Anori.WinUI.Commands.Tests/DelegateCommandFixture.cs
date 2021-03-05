@@ -12,6 +12,8 @@ namespace Anori.WinUI.Commands.Tests
     using System.Threading;
     using System.Windows.Input;
 
+    using Anori.WinUI.Commands.Builder;
+    using Anori.WinUI.Commands.Commands;
     using Anori.WinUI.Common;
 
     /// <summary>
@@ -217,8 +219,10 @@ namespace Anori.WinUI.Commands.Tests
             var canExecuteChangedRaised = false;
             var commandTestObject = new CommandTestObject();
             var command =
-                new ActivatablePropertyObserverCommand(() => { }).ObservesProperty(
-                    () => commandTestObject.IntProperty);
+                CommandBuilder.Builder.Command(() => { }, () => true)
+                    .ObservesProperty(() => commandTestObject.IntProperty)
+                    .Activatable()
+                    .Build();
             command.Activate();
             command.CanExecuteChanged += delegate
             {

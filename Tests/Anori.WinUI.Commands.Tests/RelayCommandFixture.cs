@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------
-// <copyright file="RelayCommandFixture.cs" company="Anori Soft">
-// Copyright (c) Anori Soft. All rights reserved.
+// <copyright file="RelayCommandFixture.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -11,6 +11,8 @@ namespace Anori.WinUI.Commands.Tests
     using System;
     using System.Windows.Input;
     using System.Windows.Threading;
+
+    using Anori.WinUI.Commands.Commands;
 
     using ICommand = System.Windows.Input.ICommand;
 
@@ -24,7 +26,7 @@ namespace Anori.WinUI.Commands.Tests
         public void CanExecuteCallsPassedInCanExecuteDelegate()
         {
             var handlers = new DelegateHandlers();
-            var command = new RelayCommand(handlers.Execute, handlers.CanExecute);
+            var command = new CanExecuteObserverCommand(handlers.Execute, handlers.CanExecute);
 
             handlers.CanExecuteReturnValue = true;
             var actual = command.CanExecute();
@@ -36,7 +38,7 @@ namespace Anori.WinUI.Commands.Tests
         public void CanExecuteReturnsTrueWithoutCanExecuteDelegate()
         {
             var handlers = new DelegateHandlers();
-            var command = new RelayCommand(handlers.Execute);
+            var command = new CanExecuteObserverCommand(handlers.Execute);
 
             var condition = command.CanExecute();
 
@@ -46,7 +48,7 @@ namespace Anori.WinUI.Commands.Tests
         [Test]
         public void CanExecuteWithExceptionWithoutCanExecuteDelegate()
         {
-            var command = new RelayCommand(() => { }, () => throw new Exception("Test Exception"));
+            var command = new CanExecuteObserverCommand(() => { }, () => throw new Exception("Test Exception"));
 
             Assert.Throws<Exception>(() => command.CanExecute());
         }
@@ -54,7 +56,7 @@ namespace Anori.WinUI.Commands.Tests
         [Test]
         public void CanRemoveCanExecuteChangedHandler()
         {
-            var command = new RelayCommand(() => { });
+            var command = new CanExecuteObserverCommand(() => { });
             var canExecuteChangedRaised = false;
 
             void Handler(object s, EventArgs e) => canExecuteChangedRaised = true;
@@ -72,7 +74,7 @@ namespace Anori.WinUI.Commands.Tests
         public void RaiseCanExecuteChangedNoRaiseCanExecuteChanged()
         {
             var handlers = new DelegateHandlers();
-            var command = new RelayCommand(handlers.Execute, () => true);
+            var command = new CanExecuteObserverCommand(handlers.Execute, () => true);
             var canExecuteChangedRaised = false;
 
             command.CanExecuteChanged += delegate { canExecuteChangedRaised = true; };
@@ -84,7 +86,7 @@ namespace Anori.WinUI.Commands.Tests
         public void RaiseCanExecuteWithExceptionChangedNoRaiseCanExecuteChanged()
         {
             var handlers = new DelegateHandlers();
-            var command = new RelayCommand(handlers.Execute, () => true);
+            var command = new CanExecuteObserverCommand(handlers.Execute, () => true);
             var canExecuteChangedRaised = false;
 
             command.CanExecuteChanged += delegate { canExecuteChangedRaised = true; };
@@ -98,7 +100,7 @@ namespace Anori.WinUI.Commands.Tests
             var canExecuteChangedRaised = false;
 
             var handlers = new DelegateHandlers();
-            var command = new RelayCommand(handlers.Execute, () => false);
+            var command = new CanExecuteObserverCommand(handlers.Execute, () => false);
 
             command.CanExecuteChanged += delegate { canExecuteChangedRaised = true; };
 
@@ -112,7 +114,7 @@ namespace Anori.WinUI.Commands.Tests
         public void RelayCommandCanExecuteShouldInvokeCanExecuteFunc()
         {
             var invoked = false;
-            var command = new RelayCommand(
+            var command = new CanExecuteObserverCommand(
                 () => { },
                 () =>
                     {
@@ -130,7 +132,7 @@ namespace Anori.WinUI.Commands.Tests
         public void RelayCommandExecuteShouldInvokeExecuteAction()
         {
             var executed = false;
-            var command = new RelayCommand(() => executed = true) as ICommand;
+            var command = new CanExecuteObserverCommand(() => executed = true) as ICommand;
             command.Execute(new object());
 
             Assert.True(executed);
@@ -139,7 +141,7 @@ namespace Anori.WinUI.Commands.Tests
         [Test]
         public void RelayCommandExecuteWithExceptionShouldInvokeExecuteAction()
         {
-            var command = new RelayCommand(() => throw new Exception("Test Exception")) as ICommand;
+            var command = new CanExecuteObserverCommand(() => throw new Exception("Test Exception")) as ICommand;
 
             Assert.Throws<Exception>(() => command.Execute(new object()));
         }
@@ -149,7 +151,7 @@ namespace Anori.WinUI.Commands.Tests
         {
             var canExecuteChangedRaised = false;
             var commandTestObject = new CommandTestObject();
-            var command = new RelayCommand(() => { });
+            var command = new CanExecuteObserverCommand(() => { });
 
             command.CanExecuteChanged += delegate { canExecuteChangedRaised = true; };
 
@@ -164,7 +166,7 @@ namespace Anori.WinUI.Commands.Tests
             Assert.Throws<ArgumentNullException>(
                 () =>
                     {
-                        var command = new RelayCommand(null);
+                        var command = new CanExecuteObserverCommand(null);
                     });
         }
 
@@ -174,7 +176,7 @@ namespace Anori.WinUI.Commands.Tests
             Assert.Throws<ArgumentNullException>(
                 () =>
                     {
-                        var command = new RelayCommand(null);
+                        var command = new CanExecuteObserverCommand(null);
                     });
         }
 
@@ -184,7 +186,7 @@ namespace Anori.WinUI.Commands.Tests
             Assert.Throws<ArgumentNullException>(
                 () =>
                     {
-                        var command = new RelayCommand(null);
+                        var command = new CanExecuteObserverCommand(null);
                     });
         }
     }

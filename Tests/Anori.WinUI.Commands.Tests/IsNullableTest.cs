@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="IsNullableTest.cs" company="Anori Soft">
-// Copyright (c) Anori Soft. All rights reserved.
+// <copyright file="IsNullableTest.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 

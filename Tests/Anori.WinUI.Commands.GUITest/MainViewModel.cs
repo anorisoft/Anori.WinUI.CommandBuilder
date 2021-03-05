@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="MainViewModel.cs" company="Anori Soft">
-// Copyright (c) Anori Soft. All rights reserved.
+// <copyright file="MainViewModel.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -16,7 +16,6 @@ namespace Anori.WinUI.Commands.GUITest
     using Anori.WinUI.Commands.GUITest.Thiriet;
 
     using JetBrains.Annotations;
-
 
     internal class MainViewModel : INotifyPropertyChanged
     {

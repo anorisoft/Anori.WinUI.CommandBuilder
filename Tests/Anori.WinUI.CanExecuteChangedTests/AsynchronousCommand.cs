@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="Class1.cs" company="Anori Soft">
-// Copyright (c) Anori Soft. All rights reserved.
+// <copyright file="Class1.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
