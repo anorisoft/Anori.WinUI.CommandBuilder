@@ -17,9 +17,4 @@
     <ProjectReference Include="..\..\Source\Anori.WinUI.Commands\Anori.WinUI.Commands.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="JetBrains.Annotations">
-    </Reference>
-  </ItemGroup>
-
 </Project>

@@ -51,7 +51,6 @@
 
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
-    <PackageReference Include="Anori.Extensions" Version="0.2.1-alpha0003" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -60,14 +59,16 @@
 
   <ItemGroup Condition="!($(Configuration.Contains('Submodules')))">
     <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0005" />
+    <PackageReference Include="Anori.Extensions" Version="0.2.1-alpha0003" />
   </ItemGroup>
 
   <ItemGroup Condition="($(Configuration.Contains('Submodules')))">
     <ProjectReference Include="..\..\Submodules\Anori.ExpressionObservers\Source\Anori.ExpressionObservers\Anori.ExpressionObservers.csproj" />
+    <ProjectReference Include="..\..\Submodules\Anori.Extensions\Source\Anori.Extensions\Anori.Extensions.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-     <ProjectReference Include="..\Anori.WinUI.Commands.Interfaces\Anori.WinUI.Commands.Interfaces.csproj" />
+    <ProjectReference Include="..\Anori.WinUI.Commands.Interfaces\Anori.WinUI.Commands.Interfaces.csproj" />
     <ProjectReference Include="..\Anori.WinUI.Common\Anori.WinUI.Common.csproj" />
   </ItemGroup>
 
