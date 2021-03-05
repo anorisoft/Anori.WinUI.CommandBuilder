@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="ActivatableCanExecuteObserverCommand.cs" company="Anori Soft">
-// Copyright (c) Anori Soft. All rights reserved.
+// <copyright file="ActivatableCanExecuteObserverCommand.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -11,7 +11,6 @@ using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using Anori.WinUI.Commands.Interfaces.Commands;
 
 namespace Anori.WinUI.Commands.Commands
 {

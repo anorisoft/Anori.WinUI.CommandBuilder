@@ -1,31 +1,33 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="IAsyncCommand.cs" company="Anori Soft">
-// Copyright (c) Anori Soft. All rights reserved.
+// <copyright file="IAsyncCommand.cs" company="Anorisoft">
+// Copyright (c) bfa solutions ltd. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-using Anori.WinUI.Common;
-using JetBrains.Annotations;
-
 namespace Anori.WinUI.Commands.Interfaces
 {
-    using System.Threading.Tasks;
-    using System.Windows.Input;
+    using JetBrains.Annotations;
 
+    using System.Threading.Tasks;
+
+    /// <summary>
+    ///     Async Command Interface.
+    /// </summary>
+    /// <seealso cref="System.Windows.Input.ICommand" />
     public interface IAsyncCommand : System.Windows.Input.ICommand
     {
         /// <summary>
-        /// Executes the asynchronous.
+        ///     Executes the asynchronous.
         /// </summary>
         /// <returns></returns>
         [NotNull]
         Task ExecuteAsync();
 
         /// <summary>
-        /// Determines whether this instance can execute.
+        ///     Determines whether this instance can execute.
         /// </summary>
         /// <returns>
-        ///   <c>true</c> if this instance can execute; otherwise, <c>false</c>.
+        ///     <c>true</c> if this instance can execute; otherwise, <c>false</c>.
         /// </returns>
         bool CanExecute();
     }

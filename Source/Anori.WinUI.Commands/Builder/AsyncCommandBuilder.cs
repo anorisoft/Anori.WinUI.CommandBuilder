@@ -1,62 +1,68 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="AsyncCommandBuilder.cs" company="Anorisoft">
-// Copyright (c) bfa solutions ltd. All rights reserved.
+// <copyright file="AsyncCommandBuilder.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-using Anori.WinUI.Commands.CanExecuteObservers;
-using Anori.WinUI.Commands.Commands;
-using Anori.WinUI.Commands.Exceptions;
-using Anori.WinUI.Commands.Interfaces;
-using Anori.WinUI.Commands.Interfaces.Builders;
-
-using JetBrains.Annotations;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
-
 namespace Anori.WinUI.Commands.Builder
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Linq.Expressions;
+    using System.Threading.Tasks;
+
+    using Anori.WinUI.Commands.CanExecuteObservers;
+    using Anori.WinUI.Commands.Commands;
+    using Anori.WinUI.Commands.Exceptions;
+    using Anori.WinUI.Commands.Interfaces;
+    using Anori.WinUI.Commands.Interfaces.Builders;
+
+    using JetBrains.Annotations;
+
+    /// <summary>
+    /// </summary>
+    /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder" />
+    /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder" />
+    /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder" />
+    /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCanExecuteBuilder" />
     public sealed class AsyncCommandBuilder : IAsyncCommandBuilder,
                                               IAsyncCanExecuteBuilder,
                                               IActivatableAsyncCommandBuilder,
                                               IActivatableAsyncCanExecuteBuilder
     {
         /// <summary>
-        ///     The execute
+        ///     The execute.
         /// </summary>
         [NotNull]
         private readonly Func<Task> execute;
 
         /// <summary>
-        ///     The observes
+        ///     The observes.
         /// </summary>
         [NotNull]
         [ItemNotNull]
         private readonly List<ICanExecuteChangedSubject> observes = new List<ICanExecuteChangedSubject>();
 
         /// <summary>
-        ///     The can execute function
+        ///     The can execute function.
         /// </summary>
         [CanBeNull]
         private Func<bool> canExecuteFunction;
 
         /// <summary>
-        ///     The can execute expression
+        ///     The can execute expression.
         /// </summary>
         [CanBeNull]
         private ICanExecuteSubject canExecuteSubject;
 
         /// <summary>
-        ///     The is automatic actiate
+        ///     The is automatic actiate.
         /// </summary>
         private bool isAutoActivate = true;
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="SyncCommandBuilder" /> class.
+        ///     Initializes a new instance of the <see cref="AsyncCommandBuilder" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <exception cref="ArgumentNullException">execute</exception>
@@ -295,6 +301,7 @@ namespace Anori.WinUI.Commands.Builder
         /// <returns></returns>
         /// <exception cref="CommandBuilderException">
         /// </exception>
+        /// <exception cref="ArgumentNullException">canExecute</exception>
         [NotNull]
         private AsyncCommandBuilder CanExecute([NotNull] Func<bool> canExecute)
         {
@@ -355,6 +362,7 @@ namespace Anori.WinUI.Commands.Builder
         ///     Builds this instance.
         /// </summary>
         /// <returns></returns>
+        /// <exception cref="NoCanExecuteException"></exception>
         [NotNull]
         private ActivatableAsyncCanExecuteObserverCommand BuildActivatable()
         {
@@ -404,6 +412,7 @@ namespace Anori.WinUI.Commands.Builder
         ///     Builds this instance.
         /// </summary>
         /// <returns></returns>
+        /// <exception cref="NoCanExecuteException"></exception>
         [NotNull]
         private AsyncCanExecuteObserverCommand Build()
         {
@@ -447,6 +456,7 @@ namespace Anori.WinUI.Commands.Builder
         /// <typeparam name="TType">The type of the type.</typeparam>
         /// <param name="expression">The expression.</param>
         /// <returns></returns>
+        /// <exception cref="ArgumentNullException">expression</exception>
         [NotNull]
         private AsyncCommandBuilder ObservesProperty<TType>([NotNull] Expression<Func<TType>> expression)
         {
@@ -474,6 +484,7 @@ namespace Anori.WinUI.Commands.Builder
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
         /// <returns></returns>
+        /// <exception cref="ArgumentNullException">canExecute</exception>
         /// <exception cref="CommandBuilderException">
         /// </exception>
         [NotNull]

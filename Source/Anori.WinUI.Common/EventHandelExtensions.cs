@@ -1,32 +1,35 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="EventHandelExtensions.cs" company="Anori Soft">
-// Copyright (c) Anori Soft. All rights reserved.
+// <copyright file="EventHandelExtensions.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
-using JetBrains.Annotations;
-
 namespace Anori.WinUI.Common
 {
+    using System;
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
+    using System.Threading.Tasks;
+
     using CanExecuteChangedTests;
 
-    using System;
+    using JetBrains.Annotations;
 
     /// <summary>
+    /// Event Handel Extensions.
     /// </summary>
     public static class EventHandelExtensions
     {
         /// <summary>
-        ///     Raises the specified sender.
+        /// Raises the specified sender.
         /// </summary>
         /// <param name="eventHandler">The event handler.</param>
         /// <param name="sender">The sender.</param>
         /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
-        /// <returns></returns>
-        public static bool Raise(this EventHandler eventHandler, object sender, EventArgs e)
+        /// <returns>
+        /// Is any raised.
+        /// </returns>
+        public static bool Raise(this EventHandler? eventHandler, object sender, EventArgs e)
         {
             if (eventHandler == null)
             {
@@ -38,12 +41,14 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        ///     Raises the specified e.
+        /// Raises the specified e.
         /// </summary>
         /// <param name="eventHandler">The event handler.</param>
         /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
-        /// <returns></returns>
-        public static bool Raise(this EventHandler eventHandler, EventArgs e)
+        /// <returns>
+        /// Is any raised.
+        /// </returns>
+        public static bool Raise(this EventHandler? eventHandler, EventArgs e)
         {
             if (eventHandler == null)
             {
@@ -54,25 +59,38 @@ namespace Anori.WinUI.Common
             return true;
         }
 
-
         /// <summary>
-        ///     Raises the specified e.
+        /// Raises the specified e.
         /// </summary>
         /// <param name="eventHandler">The event handler.</param>
-        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
-        /// <returns></returns>
-        public static bool Raise(this PropertyChangedEventHandler? eventHandler, [CallerMemberName] string? propertyName = null!)
+        /// <param name="propertyName">Name of the property.</param>
+        /// <returns>
+        /// Is any raised.
+        /// </returns>
+        public static bool Raise(
+            this PropertyChangedEventHandler? eventHandler,
+            [CallerMemberName] string? propertyName = null!)
         {
             if (eventHandler == null)
             {
                 return false;
             }
-            
+
             eventHandler(null, new PropertyChangedEventArgs(propertyName));
             return true;
         }
 
-        public static bool Raise(this PropertyChangedEventHandler? eventHandler, [CanBeNull] INotifyPropertyChanged sender, [CallerMemberName] string? propertyName = null!)
+        /// <summary>
+        /// Raises the specified sender.
+        /// </summary>
+        /// <param name="eventHandler">The event handler.</param>
+        /// <param name="sender">The sender.</param>
+        /// <param name="propertyName">Name of the property.</param>
+        /// <returns>Is any raised.</returns>
+        public static bool Raise(
+            this PropertyChangedEventHandler? eventHandler,
+            [CanBeNull] INotifyPropertyChanged sender,
+            [CallerMemberName] string? propertyName = null!)
         {
             if (eventHandler == null)
             {
@@ -87,8 +105,8 @@ namespace Anori.WinUI.Common
         ///     Raises the specified action.
         /// </summary>
         /// <param name="action">The action.</param>
-        /// <returns></returns>
-        public static bool Raise(this Action action)
+        /// <returns>Is any raised.</returns>
+        public static bool Raise(this Action? action)
         {
             if (action == null)
             {
@@ -99,20 +117,23 @@ namespace Anori.WinUI.Common
             return true;
         }
 
+        /// <summary>
+        /// Raises the specified function.
+        /// </summary>
+        /// <typeparam name="T">Resukt Type.</typeparam>
+        /// <param name="func">The function.</param>
+        /// <returns>Function result.</returns>
         public static T Raise<T>(this Func<T>? func)
         {
             if (func == null)
             {
-                return default(T);
+                return default!;
             }
 
             return func();
         }
 
-
-
-
-         public static async Task<bool> RaiseAsync(this Func<Task>? func)
+        public static async Task<bool> RaiseAsync(this Func<Task>? func)
         {
             if (func == null)
             {
@@ -123,16 +144,15 @@ namespace Anori.WinUI.Common
             return true;
         }
 
+        public static async Task<bool> RaiseAsync<T>(this Func<T, Task>? func, T arg)
+        {
+            if (func == null)
+            {
+                return false;
+            }
 
-         public static async Task<bool> RaiseAsync<T>(this Func<T,Task>? func, T arg)
-         {
-             if (func == null)
-             {
-                 return false; 
-             }
-
-             await func.Invoke(arg);
-             return true;
+            await func.Invoke(arg);
+            return true;
         }
 
         /// <summary>

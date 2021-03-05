@@ -1,29 +1,35 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="AsyncCanExecuteObserverCommand.cs" company="Anorisoft">
-// Copyright (c) bfa solutions ltd. All rights reserved.
+// <copyright file="AsyncCanExecuteObserverCommand.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-using Anori.WinUI.Commands.Interfaces;
-using Anori.WinUI.Common;
-
-using JetBrains.Annotations;
-
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
 namespace Anori.WinUI.Commands.Commands
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
+    using Anori.WinUI.Commands.Interfaces;
+    using Anori.WinUI.Common;
+
+    using JetBrains.Annotations;
+
+    /// <summary>
+    /// Async CanExecute Observer Command.
+    /// </summary>
+    /// <seealso cref="Anori.WinUI.Commands.Commands.AsyncCommandBase" />
+    /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver" />
+    /// <seealso cref="System.IDisposable" />
     public sealed class AsyncCanExecuteObserverCommand : AsyncCommandBase, ICanExecuteChangedObserver, IDisposable
     {
         /// <summary>
-        ///     The observers
+        ///     The observers.
         /// </summary>
         private readonly List<ICanExecuteChangedSubjectBase> observers = new List<ICanExecuteChangedSubjectBase>();
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
+        ///     Initializes a new instance of the <see cref="AsyncCanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -31,7 +37,7 @@ namespace Anori.WinUI.Commands.Commands
         /// <exception cref="ArgumentNullException">
         ///     observer
         ///     or
-        ///     observer
+        ///     observer is null.
         /// </exception>
         public AsyncCanExecuteObserverCommand(
             [NotNull] Func<Task> execute,
@@ -48,10 +54,9 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ActivatableAsyncCanExecuteObserverCommand" /> class.
+        ///     Initializes a new instance of the <see cref="AsyncCanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
-        /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="error">The error.</param>
         public AsyncCanExecuteObserverCommand([NotNull] Func<Task> execute, [NotNull] Action<Exception> error)
             : base(execute, error)
@@ -60,16 +65,15 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
+        ///     Initializes a new instance of the <see cref="AsyncCanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
-        /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="canExecuteSubject">The can execute subject.</param>
         /// <param name="observers">The observers.</param>
         /// <exception cref="ArgumentNullException">
         ///     canExecuteSubject
         ///     or
-        ///     observers
+        ///     observers is null.
         /// </exception>
         public AsyncCanExecuteObserverCommand(
             [NotNull] Func<Task> execute,
@@ -94,13 +98,12 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
+        ///     Initializes a new instance of the <see cref="AsyncCanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
-        /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="canExecute">The can execute.</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">observers</exception>
+        /// <exception cref="ArgumentNullException">observers is null.</exception>
         public AsyncCanExecuteObserverCommand(
             [NotNull] Func<Task> execute,
             [NotNull] Func<bool> canExecute,
@@ -129,10 +132,7 @@ namespace Anori.WinUI.Commands.Commands
         /// <summary>
         ///     Called when [can execute changed].
         /// </summary>
-        public void RaisePropertyChanged()
-        {
-            this.CanExecuteChanged.RaiseEmpty(this);
-        }
+        public void RaisePropertyChanged() => this.CanExecuteChanged.RaiseEmpty(this);
 
         /// <summary>
         ///     Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
@@ -146,10 +146,7 @@ namespace Anori.WinUI.Commands.Commands
         /// <summary>
         ///     Raises the can execute changed.
         /// </summary>
-        public override void RaiseCanExecuteChanged()
-        {
-            this.CanExecuteChanged.RaiseEmpty(this);
-        }
+        public override void RaiseCanExecuteChanged() => this.CanExecuteChanged.RaiseEmpty(this);
 
         /// <summary>
         ///     Releases unmanaged and - optionally - managed resources.
@@ -169,10 +166,7 @@ namespace Anori.WinUI.Commands.Commands
         /// <summary>
         ///     Subscribes this instance.
         /// </summary>
-        private void Subscribe()
-        {
-            this.observers.ForEach(observer => observer.Add(this));
-        }
+        private void Subscribe() => this.observers.ForEach(observer => observer.Add(this));
 
         /// <summary>
         ///     Unsubscribes this instance.

@@ -4,7 +4,6 @@ using Anori.ExpressionObservers;
 using Anori.WinUI.Commands.Builder;
 using Anori.WinUI.Commands.CanExecuteObservers;
 using Anori.WinUI.Commands.Interfaces;
-using Anori.WinUI.Commands.Interfaces.Commands;
 using JetBrains.Annotations;
 
 namespace Anori.WinUI.Commands.GUITest

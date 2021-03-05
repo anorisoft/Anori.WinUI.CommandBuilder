@@ -1,14 +1,16 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="CanExecuteObserver.cs" company="Anori Soft">
-// Copyright (c) Anori Soft. All rights reserved.
+// <copyright file="CanExecuteObserver.cs" company="Anorisoft">
+// Copyright (c) bfa solutions ltd. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-using System;
-using System.Linq.Expressions;
 using Anori.ExpressionObservers;
 using Anori.WinUI.Common;
+
 using JetBrains.Annotations;
+
+using System;
+using System.Linq.Expressions;
 
 namespace Anori.WinUI.Commands.CanExecuteObservers
 {
@@ -27,16 +29,17 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
             {
                 throw new ArgumentNullException(nameof(canExecuteExpression));
             }
-            var observesAndGet = PropertyValueObserver.ObservesAndGet(canExecuteExpression, () =>
-                {
-                    this.Update.Raise();
-                }, false);
+
+            var observesAndGet = PropertyValueObserver.ObservesAndGet(
+                canExecuteExpression,
+                () => { this.Update.Raise(); },
+                false);
             this.Observer = observesAndGet;
             this.CanExecute = observesAndGet.GetValue;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CanExecuteObserver"/> class.
+        ///     Initializes a new instance of the <see cref="CanExecuteObserver" /> class.
         /// </summary>
         /// <param name="canExecuteExpression">The can execute expression.</param>
         /// <param name="fallback">if set to <c>true</c> [fallback].</param>
@@ -47,7 +50,11 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
             {
                 throw new ArgumentNullException(nameof(canExecuteExpression));
             }
-            var observesAndGet = PropertyValueObserver.ObservesAndGet(canExecuteExpression, () => this.Update.Raise(), fallback);
+
+            var observesAndGet = PropertyValueObserver.ObservesAndGet(
+                canExecuteExpression,
+                () => this.Update.Raise(),
+                fallback);
             this.Observer = observesAndGet;
             this.CanExecute = observesAndGet.GetValue;
         }
@@ -66,15 +73,12 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         {
             var instance = new CanExecuteObserver(canExecuteExpression);
             instance.Subscribe();
-            instance.Update += () =>
-                {
-                    Debug.WriteLine("Update");
-                };
+            instance.Update += () => { Debug.WriteLine("Update"); };
             return instance;
         }
 
         /// <summary>
-        /// Creates the specified can execute expression.
+        ///     Creates the specified can execute expression.
         /// </summary>
         /// <param name="canExecuteExpression">The can execute expression.</param>
         /// <param name="fallback">if set to <c>true</c> [fallback].</param>

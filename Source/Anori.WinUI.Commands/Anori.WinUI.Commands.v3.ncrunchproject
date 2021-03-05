@@ -3,6 +3,6 @@
     <IgnoredTests>
       <AllTestsSelector />
     </IgnoredTests>
-    <UseBuildConfiguration>Debug Submodules</UseBuildConfiguration>
+    <UseBuildConfiguration>debug Submodules</UseBuildConfiguration>
   </Settings>
 </ProjectConfiguration>

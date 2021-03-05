@@ -1,13 +1,12 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="ActivatablePropertyObserverCommand{T}.cs" company="Anori Soft">
-// Copyright (c) Anori Soft. All rights reserved.
+// <copyright file="ActivatablePropertyObserverCommand{T}.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 using System;
 using System.Collections.Generic;
 using Anori.WinUI.Commands.Interfaces;
-using Anori.WinUI.Commands.Interfaces.Commands;
 using Anori.WinUI.Common;
 using CanExecuteChangedTests;
 using JetBrains.Annotations;

@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 
 namespace Anori.WinUI.Commands.GuitTests.Net
 {
+    using Anori.WinUI.Commands.GUITests.Net;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>

@@ -27,23 +27,43 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+    <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="ActivatableAsyncRelayCommand{T}.cs" />
+    <Compile Remove="ActivatablePropertyObserverCommand.cs" />
+    <Compile Remove="ActivatablePropertyObserverCommandBase.cs" />
+    <Compile Remove="ActivatablePropertyObserverCommand{T}.cs" />
+    <Compile Remove="ActivatableRelayCommand{T}.cs" />
+    <Compile Remove="AsyncCommand.cs" />
+    <Compile Remove="AsyncCommand{T}.cs" />
+    <Compile Remove="AsyncRelayCommand{T}..cs" />
     <Compile Remove="CanExecuteObservers\CanExecutesChangedSubject.cs" />
+    <Compile Remove="ConcurrencyCommand{T}.cs" />
+    <Compile Remove="ConcurrencyRelayCommand.cs" />
+    <Compile Remove="DirectAndRelayCommand.cs" />
+    <Compile Remove="DirectAndRelayCommand{T}.cs" />
+    <Compile Remove="DirectCommand{T}.cs" />
+    <Compile Remove="RelayCommand.cs" />
+    <Compile Remove="RelayCommand{T}.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
     <PackageReference Include="Anori.Extensions" Version="0.2.1-alpha0003" />
-  </ItemGroup>
-
-  <ItemGroup Condition="($(Configuration.Contains('Submodules')))">
-    <ProjectReference Include="..\..\Submudules\Anori.ExpressionObservers\Source\Anori.ExpressionObservers\Anori.ExpressionObservers.csproj" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup Condition="!($(Configuration.Contains('Submodules')))">
     <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0005" />
+  </ItemGroup>
+
+  <ItemGroup Condition="($(Configuration.Contains('Submodules')))">
+    <ProjectReference Include="..\..\Submodules\Anori.ExpressionObservers\Source\Anori.ExpressionObservers\Anori.ExpressionObservers.csproj" />
   </ItemGroup>
 
   <ItemGroup>

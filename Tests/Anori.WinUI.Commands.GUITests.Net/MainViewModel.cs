@@ -4,20 +4,21 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using System.Threading;
-using System.Threading.Tasks;
-using Anori.WinUI.Commands.Builder;
-using Anori.WinUI.Commands.Commands;
-using Anori.WinUI.Commands.Interfaces;
-using Anori.WinUI.Commands.Interfaces.Commands;
-using JetBrains.Annotations;
-
-namespace Anori.WinUI.Commands.GuitTests.Net
+namespace Anori.WinUI.Commands.GUITests.Net
 {
+    using System;
+    using System.ComponentModel;
+    using System.Diagnostics;
+    using System.Runtime.CompilerServices;
+    using System.Threading;
+    using System.Threading.Tasks;
+
+    using Anori.WinUI.Commands.Builder;
+    using Anori.WinUI.Commands.GuitTests.Net;
+    using Anori.WinUI.Commands.Interfaces;
+
+    using JetBrains.Annotations;
+
     internal class MainViewModel : INotifyPropertyChanged
     {
         private readonly MainWindow window;
@@ -31,8 +32,8 @@ namespace Anori.WinUI.Commands.GuitTests.Net
         public MainViewModel(MainWindow window)
         {
             this.window = window;
-            ConcurrencyCommand = CommandBuilder.Builder.Command(async (CancellationToken token) => await ExecuteWithToken(token), CanExecute).Build();
-            ConcurrencyCommand.CanExecuteChanged += ConcurrencyCommandOnCanExecuteChanged;
+            this.ConcurrencyCommand = CommandBuilder.Builder.Command(async (CancellationToken token) => await this.ExecuteWithToken(token), this.CanExecute).Build();
+            this.ConcurrencyCommand.CanExecuteChanged += this.ConcurrencyCommandOnCanExecuteChanged;
         }
 
         /// <summary>
@@ -45,15 +46,15 @@ namespace Anori.WinUI.Commands.GuitTests.Net
 
         public bool ThrowException
         {
-            get => throwException;
+            get => this.throwException;
             set
             {
-                if (value == throwException)
+                if (value == this.throwException)
                 {
                     return;
                 }
-                throwException = value;
-                OnPropertyChanged();
+                this.throwException = value;
+                this.OnPropertyChanged();
             }
         }
 
@@ -69,7 +70,7 @@ namespace Anori.WinUI.Commands.GuitTests.Net
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Anori.WinUI.Commands.GuitTests.Net
             Debug.WriteLine("Executing");
             try
             {
-                if (ThrowException)
+                if (this.ThrowException)
                 {
                     throw new Exception("Test Exception");
                 }

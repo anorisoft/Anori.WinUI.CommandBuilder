@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="ConcurrencyCommandBase.cs" company="Anori Soft">
-// Copyright (c) Anori Soft. All rights reserved.
+// <copyright file="ConcurrencyCommandBase.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -200,7 +200,6 @@ namespace Anori.WinUI.Commands.Commands
         /// </value>
         public ISyncCommand CancelCommand => this.cancelCommand;
 
-       
         /// <summary>
         ///     Gets the exception.
         /// </summary>
@@ -358,6 +357,7 @@ namespace Anori.WinUI.Commands.Commands
             this.Dispose(true);
             GC.SuppressFinalize(this);
         }
+
         /// <summary>
         ///     Cancels this instance.
         /// </summary>
@@ -366,7 +366,6 @@ namespace Anori.WinUI.Commands.Commands
         /// <summary>
         ///     Raises the can execute cancel command.
         /// </summary>
-        /// <returns></returns>
         public void RaiseCanExecuteCancelCommand() => this.cancelCommand.RaiseCanExecuteChanged();
 
         /// <summary>
@@ -503,8 +502,7 @@ namespace Anori.WinUI.Commands.Commands
             this.WasFaulty = true;
             this.Exception = ex;
 
-          await this.error.RaiseAsync(ex);
-          
+            await this.error.RaiseAsync(ex);
         }
 
         /// <summary>
@@ -541,6 +539,7 @@ namespace Anori.WinUI.Commands.Commands
                     break;
             }
         }
+
         /// <summary>
         ///     Called when [ran to completion].
         /// </summary>

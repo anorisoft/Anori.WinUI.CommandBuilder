@@ -29,13 +29,12 @@ namespace Anori.WinUI.Commands.GUITest
             Action<CancellationToken> concurrencySyncExecution = (c) => { };
             Func<CancellationToken, Task> concurrencyAsyncExecution = async (c) => await Task.Yield();
 
-            IConcurrencyAsyncCommand testAndCommand;
-            TestAndCommand = testAndCommand = commandFactory
+            var testAndCommand = commandFactory
                 .Command(concurrencyAsyncExecution)
                 .ObservesCanExecute(() => this.Condition1 && this.Condition2)
-                .Build();
-
-            ((IActivatable)testAndCommand).Activate();
+                .Activatable().Build();
+            TestAndCommand = testAndCommand;
+            testAndCommand.Activate();
 
             var canExecuteObserverOr =
                 new PropertyObserverFactory().ObservesCanExecute(() => this.Condition1 || this.Condition2);

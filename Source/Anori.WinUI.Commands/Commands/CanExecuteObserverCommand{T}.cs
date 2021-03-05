@@ -1,37 +1,42 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="ActivatablePropertyObserverCommand{T}.cs" company="Anori Soft">
-// Copyright (c) Anori Soft. All rights reserved.
+// <copyright file="CanExecuteObserverCommand{T}.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-using Anori.WinUI.Commands.Interfaces;
-using Anori.WinUI.Common;
-using JetBrains.Annotations;
-using System;
-using System.Collections.Generic;
-
 namespace Anori.WinUI.Commands.Commands
 {
-    public sealed class CanExecuteObserverCommand<T> :
-        SyncCommandBase<T>,
-        ICanExecuteChangedObserver,
-        IDisposable
+    using System;
+    using System.Collections.Generic;
+
+    using Anori.WinUI.Commands.Interfaces;
+    using Anori.WinUI.Common;
+
+    using JetBrains.Annotations;
+
+    /// <summary>
+    /// CanExecute Observer Command.
+    /// </summary>
+    /// <typeparam name="T">Parameter Type.</typeparam>
+    /// <seealso cref="Anori.WinUI.Commands.Commands.SyncCommandBase{T}" />
+    /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver" />
+    /// <seealso cref="System.IDisposable" />
+    public sealed class CanExecuteObserverCommand<T> : SyncCommandBase<T>, ICanExecuteChangedObserver, IDisposable
     {
         /// <summary>
-        ///     The observers
+        ///     The observers.
         /// </summary>
         private readonly List<ICanExecuteChangedSubjectBase> observers = new List<ICanExecuteChangedSubjectBase>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand{T}" /> class.
+        /// Initializes a new instance of the <see cref="CanExecuteObserverCommand{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
-        /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">observers</exception>
+        /// <exception cref="ArgumentNullException">observers is null.</exception>
         public CanExecuteObserverCommand(
             [NotNull] Action<T> execute,
-            [NotNull][ItemNotNull] params ICanExecuteChangedSubject[] observers)
+            [NotNull] [ItemNotNull] params ICanExecuteChangedSubject[] observers)
             : base(execute)
         {
             if (observers == null)
@@ -40,24 +45,23 @@ namespace Anori.WinUI.Commands.Commands
             }
 
             this.observers.AddIfNotContains(observers);
-            Subscribe();
+            this.Subscribe();
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
+        /// Initializes a new instance of the <see cref="CanExecuteObserverCommand{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
-        /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="canExecuteSubject">The can execute subject.</param>
         /// <param name="observers">The observers.</param>
         /// <exception cref="ArgumentNullException">observer
         /// or
-        /// observer</exception>
-        /// <exception cref="ArgumentException">propertyObserver</exception>
+        /// observer is null.</exception>
+        /// <exception cref="ArgumentException">propertyObserver is null.</exception>
         public CanExecuteObserverCommand(
             [NotNull] Action<T> execute,
             [NotNull] ICanExecuteSubject canExecuteSubject,
-            [NotNull][ItemNotNull] params ICanExecuteChangedSubject[] observers)
+            [NotNull] [ItemNotNull] params ICanExecuteChangedSubject[] observers)
             : base(execute, canExecuteSubject)
         {
             if (canExecuteSubject == null)
@@ -72,22 +76,22 @@ namespace Anori.WinUI.Commands.Commands
 
             this.observers.Add(canExecuteSubject);
             this.observers.AddIfNotContains(observers);
-            Subscribe();
+            this.Subscribe();
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
+        /// Initializes a new instance of the <see cref="CanExecuteObserverCommand{T}"/> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
-        /// <param name="canExecuteObserver">The can execute observer.</param>
+        /// <param name="canExecute">The can execute.</param>
         /// <param name="observers">The observers.</param>
         /// <exception cref="ArgumentNullException">observers
         /// or
-        /// observers</exception>
+        /// observers is null.</exception>
         public CanExecuteObserverCommand(
             [NotNull] Action<T> execute,
             [NotNull] Predicate<T> canExecute,
-            [NotNull][ItemNotNull] params ICanExecuteChangedSubject[] observers)
+            [NotNull] [ItemNotNull] params ICanExecuteChangedSubject[] observers)
             : base(execute, canExecute)
         {
             if (observers == null)
@@ -97,7 +101,7 @@ namespace Anori.WinUI.Commands.Commands
 
             this.observers.AddIfNotContains(observers);
 
-            Subscribe();
+            this.Subscribe();
         }
 
         /// <summary>
@@ -111,7 +115,7 @@ namespace Anori.WinUI.Commands.Commands
         public void RaisePropertyChanged() => this.CanExecuteChanged.RaiseEmpty(this);
 
         /// <summary>
-        ///     Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
         public void Dispose()
         {
@@ -120,12 +124,10 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Releases unmanaged and - optionally - managed resources.
+        /// Releases unmanaged and - optionally - managed resources.
         /// </summary>
-        /// <param name="disposing">
-        ///     <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only
-        ///     unmanaged resources.
-        /// </param>
+        /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only
+        /// unmanaged resources.</param>
         private void Dispose(bool disposing)
         {
             if (disposing)
@@ -135,7 +137,7 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Subscribes this instance.
+        /// Subscribes this instance.
         /// </summary>
         private void Subscribe() => this.observers.ForEach(observer => observer.Add(this));
 

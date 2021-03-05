@@ -1,14 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using Anori.WinUI.Commands.Interfaces;
-using Anori.WinUI.Commands.Resources;
+﻿// -----------------------------------------------------------------------
+// <copyright file="ObservableCollectionExtensions.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 namespace Anori.WinUI.Commands.Commands
 {
+    using System;
+    using System.Collections.Generic;
+
+    using Anori.WinUI.Commands.Interfaces;
+    using Anori.WinUI.Commands.Resources;
+
+    /// <summary>
+    ///     Observable Collection Extensions.
+    /// </summary>
     public static class ObservableCollectionExtensions
     {
-
-        public static void AddIfNotContains(this IList<ICanExecuteChangedSubjectBase> observers, IEnumerable<ICanExecuteChangedSubject> newItems)
+        /// <summary>
+        ///     Adds if not contains.
+        /// </summary>
+        /// <param name="observers">The observers.</param>
+        /// <param name="newItems">The new items.</param>
+        /// <exception cref="ArgumentNullException">observers - Observable item.</exception>
+        /// <exception cref="ArgumentException">propertyObserver</exception>
+        public static void AddIfNotContains(
+            this IList<ICanExecuteChangedSubjectBase> observers,
+            IEnumerable<ICanExecuteChangedSubject> newItems)
         {
             foreach (var propertyObserver in newItems)
             {
@@ -19,8 +37,7 @@ namespace Anori.WinUI.Commands.Commands
 
                 if (observers.Contains(propertyObserver))
                 {
-                    throw new ArgumentException(
-                        string.Format(ExceptionStrings.ObserverIsAlreadyBeingObserved, propertyObserver),
+                    throw new ArgumentException(string.Format(ExceptionStrings.ObserverIsAlreadyBeingObserved, propertyObserver),
                         nameof(propertyObserver));
                 }
 

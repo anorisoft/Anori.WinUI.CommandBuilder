@@ -9,7 +9,7 @@ using Anori.WinUI.Commands.Commands;
 using Anori.WinUI.Commands.Exceptions;
 using Anori.WinUI.Commands.Interfaces;
 using Anori.WinUI.Commands.Interfaces.Builders;
-using Anori.WinUI.Commands.Interfaces.Commands;
+
 using JetBrains.Annotations;
 
 namespace Anori.WinUI.Commands.Builder

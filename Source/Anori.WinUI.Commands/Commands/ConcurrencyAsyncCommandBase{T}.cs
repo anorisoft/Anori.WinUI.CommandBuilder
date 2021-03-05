@@ -1,8 +1,13 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="ConcurrencyCommandBase.cs" company="Anori Soft">
-// Copyright (c) Anori Soft. All rights reserved.
+// <copyright file="ConcurrencyAsyncCommandBase{T}.cs" company="Anorisoft">
+// Copyright (c) bfa solutions ltd. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
+
+using Anori.WinUI.Commands.Interfaces;
+using Anori.WinUI.Common;
+
+using JetBrains.Annotations;
 
 using System;
 using System.ComponentModel;
@@ -10,9 +15,6 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
-using Anori.WinUI.Commands.Interfaces;
-using Anori.WinUI.Common;
-using JetBrains.Annotations;
 
 namespace Anori.WinUI.Commands.Commands
 {
@@ -21,74 +23,83 @@ namespace Anori.WinUI.Commands.Commands
     /// </summary>
     /// <seealso cref="System.Windows.Input.ICommand" />
     /// <seealso cref="System.IDisposable" />
-    public abstract class ConcurrencyAsyncCommandBase<T> :
-        CommandBase,
-        IConcurrencyAsyncCommand<T>,
-        IExecutable,
-        IDisposable,
-        INotifyPropertyChanged
+    public abstract class ConcurrencyAsyncCommandBase<T> : CommandBase,
+                                                           IConcurrencyAsyncCommand<T>,
+                                                           IExecutable,
+                                                           IDisposable,
+                                                           INotifyPropertyChanged
     {
         /// <summary>
         ///     The cancel
         /// </summary>
-        [CanBeNull] private readonly Func<Task> cancel;
+        [CanBeNull]
+        private readonly Func<Task> cancel;
 
         /// <summary>
-        /// The cancel command
+        ///     The cancel command
         /// </summary>
-        [NotNull] private readonly DirectCommand cancelCommand;
+        [NotNull]
+        private readonly DirectCommand cancelCommand;
 
         /// <summary>
         ///     The can execute
         /// </summary>
-        [CanBeNull] private readonly Predicate<T> canExecute;
+        [CanBeNull]
+        private readonly Predicate<T> canExecute;
 
         /// <summary>
         ///     The completed
         /// </summary>
-        [CanBeNull] private readonly Func<Task> completed;
+        [CanBeNull]
+        private readonly Func<Task> completed;
 
         /// <summary>
         ///     The error
         /// </summary>
-        [CanBeNull] private readonly Func<Exception, Task> error;
+        [CanBeNull]
+        private readonly Func<Exception, Task> error;
 
         /// <summary>
         ///     The execute
         /// </summary>
-        [NotNull] private readonly Func<T, CancellationToken, Task> execute;
+        [NotNull]
+        private readonly Func<T, CancellationToken, Task> execute;
 
         /// <summary>
         ///     The finally task scheduler
         /// </summary>
         [NotNull]
-        private readonly TaskScheduler finallyTaskScheduler =
-            TaskScheduler.FromCurrentSynchronizationContext();
+        private readonly TaskScheduler finallyTaskScheduler = TaskScheduler.FromCurrentSynchronizationContext();
 
         /// <summary>
         ///     The post actions task scheduler
         /// </summary>
-        [NotNull] private readonly TaskScheduler postTaskScheduler = TaskScheduler.Default;
+        [NotNull]
+        private readonly TaskScheduler postTaskScheduler = TaskScheduler.Default;
 
         /// <summary>
         ///     The task factory
         /// </summary>
-        [NotNull] private readonly TaskFactory taskFactory = new TaskFactory();
+        [NotNull]
+        private readonly TaskFactory taskFactory = new TaskFactory();
 
         /// <summary>
         ///     The actions task scheduler
         /// </summary>
-        [NotNull] private readonly TaskScheduler taskScheduler = TaskScheduler.Default;
+        [NotNull]
+        private readonly TaskScheduler taskScheduler = TaskScheduler.Default;
 
         /// <summary>
         ///     The cancellation token source
         /// </summary>
-        [CanBeNull] private CancellationTokenSource cancellationTokenSource;
+        [CanBeNull]
+        private CancellationTokenSource cancellationTokenSource;
 
         /// <summary>
         ///     The exception
         /// </summary>
-        [CanBeNull] private Exception exception;
+        [CanBeNull]
+        private Exception exception;
 
         /// <summary>
         ///     The is execute
@@ -98,25 +109,26 @@ namespace Anori.WinUI.Commands.Commands
         /// <summary>
         ///     The task
         /// </summary>
-        [CanBeNull] private Task task;
+        [CanBeNull]
+        private Task task;
 
         /// <summary>
-        /// The is canceled
+        ///     The is canceled
         /// </summary>
         private bool wasCanceled;
 
         /// <summary>
-        /// The has errors
+        ///     The has errors
         /// </summary>
         private bool wasFaulty;
 
         /// <summary>
-        /// The was successfuly
+        ///     The was successfuly
         /// </summary>
         private bool wasSuccessfuly;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConcurrencyRelayCommand" /> class.
+        ///     Initializes a new instance of the <see cref="ConcurrencyRelayCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecute">The can execute.</param>
@@ -139,7 +151,7 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConcurrencyCommandBase"/> class.
+        ///     Initializes a new instance of the <see cref="ConcurrencyCommandBase" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="completed">The completed.</param>
@@ -159,7 +171,7 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConcurrencyCommandBase"/> class.
+        ///     Initializes a new instance of the <see cref="ConcurrencyCommandBase" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecuteSubject">The can execute subject.</param>
@@ -188,6 +200,11 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
+        ///     Occurs when a property value changes.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
         ///     Gets or sets the cancel command.
         /// </summary>
         /// <value>
@@ -195,7 +212,6 @@ namespace Anori.WinUI.Commands.Commands
         /// </value>
         public ISyncCommand CancelCommand => this.cancelCommand;
 
-      
         /// <summary>
         ///     Gets the exception.
         /// </summary>
@@ -308,13 +324,14 @@ namespace Anori.WinUI.Commands.Commands
                 var token = this.cancellationTokenSource.Token;
                 this.task = this.taskFactory
                     .StartNew(
-                        async (p) => await this.OnAction((T) p, token),
-                        parameter, token,
+                        async p => await this.OnAction((T)p, token),
+                        parameter,
+                        token,
                         TaskCreationOptions.DenyChildAttach,
-                        this.taskScheduler).Unwrap()
+                        this.taskScheduler)
+                    .Unwrap()
                     .ContinueWith(async t => await this.OnPostAction(t), this.postTaskScheduler);
-                task.ContinueWith(t => this.OnFinally(), this.finallyTaskScheduler);
-
+                this.task.ContinueWith(t => this.OnFinally(), this.finallyTaskScheduler);
             }
             catch (TaskCanceledException ex)
             {
@@ -357,11 +374,6 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Occurs when a property value changes.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
         ///     Cancels this instance.
         /// </summary>
         public void Cancel() => this.cancellationTokenSource?.Cancel();
@@ -369,7 +381,6 @@ namespace Anori.WinUI.Commands.Commands
         /// <summary>
         ///     Raises the can execute cancel command.
         /// </summary>
-        /// <returns></returns>
         public void RaiseCanExecuteCancelCommand() => this.cancelCommand.RaiseCanExecuteChanged();
 
         /// <summary>
@@ -378,10 +389,30 @@ namespace Anori.WinUI.Commands.Commands
         public abstract void RaiseCanExecuteCommand();
 
         /// <summary>
+        ///     Executes the asynchronous.
+        /// </summary>
+        public async Task ExecuteAsync(T parameter, CancellationToken token)
+        {
+            if (this.CanExecute(parameter))
+            {
+                try
+                {
+                    this.IsExecuting = true;
+
+                    await this.execute(parameter, token).ConfigureAwait(false);
+                }
+                finally
+                {
+                    this.IsExecuting = false;
+                }
+            }
+        }
+
+        /// <summary>
         ///     Determines whether this instance can execute the specified parameter.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
-        /// <returns></returns>
+        /// <returns>The CanExecute Boolean.</returns>
         protected sealed override bool CanExecute(object parameter) => this.CanExecute((T)parameter);
 
         /// <summary>
@@ -518,26 +549,6 @@ namespace Anori.WinUI.Commands.Commands
                 case TaskStatus.RanToCompletion:
                     await this.OnRanToCompletion();
                     break;
-            }
-        }
-
-        /// <summary>
-        ///     Executes the asynchronous.
-        /// </summary>
-        public async Task ExecuteAsync(T parameter, CancellationToken token)
-        {
-            if (this.CanExecute(parameter))
-            {
-                try
-                {
-                    this.IsExecuting = true;
-
-                    await this.execute(parameter,token).ConfigureAwait(false);
-                }
-                finally
-                {
-                    this.IsExecuting = false;
-                }
             }
         }
 

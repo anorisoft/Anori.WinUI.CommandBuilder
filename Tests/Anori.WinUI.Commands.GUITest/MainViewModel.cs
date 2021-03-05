@@ -12,11 +12,11 @@ namespace Anori.WinUI.Commands.GUITest
     using System.Threading;
     using System.Threading.Tasks;
 
+    using Anori.WinUI.Commands.Commands;
     using Anori.WinUI.Commands.GUITest.Thiriet;
 
     using JetBrains.Annotations;
 
-    using AsyncCommand = Anori.WinUI.Commands.AsyncCommand;
 
     internal class MainViewModel : INotifyPropertyChanged
     {

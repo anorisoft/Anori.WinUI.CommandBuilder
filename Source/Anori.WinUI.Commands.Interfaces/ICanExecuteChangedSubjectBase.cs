@@ -1,4 +1,10 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------
+// <copyright file="ICanExecuteChangedSubjectBase.cs" company="Anorisoft">
+// Copyright (c) bfa solutions ltd. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
+
+using System;
 
 namespace Anori.WinUI.Commands.Interfaces
 {

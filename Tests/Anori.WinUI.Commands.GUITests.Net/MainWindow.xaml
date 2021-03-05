@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Anori.WinUI.Commands.GuitTests.Net"
         xmlns:commands="clr-namespace:Anori.WinUI.Commands;assembly=Anori.WinUI.Commands"
-        d:DataContext="{d:DesignInstance local:MainViewModel}"
+        xmlns:net="clr-namespace:Anori.WinUI.Commands.GUITests.Net"
+        d:DataContext="{d:DesignInstance net:MainViewModel}"
         mc:Ignorable="d">
     <StackPanel>
         <StackPanel.Resources>

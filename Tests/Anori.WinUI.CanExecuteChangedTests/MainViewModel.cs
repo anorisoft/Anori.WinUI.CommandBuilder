@@ -14,6 +14,7 @@ namespace Anori.WinUI.CanExecuteChangedTests
     using System.Windows.Threading;
 
     using Anori.WinUI.Commands;
+    using Anori.WinUI.Commands.Commands;
 
     using JetBrains.Annotations;
 

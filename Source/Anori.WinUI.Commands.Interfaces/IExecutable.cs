@@ -1,27 +1,22 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="ICanExecute.cs" company="Anorisoft">
+// <copyright file="IExecutable.cs" company="Anorisoft">
 // Copyright (c) bfa solutions ltd. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-using System;
-
 namespace Anori.WinUI.Commands.Interfaces
 {
-    using JetBrains.Annotations;
-
     /// <summary>
-    ///     CanExecute Interface.
+    /// Executable Interface.
     /// </summary>
-    public interface ICanExecute
+    public interface IExecutable
     {
         /// <summary>
-        ///     Gets the can execute.
+        /// Gets a value indicating whether this instance is executing.
         /// </summary>
         /// <value>
-        ///     The can execute.
+        ///   <c>true</c> if this instance is executing; otherwise, <c>false</c>.
         /// </value>
-        [NotNull]
-        Func<bool> CanExecute { get; }
+        bool IsExecuting { get; }
     }
 }
