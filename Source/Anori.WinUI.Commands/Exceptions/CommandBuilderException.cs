@@ -12,6 +12,7 @@ namespace Anori.WinUI.Commands.Exceptions
     /// Command Builder Exception.
     /// </summary>
     /// <seealso cref="System.Exception" />
+    [Serializable]
     public class CommandBuilderException : Exception
     {
         /// <summary>
