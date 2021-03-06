@@ -1,4 +1,10 @@
-﻿namespace Anori.WinUI.Commands.GUITest
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Anori.WinUI.Commands.GUITest
 {
     using NUnit.Framework;
 
@@ -9,6 +15,8 @@
         [Test]
         public void PassTest()
         {
+            
+
             Assert.Pass();
         }
     }

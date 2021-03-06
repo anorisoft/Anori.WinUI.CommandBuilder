@@ -15,7 +15,6 @@
     <Compile Remove="DelegateCommandFixture.cs" />
     <Compile Remove="DelegateCommandOfTFixture.cs" />
     <Compile Remove="ErrorHandler.cs" />
-    <Compile Remove="RelayCommandFixture.cs" />
     <Compile Remove="RelayCommandOfTFixture.cs" />
   </ItemGroup>
 

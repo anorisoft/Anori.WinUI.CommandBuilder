@@ -1,15 +1,9 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="MainWindow.xaml.cs" company="Anorisoft">
-// Copyright (c) bfa solutions ltd. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
-
-namespace Anori.WinUI.Commands.GUITests.NetFramework
+﻿namespace Anori.WinUI.Commands.GUITests.NetFramework
 {
     using System.Windows;
 
     /// <summary>
-    ///     Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
