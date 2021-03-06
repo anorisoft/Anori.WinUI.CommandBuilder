@@ -43,6 +43,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Submodules", "Submodules", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anori.ExpressionObservers", "..\Submodules\Anori.ExpressionObservers\Source\Anori.ExpressionObservers\Anori.ExpressionObservers.csproj", "{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anori.Extensions", "..\Submodules\Anori.Extensions\Source\Anori.Extensions\Anori.Extensions.csproj", "{F83E2942-DE03-466F-B5A6-74C9FD5AB751}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug Submodules|Any CPU = Debug Submodules|Any CPU
@@ -92,18 +94,24 @@ Global
 		{E0DB5A90-51A7-42A6-88CD-1F914161E526}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0DB5A90-51A7-42A6-88CD-1F914161E526}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0DB5A90-51A7-42A6-88CD-1F914161E526}.Release|Any CPU.Build.0 = Release|Any CPU
-		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Debug Submodules|Any CPU.ActiveCfg = Debug Submodules|Any CPU
-		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Debug Submodules|Any CPU.Build.0 = Debug Submodules|Any CPU
+		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Debug Submodules|Any CPU.ActiveCfg = Debug|Any CPU
+		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Debug Submodules|Any CPU.Build.0 = Debug|Any CPU
 		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Debug Submodules|Any CPU.ActiveCfg = Debug Submodules|Any CPU
-		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Debug Submodules|Any CPU.Build.0 = Debug Submodules|Any CPU
+		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Debug Submodules|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Debug Submodules|Any CPU.Build.0 = Debug|Any CPU
 		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F83E2942-DE03-466F-B5A6-74C9FD5AB751}.Debug Submodules|Any CPU.ActiveCfg = Debug|Any CPU
+		{F83E2942-DE03-466F-B5A6-74C9FD5AB751}.Debug Submodules|Any CPU.Build.0 = Debug|Any CPU
+		{F83E2942-DE03-466F-B5A6-74C9FD5AB751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F83E2942-DE03-466F-B5A6-74C9FD5AB751}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F83E2942-DE03-466F-B5A6-74C9FD5AB751}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F83E2942-DE03-466F-B5A6-74C9FD5AB751}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +126,7 @@ Global
 		{E0DB5A90-51A7-42A6-88CD-1F914161E526} = {550E1A97-EADC-40C7-B9A4-963BB290A5E7}
 		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7} = {550E1A97-EADC-40C7-B9A4-963BB290A5E7}
 		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D} = {8D7F4C38-52C0-44F4-AD23-2C427C7D360E}
+		{F83E2942-DE03-466F-B5A6-74C9FD5AB751} = {8D7F4C38-52C0-44F4-AD23-2C427C7D360E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5C71111A-2F2C-4368-B7B3-3E575874F610}

@@ -27,7 +27,6 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-    <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>
