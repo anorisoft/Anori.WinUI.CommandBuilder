@@ -41,8 +41,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build Items", "Build Items"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Submodules", "Submodules", "{8D7F4C38-52C0-44F4-AD23-2C427C7D360E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anori.Extensions", "..\Submodules\Anori.Extensions\Source\Anori.Extensions\Anori.Extensions.csproj", "{9125BA9B-FA22-4E0E-87C0-338DFAA71999}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anori.ExpressionObservers", "..\Submodules\Anori.ExpressionObservers\Source\Anori.ExpressionObservers\Anori.ExpressionObservers.csproj", "{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}"
 EndProject
 Global
@@ -100,12 +98,6 @@ Global
 		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9125BA9B-FA22-4E0E-87C0-338DFAA71999}.Debug Submodules|Any CPU.ActiveCfg = Debug Submodules|Any CPU
-		{9125BA9B-FA22-4E0E-87C0-338DFAA71999}.Debug Submodules|Any CPU.Build.0 = Debug Submodules|Any CPU
-		{9125BA9B-FA22-4E0E-87C0-338DFAA71999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9125BA9B-FA22-4E0E-87C0-338DFAA71999}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9125BA9B-FA22-4E0E-87C0-338DFAA71999}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9125BA9B-FA22-4E0E-87C0-338DFAA71999}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Debug Submodules|Any CPU.ActiveCfg = Debug Submodules|Any CPU
 		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Debug Submodules|Any CPU.Build.0 = Debug Submodules|Any CPU
 		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -125,7 +117,6 @@ Global
 		{E304DD06-B40B-445D-BC0D-528AFC1B92C5} = {550E1A97-EADC-40C7-B9A4-963BB290A5E7}
 		{E0DB5A90-51A7-42A6-88CD-1F914161E526} = {550E1A97-EADC-40C7-B9A4-963BB290A5E7}
 		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7} = {550E1A97-EADC-40C7-B9A4-963BB290A5E7}
-		{9125BA9B-FA22-4E0E-87C0-338DFAA71999} = {8D7F4C38-52C0-44F4-AD23-2C427C7D360E}
 		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D} = {8D7F4C38-52C0-44F4-AD23-2C427C7D360E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
