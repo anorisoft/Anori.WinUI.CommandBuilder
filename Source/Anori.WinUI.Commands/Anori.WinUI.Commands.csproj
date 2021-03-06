@@ -19,6 +19,18 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net472|AnyCPU'">
+    <DocumentationFile>D:\Git\Anori.WinUI.Commands\Source\Anori.WinUI.Commands\Anori.WinUI.Commands.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net472|AnyCPU'">
+    <DocumentationFile>D:\Git\Anori.WinUI.Commands\Source\Anori.WinUI.Commands\Anori.WinUI.Commands.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug Submodules|net472|AnyCPU'">
+    <DocumentationFile>D:\Git\Anori.WinUI.Commands\Source\Anori.WinUI.Commands\Anori.WinUI.Commands.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Interfaces\**" />
     <EmbeddedResource Remove="Interfaces\**" />
@@ -54,6 +66,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="StyleCop.CSharp.Async.Rules" Version="6.1.41">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup Condition="!($(Configuration.Contains('Submodules')))">
@@ -85,6 +101,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ExceptionStrings.resx</DependentUpon>
     </Compile>
+    <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,5 @@
 #load nuget:?package=Cake.Recipe&version=2.2.0
+#load nuget:?package=Microsoft.CodeAnalysis.Scripting&version=3.9.0
 
 Environment.SetVariableNames();
 
@@ -10,7 +11,7 @@ BuildParameters.SetParameters(
     repositoryOwner: "anorisoft",
     repositoryName: "Anori.WinUI.Commands",
     appVeyorAccountName: "anorisoft",
-	shouldGenerateDocumentation: false,
+	shouldGenerateDocumentation: true,
     shouldRunDupFinder: false,
     shouldRunCodecov: false,
     shouldRunCoveralls: true,

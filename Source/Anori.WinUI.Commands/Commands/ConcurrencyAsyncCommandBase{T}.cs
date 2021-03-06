@@ -1,23 +1,23 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="ConcurrencyAsyncCommandBase{T}.cs" company="Anorisoft">
-// Copyright (c) bfa solutions ltd. All rights reserved.
+// <copyright file="ConcurrencyAsyncCommandBase{T}.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-using Anori.WinUI.Commands.Interfaces;
-using Anori.WinUI.Common;
-
-using JetBrains.Annotations;
-
-using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using System.Threading;
-using System.Threading.Tasks;
-
 namespace Anori.WinUI.Commands.Commands
 {
+    using System;
+    using System.ComponentModel;
+    using System.Diagnostics;
+    using System.Runtime.CompilerServices;
+    using System.Threading;
+    using System.Threading.Tasks;
+
+    using Anori.WinUI.Commands.Interfaces;
+    using Anori.WinUI.Common;
+
+    using JetBrains.Annotations;
+
     /// <summary>
     ///     Asynchronous Relay Command
     /// </summary>

@@ -1,21 +1,24 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="CanExecuteObserver.cs" company="Anorisoft">
-// Copyright (c) bfa solutions ltd. All rights reserved.
+// <copyright file="CanExecuteObserver.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-using Anori.ExpressionObservers;
-using Anori.WinUI.Common;
-
-using JetBrains.Annotations;
-
-using System;
-using System.Linq.Expressions;
-
 namespace Anori.WinUI.Commands.CanExecuteObservers
 {
+    using System;
     using System.Diagnostics;
+    using System.Linq.Expressions;
 
+    using Anori.ExpressionObservers;
+    using Anori.WinUI.Common;
+
+    using JetBrains.Annotations;
+
+    /// <summary>
+    /// CanExecute Observer.
+    /// </summary>
+    /// <seealso cref="Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserverBase" />
     public sealed class CanExecuteObserver : CanExecuteObserverBase
     {
         /// <summary>

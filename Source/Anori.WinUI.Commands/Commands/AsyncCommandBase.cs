@@ -146,13 +146,11 @@ namespace Anori.WinUI.Commands.Commands
         ///     <c>true</c> if this instance can execute the specified parameter; otherwise, <c>false</c>.
         /// </returns>
         public virtual bool CanExecute() => (!this.isExecuting) && (this.canExecute == null || this.canExecute());
-
+        
         /// <summary>
-        ///     Executes the asynchronous.
+        /// Executes the asynchronous.
         /// </summary>
-        /// <returns>
-        ///     Async Task.
-        /// </returns>
+        /// <returns>A task object that can be awaited.</returns>
         public async Task ExecuteAsync()
         {
             try

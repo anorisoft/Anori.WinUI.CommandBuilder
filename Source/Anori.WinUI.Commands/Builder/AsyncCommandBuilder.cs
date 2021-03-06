@@ -270,7 +270,7 @@ namespace Anori.WinUI.Commands.Builder
         /// <param name="canExecute">The can execute.</param>
         /// <param name="fallback">if set to <c>true</c> [fallback].</param>
         /// <returns></returns>
-        /// <exception cref="CommandBuilderException">
+        /// <exception cref="CommandBuilderException">CommandBuilder Exception.
         /// </exception>
         [NotNull]
         public AsyncCommandBuilder ObservesCanExecute([NotNull] Expression<Func<bool>> canExecute, bool fallback)
@@ -299,7 +299,7 @@ namespace Anori.WinUI.Commands.Builder
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
         /// <returns></returns>
-        /// <exception cref="CommandBuilderException">
+        /// <exception cref="CommandBuilderException">CommandBuilder Exception.
         /// </exception>
         /// <exception cref="ArgumentNullException">canExecute</exception>
         [NotNull]
@@ -524,7 +524,7 @@ namespace Anori.WinUI.Commands.Builder
         ///     Observeses the command manager.
         /// </summary>
         /// <returns></returns>
-        /// <exception cref="CommandBuilderException"></exception>
+        /// <exception cref="CommandBuilderException">CommandBuilder Exception.</exception>
         [NotNull]
         private AsyncCommandBuilder ObservesCommandManager()
         {
