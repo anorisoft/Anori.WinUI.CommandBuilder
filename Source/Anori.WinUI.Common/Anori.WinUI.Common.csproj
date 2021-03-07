@@ -16,15 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="IErrorHandler.cs" />
-    <Compile Remove="Parameters\IParameterObserverNode{T}.cs" />
-    <Compile Remove="Parameters\IParameterObserverRootNode{T}.cs" />
-    <Compile Remove="Parameters\ParameterObserverEndNode{T}.cs" />
-    <Compile Remove="Parameters\ParameterObserverNode{T}.cs" />
-    <Compile Remove="Parameters\ParameterObserverRootNode{T}.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
