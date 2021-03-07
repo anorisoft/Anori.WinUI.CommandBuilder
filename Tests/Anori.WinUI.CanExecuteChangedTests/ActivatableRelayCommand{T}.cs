@@ -15,8 +15,6 @@ namespace Anori.WinUI.CanExecuteChangedTests
     using Anori.WinUI.Commands.Interfaces;
     using Anori.WinUI.Common;
 
-    using global::CanExecuteChangedTests;
-
     using JetBrains.Annotations;
 
     #endregion

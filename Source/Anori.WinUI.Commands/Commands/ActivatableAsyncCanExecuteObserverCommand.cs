@@ -13,8 +13,6 @@ namespace Anori.WinUI.Commands.Commands
     using Anori.WinUI.Commands.Interfaces;
     using Anori.WinUI.Common;
 
-    using CanExecuteChangedTests;
-
     using JetBrains.Annotations;
 
     /// <summary>

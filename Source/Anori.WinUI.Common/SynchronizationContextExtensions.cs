@@ -6,8 +6,6 @@
 
 namespace Anori.WinUI.Common
 {
-    using CanExecuteChangedTests;
-
     using JetBrains.Annotations;
 
     using System;

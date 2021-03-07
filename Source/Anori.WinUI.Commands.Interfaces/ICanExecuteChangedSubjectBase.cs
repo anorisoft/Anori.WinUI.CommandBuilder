@@ -1,15 +1,15 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="ICanExecuteChangedSubjectBase.cs" company="Anorisoft">
-// Copyright (c) bfa solutions ltd. All rights reserved.
+// <copyright file="ICanExecuteChangedSubjectBase.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-using System;
-
 namespace Anori.WinUI.Commands.Interfaces
 {
+    using System;
+
     /// <summary>
-    ///     Interface Can Execute Updater
+    ///     Interface Can Execute Updater.
     /// </summary>
     /// <seealso cref="System.IDisposable" />
     public interface ICanExecuteChangedSubjectBase : IDisposable

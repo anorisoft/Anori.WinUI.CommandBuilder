@@ -1,1 +1,30 @@
 System.Globalization.CultureInfo.DefaultThreadCurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-GB");
+#n Wyam.Markdown
+
+// This directive installs packages from NuGet and is what you would normally use
+// NOTE: If running the example against a downloaded version of Wyam, uncomment this block and comment the next block
+// #n Wyam.Markdown
+#n Wyam.Yaml
+#n Wyam.Razor
+
+// "using" statements are placed in the outer scope
+// and are available throughout the script
+//using System.IO;
+
+// classes are also placed in the outer scope
+public static class Helpers
+{
+    public static string GetWriteExtension()
+    {
+        return ".html";
+    }
+}
+
+// normal code is placed in a wrapper class and method
+// that gets called when the script is evaluated
+Pipelines.Add("Markdown",
+    ReadFiles("*.md"),
+    FrontMatter(Yaml()),
+    Markdown(),
+    WriteFiles(Helpers.GetWriteExtension())
+);

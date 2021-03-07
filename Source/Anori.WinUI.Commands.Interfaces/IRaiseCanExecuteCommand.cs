@@ -6,6 +6,9 @@
 
 namespace Anori.WinUI.Commands.Interfaces
 {
+    /// <summary>
+    ///     Raise CanExecute Command Interface.
+    /// </summary>
     public interface IRaiseCanExecuteCommand
     {
         /// <summary>

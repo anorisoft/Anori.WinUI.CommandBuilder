@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="IActivatableSyncCommand.cs" company="Anorisoft">
-// Copyright (c) bfa solutions ltd. All rights reserved.
+// <copyright file="IActivatableSyncCommand.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 

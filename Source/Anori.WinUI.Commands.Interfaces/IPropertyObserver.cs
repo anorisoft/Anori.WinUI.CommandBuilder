@@ -7,7 +7,7 @@
 namespace Anori.WinUI.Commands.Interfaces
 {
     /// <summary>
-    /// PropertyObserver Interface.
+    ///     PropertyObserver Interface.
     /// </summary>
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject" />
     public interface IPropertyObserver : ICanExecuteChangedSubject

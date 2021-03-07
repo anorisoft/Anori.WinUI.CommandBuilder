@@ -6,12 +6,13 @@
 
 namespace Anori.WinUI.Common
 {
-    using CanExecuteChangedTests;
+    using System;
 
     using JetBrains.Annotations;
 
-    using System;
-
+    /// <summary>
+    ///     Dispatchable Context Extensions.
+    /// </summary>
     public static class DispatchableContextExtensions
     {
         /// <summary>
@@ -20,7 +21,7 @@ namespace Anori.WinUI.Common
         /// <typeparam name="TContext">The type of the context.</typeparam>
         /// <param name="context">The context.</param>
         /// <param name="handler">The handler.</param>
-        /// <exception cref="ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">context is null.</exception>
         public static void Dispatch<TContext>([NotNull] this TContext context, [CanBeNull] EventHandler handler)
             where TContext : IDispatchableContext
         {
@@ -51,7 +52,7 @@ namespace Anori.WinUI.Common
         /// <typeparam name="TContext">The type of the context context.</typeparam>
         /// <param name="context">The context.</param>
         /// <param name="action">The action.</param>
-        /// <exception cref="ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">context is null.</exception>
         public static void Dispatch<TContext>([NotNull] this TContext context, [NotNull] Action<TContext> action)
             where TContext : IDispatchableContext
         {
@@ -62,6 +63,14 @@ namespace Anori.WinUI.Common
 
             context.SynchronizationContext.Dispatch(context, action);
         }
+
+        /// <summary>
+        /// Dispatches the specified action.
+        /// </summary>
+        /// <typeparam name="TContext">The type of the context.</typeparam>
+        /// <param name="context">The context.</param>
+        /// <param name="action">The action.</param>
+        /// <exception cref="System.ArgumentNullException">context is null.</exception>
         public static void Dispatch<TContext>([NotNull] this TContext context, [NotNull] Action action)
             where TContext : IDispatchableContext
         {
@@ -74,13 +83,13 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        ///     Dispatches the specified sender.
+        /// Dispatches the specified sender.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The type.</typeparam>
         /// <param name="context">The context.</param>
         /// <param name="value">The value.</param>
         /// <param name="handler">The handler.</param>
-        /// <exception cref="ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">context is null.</exception>
         public static void Dispatch<T>(
             [NotNull] this IDispatchableContext context,
             T value,
@@ -100,10 +109,10 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        ///     Dispatches the specified value.
+        /// Dispatches the specified value.
         /// </summary>
         /// <typeparam name="TContext">The type of the context.</typeparam>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The type.</typeparam>
         /// <param name="context">The context.</param>
         /// <param name="value">The value.</param>
         /// <param name="action">The action.</param>
@@ -119,7 +128,6 @@ namespace Anori.WinUI.Common
         /// <typeparam name="TContext">The type of the context.</typeparam>
         /// <typeparam name="T1">The type of the 1.</typeparam>
         /// <typeparam name="T2">The type of the 2.</typeparam>
-        /// <typeparam name="T"></typeparam>
         /// <param name="context">The context.</param>
         /// <param name="value1">The value1.</param>
         /// <param name="value2">The value2.</param>
@@ -135,10 +143,10 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        ///     Dispatches the specified value.
+        /// Dispatches the specified value.
         /// </summary>
         /// <typeparam name="TContext">The type of the context.</typeparam>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">Th type.</typeparam>
         /// <param name="context">The context.</param>
         /// <param name="value">The value.</param>
         /// <param name="action">The action.</param>
@@ -152,12 +160,11 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        ///     Dispatches the specified value1.
+        /// Dispatches the specified value1.
         /// </summary>
         /// <typeparam name="TContext">The type of the context.</typeparam>
         /// <typeparam name="T1">The type of the 1.</typeparam>
         /// <typeparam name="T2">The type of the 2.</typeparam>
-        /// <typeparam name="T"></typeparam>
         /// <param name="context">The context.</param>
         /// <param name="value1">The value1.</param>
         /// <param name="value2">The value2.</param>

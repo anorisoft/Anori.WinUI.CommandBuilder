@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="IAsyncCommand{T}.cs" company="Anorisoft">
-// Copyright (c) bfa solutions ltd. All rights reserved.
+// <copyright file="IAsyncCommand{T}.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ namespace Anori.WinUI.Commands.Interfaces
     /// <summary>
     ///     Async Command Interface.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">The parameter type.</typeparam>
     /// <seealso cref="System.Windows.Input.ICommand" />
     public interface IAsyncCommand<in T> : System.Windows.Input.ICommand
     {
@@ -19,7 +19,7 @@ namespace Anori.WinUI.Commands.Interfaces
         ///     Executes the asynchronous.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
-        /// <returns></returns>
+        /// <returns>The async taskresult.</returns>
         Task ExecuteAsync(T parameter);
 
         /// <summary>

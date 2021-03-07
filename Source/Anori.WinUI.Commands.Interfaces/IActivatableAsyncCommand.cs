@@ -1,13 +1,13 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="IActivatableAsyncCommand.cs" company="Anorisoft">
-// Copyright (c) bfa solutions ltd. All rights reserved.
+// <copyright file="IActivatableAsyncCommand.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-using Anori.WinUI.Common;
-
 namespace Anori.WinUI.Commands.Interfaces
 {
+    using Anori.WinUI.Common;
+
     /// <summary>
     ///     Activatable Async Command Interface.
     /// </summary>

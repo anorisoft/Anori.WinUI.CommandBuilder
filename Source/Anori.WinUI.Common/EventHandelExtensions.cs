@@ -11,12 +11,10 @@ namespace Anori.WinUI.Common
     using System.Runtime.CompilerServices;
     using System.Threading.Tasks;
 
-    using CanExecuteChangedTests;
-
     using JetBrains.Annotations;
 
     /// <summary>
-    /// Event Handel Extensions.
+    ///     Event Handel Extensions.
     /// </summary>
     public static class EventHandelExtensions
     {
@@ -27,7 +25,7 @@ namespace Anori.WinUI.Common
         /// <param name="sender">The sender.</param>
         /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         /// <returns>
-        /// Is any raised.
+        /// When one has been raised.
         /// </returns>
         public static bool Raise(this EventHandler? eventHandler, object sender, EventArgs e)
         {
@@ -41,12 +39,12 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        /// Raises the specified e.
+        ///     Raises the specified e.
         /// </summary>
         /// <param name="eventHandler">The event handler.</param>
         /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         /// <returns>
-        /// Is any raised.
+        ///     Is any raised.
         /// </returns>
         public static bool Raise(this EventHandler? eventHandler, EventArgs e)
         {
@@ -60,12 +58,12 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        /// Raises the specified e.
+        ///     Raises the specified e.
         /// </summary>
         /// <param name="eventHandler">The event handler.</param>
         /// <param name="propertyName">Name of the property.</param>
         /// <returns>
-        /// Is any raised.
+        ///     Is any raised.
         /// </returns>
         public static bool Raise(
             this PropertyChangedEventHandler? eventHandler,
@@ -81,7 +79,7 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        /// Raises the specified sender.
+        ///     Raises the specified sender.
         /// </summary>
         /// <param name="eventHandler">The event handler.</param>
         /// <param name="sender">The sender.</param>
@@ -118,7 +116,7 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        /// Raises the specified function.
+        ///     Raises the specified function.
         /// </summary>
         /// <typeparam name="T">Resukt Type.</typeparam>
         /// <param name="func">The function.</param>
@@ -133,6 +131,13 @@ namespace Anori.WinUI.Common
             return func();
         }
 
+        /// <summary>
+        ///     Raises the asynchronous.
+        /// </summary>
+        /// <param name="func">The function.</param>
+        /// <returns>
+        ///     Result of RaiseAsync as Boolean.
+        /// </returns>
         public static async Task<bool> RaiseAsync(this Func<Task>? func)
         {
             if (func == null)
@@ -144,6 +149,15 @@ namespace Anori.WinUI.Common
             return true;
         }
 
+        /// <summary>
+        ///     Raises the asynchronous.
+        /// </summary>
+        /// <typeparam name="T">The type.</typeparam>
+        /// <param name="func">The function.</param>
+        /// <param name="arg">The argument.</param>
+        /// <returns>
+        ///     Result of RaiseAsync as Boolean.
+        /// </returns>
         public static async Task<bool> RaiseAsync<T>(this Func<T, Task>? func, T arg)
         {
             if (func == null)
@@ -158,10 +172,10 @@ namespace Anori.WinUI.Common
         /// <summary>
         ///     Raises the specified parameter.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The type.</typeparam>
         /// <param name="action">The action.</param>
         /// <param name="parameter">The parameter.</param>
-        /// <returns></returns>
+        /// <returns>Is any is raised.</returns>
         public static bool Raise<T>(this Action<T> action, T parameter)
         {
             if (action == null)
@@ -181,7 +195,7 @@ namespace Anori.WinUI.Common
         /// <param name="action">The action.</param>
         /// <param name="parameter1">The parameter1.</param>
         /// <param name="parameter2">The parameter2.</param>
-        /// <returns></returns>
+        /// <returns>When one has been raised.</returns>
         public static bool Raise<T1, T2>(this Action<T1, T2> action, T1 parameter1, T2 parameter2)
         {
             if (action != null)
@@ -203,7 +217,9 @@ namespace Anori.WinUI.Common
         /// <param name="parameter1">The parameter1.</param>
         /// <param name="parameter2">The parameter2.</param>
         /// <param name="parameter3">The parameter3.</param>
-        /// <returns></returns>
+        /// <returns>
+        ///     When one has been raised.
+        /// </returns>
         public static bool Raise<T1, T2, T3>(
             this Action<T1, T2, T3> action,
             T1 parameter1,
@@ -231,7 +247,9 @@ namespace Anori.WinUI.Common
         /// <param name="parameter2">The parameter2.</param>
         /// <param name="parameter3">The parameter3.</param>
         /// <param name="parameter4">The parameter4.</param>
-        /// <returns></returns>
+        /// <returns>
+        ///     When one has been raised.
+        /// </returns>
         public static bool Raise<T1, T2, T3, T4>(
             this Action<T1, T2, T3, T4>? action,
             T1 parameter1,
@@ -251,11 +269,13 @@ namespace Anori.WinUI.Common
         /// <summary>
         ///     Raises the specified sender.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The type.</typeparam>
         /// <param name="eventHandler">The event handler.</param>
         /// <param name="sender">The sender.</param>
         /// <param name="e">The e.</param>
-        /// <returns></returns>
+        /// <returns>
+        ///     When one has been raised.
+        /// </returns>
         public static bool Raise<T>(this EventHandler<T>? eventHandler, object sender, T e)
             where T : EventArgs
         {
@@ -271,10 +291,12 @@ namespace Anori.WinUI.Common
         /// <summary>
         ///     Raises the specified e.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The type.</typeparam>
         /// <param name="eventHandler">The event handler.</param>
         /// <param name="e">The e.</param>
-        /// <returns></returns>
+        /// <returns>
+        ///     When one has been raised.
+        /// </returns>
         public static bool Raise<T>(this EventHandler<T> eventHandler, T e)
             where T : EventArgs
         {
@@ -290,11 +312,13 @@ namespace Anori.WinUI.Common
         /// <summary>
         ///     Raises the specified sender.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The type.</typeparam>
         /// <param name="eventHandler">The event handler.</param>
         /// <param name="sender">The sender.</param>
         /// <param name="value">The value.</param>
-        /// <returns></returns>
+        /// <returns>
+        ///     When one has been raised.
+        /// </returns>
         public static bool Raise<T>(this EventHandler<EventArgs<T>> eventHandler, object sender, T value)
         {
             if (eventHandler == null)
@@ -309,10 +333,12 @@ namespace Anori.WinUI.Common
         /// <summary>
         ///     Raises the specified value.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The type.</typeparam>
         /// <param name="eventHandler">The event handler.</param>
         /// <param name="value">The value.</param>
-        /// <returns></returns>
+        /// <returns>
+        ///     When one has been raised.
+        /// </returns>
         public static bool Raise<T>(this EventHandler<EventArgs<T>> eventHandler, T value)
         {
             if (eventHandler == null)
@@ -328,7 +354,9 @@ namespace Anori.WinUI.Common
         ///     Raises the empty.
         /// </summary>
         /// <param name="eventHandler">The event handler.</param>
-        /// <returns></returns>
+        /// <returns>
+        ///     When one has been raised.
+        /// </returns>
         public static bool RaiseEmpty(this EventHandler eventHandler) => Raise(eventHandler, EventArgs.Empty);
 
         /// <summary>
@@ -336,7 +364,9 @@ namespace Anori.WinUI.Common
         /// </summary>
         /// <param name="eventHandler">The event handler.</param>
         /// <param name="sender">The sender.</param>
-        /// <returns></returns>
+        /// <returns>
+        ///     When one has been raised.
+        /// </returns>
         public static bool RaiseEmpty(this EventHandler eventHandler, object sender) =>
             Raise(eventHandler, sender, EventArgs.Empty);
     }

@@ -20,15 +20,15 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net472|AnyCPU'">
-    <DocumentationFile>D:\Git\Anori.WinUI.Commands\Source\Anori.WinUI.Commands\Anori.WinUI.Commands.xml</DocumentationFile>
+    <DocumentationFile>Anori.WinUI.Commands.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net472|AnyCPU'">
-    <DocumentationFile>D:\Git\Anori.WinUI.Commands\Source\Anori.WinUI.Commands\Anori.WinUI.Commands.xml</DocumentationFile>
+    <DocumentationFile>Anori.WinUI.Commands.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug Submodules|net472|AnyCPU'">
-    <DocumentationFile>D:\Git\Anori.WinUI.Commands\Source\Anori.WinUI.Commands\Anori.WinUI.Commands.xml</DocumentationFile>
+    <DocumentationFile>Anori.WinUI.Commands.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,25 +39,6 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="ActivatableAsyncRelayCommand{T}.cs" />
-    <Compile Remove="ActivatablePropertyObserverCommand.cs" />
-    <Compile Remove="ActivatablePropertyObserverCommandBase.cs" />
-    <Compile Remove="ActivatablePropertyObserverCommand{T}.cs" />
-    <Compile Remove="ActivatableRelayCommand{T}.cs" />
-    <Compile Remove="AsyncCommand.cs" />
-    <Compile Remove="AsyncCommand{T}.cs" />
-    <Compile Remove="AsyncRelayCommand{T}..cs" />
-    <Compile Remove="CanExecuteObservers\CanExecutesChangedSubject.cs" />
-    <Compile Remove="ConcurrencyCommand{T}.cs" />
-    <Compile Remove="ConcurrencyRelayCommand.cs" />
-    <Compile Remove="DirectAndRelayCommand.cs" />
-    <Compile Remove="DirectAndRelayCommand{T}.cs" />
-    <Compile Remove="DirectCommand{T}.cs" />
-    <Compile Remove="RelayCommand.cs" />
-    <Compile Remove="RelayCommand{T}.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -89,9 +70,7 @@
 
   <ItemGroup>
     <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\PresentationFramework.dll</HintPath>
-    </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
 
@@ -110,6 +89,4 @@
       <LastGenOutput>ExceptionStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
- 
 </Project>

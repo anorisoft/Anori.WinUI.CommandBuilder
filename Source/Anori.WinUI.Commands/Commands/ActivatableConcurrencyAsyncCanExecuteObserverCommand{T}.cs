@@ -10,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Anori.WinUI.Commands.Interfaces;
 using Anori.WinUI.Common;
-using CanExecuteChangedTests;
+
 using JetBrains.Annotations;
 
 namespace Anori.WinUI.Commands.Commands

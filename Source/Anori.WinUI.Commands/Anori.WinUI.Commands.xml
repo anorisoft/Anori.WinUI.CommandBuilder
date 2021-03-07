@@ -590,6 +590,13 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Anori.WinUI.Commands.Builder.CommandBuilder">
+            <summary>
+            Command Builder.
+            Class to create Command based on ICommand.
+            </summary>
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.ICommandBuilder" />
+        </member>
         <member name="P:Anori.WinUI.Commands.Builder.CommandBuilder.Builder">
             <summary>
                 Gets the builder.

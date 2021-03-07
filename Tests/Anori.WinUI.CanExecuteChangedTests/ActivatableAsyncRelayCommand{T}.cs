@@ -4,18 +4,16 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace CanExecuteChangedTests
+namespace Anori.WinUI.CanExecuteChangedTests
 {
-    using Anori.WinUI.Commands.Interfaces;
-    using Anori.WinUI.Common;
-
-    using JetBrains.Annotations;
-
     using System;
     using System.Threading.Tasks;
     using System.Windows.Input;
 
-    using Anori.WinUI.CanExecuteChangedTests;
+    using Anori.WinUI.Commands.Interfaces;
+    using Anori.WinUI.Common;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     /// </summary>
@@ -103,6 +101,16 @@ namespace CanExecuteChangedTests
         }
 
         /// <summary>
+        ///     Notifies that the value for <see cref="P:Anori.WinUI.Common.IActivated.IsActive" /> property has changed.
+        /// </summary>
+        public event EventHandler<EventArgs<bool>> IsActiveChanged;
+
+        /// <summary>
+        ///     Occurs when changes occur that affect whether or not the command should execute.
+        /// </summary>
+        public event EventHandler CanExecuteChanged;
+
+        /// <summary>
         ///     Gets a value indicating whether this instance is activated.
         /// </summary>
         /// <value>
@@ -153,11 +161,6 @@ namespace CanExecuteChangedTests
         }
 
         /// <summary>
-        ///     Notifies that the value for <see cref="P:Anori.WinUI.Common.IActivated.IsActive" /> property has changed.
-        /// </summary>
-        public event EventHandler<EventArgs<bool>> IsActiveChanged;
-
-        /// <summary>
         ///     Determines whether this instance can execute the specified parameter.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
@@ -176,7 +179,7 @@ namespace CanExecuteChangedTests
         /// <returns>
         ///     <see langword="true" /> if this command can be executed; otherwise, <see langword="false" />.
         /// </returns>
-        bool System.Windows.Input.ICommand.CanExecute(object parameter) => this.CanExecute((T)parameter);
+        bool ICommand.CanExecute(object parameter) => this.CanExecute((T)parameter);
 
         /// <summary>
         ///     Defines the method to be called when the command is invoked.
@@ -185,8 +188,7 @@ namespace CanExecuteChangedTests
         ///     Data used by the command.  If the command does not require data to be passed, this object can
         ///     be set to <see langword="null" />.
         /// </param>
-        void System.Windows.Input.ICommand.Execute(object parameter) =>
-            this.ExecuteAsync((T)parameter).FireAndForgetSafeAsync(this.error);
+        void ICommand.Execute(object parameter) => this.ExecuteAsync((T)parameter).FireAndForgetSafeAsync(this.error);
 
         /// <summary>
         ///     Executes the asynchronous.
@@ -209,11 +211,6 @@ namespace CanExecuteChangedTests
 
             this.RaiseCanExecuteChanged();
         }
-
-        /// <summary>
-        ///     Occurs when changes occur that affect whether or not the command should execute.
-        /// </summary>
-        public event EventHandler CanExecuteChanged;
 
         /// <summary>
         ///     Raises the can execute changed.

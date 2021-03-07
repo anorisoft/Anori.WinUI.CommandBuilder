@@ -1,14 +1,14 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="IAsyncCommand.cs" company="Anorisoft">
-// Copyright (c) bfa solutions ltd. All rights reserved.
+// <copyright file="IAsyncCommand.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 namespace Anori.WinUI.Commands.Interfaces
 {
-    using JetBrains.Annotations;
-
     using System.Threading.Tasks;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     ///     Async Command Interface.
@@ -19,7 +19,7 @@ namespace Anori.WinUI.Commands.Interfaces
         /// <summary>
         ///     Executes the asynchronous.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Async task result.</returns>
         [NotNull]
         Task ExecuteAsync();
 

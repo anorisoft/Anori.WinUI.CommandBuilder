@@ -15,13 +15,13 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
     using JetBrains.Annotations;
 
     /// <summary>
-    /// 
+    /// Command Manager Observer.
     /// </summary>
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject" />
     public class CommandManagerObserver : ICanExecuteChangedSubject
     {
         /// <summary>
-        ///     The dictionary
+        ///     The dictionary.
         /// </summary>
         private readonly IDictionary<ICanExecuteChangedObserver, EventHandler> dictionary =
             new Dictionary<ICanExecuteChangedObserver, EventHandler>();

@@ -4,19 +4,22 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace CanExecuteChangedTests
+namespace Anori.WinUI.Common
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
 
-    using Anori.WinUI.Common;
-
+    /// <summary>
+    /// Activatable Observable Collection.
+    /// </summary>
+    /// <typeparam name="T">Activatable Type.</typeparam>
+    /// <seealso cref="System.Collections.ObjectModel.ObservableCollection{T}" />
     public class ActivatableObservableCollection<T> : ObservableCollection<T>
         where T : IActivatable
     {
         /// <summary>
-        ///     The is activated
+        ///     The is activated.
         /// </summary>
         private bool isActivated;
 
@@ -103,7 +106,7 @@ namespace CanExecuteChangedTests
         }
 
         /// <summary>
-        ///     Inserts an item into the collection at the specified index.
+        /// Inserts an item into the collection at the specified index.
         /// </summary>
         /// <param name="index">The zero-based index at which <paramref name="item" /> should be inserted.</param>
         /// <param name="item">The object to insert.</param>
@@ -134,7 +137,7 @@ namespace CanExecuteChangedTests
         }
 
         /// <summary>
-        ///     Replaces the element at the specified index.
+        /// Replaces the element at the specified index.
         /// </summary>
         /// <param name="index">The zero-based index of the element to replace.</param>
         /// <param name="item">The new value for the element at the specified index.</param>

@@ -6,9 +6,8 @@
 
 namespace Anori.WinUI.Commands.Interfaces
 {
-
     /// <summary>
-    /// CanExecute Observer Interface.
+    ///     CanExecute Observer Interface.
     /// </summary>
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteSubject" />
     public interface ICanExecuteObserver : ICanExecuteSubject
@@ -19,6 +18,5 @@ namespace Anori.WinUI.Commands.Interfaces
         /// <value>
         /// The can execute.
         /// </value>
-
     }
 }

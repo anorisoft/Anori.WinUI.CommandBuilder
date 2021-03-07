@@ -1,16 +1,16 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="IConcurrencyAsyncCommand.cs" company="Anorisoft">
-// Copyright (c) bfa solutions ltd. All rights reserved.
+// <copyright file="IConcurrencyAsyncCommand.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-using JetBrains.Annotations;
-
-using System.Threading;
-using System.Threading.Tasks;
-
 namespace Anori.WinUI.Commands.Interfaces
 {
+    using System.Threading;
+    using System.Threading.Tasks;
+
+    using JetBrains.Annotations;
+
     /// <summary>
     ///     Concurrency Async Command Interface.
     /// </summary>
@@ -18,7 +18,7 @@ namespace Anori.WinUI.Commands.Interfaces
     public interface IConcurrencyAsyncCommand : System.Windows.Input.ICommand
     {
         /// <summary>
-        ///     Gets the is executing.
+        ///     Gets a value indicating whether this instance is executing.
         /// </summary>
         /// <value>
         ///     The is executing.
@@ -26,7 +26,7 @@ namespace Anori.WinUI.Commands.Interfaces
         bool IsExecuting { get; }
 
         /// <summary>
-        ///     Gets or sets the cancel command.
+        ///     Gets the cancel command.
         /// </summary>
         /// <value>
         ///     The cancel command.
@@ -60,7 +60,8 @@ namespace Anori.WinUI.Commands.Interfaces
         /// <summary>
         ///     Executes the asynchronous.
         /// </summary>
-        /// <returns></returns>
+        /// <param name="token">The token.</param>
+        /// <returns>The async task.</returns>
         [NotNull]
         Task ExecuteAsync(CancellationToken token);
 

@@ -4,13 +4,12 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace CanExecuteChangedTests
+namespace Anori.WinUI.Common
 {
-    using Anori.WinUI.Common;
-
     /// <summary>
-    ///     <see cref="ActivatableObservableCollection{T}" />
+    ///     Activatable Observable Collection.
     /// </summary>
+    /// <seealso cref="Anori.WinUI.Common.ActivatableObservableCollection{Anori.WinUI.Common.IActivatable}" />
     public class ActivatableObservableCollection : ActivatableObservableCollection<IActivatable>
     {
     }

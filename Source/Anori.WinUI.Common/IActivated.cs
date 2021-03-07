@@ -8,8 +8,6 @@ namespace Anori.WinUI.Common
 {
     using System;
 
-    using CanExecuteChangedTests;
-
     public interface IActivated
     {
         /// <summary>

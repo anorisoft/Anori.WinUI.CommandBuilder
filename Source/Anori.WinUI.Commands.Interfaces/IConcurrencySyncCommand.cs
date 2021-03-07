@@ -1,13 +1,13 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="IConcurrencySyncCommand.cs" company="Anorisoft">
-// Copyright (c) bfa solutions ltd. All rights reserved.
+// <copyright file="IConcurrencySyncCommand.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-using System.Threading;
-
 namespace Anori.WinUI.Commands.Interfaces
 {
+    using System.Threading;
+
     /// <summary>
     ///     Concurrency Sync Command Interface.
     /// </summary>

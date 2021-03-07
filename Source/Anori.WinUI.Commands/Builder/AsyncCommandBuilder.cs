@@ -21,6 +21,7 @@ namespace Anori.WinUI.Commands.Builder
     using JetBrains.Annotations;
 
     /// <summary>
+    /// Async Command Builder.
     /// </summary>
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder" />
@@ -65,15 +66,15 @@ namespace Anori.WinUI.Commands.Builder
         ///     Initializes a new instance of the <see cref="AsyncCommandBuilder" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
-        /// <exception cref="ArgumentNullException">execute</exception>
+        /// <exception cref="ArgumentNullException">execute in null.</exception>
         public AsyncCommandBuilder([NotNull] Func<Task> execute) =>
             this.execute = execute ?? throw new ArgumentNullException(nameof(execute));
 
         /// <summary>
-        ///     Builds the specified set command.
+        /// Builds the specified set command.
         /// </summary>
         /// <param name="setCommand">The set command.</param>
-        /// <returns></returns>
+        /// <returns>Activatable Async Command.</returns>
         IActivatableAsyncCommand IActivatableAsyncCanExecuteBuilder.
             Build(Action<IActivatableAsyncCommand> setCommand) =>
             this.BuildActivatable(setCommand);
@@ -270,7 +271,8 @@ namespace Anori.WinUI.Commands.Builder
         /// <param name="canExecute">The can execute.</param>
         /// <param name="fallback">if set to <c>true</c> [fallback].</param>
         /// <returns></returns>
-        /// <exception cref="CommandBuilderException">CommandBuilder Exception.
+        /// <exception cref="CommandBuilderException">
+        ///     CommandBuilder Exception.
         /// </exception>
         [NotNull]
         public AsyncCommandBuilder ObservesCanExecute([NotNull] Expression<Func<bool>> canExecute, bool fallback)
@@ -299,7 +301,8 @@ namespace Anori.WinUI.Commands.Builder
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
         /// <returns></returns>
-        /// <exception cref="CommandBuilderException">CommandBuilder Exception.
+        /// <exception cref="CommandBuilderException">
+        ///     CommandBuilder Exception.
         /// </exception>
         /// <exception cref="ArgumentNullException">canExecute</exception>
         [NotNull]

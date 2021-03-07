@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using Anori.WinUI.Commands.Interfaces;
 using Anori.WinUI.Common;
-using CanExecuteChangedTests;
+
 using JetBrains.Annotations;
 
 namespace Anori.WinUI.Commands.Commands

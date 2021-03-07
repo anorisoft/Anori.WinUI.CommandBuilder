@@ -6,8 +6,6 @@
 
 namespace Anori.WinUI.Common.Parameters
 {
-    using CanExecuteChangedTests;
-
     using System;
 
     /// <summary>

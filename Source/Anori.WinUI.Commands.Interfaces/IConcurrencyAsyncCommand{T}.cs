@@ -1,12 +1,11 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="IConcurrencyAsyncCommand{T}.cs" company="Anorisoft">
-// Copyright (c) bfa solutions ltd. All rights reserved.
+// <copyright file="IConcurrencyAsyncCommand{T}.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
 namespace Anori.WinUI.Commands.Interfaces
 {
-
     using System.Threading;
     using System.Threading.Tasks;
 

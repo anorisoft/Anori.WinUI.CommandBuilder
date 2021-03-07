@@ -8,8 +8,6 @@ namespace Anori.WinUI.Common.Parameters
 {
     using System;
 
-    using CanExecuteChangedTests;
-
     public interface IReadOnlyParameter
     {
         object Value { get; }

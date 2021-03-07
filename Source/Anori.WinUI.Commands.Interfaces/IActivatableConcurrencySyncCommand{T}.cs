@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="IActivatableConcurrencySyncCommand{T}.cs" company="Anorisoft">
-// Copyright (c) bfa solutions ltd. All rights reserved.
+// <copyright file="IActivatableConcurrencySyncCommand{T}.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ namespace Anori.WinUI.Commands.Interfaces
     /// <summary>
     ///     Activatable Concurrency Sync Command Interface.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">The parameter type.</typeparam>
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand{T}" />
     /// <seealso cref="Anori.WinUI.Common.IActivatable{Anori.WinUI.Commands.Interfaces.IActivatableConcurrencySyncCommand{T}}" />
     public interface IActivatableConcurrencySyncCommand<in T> : IConcurrencySyncCommand<T>,
