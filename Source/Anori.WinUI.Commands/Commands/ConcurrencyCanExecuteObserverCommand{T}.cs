@@ -15,9 +15,9 @@ namespace Anori.WinUI.Commands.Commands
 
     using JetBrains.Annotations;
 
-    public sealed class ConcurrencyCanExecuteObserverCommand<T> : ConcurrencyCommandBase<T>,
-                                                                  IConcurrencySyncCommand<T>,
-                                                                  ICanExecuteChangedObserver
+    internal sealed class ConcurrencyCanExecuteObserverCommand<T> : ConcurrencyCommandBase<T>,
+                                                                    IConcurrencySyncCommand<T>,
+                                                                    ICanExecuteChangedObserver
     {
         /// <summary>
         ///     The observers

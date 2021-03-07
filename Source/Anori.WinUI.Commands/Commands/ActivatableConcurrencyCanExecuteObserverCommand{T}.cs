@@ -22,9 +22,9 @@ namespace Anori.WinUI.Commands.Commands
     /// <seealso cref="Anori.WinUI.Commands.Commands.ConcurrencyCommandBase{T}" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.IActivatableConcurrencySyncCommand{T}" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver" />
-    public sealed class ActivatableConcurrencyCanExecuteObserverCommand<T> : ConcurrencyCommandBase<T>,
-                                                                             IActivatableConcurrencySyncCommand<T>,
-                                                                             ICanExecuteChangedObserver
+    internal sealed class ActivatableConcurrencyCanExecuteObserverCommand<T> : ConcurrencyCommandBase<T>,
+                                                                               IActivatableConcurrencySyncCommand<T>,
+                                                                               ICanExecuteChangedObserver
     {
         /// <summary>
         ///     The observers.

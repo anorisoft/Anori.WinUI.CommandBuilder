@@ -7,6 +7,10 @@
     <LangVersion>8</LangVersion>
     <Configurations>Debug;Release;Debug Submodules</Configurations>
     <DeterministicSourcePaths Condition="'$(EnableSourceLink)' == ''">false</DeterministicSourcePaths>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Anorisoft.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>

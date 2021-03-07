@@ -20,7 +20,7 @@ namespace Anori.WinUI.Commands.Commands
     /// <seealso cref="Anori.WinUI.Commands.Commands.SyncCommandBase" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver" />
     /// <seealso cref="System.IDisposable" />
-    public sealed class CanExecuteObserverCommand : SyncCommandBase, ICanExecuteChangedObserver, IDisposable
+    internal sealed class CanExecuteObserverCommand : SyncCommandBase, ICanExecuteChangedObserver, IDisposable
     {
         /// <summary>
         ///     The observers.

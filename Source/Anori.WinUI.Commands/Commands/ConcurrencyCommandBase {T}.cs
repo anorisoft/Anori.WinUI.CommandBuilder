@@ -23,7 +23,10 @@ namespace Anori.WinUI.Commands.Commands
     /// </summary>
     /// <seealso cref="System.Windows.Input.ICommand" />
     /// <seealso cref="System.IDisposable" />
-    public abstract class ConcurrencyCommandBase<T> : CommandBase, ISyncCommand<T>, IDisposable, INotifyPropertyChanged
+    internal abstract class ConcurrencyCommandBase<T> : CommandBase,
+                                                        ISyncCommand<T>,
+                                                        IDisposable,
+                                                        INotifyPropertyChanged
     {
         /// <summary>
         ///     The cancel

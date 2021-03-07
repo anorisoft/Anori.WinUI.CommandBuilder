@@ -1,23 +1,34 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="ActivatablePropertyObserverCommand{T}.cs" company="AnoriSoft">
+// <copyright file="ActivatableCanExecuteObserverCommand{T}.cs" company="AnoriSoft">
 // Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using Anori.WinUI.Commands.Interfaces;
-using Anori.WinUI.Common;
+using System.Runtime.CompilerServices;
 
-using JetBrains.Annotations;
+[assembly:
+    InternalsVisibleTo(
+        "Anori.WinUI.CanExecuteChangedTests, "
+        + "PublicKey=0024000004800000940000000602000000240000525341310004000001000100a520658730454fb71a447c87dcb713412746dd0b04a1a1afea4067c991bc260f965eb7481148266358fc635ca8395b78375f4cf69097188ab3cb2c27a52d1812872edd13157ed84b651f0462accdb31b65dfc4a3522c8ada5c895c24738b342f759ac7ad33086e44a631a8884e1e6eb526e7e4e7170a52b723fe3c0ddb55b3c2")]
+[assembly:
+    InternalsVisibleTo(
+        "Anori.WinUI.Commands.Tests, "
+        + "PublicKey=0024000004800000940000000602000000240000525341310004000001000100a520658730454fb71a447c87dcb713412746dd0b04a1a1afea4067c991bc260f965eb7481148266358fc635ca8395b78375f4cf69097188ab3cb2c27a52d1812872edd13157ed84b651f0462accdb31b65dfc4a3522c8ada5c895c24738b342f759ac7ad33086e44a631a8884e1e6eb526e7e4e7170a52b723fe3c0ddb55b3c2")]
 
 namespace Anori.WinUI.Commands.Commands
 {
-    public sealed class ActivatableCanExecuteObserverCommand<T> :
-        SyncCommandBase<T>,
-        IActivatableSyncCommand<T>,
-        ICanExecuteChangedObserver,
-        IDisposable
+    using System;
+    using System.Collections.Generic;
+
+    using Anori.WinUI.Commands.Interfaces;
+    using Anori.WinUI.Common;
+
+    using JetBrains.Annotations;
+
+    internal sealed class ActivatableCanExecuteObserverCommand<T> : SyncCommandBase<T>,
+                                                                    IActivatableSyncCommand<T>,
+                                                                    ICanExecuteChangedObserver,
+                                                                    IDisposable
     {
         /// <summary>
         ///     The observers
@@ -30,7 +41,7 @@ namespace Anori.WinUI.Commands.Commands
         private bool isActive;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand{T}" /> class.
+        ///     Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -55,15 +66,17 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
+        ///     Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="canExecuteSubject">The can execute subject.</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">observer
-        /// or
-        /// observer</exception>
+        /// <exception cref="ArgumentNullException">
+        ///     observer
+        ///     or
+        ///     observer
+        /// </exception>
         /// <exception cref="ArgumentException">propertyObserver</exception>
         public ActivatableCanExecuteObserverCommand(
             [NotNull] Action<T> execute,
@@ -91,7 +104,7 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand{T}" /> class.
+        ///     Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="observers">The observers.</param>
@@ -103,7 +116,7 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand{T}" /> class.
+        ///     Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecuteSubject">The can execute subject.</param>
@@ -117,7 +130,7 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand{T}" /> class.
+        ///     Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecuteSubject">The can execute subject.</param>
@@ -129,7 +142,7 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand{T}" /> class.
+        ///     Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecute">The can execute.</param>
@@ -143,14 +156,16 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
+        ///     Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecuteObserver">The can execute observer.</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">observers
-        /// or
-        /// observers</exception>
+        /// <exception cref="ArgumentNullException">
+        ///     observers
+        ///     or
+        ///     observers
+        /// </exception>
         public ActivatableCanExecuteObserverCommand(
             [NotNull] Action<T> execute,
             bool autoActivate,
@@ -170,6 +185,11 @@ namespace Anori.WinUI.Commands.Commands
                 this.Activate();
             }
         }
+
+        /// <summary>
+        ///     Finalizes an instance of the <see cref="ActivatableCanExecuteObserverCommand{T}" /> class.
+        /// </summary>
+        ~ActivatableCanExecuteObserverCommand() => this.Dispose(false);
 
         /// <summary>
         ///     Notifies that the value for <see cref="P:Anori.WinUI.Common.IActivated.IsActive" /> property has changed.
@@ -204,16 +224,16 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        /// Activates this instance.
+        ///     Activates this instance.
         /// </summary>
         /// <returns></returns>
-        IActivatableSyncCommand<T> IActivatable<IActivatableSyncCommand<T>>.Activate() => Activate();
+        IActivatableSyncCommand<T> IActivatable<IActivatableSyncCommand<T>>.Activate() => this.Activate();
 
         /// <summary>
-        /// Deactivates this instance.
+        ///     Deactivates this instance.
         /// </summary>
         /// <returns></returns>
-        IActivatableSyncCommand<T> IActivatable<IActivatableSyncCommand<T>>.Deactivate() => Deactivate();
+        IActivatableSyncCommand<T> IActivatable<IActivatableSyncCommand<T>>.Deactivate() => this.Deactivate();
 
         /// <summary>
         ///     Called when [can execute changed].
@@ -228,11 +248,6 @@ namespace Anori.WinUI.Commands.Commands
             this.Dispose(true);
             GC.SuppressFinalize(this);
         }
-
-        /// <summary>
-        /// Finalizes an instance of the <see cref="ActivatableCanExecuteObserverCommand{T}"/> class.
-        /// </summary>
-        ~ActivatableCanExecuteObserverCommand() => Dispose(false);
 
         /// <summary>
         ///     Activates this instance.

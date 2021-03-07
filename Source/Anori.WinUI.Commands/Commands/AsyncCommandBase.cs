@@ -21,7 +21,7 @@ namespace Anori.WinUI.Commands.Commands
     /// </summary>
     /// <seealso cref="CommandBase" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.IAsyncCommand{T}" />
-    public abstract class AsyncCommandBase : CommandBase, IAsyncCommand, IExecutable, INotifyPropertyChanged
+    internal abstract class AsyncCommandBase : CommandBase, IAsyncCommand, IExecutable, INotifyPropertyChanged
     {
         /// <summary>
         ///     The can execute.
@@ -146,9 +146,9 @@ namespace Anori.WinUI.Commands.Commands
         ///     <c>true</c> if this instance can execute the specified parameter; otherwise, <c>false</c>.
         /// </returns>
         public virtual bool CanExecute() => (!this.isExecuting) && (this.canExecute == null || this.canExecute());
-        
+
         /// <summary>
-        /// Executes the asynchronous.
+        ///     Executes the asynchronous.
         /// </summary>
         /// <returns>A task object that can be awaited.</returns>
         public async Task ExecuteAsync()

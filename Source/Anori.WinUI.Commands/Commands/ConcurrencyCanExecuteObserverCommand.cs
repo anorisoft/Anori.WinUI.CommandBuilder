@@ -1,22 +1,21 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="ActivatableCanExecuteObserverCommand.cs" company="AnoriSoft">
+// <copyright file="ConcurrencyCanExecuteObserverCommand.cs" company="AnoriSoft">
 // Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-using Anori.WinUI.Commands.Interfaces;
-using Anori.WinUI.Common;
-using JetBrains.Annotations;
-using System;
-using System.Collections.Generic;
-using System.Threading;
-
 namespace Anori.WinUI.Commands.Commands
 {
-    public sealed class ConcurrencyCanExecuteObserverCommand :
-        ConcurrencyCommandBase,
-        IConcurrencySyncCommand,
-        ICanExecuteChangedObserver
+    using Anori.WinUI.Commands.Interfaces;
+    using Anori.WinUI.Common;
+    using JetBrains.Annotations;
+    using System;
+    using System.Collections.Generic;
+    using System.Threading;
+
+    internal sealed class ConcurrencyCanExecuteObserverCommand : ConcurrencyCommandBase,
+                                                                 IConcurrencySyncCommand,
+                                                                 ICanExecuteChangedObserver
     {
         /// <summary>
         ///     The observers
@@ -24,14 +23,16 @@ namespace Anori.WinUI.Commands.Commands
         private readonly List<ICanExecuteChangedSubjectBase> observers = new List<ICanExecuteChangedSubjectBase>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
+        ///     Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">observer
-        /// or
-        /// observer</exception>
+        /// <exception cref="ArgumentNullException">
+        ///     observer
+        ///     or
+        ///     observer
+        /// </exception>
         public ConcurrencyCanExecuteObserverCommand(
             [NotNull] Action<CancellationToken> execute,
             [NotNull][ItemNotNull] params ICanExecuteChangedSubject[] observers)
@@ -44,11 +45,11 @@ namespace Anori.WinUI.Commands.Commands
 
             this.observers.AddIfNotContains(observers);
 
-            Subscribe();
+            this.Subscribe();
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConcurrencyCanExecuteObserverCommand"/> class.
+        ///     Initializes a new instance of the <see cref="ConcurrencyCanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="completed">The completed.</param>
@@ -71,19 +72,21 @@ namespace Anori.WinUI.Commands.Commands
 
             this.observers.AddIfNotContains(observers);
 
-            Subscribe();
+            this.Subscribe();
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
+        ///     Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="canExecuteSubject">The can execute subject.</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">canExecuteSubject
-        /// or
-        /// observers</exception>
+        /// <exception cref="ArgumentNullException">
+        ///     canExecuteSubject
+        ///     or
+        ///     observers
+        /// </exception>
         public ConcurrencyCanExecuteObserverCommand(
             [NotNull] Action<CancellationToken> execute,
             [NotNull] ICanExecuteSubject canExecuteSubject,
@@ -102,11 +105,11 @@ namespace Anori.WinUI.Commands.Commands
 
             this.observers.Add(canExecuteSubject);
             this.observers.AddIfNotContains(observers);
-            Subscribe();
+            this.Subscribe();
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConcurrencyCanExecuteObserverCommand"/> class.
+        ///     Initializes a new instance of the <see cref="ConcurrencyCanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecuteSubject">The can execute subject.</param>
@@ -115,9 +118,9 @@ namespace Anori.WinUI.Commands.Commands
         /// <param name="cancel">The cancel.</param>
         /// <param name="observers">The observers.</param>
         /// <exception cref="ArgumentNullException">
-        /// canExecuteSubject
-        /// or
-        /// observers
+        ///     canExecuteSubject
+        ///     or
+        ///     observers
         /// </exception>
         public ConcurrencyCanExecuteObserverCommand(
             [NotNull] Action<CancellationToken> execute,
@@ -140,11 +143,11 @@ namespace Anori.WinUI.Commands.Commands
 
             this.observers.Add(canExecuteSubject);
             this.observers.AddIfNotContains(observers);
-            Subscribe();
+            this.Subscribe();
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
+        ///     Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -163,11 +166,11 @@ namespace Anori.WinUI.Commands.Commands
             }
 
             this.observers.AddIfNotContains(observers);
-            Subscribe();
+            this.Subscribe();
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConcurrencyCanExecuteObserverCommand"/> class.
+        ///     Initializes a new instance of the <see cref="ConcurrencyCanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecute">The can execute.</param>
@@ -191,28 +194,31 @@ namespace Anori.WinUI.Commands.Commands
             }
 
             this.observers.AddIfNotContains(observers);
-            Subscribe();
+            this.Subscribe();
         }
 
         /// <summary>
-        /// Occurs when changes occur that affect whether or not the command should execute.
+        ///     Occurs when changes occur that affect whether or not the command should execute.
         /// </summary>
         public override event EventHandler CanExecuteChanged;
 
         /// <summary>
-        /// Called when [can execute changed].
+        ///     Called when [can execute changed].
         /// </summary>
         public void RaisePropertyChanged() => this.CanExecuteChanged.RaiseEmpty(this);
-        /// <summary>
-        /// Raises the can execute command.
-        /// </summary>
-        public override void RaiseCanExecuteCommand() => RaisePropertyChanged();
 
         /// <summary>
-        /// Releases unmanaged and - optionally - managed resources.
+        ///     Raises the can execute command.
         /// </summary>
-        /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only
-        /// unmanaged resources.</param>
+        public override void RaiseCanExecuteCommand() => this.RaisePropertyChanged();
+
+        /// <summary>
+        ///     Releases unmanaged and - optionally - managed resources.
+        /// </summary>
+        /// <param name="disposing">
+        ///     <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only
+        ///     unmanaged resources.
+        /// </param>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -223,12 +229,12 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        /// Subscribes this instance.
+        ///     Subscribes this instance.
         /// </summary>
         private void Subscribe() => this.observers.ForEach(observer => observer.Add(this));
 
         /// <summary>
-        /// Unsubscribes this instance.
+        ///     Unsubscribes this instance.
         /// </summary>
         private void Unsubscribe() => this.observers.ForEach(observer => observer.Remove(this));
     }

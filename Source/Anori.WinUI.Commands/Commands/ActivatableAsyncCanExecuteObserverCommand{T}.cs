@@ -6,19 +6,17 @@
 
 namespace Anori.WinUI.Commands.Commands
 {
+    using Anori.WinUI.Commands.Interfaces;
+    using Anori.WinUI.Common;
+    using JetBrains.Annotations;
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
-    using Anori.WinUI.Commands.Interfaces;
-    using Anori.WinUI.Common;
-
-    using JetBrains.Annotations;
-
-    public sealed class ActivatableAsyncCanExecuteObserverCommand<T> : AsyncCommandBase<T>,
-                                                                       IActivatableAsyncCommand<T>,
-                                                                       ICanExecuteChangedObserver,
-                                                                       IDisposable
+    internal sealed class ActivatableAsyncCanExecuteObserverCommand<T> : AsyncCommandBase<T>,
+                                                                         IActivatableAsyncCommand<T>,
+                                                                         ICanExecuteChangedObserver,
+                                                                         IDisposable
     {
         /// <summary>
         ///     The observers
@@ -44,7 +42,7 @@ namespace Anori.WinUI.Commands.Commands
         public ActivatableAsyncCanExecuteObserverCommand(
             [NotNull] Func<T, Task> execute,
             bool autoActivate,
-            [NotNull] [ItemNotNull] params ICanExecuteChangedSubject[] observers)
+            [NotNull][ItemNotNull] params ICanExecuteChangedSubject[] observers)
             : base(execute)
         {
             if (observers == null)
@@ -106,7 +104,7 @@ namespace Anori.WinUI.Commands.Commands
             [NotNull] Func<T, Task> execute,
             bool autoActivate,
             [NotNull] ICanExecuteSubject canExecuteSubject,
-            [NotNull] [ItemNotNull] params ICanExecuteChangedSubject[] observers)
+            [NotNull][ItemNotNull] params ICanExecuteChangedSubject[] observers)
             : base(execute, canExecuteSubject)
         {
             if (canExecuteSubject == null)
@@ -136,7 +134,7 @@ namespace Anori.WinUI.Commands.Commands
         /// <param name="observers">The observers.</param>
         public ActivatableAsyncCanExecuteObserverCommand(
             [NotNull] Func<T, Task> execute,
-            [NotNull] [ItemNotNull] params ICanExecuteChangedSubject[] observers)
+            [NotNull][ItemNotNull] params ICanExecuteChangedSubject[] observers)
             : this(execute, false, observers)
         {
         }
@@ -150,7 +148,7 @@ namespace Anori.WinUI.Commands.Commands
         public ActivatableAsyncCanExecuteObserverCommand(
             [NotNull] Func<T, Task> execute,
             [NotNull] ICanExecuteSubject canExecuteSubject,
-            [NotNull] [ItemNotNull] params ICanExecuteChangedSubject[] observers)
+            [NotNull][ItemNotNull] params ICanExecuteChangedSubject[] observers)
             : this(execute, false, canExecuteSubject, observers)
         {
         }
@@ -181,7 +179,7 @@ namespace Anori.WinUI.Commands.Commands
         public ActivatableAsyncCanExecuteObserverCommand(
             [NotNull] Func<T, Task> execute,
             [NotNull] Predicate<T> canExecute,
-            [NotNull] [ItemNotNull] params ICanExecuteChangedSubject[] observers)
+            [NotNull][ItemNotNull] params ICanExecuteChangedSubject[] observers)
             : this(execute, false, canExecute, observers)
         {
         }
@@ -198,7 +196,7 @@ namespace Anori.WinUI.Commands.Commands
             [NotNull] Func<T, Task> execute,
             bool autoActivate,
             [NotNull] Predicate<T> canExecute,
-            [NotNull] [ItemNotNull] params ICanExecuteChangedSubject[] observers)
+            [NotNull][ItemNotNull] params ICanExecuteChangedSubject[] observers)
             : base(execute, canExecute)
         {
             if (observers == null)

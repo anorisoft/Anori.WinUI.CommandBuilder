@@ -19,7 +19,7 @@ namespace Anori.WinUI.Commands.Commands
     /// </summary>
     /// <typeparam name="T">Parameter type</typeparam>
     /// <seealso cref="T:System.Windows.Input.ICommand" />
-    public abstract class SyncCommandBase<T> : CommandBase, ISyncCommand<T>
+    internal abstract class SyncCommandBase<T> : CommandBase, ISyncCommand<T>
     {
         /// <summary>
         ///     The can execute.
@@ -42,7 +42,7 @@ namespace Anori.WinUI.Commands.Commands
             this.execute = execute ?? throw new ArgumentNullException(nameof(execute));
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SyncCommandBase{T}" /> class.
+        ///     Initializes a new instance of the <see cref="SyncCommandBase{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecute">The can execute.</param>
@@ -63,10 +63,10 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        /// Gets a value indicating whether this instance has can execute.
+        ///     Gets a value indicating whether this instance has can execute.
         /// </summary>
         /// <value>
-        ///   <c>true</c> if this instance has can execute; otherwise, <c>false</c>.
+        ///     <c>true</c> if this instance has can execute; otherwise, <c>false</c>.
         /// </value>
         protected override bool HasCanExecute => this.canExecute != null;
 
@@ -95,16 +95,16 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        /// Determines whether this instance can execute the specified parameter.
+        ///     Determines whether this instance can execute the specified parameter.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
         /// <returns>
-        /// CanExecute result.
+        ///     CanExecute result.
         /// </returns>
         protected sealed override bool CanExecute(object parameter) => this.CanExecute((T)parameter);
 
         /// <summary>
-        /// Handle the internal invocation of <see cref="ICommand.Execute(object)" />.
+        ///     Handle the internal invocation of <see cref="ICommand.Execute(object)" />.
         /// </summary>
         /// <param name="parameter">Command Parameter.</param>
         protected sealed override void Execute(object parameter) => this.Execute((T)parameter);

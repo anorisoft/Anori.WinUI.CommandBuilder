@@ -47,7 +47,7 @@ namespace Anori.WinUI.Commands.GUITest
 
         public ICommand TestAndCommand { get; }
 
-        public ActivatableCanExecuteObserverCommand TestOrCommand { get; }
+        internal ActivatableCanExecuteObserverCommand TestOrCommand { get; }
 
         public bool Condition1
         {

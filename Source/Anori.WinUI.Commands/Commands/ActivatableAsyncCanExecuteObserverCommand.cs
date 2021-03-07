@@ -22,7 +22,7 @@ namespace Anori.WinUI.Commands.Commands
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.IActivatableAsyncCommand" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver" />
     /// <seealso cref="System.IDisposable" />
-    public sealed class ActivatableAsyncCanExecuteObserverCommand : AsyncCommandBase,
+    internal sealed class ActivatableAsyncCanExecuteObserverCommand : AsyncCommandBase,
                                                                     IActivatableAsyncCommand,
                                                                     ICanExecuteChangedObserver,
                                                                     IDisposable

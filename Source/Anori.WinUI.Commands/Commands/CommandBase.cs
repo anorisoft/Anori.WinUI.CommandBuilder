@@ -20,7 +20,7 @@ namespace Anori.WinUI.Commands.Commands
     /// </summary>
     /// <seealso cref="System.Windows.Input.ICommand" />
     /// <seealso cref="Anori.WinUI.Common.IDispatchableContext" />
-    public abstract class CommandBase : ICommand, IDispatchableContext
+    internal abstract class CommandBase : ICommand, IDispatchableContext
     {
         /// <summary>
         ///     Initializes a new instance of the <see cref="CommandBase" /> class.

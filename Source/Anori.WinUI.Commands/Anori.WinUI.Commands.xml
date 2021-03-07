@@ -6,6 +6,7 @@
     <members>
         <member name="T:Anori.WinUI.Commands.Builder.AsyncCommandBuilder">
             <summary>
+            Async Command Builder.
             </summary>
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder" />
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder" />
@@ -42,14 +43,14 @@
                 Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Builder.AsyncCommandBuilder" /> class.
             </summary>
             <param name="execute">The execute.</param>
-            <exception cref="T:System.ArgumentNullException">execute</exception>
+            <exception cref="T:System.ArgumentNullException">execute in null.</exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Builder.AsyncCommandBuilder.Anori#WinUI#Commands#Interfaces#Builders#IActivatableAsyncCanExecuteBuilder#Build(System.Action{Anori.WinUI.Commands.Interfaces.IActivatableAsyncCommand})">
             <summary>
-                Builds the specified set command.
+            Builds the specified set command.
             </summary>
             <param name="setCommand">The set command.</param>
-            <returns></returns>
+            <returns>Activatable Async Command.</returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Builder.AsyncCommandBuilder.Anori#WinUI#Commands#Interfaces#Builders#IActivatableAsyncCanExecuteBuilder#ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
             <summary>
@@ -211,7 +212,8 @@
             <param name="canExecute">The can execute.</param>
             <param name="fallback">if set to <c>true</c> [fallback].</param>
             <returns></returns>
-            <exception cref="T:Anori.WinUI.Commands.Exceptions.CommandBuilderException">CommandBuilder Exception.
+            <exception cref="T:Anori.WinUI.Commands.Exceptions.CommandBuilderException">
+                CommandBuilder Exception.
             </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Builder.AsyncCommandBuilder.CanExecute(System.Func{System.Boolean})">
@@ -220,7 +222,8 @@
             </summary>
             <param name="canExecute">The can execute.</param>
             <returns></returns>
-            <exception cref="T:Anori.WinUI.Commands.Exceptions.CommandBuilderException">CommandBuilder Exception.
+            <exception cref="T:Anori.WinUI.Commands.Exceptions.CommandBuilderException">
+                CommandBuilder Exception.
             </exception>
             <exception cref="T:System.ArgumentNullException">canExecute</exception>
         </member>
@@ -3101,13 +3104,13 @@
         </member>
         <member name="T:Anori.WinUI.Commands.CanExecuteObservers.CommandManagerObserver">
             <summary>
-            
+            Command Manager Observer.
             </summary>
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject" />
         </member>
         <member name="F:Anori.WinUI.Commands.CanExecuteObservers.CommandManagerObserver.dictionary">
             <summary>
-                The dictionary
+                The dictionary.
             </summary>
         </member>
         <member name="P:Anori.WinUI.Commands.CanExecuteObservers.CommandManagerObserver.Observer">
@@ -3780,37 +3783,41 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.#ctor(System.Action,System.Boolean,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">observer
-            or
-            observer</exception>
+            <exception cref="T:System.ArgumentNullException">
+                observer
+                or
+                observer
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.#ctor(System.Action,System.Boolean,Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="canExecuteSubject">The can execute subject.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">canExecuteSubject
-            or
-            observers</exception>
+            <exception cref="T:System.ArgumentNullException">
+                canExecuteSubject
+                or
+                observers
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.#ctor(System.Action,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="observers">The observers.</param>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.#ctor(System.Action,Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
@@ -3818,25 +3825,27 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.#ctor(System.Action,Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.#ctor(System.Action,System.Func{System.Boolean},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">observers
-            or
-            observers</exception>
+            <exception cref="T:System.ArgumentNullException">
+                observers
+                or
+                observers
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.#ctor(System.Action,System.Boolean,System.Func{System.Boolean},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -3844,67 +3853,67 @@
             <param name="observers">The observers.</param>
             <exception cref="T:System.ArgumentNullException">observers</exception>
         </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.Finalize">
+            <summary>
+                Finalizes an instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+            </summary>
+        </member>
         <member name="E:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.IsActiveChanged">
             <summary>
-            Notifies that the value for <see cref="P:Anori.WinUI.Common.IActivated.IsActive" /> property has changed.
+                Notifies that the value for <see cref="P:Anori.WinUI.Common.IActivated.IsActive" /> property has changed.
             </summary>
         </member>
         <member name="E:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.CanExecuteChanged">
             <summary>
-            Occurs when changes occur that affect whether or not the command should execute.
+                Occurs when changes occur that affect whether or not the command should execute.
             </summary>
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.IsActive">
             <summary>
-            Gets or sets a value indicating whether the object is active.
+                Gets or sets a value indicating whether the object is active.
             </summary>
             <value>
-              <see langword="true" /> if the object is active; otherwise <see langword="false" />.
+                <see langword="true" /> if the object is active; otherwise <see langword="false" />.
             </value>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.CanExecute">
             <summary>
-            Determines whether this instance can execute.
+                Determines whether this instance can execute.
             </summary>
             <returns>
-              <c>true</c> if this instance can execute; otherwise, <c>false</c>.
+                <c>true</c> if this instance can execute; otherwise, <c>false</c>.
             </returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.Anori#WinUI#Common#IActivatable{Anori#WinUI#Commands#Interfaces#IActivatableSyncCommand}#Activate">
             <summary>
-            Activates this instance.
+                Activates this instance.
             </summary>
             <returns></returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.Anori#WinUI#Common#IActivatable{Anori#WinUI#Commands#Interfaces#IActivatableSyncCommand}#Deactivate">
             <summary>
-            Deactivates this instance.
+                Deactivates this instance.
             </summary>
             <returns></returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.RaisePropertyChanged">
             <summary>
-            Called when [can execute changed].
+                Called when [can execute changed].
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.Dispose">
             <summary>
-            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-            </summary>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.Finalize">
-            <summary>
-            Finalizes an instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand"/> class.
+                Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.Activate">
             <summary>
-            Activates this instance.
+                Activates this instance.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.Deactivate">
             <summary>
-            Deactivates this instance.
+                Deactivates this instance.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.Dispose(System.Boolean)">
@@ -3938,7 +3947,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1.#ctor(System.Action{`0},System.Boolean,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -3947,27 +3956,29 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1.#ctor(System.Action{`0},System.Boolean,Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="canExecuteSubject">The can execute subject.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">observer
-            or
-            observer</exception>
+            <exception cref="T:System.ArgumentNullException">
+                observer
+                or
+                observer
+            </exception>
             <exception cref="T:System.ArgumentException">propertyObserver</exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1.#ctor(System.Action{`0},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="observers">The observers.</param>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1.#ctor(System.Action{`0},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
@@ -3975,14 +3986,14 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1.#ctor(System.Action{`0},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1.#ctor(System.Action{`0},System.Predicate{`0},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
@@ -3990,14 +4001,21 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1.#ctor(System.Action{`0},System.Boolean,System.Predicate{`0},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteObserver">The can execute observer.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">observers
-            or
-            observers</exception>
+            <exception cref="T:System.ArgumentNullException">
+                observers
+                or
+                observers
+            </exception>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1.Finalize">
+            <summary>
+                Finalizes an instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1" /> class.
+            </summary>
         </member>
         <member name="E:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1.IsActiveChanged">
             <summary>
@@ -4019,13 +4037,13 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1.Anori#WinUI#Common#IActivatable{Anori#WinUI#Commands#Interfaces#IActivatableSyncCommand{T}}#Activate">
             <summary>
-            Activates this instance.
+                Activates this instance.
             </summary>
             <returns></returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1.Anori#WinUI#Common#IActivatable{Anori#WinUI#Commands#Interfaces#IActivatableSyncCommand{T}}#Deactivate">
             <summary>
-            Deactivates this instance.
+                Deactivates this instance.
             </summary>
             <returns></returns>
         </member>
@@ -4037,11 +4055,6 @@
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1.Dispose">
             <summary>
                 Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-            </summary>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1.Finalize">
-            <summary>
-            Finalizes an instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1"/> class.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand`1.Activate">
@@ -4085,18 +4098,20 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Boolean,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">observer
-            or
-            observer</exception>
+            <exception cref="T:System.ArgumentNullException">
+                observer
+                or
+                observer
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Boolean,System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -4108,19 +4123,21 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Boolean,Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="canExecuteSubject">The can execute subject.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">canExecuteSubject
-            or
-            observers</exception>
+            <exception cref="T:System.ArgumentNullException">
+                canExecuteSubject
+                or
+                observers
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Boolean,Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -4129,13 +4146,15 @@
             <param name="error">The error.</param>
             <param name="cancel">The cancel.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">canExecuteSubject
-            or
-            observers</exception>
+            <exception cref="T:System.ArgumentNullException">
+                canExecuteSubject
+                or
+                observers
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task})">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="completed">The completed.</param>
@@ -4144,7 +4163,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
@@ -4155,14 +4174,14 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task})">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
@@ -4172,18 +4191,20 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Boolean},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">observers
-            or
-            observers</exception>
+            <exception cref="T:System.ArgumentNullException">
+                observers
+                or
+                observers
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Boolean},System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
@@ -4194,7 +4215,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Boolean,System.Func{System.Boolean},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -4204,7 +4225,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Boolean,System.Func{System.Boolean},System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -4217,52 +4238,52 @@
         </member>
         <member name="E:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.IsActiveChanged">
             <summary>
-            Notifies that the value for <see cref="P:Anori.WinUI.Common.IActivated.IsActive" /> property has changed.
+                Notifies that the value for <see cref="P:Anori.WinUI.Common.IActivated.IsActive" /> property has changed.
             </summary>
         </member>
         <member name="E:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.CanExecuteChanged">
             <summary>
-            Occurs when changes occur that affect whether or not the command should execute.
+                Occurs when changes occur that affect whether or not the command should execute.
             </summary>
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.IsActive">
             <summary>
-            Gets or sets a value indicating whether the object is active.
+                Gets or sets a value indicating whether the object is active.
             </summary>
             <value>
-              <see langword="true" /> if the object is active; otherwise <see langword="false" />.
+                <see langword="true" /> if the object is active; otherwise <see langword="false" />.
             </value>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.Anori#WinUI#Common#IActivatable{Anori#WinUI#Commands#Interfaces#IActivatableConcurrencyAsyncCommand}#Activate">
             <summary>
-            Activates this instance.
+                Activates this instance.
             </summary>
             <returns></returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.Anori#WinUI#Common#IActivatable{Anori#WinUI#Commands#Interfaces#IActivatableConcurrencyAsyncCommand}#Deactivate">
             <summary>
-            Deactivates this instance.
+                Deactivates this instance.
             </summary>
             <returns></returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.RaisePropertyChanged">
             <summary>
-            Called when [can execute changed].
+                Called when [can execute changed].
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.Activate">
             <summary>
-            Activates this instance.
+                Activates this instance.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.Deactivate">
             <summary>
-            Deactivates this instance.
+                Deactivates this instance.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.RaiseCanExecuteCommand">
             <summary>
-            Raises the can execute command.
+                Raises the can execute command.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand.Dispose(System.Boolean)">
@@ -4296,18 +4317,20 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Boolean,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">observer
-            or
-            observer</exception>
+            <exception cref="T:System.ArgumentNullException">
+                observer
+                or
+                observer
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Boolean,System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -4319,19 +4342,21 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Boolean,Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="canExecuteSubject">The can execute subject.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">canExecuteSubject
-            or
-            observers</exception>
+            <exception cref="T:System.ArgumentNullException">
+                canExecuteSubject
+                or
+                observers
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Boolean,Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -4341,21 +4366,21 @@
             <param name="cancel">The cancel.</param>
             <param name="observers">The observers.</param>
             <exception cref="T:System.ArgumentNullException">
-            canExecuteSubject
-            or
-            observers
+                canExecuteSubject
+                or
+                observers
             </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task})">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="observers">The observers.</param>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task})">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="completed">The completed.</param>
@@ -4364,7 +4389,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
@@ -4372,7 +4397,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
@@ -4383,14 +4408,14 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task})">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
@@ -4400,18 +4425,20 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Predicate{`0},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">observers
-            or
-            observers</exception>
+            <exception cref="T:System.ArgumentNullException">
+                observers
+                or
+                observers
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Predicate{`0},System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
@@ -4422,7 +4449,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Boolean,System.Predicate{`0},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -4432,7 +4459,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Boolean,System.Predicate{`0},System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -4445,52 +4472,52 @@
         </member>
         <member name="E:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.IsActiveChanged">
             <summary>
-            Notifies that the value for <see cref="P:Anori.WinUI.Common.IActivated.IsActive" /> property has changed.
+                Notifies that the value for <see cref="P:Anori.WinUI.Common.IActivated.IsActive" /> property has changed.
             </summary>
         </member>
         <member name="E:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.CanExecuteChanged">
             <summary>
-            Occurs when changes occur that affect whether or not the command should execute.
+                Occurs when changes occur that affect whether or not the command should execute.
             </summary>
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.IsActive">
             <summary>
-            Gets or sets a value indicating whether the object is active.
+                Gets or sets a value indicating whether the object is active.
             </summary>
             <value>
-              <see langword="true" /> if the object is active; otherwise <see langword="false" />.
+                <see langword="true" /> if the object is active; otherwise <see langword="false" />.
             </value>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.Anori#WinUI#Common#IActivatable{Anori#WinUI#Commands#Interfaces#IActivatableConcurrencyAsyncCommand{T}}#Activate">
             <summary>
-            Activates this instance.
+                Activates this instance.
             </summary>
             <returns></returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.Anori#WinUI#Common#IActivatable{Anori#WinUI#Commands#Interfaces#IActivatableConcurrencyAsyncCommand{T}}#Deactivate">
             <summary>
-            Deactivates this instance.
+                Deactivates this instance.
             </summary>
             <returns></returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.RaisePropertyChanged">
             <summary>
-            Called when [can execute changed].
+                Called when [can execute changed].
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.Activate">
             <summary>
-            Activates this instance.
+                Activates this instance.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.Deactivate">
             <summary>
-            Deactivates this instance.
+                Deactivates this instance.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.RaiseCanExecuteCommand">
             <summary>
-            Raises the can execute command.
+                Raises the can execute command.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.Dispose(System.Boolean)">
@@ -4524,18 +4551,20 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},System.Boolean,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">observer
-            or
-            observer</exception>
+            <exception cref="T:System.ArgumentNullException">
+                observer
+                or
+                observer
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},System.Boolean,System.Action,System.Action{System.Exception},System.Action,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -4547,19 +4576,21 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},System.Boolean,Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="canExecuteSubject">The can execute subject.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">canExecuteSubject
-            or
-            observers</exception>
+            <exception cref="T:System.ArgumentNullException">
+                canExecuteSubject
+                or
+                observers
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},System.Boolean,Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,System.Action,System.Action{System.Exception},System.Action,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -4569,21 +4600,21 @@
             <param name="cancel">The cancel.</param>
             <param name="observers">The observers.</param>
             <exception cref="T:System.ArgumentNullException">
-            canExecuteSubject
-            or
-            observers
+                canExecuteSubject
+                or
+                observers
             </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken})">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="observers">The observers.</param>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},System.Action,System.Action{System.Exception},System.Action)">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="completed">The completed.</param>
@@ -4592,7 +4623,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
@@ -4600,7 +4631,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,System.Action,System.Action{System.Exception},System.Action,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
@@ -4611,14 +4642,14 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,System.Action,System.Action{System.Exception},System.Action)">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
@@ -4628,18 +4659,20 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},System.Func{System.Boolean},System.Action,System.Action{System.Exception},System.Action,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">observers
-            or
-            observers</exception>
+            <exception cref="T:System.ArgumentNullException">
+                observers
+                or
+                observers
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},System.Boolean,System.Func{System.Boolean},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -4649,7 +4682,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},System.Boolean,System.Func{System.Boolean},System.Action,System.Action{System.Exception},System.Action,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -4662,52 +4695,52 @@
         </member>
         <member name="E:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.IsActiveChanged">
             <summary>
-            Notifies that the value for <see cref="P:Anori.WinUI.Common.IActivated.IsActive" /> property has changed.
+                Notifies that the value for <see cref="P:Anori.WinUI.Common.IActivated.IsActive" /> property has changed.
             </summary>
         </member>
         <member name="E:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.CanExecuteChanged">
             <summary>
-            Occurs when changes occur that affect whether or not the command should execute.
+                Occurs when changes occur that affect whether or not the command should execute.
             </summary>
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.IsActive">
             <summary>
-            Gets or sets a value indicating whether the object is active.
+                Gets or sets a value indicating whether the object is active.
             </summary>
             <value>
-              <see langword="true" /> if the object is active; otherwise <see langword="false" />.
+                <see langword="true" /> if the object is active; otherwise <see langword="false" />.
             </value>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.Anori#WinUI#Common#IActivatable{Anori#WinUI#Commands#Interfaces#IActivatableConcurrencySyncCommand}#Activate">
             <summary>
-            Activates this instance.
+                Activates this instance.
             </summary>
             <returns></returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.Anori#WinUI#Common#IActivatable{Anori#WinUI#Commands#Interfaces#IActivatableConcurrencySyncCommand}#Deactivate">
             <summary>
-            Deactivates this instance.
+                Deactivates this instance.
             </summary>
             <returns></returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.RaisePropertyChanged">
             <summary>
-            Called when [can execute changed].
+                Called when [can execute changed].
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.Activate">
             <summary>
-            Activates this instance.
+                Activates this instance.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.Deactivate">
             <summary>
-            Deactivates this instance.
+                Deactivates this instance.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.RaiseCanExecuteCommand">
             <summary>
-            Raises the can execute command.
+                Raises the can execute command.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyCanExecuteObserverCommand.Dispose(System.Boolean)">
@@ -4971,7 +5004,7 @@
         </member>
         <member name="T:Anori.WinUI.Commands.Commands.AsyncCanExecuteObserverCommand">
             <summary>
-            Async CanExecute Observer Command.
+                Async CanExecute Observer Command.
             </summary>
             <seealso cref="T:Anori.WinUI.Commands.Commands.AsyncCommandBase" />
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver" />
@@ -4984,16 +5017,14 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.AsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.AsyncCanExecuteObserverCommand" /> class.
+            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.AsyncCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
-            <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">
-                observer
-                or
-                observer is null.
-            </exception>
+            <exception cref="T:System.ArgumentNullException">observers</exception>
+            <exception cref="T:System.ArgumentNullException">observer
+            or
+            observer is null.</exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.AsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.Tasks.Task},System.Action{System.Exception})">
             <summary>
@@ -5264,7 +5295,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.AsyncCommandBase.ExecuteAsync">
             <summary>
-            Executes the asynchronous.
+                Executes the asynchronous.
             </summary>
             <returns>A task object that can be awaited.</returns>
         </member>
@@ -5369,10 +5400,10 @@
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.AsyncCommandBase`1.IsExecuting">
             <summary>
-            Gets a value indicating whether this instance is executing.
+                Gets a value indicating whether this instance is executing.
             </summary>
             <value>
-              <c>true</c> if this instance is executing; otherwise, <c>false</c>.
+                <c>true</c> if this instance is executing; otherwise, <c>false</c>.
             </value>
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.AsyncCommandBase`1.HasCanExecute">
@@ -5516,7 +5547,7 @@
         </member>
         <member name="T:Anori.WinUI.Commands.Commands.CanExecuteObserverCommand`1">
             <summary>
-            CanExecute Observer Command.
+                CanExecute Observer Command.
             </summary>
             <typeparam name="T">Parameter Type.</typeparam>
             <seealso cref="T:Anori.WinUI.Commands.Commands.SyncCommandBase`1" />
@@ -5530,7 +5561,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.CanExecuteObserverCommand`1.#ctor(System.Action{`0},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.CanExecuteObserverCommand`1" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.CanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="observers">The observers.</param>
@@ -5538,26 +5569,30 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.CanExecuteObserverCommand`1.#ctor(System.Action{`0},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.CanExecuteObserverCommand`1" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.CanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">observer
-            or
-            observer is null.</exception>
+            <exception cref="T:System.ArgumentNullException">
+                observer
+                or
+                observer is null.
+            </exception>
             <exception cref="T:System.ArgumentException">propertyObserver is null.</exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.CanExecuteObserverCommand`1.#ctor(System.Action{`0},System.Predicate{`0},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.CanExecuteObserverCommand`1"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.CanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">observers
-            or
-            observers is null.</exception>
+            <exception cref="T:System.ArgumentNullException">
+                observers
+                or
+                observers is null.
+            </exception>
         </member>
         <member name="E:Anori.WinUI.Commands.Commands.CanExecuteObserverCommand`1.CanExecuteChanged">
             <summary>
@@ -5571,19 +5606,21 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.CanExecuteObserverCommand`1.Dispose">
             <summary>
-            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+                Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.CanExecuteObserverCommand`1.Dispose(System.Boolean)">
             <summary>
-            Releases unmanaged and - optionally - managed resources.
+                Releases unmanaged and - optionally - managed resources.
             </summary>
-            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only
-            unmanaged resources.</param>
+            <param name="disposing">
+                <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only
+                unmanaged resources.
+            </param>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.CanExecuteObserverCommand`1.Subscribe">
             <summary>
-            Subscribes this instance.
+                Subscribes this instance.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.CanExecuteObserverCommand`1.Unsubscribe">
@@ -5668,18 +5705,20 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">observer
-            or
-            observer</exception>
+            <exception cref="T:System.ArgumentNullException">
+                observer
+                or
+                observer
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="observers">The observers.</param>
@@ -5687,19 +5726,21 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="canExecuteSubject">The can execute subject.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">canExecuteSubject
-            or
-            observers</exception>
+            <exception cref="T:System.ArgumentNullException">
+                canExecuteSubject
+                or
+                observers
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
@@ -5708,14 +5749,14 @@
             <param name="cancel">The cancel.</param>
             <param name="observers">The observers.</param>
             <exception cref="T:System.ArgumentNullException">
-            canExecuteSubject
-            or
-            observers
+                canExecuteSubject
+                or
+                observers
             </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Boolean},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -5725,7 +5766,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Boolean},System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
@@ -5737,17 +5778,17 @@
         </member>
         <member name="E:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand.CanExecuteChanged">
             <summary>
-            Occurs when changes occur that affect whether or not the command should execute.
+                Occurs when changes occur that affect whether or not the command should execute.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand.RaisePropertyChanged">
             <summary>
-            Called when [can execute changed].
+                Called when [can execute changed].
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand.RaiseCanExecuteCommand">
             <summary>
-            Raises the can execute command.
+                Raises the can execute command.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand.Dispose(System.Boolean)">
@@ -5776,18 +5817,20 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">observer
-            or
-            observer</exception>
+            <exception cref="T:System.ArgumentNullException">
+                observer
+                or
+                observer
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand`1"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="completed">The completed.</param>
@@ -5798,19 +5841,21 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="canExecuteSubject">The can execute subject.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">canExecuteSubject
-            or
-            observers</exception>
+            <exception cref="T:System.ArgumentNullException">
+                canExecuteSubject
+                or
+                observers
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand`1"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
@@ -5819,14 +5864,14 @@
             <param name="cancel">The cancel.</param>
             <param name="observers">The observers.</param>
             <exception cref="T:System.ArgumentNullException">
-            canExecuteSubject
-            or
-            observers
+                canExecuteSubject
+                or
+                observers
             </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Predicate{`0},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -5836,7 +5881,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Predicate{`0},System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand`1"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
@@ -5846,19 +5891,19 @@
             <param name="observers">The observers.</param>
             <exception cref="T:System.ArgumentNullException">observers</exception>
         </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand`1.RaisePropertyChanged">
-            <summary>
-            Called when [can execute changed].
-            </summary>
-        </member>
         <member name="E:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand`1.CanExecuteChanged">
             <summary>
-            Occurs when changes occur that affect whether or not the command should execute.
+                Occurs when changes occur that affect whether or not the command should execute.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand`1.RaisePropertyChanged">
+            <summary>
+                Called when [can execute changed].
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand`1.RaiseCanExecuteCommand">
             <summary>
-            Raises the can execute command.
+                Raises the can execute command.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCanExecuteObserverCommand`1.Dispose(System.Boolean)">
@@ -5894,7 +5939,7 @@
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.cancelCommand">
             <summary>
-            The cancel command
+                The cancel command
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.canExecute">
@@ -5959,22 +6004,22 @@
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.wasCanceled">
             <summary>
-            The is canceled
+                The is canceled
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.wasFaulty">
             <summary>
-            The has errors
+                The has errors
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.wasSuccessfuly">
             <summary>
-            The was successfuly
+                The was successfuly
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Boolean},System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task})">
             <summary>
-            Initializes a new instance of the <see cref="!:ConcurrencyRelayCommand" /> class.
+                Initializes a new instance of the <see cref="!:ConcurrencyRelayCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
@@ -5984,7 +6029,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task})">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="completed">The completed.</param>
@@ -5993,7 +6038,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task})">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
@@ -6125,7 +6170,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.RaisePropertyChanged(System.String)">
             <summary>
-            Raises the property changed.
+                Raises the property changed.
             </summary>
             <param name="propertyName">Name of the property.</param>
         </member>
@@ -6481,18 +6526,20 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">observer
-            or
-            observer</exception>
+            <exception cref="T:System.ArgumentNullException">
+                observer
+                or
+                observer
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},System.Action,System.Action{System.Exception},System.Action,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="completed">The completed.</param>
@@ -6503,19 +6550,21 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="canExecuteSubject">The can execute subject.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">canExecuteSubject
-            or
-            observers</exception>
+            <exception cref="T:System.ArgumentNullException">
+                canExecuteSubject
+                or
+                observers
+            </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,System.Action,System.Action{System.Exception},System.Action,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
@@ -6524,14 +6573,14 @@
             <param name="cancel">The cancel.</param>
             <param name="observers">The observers.</param>
             <exception cref="T:System.ArgumentNullException">
-            canExecuteSubject
-            or
-            observers
+                canExecuteSubject
+                or
+                observers
             </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},System.Func{System.Boolean},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -6541,7 +6590,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand.#ctor(System.Action{System.Threading.CancellationToken},System.Func{System.Boolean},System.Action,System.Action{System.Exception},System.Action,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
@@ -6553,34 +6602,36 @@
         </member>
         <member name="E:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand.CanExecuteChanged">
             <summary>
-            Occurs when changes occur that affect whether or not the command should execute.
+                Occurs when changes occur that affect whether or not the command should execute.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand.RaisePropertyChanged">
             <summary>
-            Called when [can execute changed].
+                Called when [can execute changed].
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand.RaiseCanExecuteCommand">
             <summary>
-            Raises the can execute command.
+                Raises the can execute command.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand.Dispose(System.Boolean)">
             <summary>
-            Releases unmanaged and - optionally - managed resources.
+                Releases unmanaged and - optionally - managed resources.
             </summary>
-            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only
-            unmanaged resources.</param>
+            <param name="disposing">
+                <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only
+                unmanaged resources.
+            </param>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand.Subscribe">
             <summary>
-            Subscribes this instance.
+                Subscribes this instance.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand.Unsubscribe">
             <summary>
-            Unsubscribes this instance.
+                Unsubscribes this instance.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCanExecuteObserverCommand`1.observers">
@@ -7000,7 +7051,7 @@
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.cancelCommand">
             <summary>
-            The cancel command
+                The cancel command
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.canExecute">
@@ -7065,22 +7116,22 @@
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.wasCanceled">
             <summary>
-            The is canceled
+                The is canceled
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.wasFaulty">
             <summary>
-            The has errors
+                The has errors
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.wasSuccessfuly">
             <summary>
-            The was successfuly
+                The was successfuly
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.#ctor(System.Action{System.Threading.CancellationToken},System.Func{System.Boolean},System.Action,System.Action{System.Exception},System.Action)">
             <summary>
-            Initializes a new instance of the <see cref="!:ConcurrencyRelayCommand" /> class.
+                Initializes a new instance of the <see cref="!:ConcurrencyRelayCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
@@ -7090,7 +7141,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.#ctor(System.Action{System.Threading.CancellationToken},System.Action,System.Action{System.Exception},System.Action)">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="completed">The completed.</param>
@@ -7099,7 +7150,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.#ctor(System.Action{System.Threading.CancellationToken},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,System.Action,System.Action{System.Exception},System.Action)">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecuteSubject">The can execute subject.</param>
@@ -7107,6 +7158,11 @@
             <param name="error">The error.</param>
             <param name="cancel">The cancel.</param>
             <exception cref="T:System.ArgumentNullException">canExecuteSubject</exception>
+        </member>
+        <member name="E:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.PropertyChanged">
+            <summary>
+                Occurs when a property value changes.
+            </summary>
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.CancelCommand">
             <summary>
@@ -7183,11 +7239,6 @@
                 Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
             </summary>
         </member>
-        <member name="E:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.PropertyChanged">
-            <summary>
-                Occurs when a property value changes.
-            </summary>
-        </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.Cancel">
             <summary>
                 Cancels this instance.
@@ -7203,6 +7254,13 @@
             <summary>
                 Raises the can execute command.
             </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.Execute(System.Threading.CancellationToken)">
+            <summary>
+                Executes the specified token.
+            </summary>
+            <param name="token">The token.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.CanExecute(System.Object)">
             <summary>
@@ -7224,13 +7282,6 @@
                 Handle the internal invocation of <see cref="!:ISyncCommand.Execute(object)" />
             </summary>
             <param name="parameter">Command Parameter</param>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.Execute(System.Threading.CancellationToken)">
-            <summary>
-            Executes the specified token.
-            </summary>
-            <param name="token">The token.</param>
-            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.RaisePropertyChanged(System.String)">
             <summary>
@@ -7369,15 +7420,15 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.SyncCommandBase.#ctor(System.Action)">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.SyncCommandBase" /> class and the Command can
-            always be executed.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.SyncCommandBase" /> class and the Command can
+                always be executed.
             </summary>
             <param name="execute">The execution logic.</param>
             <exception cref="T:System.ArgumentNullException">execute</exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.SyncCommandBase.#ctor(System.Action,System.Func{System.Boolean})">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.SyncCommandBase"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.SyncCommandBase" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
@@ -7385,7 +7436,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.SyncCommandBase.#ctor(System.Action,Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.SyncCommandBase"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.SyncCommandBase" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
@@ -7393,10 +7444,10 @@
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.SyncCommandBase.HasCanExecute">
             <summary>
-            Gets or sets a value indicating whether this instance has can execute.
+                Gets or sets a value indicating whether this instance has can execute.
             </summary>
             <value>
-              <c>true</c> if this instance has can execute; otherwise, <c>false</c>.
+                <c>true</c> if this instance has can execute; otherwise, <c>false</c>.
             </value>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.SyncCommandBase.CanExecute">
@@ -7409,7 +7460,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.SyncCommandBase.Execute">
             <summary>
-            Executes this instance.
+                Executes this instance.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.SyncCommandBase.CanExecute(System.Object)">
@@ -7452,7 +7503,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.SyncCommandBase`1.#ctor(System.Action{`0},System.Predicate{`0})">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.SyncCommandBase`1" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.SyncCommandBase`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
@@ -7467,10 +7518,10 @@
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.SyncCommandBase`1.HasCanExecute">
             <summary>
-            Gets a value indicating whether this instance has can execute.
+                Gets a value indicating whether this instance has can execute.
             </summary>
             <value>
-              <c>true</c> if this instance has can execute; otherwise, <c>false</c>.
+                <c>true</c> if this instance has can execute; otherwise, <c>false</c>.
             </value>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.SyncCommandBase`1.CanExecute(`0)">
@@ -7490,16 +7541,16 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.SyncCommandBase`1.CanExecute(System.Object)">
             <summary>
-            Determines whether this instance can execute the specified parameter.
+                Determines whether this instance can execute the specified parameter.
             </summary>
             <param name="parameter">The parameter.</param>
             <returns>
-            CanExecute result.
+                CanExecute result.
             </returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.SyncCommandBase`1.Execute(System.Object)">
             <summary>
-            Handle the internal invocation of <see cref="M:System.Windows.Input.ICommand.Execute(System.Object)" />.
+                Handle the internal invocation of <see cref="M:System.Windows.Input.ICommand.Execute(System.Object)" />.
             </summary>
             <param name="parameter">Command Parameter.</param>
         </member>

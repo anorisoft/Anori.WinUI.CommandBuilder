@@ -6,6 +6,8 @@
     <UseWPF>true</UseWPF>
     <LangVersion>8</LangVersion>
     <DeterministicSourcePaths Condition="'$(EnableSourceLink)' == ''">false</DeterministicSourcePaths>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Anorisoft.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>

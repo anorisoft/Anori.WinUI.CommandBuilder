@@ -6,8 +6,9 @@
     <IsPackable>false</IsPackable>
 
     <LangVersion>8</LangVersion>
-
     <Configurations>Debug;Release;Debug Submodules</Configurations>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Anorisoft.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>

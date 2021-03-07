@@ -22,7 +22,7 @@ namespace Anori.WinUI.Commands.Commands
     /// <typeparam name="T">Parameter Type.</typeparam>
     /// <seealso cref="CommandBase" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.IAsyncCommand{T}" />
-    public abstract class AsyncCommandBase<T> : CommandBase, IAsyncCommand<T>, IExecutable, INotifyPropertyChanged
+    internal abstract class AsyncCommandBase<T> : CommandBase, IAsyncCommand<T>, IExecutable, INotifyPropertyChanged
     {
         /// <summary>
         ///     The can execute.
@@ -112,10 +112,10 @@ namespace Anori.WinUI.Commands.Commands
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        /// Gets a value indicating whether this instance is executing.
+        ///     Gets a value indicating whether this instance is executing.
         /// </summary>
         /// <value>
-        ///   <c>true</c> if this instance is executing; otherwise, <c>false</c>.
+        ///     <c>true</c> if this instance is executing; otherwise, <c>false</c>.
         /// </value>
         public bool IsExecuting
         {

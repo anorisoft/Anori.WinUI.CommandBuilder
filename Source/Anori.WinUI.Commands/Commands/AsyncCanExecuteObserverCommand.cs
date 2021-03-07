@@ -16,12 +16,12 @@ namespace Anori.WinUI.Commands.Commands
     using JetBrains.Annotations;
 
     /// <summary>
-    /// Async CanExecute Observer Command.
+    ///     Async CanExecute Observer Command.
     /// </summary>
     /// <seealso cref="Anori.WinUI.Commands.Commands.AsyncCommandBase" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver" />
     /// <seealso cref="System.IDisposable" />
-    public sealed class AsyncCanExecuteObserverCommand : AsyncCommandBase, ICanExecuteChangedObserver, IDisposable
+    internal sealed class AsyncCanExecuteObserverCommand : AsyncCommandBase, ICanExecuteChangedObserver, IDisposable
     {
         /// <summary>
         ///     The observers.
@@ -29,16 +29,14 @@ namespace Anori.WinUI.Commands.Commands
         private readonly List<ICanExecuteChangedSubjectBase> observers = new List<ICanExecuteChangedSubjectBase>();
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="AsyncCanExecuteObserverCommand" /> class.
+        /// Initializes a new instance of the <see cref="AsyncCanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
-        /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">
-        ///     observer
-        ///     or
-        ///     observer is null.
-        /// </exception>
+        /// <exception cref="System.ArgumentNullException">observers</exception>
+        /// <exception cref="ArgumentNullException">observer
+        /// or
+        /// observer is null.</exception>
         public AsyncCanExecuteObserverCommand(
             [NotNull] Func<Task> execute,
             [NotNull] [ItemNotNull] params ICanExecuteChangedSubject[] observers)
