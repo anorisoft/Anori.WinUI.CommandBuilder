@@ -28,10 +28,10 @@ namespace Anori.WinUI.Commands.Builder
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder{T}" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder{T}" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCanExecuteBuilder{T}" />
-    public sealed class AsyncCommandBuilder<T> : IAsyncCommandBuilder<T>,
-                                                 IAsyncCanExecuteBuilder<T>,
-                                                 IActivatableAsyncCommandBuilder<T>,
-                                                 IActivatableAsyncCanExecuteBuilder<T>
+    internal sealed class AsyncCommandBuilder<T> : IAsyncCommandBuilder<T>,
+                                                   IAsyncCanExecuteBuilder<T>,
+                                                   IActivatableAsyncCommandBuilder<T>,
+                                                   IActivatableAsyncCanExecuteBuilder<T>
     {
         /// <summary>
         ///     The execute.

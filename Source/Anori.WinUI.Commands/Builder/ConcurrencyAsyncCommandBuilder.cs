@@ -21,10 +21,10 @@ namespace Anori.WinUI.Commands.Builder
 
     using JetBrains.Annotations;
 
-    public sealed class ConcurrencyAsyncCommandBuilder : IConcurrencyAsyncCommandBuilder,
-                                                         IConcurrencyAsyncCanExecuteBuilder,
-                                                         IActivatableConcurrencyAsyncCommandBuilder,
-                                                         IActivatableConcurrencyAsyncCanExecuteBuilder
+    internal sealed class ConcurrencyAsyncCommandBuilder : IConcurrencyAsyncCommandBuilder,
+                                                           IConcurrencyAsyncCanExecuteBuilder,
+                                                           IActivatableConcurrencyAsyncCommandBuilder,
+                                                           IActivatableConcurrencyAsyncCanExecuteBuilder
     {
         /// <summary>
         ///     The execute

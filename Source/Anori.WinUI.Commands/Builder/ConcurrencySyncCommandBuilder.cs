@@ -27,10 +27,10 @@ namespace Anori.WinUI.Commands.Builder
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder" />
-    public sealed class ConcurrencySyncCommandBuilder : IConcurrencySyncCommandBuilder,
-                                                        IConcurrencySyncCanExecuteBuilder,
-                                                        IActivatableConcurrencySyncCommandBuilder,
-                                                        IActivatableConcurrencySyncCanExecuteBuilder
+    internal sealed class ConcurrencySyncCommandBuilder : IConcurrencySyncCommandBuilder,
+                                                          IConcurrencySyncCanExecuteBuilder,
+                                                          IActivatableConcurrencySyncCommandBuilder,
+                                                          IActivatableConcurrencySyncCanExecuteBuilder
     {
         /// <summary>
         ///     The execute.

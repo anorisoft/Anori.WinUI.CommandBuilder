@@ -12,7 +12,7 @@ using JetBrains.Annotations;
 
 namespace Anori.WinUI.Commands.Builder
 {
-    public sealed class SyncCommandBuilder<T> :
+    internal sealed class SyncCommandBuilder<T> :
         ISyncCommandBuilder<T>,
         ISyncCanExecuteBuilder<T>,
         IActivatableSyncCommandBuilder<T>,

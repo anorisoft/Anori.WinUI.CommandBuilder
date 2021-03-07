@@ -3423,24 +3423,22 @@
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.observers">
             <summary>
-                The observers
+                The observers.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.isActive">
             <summary>
-                The is active
+                The is active.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.Tasks.Task},System.Boolean,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">observer
-            or
-            observer</exception>
+            <exception cref="T:System.ArgumentNullException">observer or observer is null.</exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.Tasks.Task},System.Action{System.Exception})">
             <summary>
@@ -3465,9 +3463,7 @@
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="canExecuteSubject">The can execute subject.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">canExecuteSubject
-            or
-            observers</exception>
+            <exception cref="T:System.ArgumentNullException">canExecuteSubject or observers is null.</exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
@@ -3499,9 +3495,7 @@
             <param name="canExecute">The can execute.</param>
             <param name="observers">The observers.</param>
             <exception cref="T:System.ArgumentNullException">
-                observers
-                or
-                observers
+                observers is null.
             </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.Tasks.Task},System.Boolean,System.Func{System.Boolean},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
@@ -3512,7 +3506,7 @@
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
             <param name="canExecute">The can execute.</param>
             <param name="observers">The observers.</param>
-            <exception cref="T:System.ArgumentNullException">observers</exception>
+            <exception cref="T:System.ArgumentNullException">observers is null.</exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.Finalize">
             <summary>
@@ -3531,7 +3525,7 @@
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.IsActive">
             <summary>
-            Gets or sets a value indicating whether the object is active.
+            Gets a value indicating whether the object is active.
             </summary>
             <value>
               <see langword="true" /> if the object is active; otherwise <see langword="false" />.

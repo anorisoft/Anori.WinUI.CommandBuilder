@@ -28,24 +28,22 @@ namespace Anori.WinUI.Commands.Commands
                                                                     IDisposable
     {
         /// <summary>
-        ///     The observers
+        ///     The observers.
         /// </summary>
         private readonly List<ICanExecuteChangedSubjectBase> observers = new List<ICanExecuteChangedSubjectBase>();
 
         /// <summary>
-        ///     The is active
+        ///     The is active.
         /// </summary>
         private bool isActive;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
+        /// Initializes a new instance of the <see cref="ActivatableAsyncCanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">observer
-        /// or
-        /// observer</exception>
+        /// <exception cref="ArgumentNullException">observer or observer is null.</exception>
         public ActivatableAsyncCanExecuteObserverCommand(
             [NotNull] Func<Task> execute,
             bool autoActivate,
@@ -102,9 +100,7 @@ namespace Anori.WinUI.Commands.Commands
         /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="canExecuteSubject">The can execute subject.</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">canExecuteSubject
-        /// or
-        /// observers</exception>
+        /// <exception cref="ArgumentNullException">canExecuteSubject or observers is null.</exception>
         public ActivatableAsyncCanExecuteObserverCommand(
             [NotNull] Func<Task> execute,
             bool autoActivate,
@@ -177,9 +173,7 @@ namespace Anori.WinUI.Commands.Commands
         /// <param name="canExecute">The can execute.</param>
         /// <param name="observers">The observers.</param>
         /// <exception cref="ArgumentNullException">
-        ///     observers
-        ///     or
-        ///     observers
+        ///     observers is null.
         /// </exception>
         public ActivatableAsyncCanExecuteObserverCommand(
             [NotNull] Func<Task> execute,
@@ -196,7 +190,7 @@ namespace Anori.WinUI.Commands.Commands
         /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="canExecute">The can execute.</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">observers</exception>
+        /// <exception cref="ArgumentNullException">observers is null.</exception>
         public ActivatableAsyncCanExecuteObserverCommand(
             [NotNull] Func<Task> execute,
             bool autoActivate,
@@ -233,7 +227,7 @@ namespace Anori.WinUI.Commands.Commands
         public override event EventHandler CanExecuteChanged;
 
         /// <summary>
-        /// Gets or sets a value indicating whether the object is active.
+        /// Gets a value indicating whether the object is active.
         /// </summary>
         /// <value>
         ///   <see langword="true" /> if the object is active; otherwise <see langword="false" />.
