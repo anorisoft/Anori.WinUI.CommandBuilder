@@ -10,28 +10,31 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
     using System.ComponentModel;
     using System.Linq.Expressions;
 
-    public class PropertyObserverFactory
+    /// <summary>
+    /// Property Observer Factory.
+    /// </summary>
+    internal class PropertyObserverFactory
     {
-
         /// <summary>
         ///     Observeses the property.
         /// </summary>
         /// <typeparam name="TResult">The type of the type.</typeparam>
         /// <param name="propertyExpression">The property expression.</param>
-        /// <returns></returns>
+        /// <returns>The PropertyObserver.</returns>
         public PropertyObserver<TResult> ObservesProperty<TResult>(
             Expression<Func<TResult>> propertyExpression) =>
             PropertyObserver<TResult>.Create(propertyExpression);
 
-      
         /// <summary>
-        ///     Observeses the property.
+        /// Observeses the property.
         /// </summary>
         /// <typeparam name="TParameter">The type of the owner.</typeparam>
-        /// <typeparam name="TType">The type of the type.</typeparam>
-        /// <param name="parameter">The owner.</param>
+        /// <typeparam name="TResult">The type of the result.</typeparam>
+        /// <param name="parameter">The parameter.</param>
         /// <param name="propertyExpression">The property expression.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Result of ObservesProperty as PropertyObserver&lt;TParameter, TResult&gt;.
+        /// </returns>
         public PropertyObserver<TParameter, TResult> ObservesProperty<TParameter, TResult>(
             TParameter parameter,
             Expression<Func<TParameter, TResult>> propertyExpression)
@@ -40,35 +43,42 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
             PropertyObserver<TParameter, TResult>.Create(parameter, propertyExpression);
 
         /// <summary>
-        ///     Observeses the can execute.
+        /// Observeses the can execute.
         /// </summary>
         /// <param name="canExecuteExpression">The can execute expression.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Result of ObservesCanExecute as CanExecuteObserver.
+        /// </returns>
         public CanExecuteObserver ObservesCanExecute(
-            Expression<Func<bool>> canExecuteExpression) => 
+            Expression<Func<bool>> canExecuteExpression) =>
             CanExecuteObserver.Create(canExecuteExpression);
 
         /// <summary>
-        ///     Observeses the can execute.
+        /// Observeses the can execute.
         /// </summary>
         /// <typeparam name="TParameter">The type of the owner.</typeparam>
         /// <param name="parameter">The owner.</param>
         /// <param name="canExecuteExpression">The can execute expression.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Result of ObservesCanExecute as CanExecuteObserver&lt;TParameter&gt;.
+        /// </returns>
         public CanExecuteObserver<TParameter> ObservesCanExecute<TParameter>(
             TParameter parameter,
             Expression<Func<TParameter, bool>> canExecuteExpression)
             where TParameter : INotifyPropertyChanged =>
             CanExecuteObserver<TParameter>.Create(parameter, canExecuteExpression);
 
-
         /// <summary>
-        ///     Observeses the can execute.
+        /// Observeses the can execute.
         /// </summary>
-        /// <typeparam name="TParameter">The type of the owner.</typeparam>
-        /// <param name="parameter">The owner.</param>
+        /// <typeparam name="TParameter1">The type of the parameter1.</typeparam>
+        /// <typeparam name="TParameter2">The type of the parameter2.</typeparam>
+        /// <param name="parameter1">The parameter1.</param>
+        /// <param name="parameter2">The parameter2.</param>
         /// <param name="canExecuteExpression">The can execute expression.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Result of ObservesCanExecute as CanExecuteObserver&lt;TParameter1, TParameter2&gt;.
+        /// </returns>
         public CanExecuteObserver<TParameter1, TParameter2> ObservesCanExecute<TParameter1, TParameter2>(
             TParameter1 parameter1,
             TParameter2 parameter2,

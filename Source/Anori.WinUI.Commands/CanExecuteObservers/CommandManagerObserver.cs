@@ -18,10 +18,10 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
     /// Command Manager Observer.
     /// </summary>
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject" />
-    public class CommandManagerObserver : ICanExecuteChangedSubject
+    internal class CommandManagerObserver : ICanExecuteChangedSubject
     {
         /// <summary>
-        ///     The dictionary.
+        /// The dictionary.
         /// </summary>
         private readonly IDictionary<ICanExecuteChangedObserver, EventHandler> dictionary =
             new Dictionary<ICanExecuteChangedObserver, EventHandler>();
@@ -35,10 +35,11 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         public static ICanExecuteChangedSubject Observer { get; } = new CommandManagerObserver();
 
         /// <summary>
-        ///     Adds the specified observer.
+        /// Adds the specified observer.
         /// </summary>
         /// <param name="observer">The observer.</param>
-        public void Add([NotNull] ICanExecuteChangedObserver observer)
+        /// <exception cref="ArgumentNullException">observer is null.</exception>
+        public void Add(ICanExecuteChangedObserver observer)
         {
             if (observer == null)
             {
@@ -68,7 +69,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         ///     Removes the specified observer.
         /// </summary>
         /// <param name="observer">The observer.</param>
-        public void Remove([NotNull] ICanExecuteChangedObserver observer)
+        public void Remove(ICanExecuteChangedObserver observer)
         {
             if (observer == null)
             {

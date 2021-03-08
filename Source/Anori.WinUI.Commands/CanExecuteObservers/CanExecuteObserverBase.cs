@@ -10,11 +10,19 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
 
     using Anori.WinUI.Commands.Interfaces;
 
-    public abstract class CanExecuteObserverBase : PropertyObserverBase, ICanExecuteObserver
+    /// <summary>
+    ///     CanExecute Observer Base.
+    /// </summary>
+    /// <seealso cref="Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase" />
+    /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteObserver" />
+    internal abstract class CanExecuteObserverBase : PropertyObserverBase, ICanExecuteObserver
     {
         /// <summary>
-        ///     Called when [can execute changed].
+        ///     Gets or sets the can execute.
         /// </summary>
+        /// <value>
+        ///     The can execute.
+        /// </value>
         public Func<bool> CanExecute { get; protected set; }
     }
 }

@@ -19,7 +19,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
     /// CanExecute Observer.
     /// </summary>
     /// <seealso cref="Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserverBase" />
-    public sealed class CanExecuteObserver : CanExecuteObserverBase
+    internal sealed class CanExecuteObserver : CanExecuteObserverBase
     {
         /// <summary>
         ///     Initializes a new instance of the <see cref="CanExecuteObserver" /> class.

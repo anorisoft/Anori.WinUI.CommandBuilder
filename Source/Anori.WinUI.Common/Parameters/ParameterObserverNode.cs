@@ -113,7 +113,7 @@ namespace Anori.WinUI.Common.Parameters
                 return;
             }
 
-            if (!(nextParameter is IReadOnlyParameter parameter))
+            if (!(nextParameter is IReadOnlyParameter parameter1))
             {
                 if (this.Next is ParameterObserverNode next)
                 {
@@ -125,7 +125,7 @@ namespace Anori.WinUI.Common.Parameters
                     "Trying to subscribe ValueChanged listener in object that, but the object does not implements IReadOnlyParameter.");
             }
 
-            this.Next.SubscribeListenerFor(parameter);
+            this.Next.SubscribeListenerFor(parameter1);
         }
 
         /// <summary>

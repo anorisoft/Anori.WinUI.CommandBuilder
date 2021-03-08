@@ -15,7 +15,7 @@ namespace Anori.WinUI.Commands.Commands
     /// <summary>
     ///     Observable Collection Extensions.
     /// </summary>
-    public static class ObservableCollectionExtensions
+    internal static class ObservableCollectionExtensions
     {
         /// <summary>
         ///     Adds if not contains.

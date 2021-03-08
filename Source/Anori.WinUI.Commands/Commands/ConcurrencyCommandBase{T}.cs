@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="ConcurrencyCommandBase {T}.cs" company="AnoriSoft">
+// <copyright file="ConcurrencyCommandBase{T}.cs" company="AnoriSoft">
 // Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -12,6 +12,7 @@ namespace Anori.WinUI.Commands.Commands
     using System.Runtime.CompilerServices;
     using System.Threading;
     using System.Threading.Tasks;
+    using System.Windows.Input;
 
     using Anori.WinUI.Commands.Interfaces;
     using Anori.WinUI.Common;
@@ -19,8 +20,12 @@ namespace Anori.WinUI.Commands.Commands
     using JetBrains.Annotations;
 
     /// <summary>
-    ///     Asynchronous Relay Command
+    ///     Asynchronous Relay Command.
     /// </summary>
+    /// <typeparam name="T">Parameter type.</typeparam>
+    /// <seealso cref="Anori.WinUI.Commands.Commands.CommandBase" />
+    /// <seealso cref="Anori.WinUI.Commands.Interfaces.ISyncCommand{T}" />
+    /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
     /// <seealso cref="System.Windows.Input.ICommand" />
     /// <seealso cref="System.IDisposable" />
     internal abstract class ConcurrencyCommandBase<T> : CommandBase,
@@ -29,104 +34,104 @@ namespace Anori.WinUI.Commands.Commands
                                                         INotifyPropertyChanged
     {
         /// <summary>
-        ///     The cancel
+        ///     The cancel.
         /// </summary>
         [CanBeNull]
         private readonly Action cancel;
 
         /// <summary>
-        ///     The cancel command
+        ///     The cancel command.
         /// </summary>
         private readonly DirectCommand cancelCommand;
 
         /// <summary>
-        ///     The can execute
+        ///     The can execute.
         /// </summary>
         [CanBeNull]
         private readonly Predicate<T> canExecute;
 
         /// <summary>
-        ///     The completed
+        ///     The completed.
         /// </summary>
         [CanBeNull]
         private readonly Action completed;
 
         /// <summary>
-        ///     The error
+        ///     The error.
         /// </summary>
         [CanBeNull]
         private readonly Action<Exception> error;
 
         /// <summary>
-        ///     The execute
+        ///     The execute.
         /// </summary>
         [NotNull]
         private readonly Action<T, CancellationToken> execute;
 
         /// <summary>
-        ///     The finally task scheduler
+        ///     The finally task scheduler.
         /// </summary>
         [NotNull]
         private readonly TaskScheduler finallyTaskScheduler = TaskScheduler.FromCurrentSynchronizationContext();
 
         /// <summary>
-        ///     The post actions task scheduler
+        ///     The post actions task scheduler.
         /// </summary>
         [NotNull]
         private readonly TaskScheduler postTaskScheduler = TaskScheduler.Default;
 
         /// <summary>
-        ///     The task factory
+        ///     The task factory.
         /// </summary>
         [NotNull]
         private readonly TaskFactory taskFactory = new TaskFactory();
 
         /// <summary>
-        ///     The actions task scheduler
+        ///     The actions task scheduler.
         /// </summary>
         [NotNull]
         private readonly TaskScheduler taskScheduler = TaskScheduler.Default;
 
         /// <summary>
-        ///     The cancellation token source
+        ///     The cancellation token source.
         /// </summary>
         [CanBeNull]
         private CancellationTokenSource cancellationTokenSource;
 
         /// <summary>
-        ///     The exception
+        ///     The exception.
         /// </summary>
         [CanBeNull]
         private Exception exception;
 
         /// <summary>
-        ///     The is execute
+        ///     The is execute.
         /// </summary>
         private bool isExecuting;
 
         /// <summary>
-        ///     The task
+        ///     The task.
         /// </summary>
         [CanBeNull]
         private Task task;
 
         /// <summary>
-        ///     The is canceled
+        ///     The is canceled.
         /// </summary>
         private bool wasCanceled;
 
         /// <summary>
-        ///     The has errors
+        ///     The has errors.
         /// </summary>
         private bool wasFaulty;
 
         /// <summary>
-        ///     The was successfuly
+        ///     The was successfuly.
         /// </summary>
         private bool wasSuccessfuly;
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ConcurrencyRelayCommand" /> class.
+        ///     Initializes a new instance of the <see cref="ConcurrencyCommandBase{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecute">The can execute.</param>
@@ -149,7 +154,7 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ConcurrencyCommandBase" /> class.
+        ///     Initializes a new instance of the <see cref="ConcurrencyCommandBase{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="completed">The completed.</param>
@@ -169,14 +174,14 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ConcurrencyCommandBase" /> class.
+        ///     Initializes a new instance of the <see cref="ConcurrencyCommandBase{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecuteSubject">The can execute subject.</param>
         /// <param name="completed">The completed.</param>
         /// <param name="error">The error.</param>
         /// <param name="cancel">The cancel.</param>
-        /// <exception cref="ArgumentNullException">canExecuteSubject</exception>
+        /// <exception cref="ArgumentNullException">canExecuteSubject is null.</exception>
         protected ConcurrencyCommandBase(
             [NotNull] Action<T, CancellationToken> execute,
             [NotNull] ICanExecuteSubject canExecuteSubject,
@@ -203,7 +208,7 @@ namespace Anori.WinUI.Commands.Commands
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        ///     Gets or sets the cancel command.
+        ///     Gets the cancel command.
         /// </summary>
         /// <value>
         ///     The cancel command.
@@ -235,10 +240,10 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Gets or sets a value indicating whether this instance is execute.
+        ///     Gets a value indicating whether this instance is executing.
         /// </summary>
         /// <value>
-        ///     <c>true</c> if this instance is execute; otherwise, <c>false</c>.
+        ///     <c>true</c> if this instance is executing; otherwise, <c>false</c>.
         /// </value>
         public bool IsExecuting
         {
@@ -271,7 +276,7 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Gets or sets a value indicating whether this instance has can execute.
+        ///     Gets a value indicating whether this instance has can execute.
         /// </summary>
         /// <value>
         ///     <c>true</c> if this instance has can execute; otherwise, <c>false</c>.
@@ -281,6 +286,7 @@ namespace Anori.WinUI.Commands.Commands
         /// <summary>
         ///     Determines whether this instance can execute.
         /// </summary>
+        /// <param name="parameter">The parameter.</param>
         /// <returns>
         ///     <c>true</c> if this instance can execute; otherwise, <c>false</c>.
         /// </returns>
@@ -312,6 +318,7 @@ namespace Anori.WinUI.Commands.Commands
         /// <summary>
         ///     Executes this instance.
         /// </summary>
+        /// <param name="parameter">The parameter.</param>
         public void Execute(T parameter)
         {
             try
@@ -339,12 +346,10 @@ namespace Anori.WinUI.Commands.Commands
                 this.OnFinally();
                 foreach (var e in ex.InnerExceptions)
                 {
-                    // Handle the custom exception.
                     if (e is TaskCanceledException)
                     {
                         Debug.WriteLine(e.Message);
                     }
-                    // Rethrow any other exception.
                     else
                     {
                         throw e;
@@ -377,7 +382,6 @@ namespace Anori.WinUI.Commands.Commands
         /// <summary>
         ///     Raises the can execute cancel command.
         /// </summary>
-        /// <returns></returns>
         public void RaiseCanExecuteCancelCommand() => this.cancelCommand.RaiseCanExecuteChanged();
 
         /// <summary>
@@ -396,7 +400,9 @@ namespace Anori.WinUI.Commands.Commands
         ///     Determines whether this instance can execute the specified parameter.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
-        /// <returns></returns>
+        /// <returns>
+        ///     <see langword="true" /> if this command can be executed; otherwise, <see langword="false" />.
+        /// </returns>
         protected sealed override bool CanExecute(object parameter) => this.CanExecute((T)parameter);
 
         /// <summary>
@@ -425,9 +431,9 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Handle the internal invocation of <see cref="ISyncCommand.Execute(object)" />
+        ///     Handle the internal invocation of <see cref="ICommand.Execute(object)" />.
         /// </summary>
-        /// <param name="parameter">Command Parameter</param>
+        /// <param name="parameter">Command Parameter.</param>
         protected sealed override void Execute(object parameter) => this.Execute((T)parameter);
 
         /// <summary>
@@ -440,13 +446,18 @@ namespace Anori.WinUI.Commands.Commands
         /// <summary>
         ///     Sets the property.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TValue">The type of the value.</typeparam>
         /// <param name="storage">The storage.</param>
         /// <param name="value">The value.</param>
         /// <param name="propertyName">Name of the property.</param>
-        /// <returns></returns>
+        /// <returns>
+        ///     Result of SetProperty as Boolean.
+        /// </returns>
         [NotifyPropertyChangedInvocator]
-        protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
+        protected bool SetProperty<TValue>(
+            ref TValue storage,
+            TValue value,
+            [CallerMemberName] string propertyName = null)
         {
             if (Equals(storage, value))
             {
@@ -461,6 +472,7 @@ namespace Anori.WinUI.Commands.Commands
         /// <summary>
         ///     Called when [execute].
         /// </summary>
+        /// <param name="parameter">The parameter.</param>
         /// <param name="token">The token.</param>
         private void OnAction(T parameter, CancellationToken token) => this.execute(parameter, token);
 

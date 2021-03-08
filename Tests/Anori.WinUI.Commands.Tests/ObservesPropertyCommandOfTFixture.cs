@@ -4,11 +4,21 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-using Anori.WinUI.Commands.Commands;
+using System.Runtime.CompilerServices;
+
+[assembly:
+    InternalsVisibleTo(
+        "Anori.WinUI.Commands.GUITest, "
+        + "PublicKey="
+        + "0024000004800000940000000602000000240000525341310004000001000100a520658730454f"
+        + "b71a447c87dcb713412746dd0b04a1a1afea4067c991bc260f965eb7481148266358fc635ca839"
+        + "5b78375f4cf69097188ab3cb2c27a52d1812872edd13157ed84b651f0462accdb31b65dfc4a352"
+        + "2c8ada5c895c24738b342f759ac7ad33086e44a631a8884e1e6eb526e7e4e7170a52b723fe3c0d"
+        + "db55b3c2")]
 
 namespace Anori.WinUI.Commands.Tests
 {
-    using Anori.WinUI.Commands.CanExecuteObservers;
+using Anori.WinUI.Commands.Commands;    using Anori.WinUI.Commands.CanExecuteObservers;
     using Anori.WinUI.Commands.Interfaces;
 
     using NUnit.Framework;
@@ -17,7 +27,7 @@ namespace Anori.WinUI.Commands.Tests
 
     using ICommand = System.Windows.Input.ICommand;
 
-    public class DummyObserver : PropertyObserverBase<DummyObserver>, IPropertyObserver
+    internal class DummyObserver : PropertyObserverBase<DummyObserver>, IPropertyObserver
     {
         public override event Action Update;
     }

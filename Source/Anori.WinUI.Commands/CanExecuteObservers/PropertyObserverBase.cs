@@ -1,24 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using Anori.WinUI.Commands.Interfaces;
-using JetBrains.Annotations;
+﻿// -----------------------------------------------------------------------
+// <copyright file="PropertyObserverBase.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 namespace Anori.WinUI.Commands.CanExecuteObservers
 {
+    using System;
+    using System.Collections.Generic;
+
+    using Anori.WinUI.Commands.Interfaces;
+
+    using JetBrains.Annotations;
+
     /// <summary>
-    ///
+    ///     Property Observer Base.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubjectBase" />
     /// <seealso cref="ICanExecuteChangedSubject" />
     /// <seealso cref="System.Collections.Generic.IEqualityComparer{T}" />
-    public abstract class PropertyObserverBase : ICanExecuteChangedSubjectBase
+    internal abstract class PropertyObserverBase : ICanExecuteChangedSubjectBase
     {
-        /// <summary>
-        ///     The observables
-        /// </summary>
-        [NotNull] protected readonly IDictionary<ICanExecuteChangedObserver, Action> observables =
-            new Dictionary<ICanExecuteChangedObserver, Action>();
-
         /// <summary>
         ///     Occurs when [can execute changed].
         /// </summary>
@@ -34,10 +36,23 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         public string PropertyExpression { get; protected set; } = null!;
 
         /// <summary>
-        ///     The observerBase
+        ///     Gets or sets the observer.
         /// </summary>
+        /// <value>
+        ///     The observer.
+        /// </value>
         [NotNull]
         protected virtual ExpressionObservers.Observers.PropertyObserverBase Observer { get; set; } = null!;
+
+        /// <summary>
+        ///     Gets the observables.
+        /// </summary>
+        /// <value>
+        ///     The observables.
+        /// </value>
+        [NotNull]
+        protected IDictionary<ICanExecuteChangedObserver, Action> Observables { get; } =
+            new Dictionary<ICanExecuteChangedObserver, Action>();
 
         /// <summary>
         ///     Adds the specified observer.
@@ -50,7 +65,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
                 throw new ArgumentNullException(nameof(observer));
             }
 
-            if (this.observables.TryGetValue(observer, out _))
+            if (this.Observables.TryGetValue(observer, out _))
             {
                 return;
             }
@@ -60,7 +75,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
                 observer.RaisePropertyChanged();
             }
 
-            this.observables.Add(observer, Handler);
+            this.Observables.Add(observer, Handler);
             this.Update += Handler;
         }
 
@@ -73,8 +88,6 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
             GC.SuppressFinalize(this);
         }
 
-   
-
         /// <summary>
         ///     Removes the specified observer.
         /// </summary>
@@ -86,13 +99,13 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
                 throw new ArgumentNullException(nameof(observer));
             }
 
-            if (!this.observables.TryGetValue(observer, out var handler))
+            if (!this.Observables.TryGetValue(observer, out var handler))
             {
                 return;
             }
 
             this.Update -= handler;
-            this.observables.Remove(observer);
+            this.Observables.Remove(observer);
             observer.RaisePropertyChanged();
         }
 
@@ -112,17 +125,17 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
 
             this.Unsubscribe();
 
-            foreach (var handler in this.observables.Values)
+            foreach (var handler in this.Observables.Values)
             {
                 this.Update -= handler;
             }
 
-            foreach (var updateable in this.observables.Keys)
+            foreach (var updateable in this.Observables.Keys)
             {
                 updateable.RaisePropertyChanged();
             }
 
-            this.observables.Clear();
+            this.Observables.Clear();
         }
 
         /// <summary>

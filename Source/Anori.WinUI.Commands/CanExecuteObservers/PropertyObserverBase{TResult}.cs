@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="PropertyObserverBase.cs" company="AnoriSoft">
+// <copyright file="PropertyObserverBase{TResult}.cs" company="AnoriSoft">
 // Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -8,7 +8,13 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
 {
     using System;
 
-    public abstract class PropertyObserverBase<TResult> : PropertyObserverBase, IEquatable<PropertyObserverBase<TResult>>
+    /// <summary>
+    ///     Property Observer Base.
+    /// </summary>
+    /// <typeparam name="TResult">The type of the result.</typeparam>
+    /// <seealso cref="Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase" />
+    internal abstract class PropertyObserverBase<TResult> : PropertyObserverBase,
+                                                            IEquatable<PropertyObserverBase<TResult>>
     {
         /// <summary>
         ///     Determines whether the specified objects are equal.
@@ -67,15 +73,16 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
             {
                 return false;
             }
+
             return this.Observer.Equals(other.Observer);
         }
 
         /// <summary>
-        ///     Determines whether the specified <see cref="System.Object" />, is equal to this instance.
+        ///     Determines whether the specified <see cref="object" />, is equal to this instance.
         /// </summary>
-        /// <param name="obj">The <see cref="System.Object" /> to compare with this instance.</param>
+        /// <param name="obj">The <see cref="object" /> to compare with this instance.</param>
         /// <returns>
-        ///     <c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+        ///     <c>true</c> if the specified <see cref="object" /> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
         public override bool Equals(object obj)
         {
@@ -108,7 +115,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         {
             unchecked
             {
-                var hashCode = obj.observables.GetHashCode();
+                var hashCode = obj.Observables.GetHashCode();
                 hashCode = (hashCode * 397) ^ obj.Observer.GetHashCode();
                 hashCode = (hashCode * 397)
                            ^ (obj.PropertyExpression != null ? obj.PropertyExpression.GetHashCode() : 0);
@@ -126,7 +133,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         {
             unchecked
             {
-                return (this.observables.GetHashCode() * 397) ^ this.Observer.GetHashCode();
+                return (this.Observables.GetHashCode() * 397) ^ this.Observer.GetHashCode();
             }
         }
     }

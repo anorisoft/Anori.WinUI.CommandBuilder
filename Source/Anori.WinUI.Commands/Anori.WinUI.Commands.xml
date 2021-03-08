@@ -3017,14 +3017,24 @@
             <param name="fallback">if set to <c>true</c> [fallback].</param>
             <returns></returns>
         </member>
+        <member name="T:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserverBase">
+            <summary>
+                CanExecute Observer Base.
+            </summary>
+            <seealso cref="T:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase" />
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.ICanExecuteObserver" />
+        </member>
         <member name="P:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserverBase.CanExecute">
             <summary>
-                Called when [can execute changed].
+                Gets or sets the can execute.
             </summary>
+            <value>
+                The can execute.
+            </value>
         </member>
         <member name="T:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserver`2">
             <summary>
-            CanExecute Observer with two parameters.
+                CanExecute Observer with two parameters.
             </summary>
             <typeparam name="TParameter1">The type of the parameter1.</typeparam>
             <typeparam name="TParameter2">The type of the parameter2.</typeparam>
@@ -3032,37 +3042,33 @@
         </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserver`2.#ctor(`0,`1,System.Linq.Expressions.Expression{System.Func{`0,`1,System.Boolean}})">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserver`1" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserver`2" /> class.
             </summary>
-            <param name="parameter1">The owner.</param>
+            <param name="parameter1">The parameter1.</param>
             <param name="parameter2">The parameter2.</param>
             <param name="canExecuteExpression">The can execute expression.</param>
-            <exception cref="T:System.ArgumentNullException">
-            parameter1
-            or
-            canExecuteExpression
-            </exception>
+            <exception cref="T:System.ArgumentNullException">parameter1 or parameter2 or canExecuteExpression is null.</exception>
+        </member>
+        <member name="E:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserver`2.Update">
+            <summary>
+                Occurs when [can execute changed].
+            </summary>
         </member>
         <member name="P:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserver`2.Parameter1">
             <summary>
-            Gets the parameter1.
+                Gets the parameter1.
             </summary>
             <value>
-            The parameter1.
+                The parameter1.
             </value>
         </member>
         <member name="P:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserver`2.Parameter2">
             <summary>
-            Gets the parameter2.
+                Gets the parameter2.
             </summary>
             <value>
-            The parameter2.
+                The parameter2.
             </value>
-        </member>
-        <member name="E:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserver`2.Update">
-            <summary>
-            Occurs when [can execute changed].
-            </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserver`2.Create(`0,`1,System.Linq.Expressions.Expression{System.Func{`0,`1,System.Boolean}})">
             <summary>
@@ -3071,7 +3077,14 @@
             <param name="parameter1">The owner.</param>
             <param name="parameter2">The parameter2.</param>
             <param name="canExecuteExpression">The can execute expression.</param>
-            <returns></returns>
+            <returns>CanExecute Observer.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserver`1">
+            <summary>
+                CanExecute Observer with one parameters.
+            </summary>
+            <typeparam name="TParameter1">The type of the parameter.</typeparam>
+            <seealso cref="T:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserverBase" />
         </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserver`1.#ctor(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
@@ -3079,7 +3092,16 @@
             </summary>
             <param name="parameter">The owner.</param>
             <param name="canExecuteExpression">The can execute expression.</param>
-            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentNullException">
+                parameter
+                or
+                canExecuteExpression is null.
+            </exception>
+        </member>
+        <member name="E:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserver`1.Update">
+            <summary>
+                Occurs when [can execute changed].
+            </summary>
         </member>
         <member name="P:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserver`1.Parameter">
             <summary>
@@ -3089,18 +3111,13 @@
                 The owner.
             </value>
         </member>
-        <member name="E:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserver`1.Update">
-            <summary>
-                Occurs when [can execute changed].
-            </summary>
-        </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserver`1.Create(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
                 Creates the specified owner.
             </summary>
             <param name="parameter">The owner.</param>
             <param name="canExecuteExpression">The can execute expression.</param>
-            <returns></returns>
+            <returns>The observer.</returns>
         </member>
         <member name="T:Anori.WinUI.Commands.CanExecuteObservers.CommandManagerObserver">
             <summary>
@@ -3110,7 +3127,7 @@
         </member>
         <member name="F:Anori.WinUI.Commands.CanExecuteObservers.CommandManagerObserver.dictionary">
             <summary>
-                The dictionary.
+            The dictionary.
             </summary>
         </member>
         <member name="P:Anori.WinUI.Commands.CanExecuteObservers.CommandManagerObserver.Observer">
@@ -3123,9 +3140,10 @@
         </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.CommandManagerObserver.Add(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver)">
             <summary>
-                Adds the specified observer.
+            Adds the specified observer.
             </summary>
             <param name="observer">The observer.</param>
+            <exception cref="T:System.ArgumentNullException">observer is null.</exception>
         </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.CommandManagerObserver.Dispose">
             <summary>
@@ -3148,17 +3166,12 @@
             </param>
         </member>
         <member name="T:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase">
-             <summary>
-            
-             </summary>
-             <typeparam name="T"></typeparam>
-             <seealso cref="T:Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject" />
-             <seealso cref="T:System.Collections.Generic.IEqualityComparer`1" />
-        </member>
-        <member name="F:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase.observables">
             <summary>
-                The observables
+                Property Observer Base.
             </summary>
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubjectBase" />
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject" />
+            <seealso cref="T:System.Collections.Generic.IEqualityComparer`1" />
         </member>
         <member name="E:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase.Update">
             <summary>
@@ -3175,8 +3188,19 @@
         </member>
         <member name="P:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase.Observer">
             <summary>
-                The observerBase
+                Gets or sets the observer.
             </summary>
+            <value>
+                The observer.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase.Observables">
+            <summary>
+                Gets the observables.
+            </summary>
+            <value>
+                The observables.
+            </value>
         </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase.Add(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver)">
             <summary>
@@ -3213,6 +3237,13 @@
             <summary>
                 Unsubscribes this instance.
             </summary>
+        </member>
+        <member name="T:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase`1">
+            <summary>
+                Property Observer Base.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <seealso cref="T:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase" />
         </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase`1.Equals(Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase{`0},Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase{`0})">
             <summary>
@@ -3260,68 +3291,82 @@
                 A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
             </returns>
         </member>
+        <member name="T:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverFactory">
+            <summary>
+            Property Observer Factory.
+            </summary>
+        </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverFactory.ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
             <summary>
                 Observeses the property.
             </summary>
             <typeparam name="TResult">The type of the type.</typeparam>
             <param name="propertyExpression">The property expression.</param>
-            <returns></returns>
+            <returns>The PropertyObserver.</returns>
         </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverFactory.ObservesProperty``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
             <summary>
-                Observeses the property.
+            Observeses the property.
             </summary>
             <typeparam name="TParameter">The type of the owner.</typeparam>
-            <typeparam name="TType">The type of the type.</typeparam>
-            <param name="parameter">The owner.</param>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <param name="parameter">The parameter.</param>
             <param name="propertyExpression">The property expression.</param>
-            <returns></returns>
+            <returns>
+            Result of ObservesProperty as PropertyObserver&lt;TParameter, TResult&gt;.
+            </returns>
         </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverFactory.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
             <summary>
-                Observeses the can execute.
+            Observeses the can execute.
             </summary>
             <param name="canExecuteExpression">The can execute expression.</param>
-            <returns></returns>
+            <returns>
+            Result of ObservesCanExecute as CanExecuteObserver.
+            </returns>
         </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverFactory.ObservesCanExecute``1(``0,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
             <summary>
-                Observeses the can execute.
+            Observeses the can execute.
             </summary>
             <typeparam name="TParameter">The type of the owner.</typeparam>
             <param name="parameter">The owner.</param>
             <param name="canExecuteExpression">The can execute expression.</param>
-            <returns></returns>
+            <returns>
+            Result of ObservesCanExecute as CanExecuteObserver&lt;TParameter&gt;.
+            </returns>
         </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverFactory.ObservesCanExecute``2(``0,``1,System.Linq.Expressions.Expression{System.Func{``0,``1,System.Boolean}})">
             <summary>
-                Observeses the can execute.
+            Observeses the can execute.
             </summary>
-            <typeparam name="TParameter">The type of the owner.</typeparam>
-            <param name="parameter">The owner.</param>
+            <typeparam name="TParameter1">The type of the parameter1.</typeparam>
+            <typeparam name="TParameter2">The type of the parameter2.</typeparam>
+            <param name="parameter1">The parameter1.</param>
+            <param name="parameter2">The parameter2.</param>
             <param name="canExecuteExpression">The can execute expression.</param>
-            <returns></returns>
+            <returns>
+            Result of ObservesCanExecute as CanExecuteObserver&lt;TParameter1, TParameter2&gt;.
+            </returns>
         </member>
         <member name="T:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`3">
             <summary>
-            PropertyObserver
+                Property Observer.
             </summary>
-            <typeparam name="TParameter">The type of the parameter.</typeparam>
+            <typeparam name="TParameter1">The type of the parameter1.</typeparam>
+            <typeparam name="TParameter2">The type of the parameter2.</typeparam>
             <typeparam name="TResult">The type of the result.</typeparam>
             <seealso cref="T:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase`1" />
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.IPropertyObserver" />
         </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`3.#ctor(`0,`1,System.Linq.Expressions.Expression{System.Func{`0,`1,`2}})">
             <summary>
-            Initializes a new instance of the <see cref="!:PropertyValueObserver&lt;TParameter,TResult&gt;" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`3" /> class.
             </summary>
             <param name="parameter1">The parameter1.</param>
             <param name="parameter2">The parameter2.</param>
             <param name="propertyExpression">The property expression.</param>
-            <exception cref="T:System.ArgumentNullException">parameter1
-            or
-            propertyExpression</exception>
+            <exception cref="T:System.ArgumentNullException">parameter1 or parameter2 or propertyExpression is null.</exception>
         </member>
         <member name="E:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`3.Update">
             <summary>
@@ -3330,18 +3375,18 @@
         </member>
         <member name="P:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`3.Parameter1">
             <summary>
-            Gets the parameter1.
+                Gets the parameter1.
             </summary>
             <value>
-            The parameter1.
+                The parameter1.
             </value>
         </member>
         <member name="P:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`3.Parameter2">
             <summary>
-            Gets the parameter2.
+                Gets the parameter2.
             </summary>
             <value>
-            The parameter2.
+                The parameter2.
             </value>
         </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`3.Create(`0,`1,System.Linq.Expressions.Expression{System.Func{`0,`1,`2}})">
@@ -3351,53 +3396,64 @@
             <param name="parameter1">The parameter1.</param>
             <param name="parameter2">The parameter2.</param>
             <param name="propertyExpression">The property expression.</param>
-            <returns></returns>
+            <returns>
+            The Property Observer.
+            </returns>
         </member>
         <member name="T:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`2">
             <summary>
-            PropertyObserver
+            Property Observer.
             </summary>
-            <typeparam name="TParameter">The type of the parameter.</typeparam>
+            <typeparam name="TParameter1">The type of the parameter.</typeparam>
             <typeparam name="TResult">The type of the result.</typeparam>
             <seealso cref="T:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase`1" />
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.IPropertyObserver" />
         </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`2.#ctor(`0,System.Linq.Expressions.Expression{System.Func{`0,`1}})">
             <summary>
-                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`2" /> class.
+            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`2" /> class.
             </summary>
             <param name="parameter">The owner.</param>
             <param name="propertyExpression">The property expression.</param>
+            <exception cref="T:System.ArgumentNullException">
+            parameter1 or propertyExpression is null.
+            </exception>
         </member>
         <member name="E:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`2.Update">
             <summary>
-                Occurs when [can execute changed].
+            Occurs when [can execute changed].
             </summary>
         </member>
         <member name="P:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`2.Parameter">
             <summary>
-            Gets the parameter.
+                Gets the parameter.
             </summary>
             <value>
-            The parameter.
+                The parameter.
             </value>
         </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`2.Create(`0,System.Linq.Expressions.Expression{System.Func{`0,`1}})">
             <summary>
-                Creates the specified owner.
+            Creates the specified owner.
             </summary>
-            <typeparam name="TParameter">The type of the owner.</typeparam>
-            <typeparam name="TType">The type of the type.</typeparam>
             <param name="owner">The owner.</param>
             <param name="propertyExpression">The property expression.</param>
-            <returns></returns>
+            <returns>The Property Observer.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`1">
+            <summary>
+                Property Observer.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <seealso cref="T:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase`1" />
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.IPropertyObserver" />
         </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`1.#ctor(System.Linq.Expressions.Expression{System.Func{`0}})">
             <summary>
-            Initializes a new instance of the <see cref="!:PropertyValueObserver&lt;TParameter&gt;"/> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`1" /> class.
             </summary>
             <param name="propertyExpression">The property expression.</param>
-            <exception cref="T:System.ArgumentNullException">propertyExpression</exception>
+            <exception cref="T:System.ArgumentNullException">propertyExpression is null.</exception>
         </member>
         <member name="E:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserver`1.Update">
             <summary>
@@ -3410,7 +3466,8 @@
             </summary>
             <typeparam name="TType">The type of the type.</typeparam>
             <param name="propertyExpression">The property expression.</param>
-            <returns></returns>
+            <returns>The Property Observer.</returns>
+            <exception cref="T:System.ArgumentNullException">propertyExpression is null.</exception>
         </member>
         <member name="T:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand">
             <summary>

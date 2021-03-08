@@ -66,7 +66,7 @@ namespace Anori.WinUI.Commands.Commands
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecute">The can execute.</param>
-        /// <exception cref="System.ArgumentNullException">canExecute</exception>
+        /// <exception cref="System.ArgumentNullException">canExecute is null.</exception>
         public DirectCommand([NotNull] Action execute, [NotNull] Func<bool> canExecute)
             : base(execute, canExecute)
         {

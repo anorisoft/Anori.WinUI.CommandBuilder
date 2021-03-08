@@ -12,6 +12,7 @@ namespace Anori.WinUI.Commands.Commands
     using System.Runtime.CompilerServices;
     using System.Threading;
     using System.Threading.Tasks;
+    using System.Windows.Input;
 
     using Anori.WinUI.Commands.Interfaces;
     using Anori.WinUI.Common;
@@ -420,10 +421,11 @@ namespace Anori.WinUI.Commands.Commands
             }
         }
 
+
         /// <summary>
-        ///     Handle the internal invocation of <see cref="ISyncCommand.Execute(object)" />
+        /// Handle the internal invocation of <see cref="ICommand.Execute(object)" />.
         /// </summary>
-        /// <param name="parameter">Command Parameter</param>
+        /// <param name="parameter">Command Parameter.</param>
         protected sealed override void Execute(object parameter) => this.Execute();
 
         /// <summary>
