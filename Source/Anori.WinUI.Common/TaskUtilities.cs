@@ -4,18 +4,27 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-using System;
-using System.Threading.Tasks;
-using JetBrains.Annotations;
-
 namespace Anori.WinUI.Common
 {
+    using System;
+    using System.Threading.Tasks;
+
+    using JetBrains.Annotations;
+
+    /// <summary>
+    ///     Task Extensions.
+    /// </summary>
     public static partial class TaskExtensions
     {
 #pragma warning disable RECS0165 // Asynchronous methods should return a Task instead of void
 #pragma warning disable S3168 // "async" methods should not return "void"
 
-        public static async void FireAndForgetSafeAsync(this Task task, Action<Exception> error = null)
+        /// <summary>
+        ///     Fires the and forget safe asynchronous.
+        /// </summary>
+        /// <param name="task">The task.</param>
+        /// <param name="error">The error.</param>
+        public static async void FireAndForgetSafeAsync(this Task task, Action<Exception>? error = null)
 #pragma warning restore S3168 // "async" methods should not return "void"
 #pragma warning restore RECS0165 // Asynchronous methods should return a Task instead of void
         {
@@ -32,12 +41,22 @@ namespace Anori.WinUI.Common
 #pragma warning disable RECS0165 // Asynchronous methods should return a Task instead of void
 #pragma warning disable S3168 // "async" methods should not return "void"
 
+        /// <summary>
+        ///     Fires the and forget safe asynchronous.
+        /// </summary>
+        /// <param name="task">The task.</param>
+        /// <param name="completed">The completed.</param>
+        /// <param name="error">The error.</param>
+        /// <param name="final">The final.</param>
+        /// <param name="cancel">The cancel.</param>
+        /// <param name="configureAwait">if set to <c>true</c> [configure await].</param>
+        /// <exception cref="System.ArgumentNullException">task is null.</exception>
         public static async void FireAndForgetSafeAsync(
             [NotNull] this Task task,
-            [CanBeNull] Action completed = null,
-            [CanBeNull] Action<Exception> error = null,
-            [CanBeNull] Action final = null,
-            [CanBeNull] Action cancel = null,
+            Action? completed = null,
+            Action<Exception>? error = null,
+            Action? final = null,
+            Action? cancel = null,
             bool configureAwait = false)
 #pragma warning restore S3168 // "async" methods should not return "void"
 #pragma warning restore RECS0165 // Asynchronous methods should return a Task instead of void
@@ -54,27 +73,38 @@ namespace Anori.WinUI.Common
             }
             catch (TaskCanceledException)
             {
-                cancel?.Invoke();
+                cancel.Raise();
             }
             catch (Exception ex)
             {
-                error?.Invoke(ex);
+                error.Raise(ex);
             }
             finally
             {
-                final?.Invoke();
+                final.Raise();
             }
         }
 
 #pragma warning disable RECS0165 // Asynchronous methods should return a Task instead of void
 #pragma warning disable S3168 // "async" methods should not return "void"
 
+        /// <summary>
+        ///     Fires the and forget safe asynchronous.
+        /// </summary>
+        /// <typeparam name="T">The type.</typeparam>
+        /// <param name="task">The task.</param>
+        /// <param name="completed">The completed.</param>
+        /// <param name="error">The error.</param>
+        /// <param name="final">The final.</param>
+        /// <param name="cancel">The cancel.</param>
+        /// <param name="configureAwait">if set to <c>true</c> [configure await].</param>
+        /// <exception cref="System.ArgumentNullException">task</exception>
         public static async void FireAndForgetSafeAsync<T>(
             [NotNull] this Task<T> task,
-            [CanBeNull] Action<T> completed = null,
-            [CanBeNull] Action<Exception> error = null,
-            [CanBeNull] Action final = null,
-            [CanBeNull] Action cancel = null,
+            Action<T>? completed = null,
+            Action<Exception>? error = null,
+            Action? final = null,
+            Action? cancel = null,
             bool configureAwait = false)
 #pragma warning restore S3168 // "async" methods should not return "void"
 #pragma warning restore RECS0165 // Asynchronous methods should return a Task instead of void
@@ -87,31 +117,42 @@ namespace Anori.WinUI.Common
             try
             {
                 var result = await task.ConfigureAwait(configureAwait);
-                completed?.Invoke(result);
+                completed.Raise(result);
             }
             catch (TaskCanceledException)
             {
-                cancel?.Invoke();
+                cancel.Raise();
             }
             catch (Exception ex)
             {
-                error?.Invoke(ex);
+                error.Raise(ex);
             }
             finally
             {
-                final?.Invoke();
+                final.Raise();
             }
         }
 
 #pragma warning disable RECS0165 // Asynchronous methods should return a Task instead of void
 #pragma warning disable S3168 // "async" methods should not return "void"
 
+        /// <summary>
+        ///     Fires the and forget safe asynchronous.
+        /// </summary>
+        /// <typeparam name="T">The type.</typeparam>
+        /// <param name="task">The task.</param>
+        /// <param name="completed">The completed.</param>
+        /// <param name="error">The error.</param>
+        /// <param name="final">The final.</param>
+        /// <param name="cancel">The cancel.</param>
+        /// <param name="configureAwait">if set to <c>true</c> [configure await].</param>
+        /// <exception cref="System.ArgumentNullException">task is null.</exception>
         public static async void FireAndForgetSafeAsync<T>(
             [NotNull] this Task<T> task,
-            [CanBeNull] Func<T, Task> completed = null,
-            [CanBeNull] Func<Exception, Task> error = null,
-            [CanBeNull] Func<Task> final = null,
-            [CanBeNull] Func<Task> cancel = null,
+            Func<T, Task>? completed = null,
+            Func<Exception, Task>? error = null,
+            Func<Task>? final = null,
+            Func<Task>? cancel = null,
             bool configureAwait = false)
 #pragma warning restore S3168 // "async" methods should not return "void"
 #pragma warning restore RECS0165 // Asynchronous methods should return a Task instead of void
@@ -124,31 +165,19 @@ namespace Anori.WinUI.Common
             try
             {
                 var result = await task.ConfigureAwait(configureAwait);
-                if (completed != null)
-                {
-                    await completed(result);
-                }
+                await completed.RaiseAsync(result);
             }
             catch (TaskCanceledException)
             {
-                if (cancel != null)
-                {
-                    await cancel.Invoke();
-                }
+                await cancel.RaiseAsync();
             }
             catch (Exception ex)
             {
-                if (error != null)
-                {
-                    await error.Invoke(ex);
-                }
+                await error.RaiseAsync(ex);
             }
             finally
             {
-                if (final != null)
-                {
-                    await final.Invoke();
-                }
+                await final.RaiseAsync();
             }
         }
     }

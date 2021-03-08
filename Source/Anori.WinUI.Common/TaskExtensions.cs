@@ -6,17 +6,13 @@
 
 namespace Anori.WinUI.Common
 {
-    #region
-
     using System;
     using System.Threading.Tasks;
 
     using JetBrains.Annotations;
 
-    #endregion
-
     /// <summary>
-    ///     Extensions for Tasks
+    ///     Extensions for Tasks.
     /// </summary>
     public static partial class TaskExtensions
     {
@@ -27,7 +23,7 @@ namespace Anori.WinUI.Common
         /// <returns>
         ///     <c>true</c> if the specified task is finished; otherwise, <c>false</c>.
         /// </returns>
-        /// <exception cref="ArgumentNullException">task</exception>
+        /// <exception cref="ArgumentNullException">task is null.</exception>
         public static bool IsFinished([NotNull] this Task task)
         {
             if (task == null)

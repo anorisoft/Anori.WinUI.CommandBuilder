@@ -176,7 +176,7 @@ namespace Anori.WinUI.Common
         /// <param name="action">The action.</param>
         /// <param name="parameter">The parameter.</param>
         /// <returns>Is any is raised.</returns>
-        public static bool Raise<T>(this Action<T> action, T parameter)
+        public static bool Raise<T>(this Action<T>? action, T parameter)
         {
             if (action == null)
             {

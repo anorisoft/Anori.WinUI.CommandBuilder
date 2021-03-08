@@ -3490,7 +3490,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.Tasks.Task},System.Boolean,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -3499,14 +3499,14 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.Tasks.Task},System.Action{System.Exception})">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="error">The error.</param>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.Tasks.Task},System.Boolean,System.Action{System.Exception})">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -3514,7 +3514,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.Tasks.Task},System.Boolean,Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -3524,7 +3524,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.Tasks.Task},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="observers">The observers.</param>
@@ -3557,7 +3557,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.#ctor(System.Func{System.Threading.Tasks.Task},System.Boolean,System.Func{System.Boolean},Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
@@ -3567,36 +3567,36 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.Finalize">
             <summary>
-            Finalizes an instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand" /> class.
+                Finalizes an instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand" /> class.
             </summary>
         </member>
         <member name="E:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.IsActiveChanged">
             <summary>
-            Notifies that the value for <see cref="P:Anori.WinUI.Common.IActivated.IsActive" /> property has changed.
+                Notifies that the value for <see cref="P:Anori.WinUI.Common.IActivated.IsActive" /> property has changed.
             </summary>
         </member>
         <member name="E:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.CanExecuteChanged">
             <summary>
-            Occurs when changes occur that affect whether or not the command should execute.
+                Occurs when changes occur that affect whether or not the command should execute.
             </summary>
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.IsActive">
             <summary>
-            Gets a value indicating whether the object is active.
+                Gets a value indicating whether the object is active.
             </summary>
             <value>
-              <see langword="true" /> if the object is active; otherwise <see langword="false" />.
+                <see langword="true" /> if the object is active; otherwise <see langword="false" />.
             </value>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.Activate">
             <summary>
-            Activates this instance.
+                Activates this instance.
             </summary>
             <returns>The Self.</returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.Deactivate">
             <summary>
-            Deactivates this instance.
+                Deactivates this instance.
             </summary>
             <returns>The Self.</returns>
         </member>
@@ -3614,6 +3614,20 @@
             <summary>
                 Raises the can execute changed.
             </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.Anori#WinUI#Common#IActivatable{Anori#WinUI#Commands#Interfaces#IActivatableAsyncCommand}#Activate">
+            <summary>
+                Activates this instance.
+            </summary>
+            <returns>
+                The Activatable Async Command.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.Anori#WinUI#Common#IActivatable{Anori#WinUI#Commands#Interfaces#IActivatableAsyncCommand}#Deactivate">
+            <summary>
+                Deactivates this instance.
+            </summary>
+            <returns>The Activatable Async Command.</returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.Dispose(System.Boolean)">
             <summary>
@@ -3633,18 +3647,6 @@
             <summary>
                 Unsubscribes this instance.
             </summary>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.Anori#WinUI#Common#IActivatable{Anori#WinUI#Commands#Interfaces#IActivatableAsyncCommand}#Activate">
-            <summary>
-                Activates this instance.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand.Anori#WinUI#Common#IActivatable{Anori#WinUI#Commands#Interfaces#IActivatableAsyncCommand}#Deactivate">
-            <summary>
-                Deactivates this instance.
-            </summary>
-            <returns></returns>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ActivatableAsyncCanExecuteObserverCommand`1.observers">
             <summary>
@@ -3842,7 +3844,7 @@
             <exception cref="T:System.ArgumentNullException">
                 observer
                 or
-                observer
+                observer is null.
             </exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand.#ctor(System.Action,System.Boolean,Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject[])">
@@ -5366,7 +5368,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.AsyncCommandBase.Execute(System.Object)">
             <summary>
-                Handle the internal invocation of <see cref="!:ISyncCommand.Execute(object)" />.
+            Handle the internal invocation of <see cref="M:System.Windows.Input.ICommand.Execute(System.Object)" />.
             </summary>
             <param name="parameter">Command Parameter.</param>
         </member>
@@ -5497,7 +5499,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.AsyncCommandBase`1.Execute(System.Object)">
             <summary>
-                Handle the internal invocation of <see cref="!:ISyncCommand.Execute(object)" />.
+            Handle the internal invocation of <see cref="M:System.Windows.Input.ICommand.Execute(System.Object)" />.
             </summary>
             <param name="parameter">Command Parameter.</param>
         </member>
@@ -6070,7 +6072,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Boolean},System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task})">
             <summary>
-                Initializes a new instance of the <see cref="!:ConcurrencyRelayCommand" /> class.
+            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase"/> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
@@ -6215,9 +6217,9 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.Execute(System.Object)">
             <summary>
-                Handle the internal invocation of <see cref="!:ISyncCommand.Execute(object)" />
+            Handle the internal invocation of <see cref="M:System.Windows.Input.ICommand.Execute(System.Object)" />.
             </summary>
-            <param name="parameter">Command Parameter</param>
+            <param name="parameter">Command Parameter.</param>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.RaisePropertyChanged(System.String)">
             <summary>
@@ -6367,7 +6369,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Predicate{`0},System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task})">
             <summary>
-                Initializes a new instance of the <see cref="!:ConcurrencyRelayCommand" /> class.
+            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase`1"/> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
@@ -6512,9 +6514,9 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase`1.Execute(System.Object)">
             <summary>
-                Handle the internal invocation of <see cref="!:ISyncCommand.Execute(object)" />
+            Handle the internal invocation of <see cref="M:System.Windows.Input.ICommand.Execute(System.Object)" />.
             </summary>
-            <param name="parameter">Command Parameter</param>
+            <param name="parameter">Command Parameter.</param>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase`1.RaisePropertyChanged(System.String)">
             <summary>
@@ -6788,401 +6790,101 @@
                 Unsubscribes this instance.
             </summary>
         </member>
-        <member name="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1">
-            <summary>
-                Asynchronous Relay Command
-            </summary>
-            <seealso cref="T:System.Windows.Input.ICommand" />
-            <seealso cref="T:System.IDisposable" />
-        </member>
-        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.cancel">
-            <summary>
-                The cancel
-            </summary>
-        </member>
-        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.cancelCommand">
-            <summary>
-                The cancel command
-            </summary>
-        </member>
-        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.canExecute">
-            <summary>
-                The can execute
-            </summary>
-        </member>
-        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.completed">
-            <summary>
-                The completed
-            </summary>
-        </member>
-        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.error">
-            <summary>
-                The error
-            </summary>
-        </member>
-        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.execute">
-            <summary>
-                The execute
-            </summary>
-        </member>
-        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.finallyTaskScheduler">
-            <summary>
-                The finally task scheduler
-            </summary>
-        </member>
-        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.postTaskScheduler">
-            <summary>
-                The post actions task scheduler
-            </summary>
-        </member>
-        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.taskFactory">
-            <summary>
-                The task factory
-            </summary>
-        </member>
-        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.taskScheduler">
-            <summary>
-                The actions task scheduler
-            </summary>
-        </member>
-        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.cancellationTokenSource">
-            <summary>
-                The cancellation token source
-            </summary>
-        </member>
-        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.exception">
-            <summary>
-                The exception
-            </summary>
-        </member>
-        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.isExecuting">
-            <summary>
-                The is execute
-            </summary>
-        </member>
-        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.task">
-            <summary>
-                The task
-            </summary>
-        </member>
-        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.wasCanceled">
-            <summary>
-                The is canceled
-            </summary>
-        </member>
-        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.wasFaulty">
-            <summary>
-                The has errors
-            </summary>
-        </member>
-        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.wasSuccessfuly">
-            <summary>
-                The was successfuly
-            </summary>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.#ctor(System.Action{`0,System.Threading.CancellationToken},System.Predicate{`0},System.Action,System.Action{System.Exception},System.Action)">
-            <summary>
-                Initializes a new instance of the <see cref="!:ConcurrencyRelayCommand" /> class.
-            </summary>
-            <param name="execute">The execute.</param>
-            <param name="canExecute">The can execute.</param>
-            <param name="completed">The completed.</param>
-            <param name="error">The error.</param>
-            <param name="cancel">The cancel.</param>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.#ctor(System.Action{`0,System.Threading.CancellationToken},System.Action,System.Action{System.Exception},System.Action)">
-            <summary>
-                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase" /> class.
-            </summary>
-            <param name="execute">The execute.</param>
-            <param name="completed">The completed.</param>
-            <param name="error">The error.</param>
-            <param name="cancel">The cancel.</param>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.#ctor(System.Action{`0,System.Threading.CancellationToken},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,System.Action,System.Action{System.Exception},System.Action)">
-            <summary>
-                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase" /> class.
-            </summary>
-            <param name="execute">The execute.</param>
-            <param name="canExecuteSubject">The can execute subject.</param>
-            <param name="completed">The completed.</param>
-            <param name="error">The error.</param>
-            <param name="cancel">The cancel.</param>
-            <exception cref="T:System.ArgumentNullException">canExecuteSubject</exception>
-        </member>
-        <member name="E:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.PropertyChanged">
-            <summary>
-                Occurs when a property value changes.
-            </summary>
-        </member>
-        <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.CancelCommand">
-            <summary>
-                Gets or sets the cancel command.
-            </summary>
-            <value>
-                The cancel command.
-            </value>
-        </member>
-        <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.Exception">
-            <summary>
-                Gets the exception.
-            </summary>
-            <value>
-                The exception.
-            </value>
-        </member>
-        <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.WasFaulty">
-            <summary>
-                Gets a value indicating whether this instance has errors.
-            </summary>
-            <value>
-                <c>true</c> if this instance has errors; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.IsExecuting">
-            <summary>
-                Gets or sets a value indicating whether this instance is execute.
-            </summary>
-            <value>
-                <c>true</c> if this instance is execute; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.WasCanceled">
-            <summary>
-                Gets a value indicating whether this instance is canceled.
-            </summary>
-            <value>
-                <c>true</c> if this instance is canceled; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.WasSuccessfuly">
-            <summary>
-                Gets or sets a value indicating whether [was successful].
-            </summary>
-            <value>
-                <c>true</c> if [was successful]; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.HasCanExecute">
-            <summary>
-                Gets or sets a value indicating whether this instance has can execute.
-            </summary>
-            <value>
-                <c>true</c> if this instance has can execute; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.CanExecute(`0)">
-            <summary>
-                Determines whether this instance can execute.
-            </summary>
-            <returns>
-                <c>true</c> if this instance can execute; otherwise, <c>false</c>.
-            </returns>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.Execute(`0)">
-            <summary>
-                Executes this instance.
-            </summary>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.Dispose">
-            <inheritdoc />
-            <summary>
-                Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-            </summary>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.Cancel">
-            <summary>
-                Cancels this instance.
-            </summary>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.RaiseCanExecuteCancelCommand">
-            <summary>
-                Raises the can execute cancel command.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.RaiseCanExecuteCommand">
-            <summary>
-                Raises the can execute command.
-            </summary>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.Execute(`0,System.Threading.CancellationToken)">
-            <summary>
-                Executes the specified parameter.
-            </summary>
-            <param name="parameter">The parameter.</param>
-            <param name="token">The token.</param>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.CanExecute(System.Object)">
-            <summary>
-                Determines whether this instance can execute the specified parameter.
-            </summary>
-            <param name="parameter">The parameter.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.Dispose(System.Boolean)">
-            <summary>
-                Releases unmanaged and - optionally - managed resources.
-            </summary>
-            <param name="disposing">
-                <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.
-            </param>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.Execute(System.Object)">
-            <summary>
-                Handle the internal invocation of <see cref="!:ISyncCommand.Execute(object)" />
-            </summary>
-            <param name="parameter">Command Parameter</param>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.RaisePropertyChanged(System.String)">
-            <summary>
-                Raises the property changed.
-            </summary>
-            <param name="propertyName">Name of the property.</param>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.SetProperty``1(``0@,``0,System.String)">
-            <summary>
-                Sets the property.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="storage">The storage.</param>
-            <param name="value">The value.</param>
-            <param name="propertyName">Name of the property.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.OnAction(`0,System.Threading.CancellationToken)">
-            <summary>
-                Called when [execute].
-            </summary>
-            <param name="token">The token.</param>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.OnBegin">
-            <summary>
-                Called when [begin].
-            </summary>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.OnCanceled">
-            <summary>
-                Called when [canceled].
-            </summary>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.OnFaulted(System.Exception)">
-            <summary>
-                Called when [faulted].
-            </summary>
-            <param name="ex">The exception.</param>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.OnFinally">
-            <summary>
-                Called when [finally].
-            </summary>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.OnPostAction(System.Threading.Tasks.Task)">
-            <summary>
-                Called when [post execute].
-            </summary>
-            <param name="t">The t.</param>
-        </member>
-        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.OnRanToCompletion">
-            <summary>
-                Called when [ran to completion].
-            </summary>
-        </member>
         <member name="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase">
             <summary>
-                Asynchronous Relay Command
+                Asynchronous Relay Command.
             </summary>
             <seealso cref="T:System.Windows.Input.ICommand" />
             <seealso cref="T:System.IDisposable" />
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.cancel">
             <summary>
-                The cancel
+                The cancel.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.cancelCommand">
             <summary>
-                The cancel command
+                The cancel command.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.canExecute">
             <summary>
-                The can execute
+                The can execute.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.completed">
             <summary>
-                The completed
+                The completed.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.error">
             <summary>
-                The error
+                The error.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.execute">
             <summary>
-                The execute
+                The execute.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.finallyTaskScheduler">
             <summary>
-                The finally task scheduler
+                The finally task scheduler.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.postTaskScheduler">
             <summary>
-                The post actions task scheduler
+                The post actions task scheduler.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.taskFactory">
             <summary>
-                The task factory
+                The task factory.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.taskScheduler">
             <summary>
-                The actions task scheduler
+                The actions task scheduler.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.cancellationTokenSource">
             <summary>
-                The cancellation token source
+                The cancellation token source.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.exception">
             <summary>
-                The exception
+                The exception.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.isExecuting">
             <summary>
-                The is execute
+                The is execute.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.task">
             <summary>
-                The task
+                The task.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.wasCanceled">
             <summary>
-                The is canceled
+                The is canceled.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.wasFaulty">
             <summary>
-                The has errors
+                The has errors.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.wasSuccessfuly">
             <summary>
-                The was successfuly
+                The was successfuly.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.#ctor(System.Action{System.Threading.CancellationToken},System.Func{System.Boolean},System.Action,System.Action{System.Exception},System.Action)">
             <summary>
-                Initializes a new instance of the <see cref="!:ConcurrencyRelayCommand" /> class.
+            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
@@ -7208,7 +6910,7 @@
             <param name="completed">The completed.</param>
             <param name="error">The error.</param>
             <param name="cancel">The cancel.</param>
-            <exception cref="T:System.ArgumentNullException">canExecuteSubject</exception>
+            <exception cref="T:System.ArgumentNullException">canExecuteSubject is null.</exception>
         </member>
         <member name="E:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.PropertyChanged">
             <summary>
@@ -7217,10 +6919,10 @@
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.CancelCommand">
             <summary>
-                Gets or sets the cancel command.
+            Gets the cancel command.
             </summary>
             <value>
-                The cancel command.
+            The cancel command.
             </value>
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.Exception">
@@ -7241,7 +6943,7 @@
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.IsExecuting">
             <summary>
-                Gets or sets a value indicating whether this instance is execute.
+                Gets a value indicating whether this instance is execute.
             </summary>
             <value>
                 <c>true</c> if this instance is execute; otherwise, <c>false</c>.
@@ -7265,7 +6967,7 @@
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.HasCanExecute">
             <summary>
-                Gets or sets a value indicating whether this instance has can execute.
+                Gets a value indicating whether this instance has can execute.
             </summary>
             <value>
                 <c>true</c> if this instance has can execute; otherwise, <c>false</c>.
@@ -7281,7 +6983,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.Execute">
             <summary>
-                Executes this instance.
+            Executes this instance.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.Dispose">
@@ -7299,7 +7001,6 @@
             <summary>
                 Raises the can execute cancel command.
             </summary>
-            <returns></returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.RaiseCanExecuteCommand">
             <summary>
@@ -7311,14 +7012,15 @@
                 Executes the specified token.
             </summary>
             <param name="token">The token.</param>
-            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.CanExecute(System.Object)">
             <summary>
-                Determines whether this instance can execute the specified parameter.
+            Determines whether this instance can execute the specified parameter.
             </summary>
             <param name="parameter">The parameter.</param>
-            <returns></returns>
+            <returns>
+              <see langword="true" /> if this command can be executed; otherwise, <see langword="false" />.
+            </returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.Dispose(System.Boolean)">
             <summary>
@@ -7330,9 +7032,9 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.Execute(System.Object)">
             <summary>
-                Handle the internal invocation of <see cref="!:ISyncCommand.Execute(object)" />
+            Handle the internal invocation of <see cref="M:System.Windows.Input.ICommand.Execute(System.Object)" />.
             </summary>
-            <param name="parameter">Command Parameter</param>
+            <param name="parameter">Command Parameter.</param>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.RaisePropertyChanged(System.String)">
             <summary>
@@ -7342,13 +7044,15 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.SetProperty``1(``0@,``0,System.String)">
             <summary>
-                Sets the property.
+            Sets the property.
             </summary>
-            <typeparam name="T"></typeparam>
+            <typeparam name="TValue">The type of the value.</typeparam>
             <param name="storage">The storage.</param>
             <param name="value">The value.</param>
             <param name="propertyName">Name of the property.</param>
-            <returns></returns>
+            <returns>
+            Property is set.
+            </returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.OnAction(System.Threading.CancellationToken)">
             <summary>
@@ -7388,6 +7092,316 @@
                 Called when [ran to completion].
             </summary>
         </member>
+        <member name="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1">
+            <summary>
+                Asynchronous Relay Command.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+            <seealso cref="T:Anori.WinUI.Commands.Commands.CommandBase" />
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.ISyncCommand`1" />
+            <seealso cref="T:System.ComponentModel.INotifyPropertyChanged" />
+            <seealso cref="T:System.Windows.Input.ICommand" />
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.cancel">
+            <summary>
+                The cancel.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.cancelCommand">
+            <summary>
+                The cancel command.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.canExecute">
+            <summary>
+                The can execute.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.completed">
+            <summary>
+                The completed.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.error">
+            <summary>
+                The error.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.execute">
+            <summary>
+                The execute.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.finallyTaskScheduler">
+            <summary>
+                The finally task scheduler.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.postTaskScheduler">
+            <summary>
+                The post actions task scheduler.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.taskFactory">
+            <summary>
+                The task factory.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.taskScheduler">
+            <summary>
+                The actions task scheduler.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.cancellationTokenSource">
+            <summary>
+                The cancellation token source.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.exception">
+            <summary>
+                The exception.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.isExecuting">
+            <summary>
+                The is execute.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.task">
+            <summary>
+                The task.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.wasCanceled">
+            <summary>
+                The is canceled.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.wasFaulty">
+            <summary>
+                The has errors.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.wasSuccessfuly">
+            <summary>
+                The was successfuly.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.#ctor(System.Action{`0,System.Threading.CancellationToken},System.Predicate{`0},System.Action,System.Action{System.Exception},System.Action)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1" /> class.
+            </summary>
+            <param name="execute">The execute.</param>
+            <param name="canExecute">The can execute.</param>
+            <param name="completed">The completed.</param>
+            <param name="error">The error.</param>
+            <param name="cancel">The cancel.</param>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.#ctor(System.Action{`0,System.Threading.CancellationToken},System.Action,System.Action{System.Exception},System.Action)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1" /> class.
+            </summary>
+            <param name="execute">The execute.</param>
+            <param name="completed">The completed.</param>
+            <param name="error">The error.</param>
+            <param name="cancel">The cancel.</param>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.#ctor(System.Action{`0,System.Threading.CancellationToken},Anori.WinUI.Commands.Interfaces.ICanExecuteSubject,System.Action,System.Action{System.Exception},System.Action)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1" /> class.
+            </summary>
+            <param name="execute">The execute.</param>
+            <param name="canExecuteSubject">The can execute subject.</param>
+            <param name="completed">The completed.</param>
+            <param name="error">The error.</param>
+            <param name="cancel">The cancel.</param>
+            <exception cref="T:System.ArgumentNullException">canExecuteSubject is null.</exception>
+        </member>
+        <member name="E:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.PropertyChanged">
+            <summary>
+                Occurs when a property value changes.
+            </summary>
+        </member>
+        <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.CancelCommand">
+            <summary>
+                Gets the cancel command.
+            </summary>
+            <value>
+                The cancel command.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.Exception">
+            <summary>
+                Gets the exception.
+            </summary>
+            <value>
+                The exception.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.WasFaulty">
+            <summary>
+                Gets a value indicating whether this instance has errors.
+            </summary>
+            <value>
+                <c>true</c> if this instance has errors; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.IsExecuting">
+            <summary>
+                Gets a value indicating whether this instance is executing.
+            </summary>
+            <value>
+                <c>true</c> if this instance is executing; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.WasCanceled">
+            <summary>
+                Gets a value indicating whether this instance is canceled.
+            </summary>
+            <value>
+                <c>true</c> if this instance is canceled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.WasSuccessfuly">
+            <summary>
+                Gets or sets a value indicating whether [was successful].
+            </summary>
+            <value>
+                <c>true</c> if [was successful]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.HasCanExecute">
+            <summary>
+                Gets a value indicating whether this instance has can execute.
+            </summary>
+            <value>
+                <c>true</c> if this instance has can execute; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.CanExecute(`0)">
+            <summary>
+                Determines whether this instance can execute.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <returns>
+                <c>true</c> if this instance can execute; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.Execute(`0)">
+            <summary>
+                Executes this instance.
+            </summary>
+            <param name="parameter">The parameter.</param>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.Dispose">
+            <inheritdoc />
+            <summary>
+                Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.Cancel">
+            <summary>
+                Cancels this instance.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.RaiseCanExecuteCancelCommand">
+            <summary>
+                Raises the can execute cancel command.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.RaiseCanExecuteCommand">
+            <summary>
+                Raises the can execute command.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.Execute(`0,System.Threading.CancellationToken)">
+            <summary>
+                Executes the specified parameter.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <param name="token">The token.</param>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.CanExecute(System.Object)">
+            <summary>
+                Determines whether this instance can execute the specified parameter.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <returns>
+                <see langword="true" /> if this command can be executed; otherwise, <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.Dispose(System.Boolean)">
+            <summary>
+                Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing">
+                <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.
+            </param>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.Execute(System.Object)">
+            <summary>
+                Handle the internal invocation of <see cref="M:System.Windows.Input.ICommand.Execute(System.Object)" />.
+            </summary>
+            <param name="parameter">Command Parameter.</param>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.RaisePropertyChanged(System.String)">
+            <summary>
+                Raises the property changed.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.SetProperty``1(``0@,``0,System.String)">
+            <summary>
+                Sets the property.
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="storage">The storage.</param>
+            <param name="value">The value.</param>
+            <param name="propertyName">Name of the property.</param>
+            <returns>
+                Result of SetProperty as Boolean.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.OnAction(`0,System.Threading.CancellationToken)">
+            <summary>
+                Called when [execute].
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <param name="token">The token.</param>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.OnBegin">
+            <summary>
+                Called when [begin].
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.OnCanceled">
+            <summary>
+                Called when [canceled].
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.OnFaulted(System.Exception)">
+            <summary>
+                Called when [faulted].
+            </summary>
+            <param name="ex">The exception.</param>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.OnFinally">
+            <summary>
+                Called when [finally].
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.OnPostAction(System.Threading.Tasks.Task)">
+            <summary>
+                Called when [post execute].
+            </summary>
+            <param name="t">The t.</param>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase`1.OnRanToCompletion">
+            <summary>
+                Called when [ran to completion].
+            </summary>
+        </member>
         <member name="T:Anori.WinUI.Commands.Commands.DirectCommand">
             <summary>
             Direct Command.
@@ -7409,7 +7423,7 @@
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
-            <exception cref="T:System.ArgumentNullException">canExecute</exception>
+            <exception cref="T:System.ArgumentNullException">canExecute is null.</exception>
         </member>
         <member name="E:Anori.WinUI.Commands.Commands.DirectCommand.CanExecuteChanged">
             <summary>

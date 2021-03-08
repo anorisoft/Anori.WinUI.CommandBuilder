@@ -6,11 +6,14 @@
 
 namespace Anori.WinUI.Common
 {
-    using JetBrains.Annotations;
-
     using System;
     using System.Threading;
 
+    using JetBrains.Annotations;
+
+    /// <summary>
+    ///     Synchronization Context Extensions.
+    /// </summary>
     public static class SynchronizationContextExtensions
     {
         /// <summary>
@@ -43,7 +46,7 @@ namespace Anori.WinUI.Common
         /// <exception cref="ArgumentNullException">
         ///     context
         ///     or
-        ///     action
+        ///     action is null.
         /// </exception>
         public static void Dispatch<TState>(
             [NotNull] this SynchronizationContext context,
@@ -68,8 +71,8 @@ namespace Anori.WinUI.Common
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="handler">The handler.</param>
-        /// <exception cref="ArgumentNullException">context</exception>
-        public static void Dispatch([NotNull] this SynchronizationContext context, [CanBeNull] EventHandler handler)
+        /// <exception cref="ArgumentNullException">context is null.</exception>
+        public static void Dispatch([NotNull] this SynchronizationContext context, EventHandler? handler)
         {
             if (context == null)
             {
@@ -90,11 +93,11 @@ namespace Anori.WinUI.Common
         /// <param name="context">The context.</param>
         /// <param name="sender">The sender.</param>
         /// <param name="handler">The handler.</param>
-        /// <exception cref="ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">context is null.</exception>
         public static void Dispatch(
             [NotNull] this SynchronizationContext context,
             object sender,
-            [CanBeNull] EventHandler handler)
+            EventHandler? handler)
         {
             if (context == null)
             {
@@ -112,7 +115,7 @@ namespace Anori.WinUI.Common
         /// <summary>
         ///     Dispatches the specified value.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The type.</typeparam>
         /// <param name="context">The context.</param>
         /// <param name="value">The value.</param>
         /// <param name="handler">The handler.</param>
@@ -132,7 +135,7 @@ namespace Anori.WinUI.Common
         /// <summary>
         ///     Dispatches the specified sender.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The type.</typeparam>
         /// <param name="context">The context.</param>
         /// <param name="sender">The sender.</param>
         /// <param name="value">The value.</param>
@@ -165,7 +168,7 @@ namespace Anori.WinUI.Common
         /// <param name="sender">The sender.</param>
         /// <param name="args">The <see cref="TEventArgs" /> instance containing the event data.</param>
         /// <param name="handler">The handler.</param>
-        /// <exception cref="ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">context is null.</exception>
         public static void Dispatch<TEventArgs>(
             [NotNull] this SynchronizationContext context,
             object sender,
@@ -194,7 +197,7 @@ namespace Anori.WinUI.Common
         /// <param name="context">The context.</param>
         /// <param name="args">The <see cref="TEventArgs" /> instance containing the event data.</param>
         /// <param name="handler">The handler.</param>
-        /// <exception cref="ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">context is null.</exception>
         public static void Dispatch<TEventArgs>(
             [NotNull] this SynchronizationContext context,
             TEventArgs args,
