@@ -16,9 +16,16 @@ namespace Anori.WinUI.Commands.Commands
 
     using JetBrains.Annotations;
 
+    /// <summary>
+    ///     Activatable Concurrency Async CanExecuteObserver Command.
+    /// </summary>
+    /// <typeparam name="T">Parameter Type.</typeparam>
+    /// <seealso cref="Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase{T}" />
+    /// <seealso cref="Anori.WinUI.Commands.Interfaces.IActivatableConcurrencyAsyncCommand{T}" />
+    /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver" />
     internal sealed class ActivatableConcurrencyAsyncCanExecuteObserverCommand<T> : ConcurrencyAsyncCommandBase<T>,
-        IActivatableConcurrencyAsyncCommand<T>,
-        ICanExecuteChangedObserver
+                                                                                    IActivatableConcurrencyAsyncCommand<T>,
+                                                                                    ICanExecuteChangedObserver
     {
         /// <summary>
         ///     The observers
@@ -177,10 +184,9 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
+        ///     Initializes a new instance of the <see cref="ActivatableConcurrencyAsyncCanExecuteObserverCommand{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
-        /// <param name="observers">The observers.</param>
         public ActivatableConcurrencyAsyncCanExecuteObserverCommand([NotNull] Func<T, CancellationToken, Task> execute)
             : this(execute, false)
         {
