@@ -6,20 +6,12 @@
 
 namespace Anori.WinUI.Commands.GUITest
 {
-    using System;
-    using System.ComponentModel;
-    using System.Runtime.CompilerServices;
+    using Anori.WinUI.Commands.Builder;
     using System.Threading;
     using System.Threading.Tasks;
-    using System.Windows.Input;
-
-    using Anori.WinUI.Commands.Builder;
-
-    using JetBrains.Annotations;
 
     public class PropertyObservableConcurrencyAsyncTestViewModel : PropertyObservableTestViewModelBase
     {
-       
         public PropertyObservableConcurrencyAsyncTestViewModel()
         {
             static async Task ConcurrencyAsyncExecution(CancellationToken c) => await Task.Yield();
