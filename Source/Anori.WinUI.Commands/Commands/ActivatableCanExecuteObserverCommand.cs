@@ -4,10 +4,6 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-using System.Runtime.CompilerServices;
-
-
-
 namespace Anori.WinUI.Commands.Commands
 {
     using System;
@@ -18,18 +14,25 @@ namespace Anori.WinUI.Commands.Commands
 
     using JetBrains.Annotations;
 
+    /// <summary>
+    ///     Activatable CanExecute Observer Command:
+    /// </summary>
+    /// <seealso cref="Anori.WinUI.Commands.Commands.SyncCommandBase" />
+    /// <seealso cref="Anori.WinUI.Commands.Interfaces.IActivatableSyncCommand" />
+    /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver" />
+    /// <seealso cref="System.IDisposable" />
     internal sealed class ActivatableCanExecuteObserverCommand : SyncCommandBase,
                                                                  IActivatableSyncCommand,
                                                                  ICanExecuteChangedObserver,
                                                                  IDisposable
     {
         /// <summary>
-        ///     The observers
+        ///     The observers.
         /// </summary>
         private readonly List<ICanExecuteChangedSubjectBase> observers = new List<ICanExecuteChangedSubjectBase>();
 
         /// <summary>
-        ///     The is active
+        ///     The is active.
         /// </summary>
         private bool isActive;
 

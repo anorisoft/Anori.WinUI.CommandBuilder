@@ -35,7 +35,7 @@ namespace Anori.WinUI.Commands.Interfaces.Builders
         ///     Determines whether this instance can execute the specified can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
-        /// <returns></returns>
+        /// <returns>The Activatable Async CanExecute Command Builder.</returns>
         [NotNull]
         IActivatableAsyncCanExecuteBuilder CanExecute([NotNull] Func<bool> canExecute);
 
@@ -43,7 +43,7 @@ namespace Anori.WinUI.Commands.Interfaces.Builders
         ///     Determines whether this instance can execute the specified can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
-        /// <returns></returns>
+        /// <returns>The Activatable Async CanExecute Command Builder.</returns>
         [NotNull]
         IActivatableAsyncCanExecuteBuilder CanExecute([NotNull] ICanExecuteSubject canExecute);
 
@@ -51,7 +51,7 @@ namespace Anori.WinUI.Commands.Interfaces.Builders
         ///     Observeses the can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
-        /// <returns></returns>
+        /// <returns>The Activatable Async CanExecute Command Builder.</returns>
         [NotNull]
         IActivatableAsyncCanExecuteBuilder ObservesCanExecute([NotNull] Expression<Func<bool>> canExecute);
 
@@ -60,7 +60,7 @@ namespace Anori.WinUI.Commands.Interfaces.Builders
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
         /// <param name="fallback">if set to <c>true</c> [fallback].</param>
-        /// <returns></returns>
+        /// <returns>The Activatable Async CanExecute Command Builder.</returns>
         [NotNull]
         IActivatableAsyncCanExecuteBuilder ObservesCanExecute(
             [NotNull] Expression<Func<bool>> canExecute,
@@ -69,7 +69,7 @@ namespace Anori.WinUI.Commands.Interfaces.Builders
         /// <summary>
         ///     Automatics the activate.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The Activatable Async CanExecute Command Builder.</returns>
         [NotNull]
         IActivatableAsyncCanExecuteBuilder AutoActivate();
     }
