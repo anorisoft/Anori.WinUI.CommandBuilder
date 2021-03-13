@@ -18,12 +18,12 @@ namespace Anori.WinUI.Commands.Commands
     internal static class ObservableCollectionExtensions
     {
         /// <summary>
-        ///     Adds if not contains.
+        /// Adds if not contains.
         /// </summary>
         /// <param name="observers">The observers.</param>
         /// <param name="newItems">The new items.</param>
         /// <exception cref="ArgumentNullException">observers - Observable item.</exception>
-        /// <exception cref="ArgumentException">propertyObserver</exception>
+        /// <exception cref="ArgumentException">propertyObserver is null.</exception>
         public static void AddIfNotContains(
             this IList<ICanExecuteChangedSubjectBase> observers,
             IEnumerable<ICanExecuteChangedSubject> newItems)
@@ -37,7 +37,8 @@ namespace Anori.WinUI.Commands.Commands
 
                 if (observers.Contains(propertyObserver))
                 {
-                    throw new ArgumentException(string.Format(ExceptionStrings.ObserverIsAlreadyBeingObserved, propertyObserver),
+                    throw new ArgumentException(
+                        string.Format(ExceptionStrings.ObserverIsAlreadyBeingObserved, propertyObserver),
                         nameof(propertyObserver));
                 }
 

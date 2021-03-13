@@ -11,8 +11,8 @@ namespace Anori.WinUI.Commands.Interfaces
     /// <summary>
     ///     Activatable Sync Command Interface.
     /// </summary>
-    /// <seealso cref="Anori.WinUI.Commands.Interfaces.ISyncCommand" />
-    /// <seealso cref="Anori.WinUI.Common.IActivatable{Anori.WinUI.Commands.Interfaces.IActivatableSyncCommand}" />
+    /// <seealso cref="ISyncCommand" />
+    /// <seealso cref="IActivatable{TSelf}" />
     public interface IActivatableSyncCommand : ISyncCommand, IActivatable<IActivatableSyncCommand>
     {
     }

@@ -33,7 +33,7 @@ namespace Anori.WinUI.Commands.Commands
         public abstract event EventHandler CanExecuteChanged;
 
         /// <summary>
-        ///     Gets or sets a value indicating whether this instance has can execute.
+        ///     Gets a value indicating whether this instance has can execute.
         /// </summary>
         /// <value>
         ///     <c>true</c> if this instance has can execute; otherwise, <c>false</c>.
@@ -41,23 +41,21 @@ namespace Anori.WinUI.Commands.Commands
         protected abstract bool HasCanExecute { get; }
 
         /// <summary>
-        ///     Gets the synchronization context.
+        /// Gets the synchronization context.
         /// </summary>
         /// <value>
-        ///     The synchronization context.
+        /// The synchronization context.
         /// </value>
         [NotNull]
         public SynchronizationContext SynchronizationContext { get; }
 
         /// <summary>
-        ///     Defines the method that determines whether the command can execute in its current state.
+        /// Defines the method that determines whether the command can execute in its current state.
         /// </summary>
-        /// <param name="parameter">
-        ///     Data used by the command.  If the command does not require data to be passed, this object can
-        ///     be set to <see langword="null" />.
-        /// </param>
+        /// <param name="parameter">Data used by the command.  If the command does not require data to be passed, this object can
+        /// be set to <see langword="null" />.</param>
         /// <returns>
-        ///     <see langword="true" /> if this command can be executed; otherwise, <see langword="false" />.
+        ///   <see langword="true" /> if this command can be executed; otherwise, <see langword="false" />.
         /// </returns>
         [DebuggerStepThrough]
         bool ICommand.CanExecute([CanBeNull] object parameter) => this.CanExecute(parameter);

@@ -19,7 +19,7 @@ namespace Anori.WinUI.Commands.Commands
     /// <summary>
     /// The Concurrency Asynchronous Can Execute Observer Command class.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">Parameter type.</typeparam>
     /// <seealso cref="Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase{T}" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver" />
     internal sealed class ConcurrencyAsyncCanExecuteObserverCommand<T> : ConcurrencyAsyncCommandBase<T>,

@@ -16,7 +16,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
     using JetBrains.Annotations;
 
     /// <summary>
-    /// CanExecute Observer.
+    ///     CanExecute Observer.
     /// </summary>
     /// <seealso cref="Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserverBase" />
     internal sealed class CanExecuteObserver : CanExecuteObserverBase
@@ -25,7 +25,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         ///     Initializes a new instance of the <see cref="CanExecuteObserver" /> class.
         /// </summary>
         /// <param name="canExecuteExpression">The can execute expression.</param>
-        /// <exception cref="ArgumentNullException">canExecuteExpression</exception>
+        /// <exception cref="ArgumentNullException">canExecuteExpression is null.</exception>
         public CanExecuteObserver([NotNull] Expression<Func<bool>> canExecuteExpression)
         {
             if (canExecuteExpression == null)
@@ -46,7 +46,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         /// </summary>
         /// <param name="canExecuteExpression">The can execute expression.</param>
         /// <param name="fallback">if set to <c>true</c> [fallback].</param>
-        /// <exception cref="ArgumentNullException">canExecuteExpression</exception>
+        /// <exception cref="ArgumentNullException">canExecuteExpression is null.</exception>
         public CanExecuteObserver([NotNull] Expression<Func<bool>> canExecuteExpression, bool fallback)
         {
             if (canExecuteExpression == null)
@@ -71,7 +71,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         ///     Creates the specified can execute expression.
         /// </summary>
         /// <param name="canExecuteExpression">The can execute expression.</param>
-        /// <returns></returns>
+        /// <returns>Can Execute Observer.</returns>
         public static CanExecuteObserver Create([NotNull] Expression<Func<bool>> canExecuteExpression)
         {
             var instance = new CanExecuteObserver(canExecuteExpression);
@@ -85,7 +85,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         /// </summary>
         /// <param name="canExecuteExpression">The can execute expression.</param>
         /// <param name="fallback">if set to <c>true</c> [fallback].</param>
-        /// <returns></returns>
+        /// <returns>Can Execute Observer.</returns>
         public static CanExecuteObserver Create([NotNull] Expression<Func<bool>> canExecuteExpression, bool fallback)
         {
             var instance = new CanExecuteObserver(canExecuteExpression, fallback);

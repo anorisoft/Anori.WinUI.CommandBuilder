@@ -29,14 +29,15 @@ namespace Anori.WinUI.Commands.Commands
         private readonly List<ICanExecuteChangedSubjectBase> observers = new List<ICanExecuteChangedSubjectBase>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AsyncCanExecuteObserverCommand" /> class.
+        ///     Initializes a new instance of the <see cref="AsyncCanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="System.ArgumentNullException">observers</exception>
-        /// <exception cref="ArgumentNullException">observer
-        /// or
-        /// observer is null.</exception>
+        /// <exception cref="ArgumentNullException">
+        ///     observer
+        ///     or
+        ///     observer is null.
+        /// </exception>
         public AsyncCanExecuteObserverCommand(
             [NotNull] Func<Task> execute,
             [NotNull] [ItemNotNull] params ICanExecuteChangedSubject[] observers)

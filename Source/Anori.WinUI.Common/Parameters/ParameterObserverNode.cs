@@ -65,7 +65,7 @@ namespace Anori.WinUI.Common.Parameters
         public PropertyInfo PropertyInfo { get; }
 
         /// <summary>
-        /// Subscribes the listener for.
+        ///     Subscribes the listener for.
         /// </summary>
         /// <param name="parameter">The property changed.</param>
         public void SubscribeListenerFor(IReadOnlyParameter parameter)
@@ -121,6 +121,7 @@ namespace Anori.WinUI.Common.Parameters
                         "Trying to subscribe ValueChanged listener in object that "
                         + $"owns '{next.PropertyInfo.Name}' property, but the object does not implements IReadOnlyParameter.");
                 }
+
                 throw new InvalidOperationException(
                     "Trying to subscribe ValueChanged listener in object that, but the object does not implements IReadOnlyParameter.");
             }
@@ -129,10 +130,10 @@ namespace Anori.WinUI.Common.Parameters
         }
 
         /// <summary>
-        /// Called when [value changed].
+        ///     Called when [value changed].
         /// </summary>
         /// <param name="sender">The sender.</param>
-        /// <param name="e">The <see cref="EventArgs{System.Object}"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs{ôbject}" /> instance containing the event data.</param>
         private void OnValueChanged(object sender, EventArgs<object> e) => this.action.Raise();
     }
 }

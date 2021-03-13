@@ -348,10 +348,10 @@ namespace Anori.WinUI.Commands.Builder
         }
 
         /// <summary>
-        ///     Builds this instance.
+        /// Builds this instance.
         /// </summary>
         /// <returns>
-        ///     Activatable Can Execute Observer Command.
+        /// Activatable Can Execute Observer Command.
         /// </returns>
         /// <exception cref="NoCanExecuteException">No Can Execute Exception.</exception>
         [NotNull]
@@ -400,10 +400,10 @@ namespace Anori.WinUI.Commands.Builder
         }
 
         /// <summary>
-        ///     Builds this instance.
+        /// Builds this instance.
         /// </summary>
         /// <returns>
-        ///     Can Execute Observer Command.
+        /// Can Execute Observer Command.
         /// </returns>
         /// <exception cref="NoCanExecuteException">No Can Execute Exception.</exception>
         [NotNull]

@@ -22,7 +22,7 @@ namespace Anori.WinUI.Commands.Builder
     /// <summary>
     /// The Synchronize Command Builder class.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">Parameter type.</typeparam>
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.ISyncCommandBuilder{T}" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.ISyncCanExecuteBuilder{T}" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCommandBuilder{T}" />
@@ -33,65 +33,72 @@ namespace Anori.WinUI.Commands.Builder
                                                   IActivatableSyncCanExecuteBuilder<T>
     {
         /// <summary>
-        ///     The execute
+        ///     The execute.
         /// </summary>
         [NotNull]
         private readonly Action<T> execute;
 
         /// <summary>
-        ///     The observes
+        ///     The observes.
         /// </summary>
         private readonly List<ICanExecuteChangedSubject> observes = new List<ICanExecuteChangedSubject>();
 
         /// <summary>
-        ///     The can execute function
+        ///     The can execute function.
         /// </summary>
         [CanBeNull]
         private Predicate<T> canExecuteFunction;
 
         /// <summary>
-        ///     The can execute expression
+        ///     The can execute expression.
         /// </summary>
         [CanBeNull]
         private ICanExecuteSubject canExecuteSubject;
 
         /// <summary>
-        ///     The is automatic actiate
+        ///     The is automatic actiate.
         /// </summary>
         private bool isAutoActiate;
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="SyncCommandBuilder" /> class.
+        /// Initializes a new instance of the <see cref="SyncCommandBuilder{T}"/> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
+        /// <exception cref="ArgumentNullException">execute</exception>
         /// <exception cref="SyncCommandBuilder">execute</exception>
         public SyncCommandBuilder([NotNull] Action<T> execute) =>
             this.execute = execute ?? throw new ArgumentNullException(nameof(execute));
 
         /// <summary>
-        ///     Builds the specified set command.
+        /// Builds the specified set command.
         /// </summary>
         /// <param name="setCommand">The set command.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Activatable Sync Command.
+        /// </returns>
         IActivatableSyncCommand<T> IActivatableSyncCanExecuteBuilder<T>.Build(
             Action<IActivatableSyncCommand<T>> setCommand) =>
             this.BuildActivatable(setCommand);
 
         /// <summary>
-        ///     Observeses the property.
+        /// Observeses the property.
         /// </summary>
         /// <typeparam name="TType">The type of the type.</typeparam>
         /// <param name="expression">The expression.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Activatable Sync Can Execute Command Builder.
+        /// </returns>
         IActivatableSyncCanExecuteBuilder<T> IActivatableSyncCanExecuteBuilder<T>.ObservesProperty<TType>(
             Expression<Func<TType>> expression) =>
             this.ObservesProperty(expression);
 
         /// <summary>
-        ///     Observeses the specified observer.
+        /// Observeses the specified observer.
         /// </summary>
         /// <param name="observer">The observer.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Activatable Sync Can Execute Command Builder.
+        /// </returns>
         IActivatableSyncCanExecuteBuilder<T> IActivatableSyncCanExecuteBuilder<T>.Observes(
             ICanExecuteChangedSubject observer)
         {
@@ -100,46 +107,58 @@ namespace Anori.WinUI.Commands.Builder
         }
 
         /// <summary>
-        ///     Observeses the command manager.
+        /// Observeses the command manager.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Activatable Sync Can Execute Command Builder.
+        /// </returns>
         IActivatableSyncCanExecuteBuilder<T> IActivatableSyncCanExecuteBuilder<T>.ObservesCommandManager() =>
             this.ObservesCommandManager();
 
         /// <summary>
-        ///     Automatics the activate.
+        /// Automatics the activate.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Activatable Sync Can Execute Command Builder.
+        /// </returns>
         IActivatableSyncCanExecuteBuilder<T> IActivatableSyncCanExecuteBuilder<T>.AutoActivate() => this.AutoActivate();
 
         /// <summary>
-        ///     Builds this instance.
+        /// Builds this instance.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Activatable Sync Command.
+        /// </returns>
         IActivatableSyncCommand<T> IActivatableSyncCanExecuteBuilder<T>.Build() => this.BuildActivatable();
 
         /// <summary>
-        ///     Builds the specified set command.
+        /// Builds the specified set command.
         /// </summary>
         /// <param name="setCommand">The set command.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Activatable Sync Command.
+        /// </returns>
         IActivatableSyncCommand<T> IActivatableSyncCommandBuilder<T>.Build(
             Action<IActivatableSyncCommand<T>> setCommand) =>
             this.BuildActivatable(setCommand);
 
         /// <summary>
-        ///     Determines whether this instance can execute the specified can execute.
+        /// Determines whether this instance can execute the specified can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Activatable Sync Can Execute Command Builder.
+        /// </returns>
         IActivatableSyncCanExecuteBuilder<T> IActivatableSyncCommandBuilder<T>.CanExecute(Predicate<T> canExecute) =>
             this.CanExecute(canExecute);
 
         /// <summary>
-        ///     Determines whether this instance can execute the specified can execute.
+        /// Determines whether this instance can execute the specified can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Activatable Sync Can Execute Command Builder.
+        /// </returns>
         IActivatableSyncCanExecuteBuilder<T> IActivatableSyncCommandBuilder<T>.CanExecute(ICanExecuteSubject canExecute)
         {
             this.canExecuteSubject = canExecute;
@@ -147,10 +166,12 @@ namespace Anori.WinUI.Commands.Builder
         }
 
         /// <summary>
-        ///     Determines whether this instance can execute the specified can execute.
+        /// Determines whether this instance can execute the specified can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Sync Can Execute Command Builder.
+        /// </returns>
         ISyncCanExecuteBuilder<T> ISyncCommandBuilder<T>.CanExecute(ICanExecuteSubject canExecute)
         {
             this.canExecuteSubject = canExecute;
@@ -158,42 +179,52 @@ namespace Anori.WinUI.Commands.Builder
         }
 
         /// <summary>
-        ///     Observeses the can execute.
+        /// Observeses the can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Activatable Sync Can Execute Command Builder.
+        /// </returns>
         IActivatableSyncCanExecuteBuilder<T> IActivatableSyncCommandBuilder<T>.ObservesCanExecute(
             Expression<Func<bool>> canExecute) =>
             this.ObservesCanExecute(canExecute);
 
         /// <summary>
-        ///     Observeses the can execute.
+        /// Observeses the can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
         /// <param name="fallback">if set to <c>true</c> [fallback].</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Activatable Sync Can Execute Command Builder.
+        /// </returns>
         IActivatableSyncCanExecuteBuilder<T> IActivatableSyncCommandBuilder<T>.ObservesCanExecute(
             Expression<Func<bool>> canExecute,
             bool fallback) =>
             this.ObservesCanExecute(canExecute, fallback);
 
         /// <summary>
-        ///     Automatics the activate.
+        /// Automatics the activate.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Activatable Sync Command Builder.
+        /// </returns>
         IActivatableSyncCommandBuilder<T> IActivatableSyncCommandBuilder<T>.AutoActivate() => this.AutoActivate();
 
         /// <summary>
-        ///     Builds this instance.
+        /// Builds this instance.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Activatable Sync Command.
+        /// </returns>
         IActivatableSyncCommand<T> IActivatableSyncCommandBuilder<T>.Build() => this.BuildActivatable();
 
         /// <summary>
-        ///     Observeses the specified observer.
+        /// Observeses the specified observer.
         /// </summary>
         /// <param name="observer">The observer.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Sync Can Execute Command Builder.
+        /// </returns>
         ISyncCanExecuteBuilder<T> ISyncCanExecuteBuilder<T>.Observes(ICanExecuteChangedSubject observer)
         {
             this.observes.Add(observer);
@@ -201,88 +232,110 @@ namespace Anori.WinUI.Commands.Builder
         }
 
         /// <summary>
-        ///     Builds the specified set command.
+        /// Builds the specified set command.
         /// </summary>
         /// <param name="setCommand">The set command.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Sync Command.
+        /// </returns>
         ISyncCommand<T> ISyncCanExecuteBuilder<T>.Build(Action<ISyncCommand<T>> setCommand) => this.Build(setCommand);
 
         /// <summary>
-        ///     Activatables this instance.
+        /// Activatables this instance.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Activatable Sync Can Execute Command Builder.
+        /// </returns>
         IActivatableSyncCanExecuteBuilder<T> ISyncCanExecuteBuilder<T>.Activatable() => this.Activatable();
 
         /// <summary>
-        ///     Observeses the property.
+        /// Observeses the property.
         /// </summary>
         /// <typeparam name="TType">The type of the type.</typeparam>
         /// <param name="canExecute">The can execute.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Sync Can Execute Command Builder.
+        /// </returns>
         ISyncCanExecuteBuilder<T> ISyncCanExecuteBuilder<T>.
             ObservesProperty<TType>(Expression<Func<TType>> canExecute) =>
             this.ObservesProperty(canExecute);
 
         /// <summary>
-        ///     Observeses the command manager.
+        /// Observeses the command manager.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Sync Can Execute Command Builder.
+        /// </returns>
         ISyncCanExecuteBuilder<T> ISyncCanExecuteBuilder<T>.ObservesCommandManager() => this.ObservesCommandManager();
 
         /// <summary>
-        ///     Builds this instance.
+        /// Builds this instance.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Sync Command.
+        /// </returns>
         ISyncCommand<T> ISyncCanExecuteBuilder<T>.Build() => this.Build();
 
         /// <summary>
-        ///     Builds the specified set command.
+        /// Builds the specified set command.
         /// </summary>
         /// <param name="setCommand">The set command.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Sync Command.
+        /// </returns>
         ISyncCommand<T> ISyncCommandBuilder<T>.Build(Action<ISyncCommand<T>> setCommand) => this.Build(setCommand);
 
         /// <summary>
-        ///     Activatables this instance.
+        /// Activatables this instance.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Activatable Sync Command Builder.
+        /// </returns>
         IActivatableSyncCommandBuilder<T> ISyncCommandBuilder<T>.Activatable() => this.Activatable();
 
         /// <summary>
-        ///     Observeses the can execute.
+        /// Observeses the can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Sync Can Execute Command Builder.
+        /// </returns>
         ISyncCanExecuteBuilder<T> ISyncCommandBuilder<T>.ObservesCanExecute(Expression<Func<bool>> canExecute) =>
             this.ObservesCanExecute(canExecute);
 
         /// <summary>
-        ///     Observeses the can execute.
+        /// Observeses the can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
         /// <param name="fallback">if set to <c>true</c> [fallback].</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Sync Can Execute Command Builder.
+        /// </returns>
         ISyncCanExecuteBuilder<T> ISyncCommandBuilder<T>.ObservesCanExecute(
             Expression<Func<bool>> canExecute,
             bool fallback) =>
             this.ObservesCanExecute(canExecute, fallback);
 
         /// <summary>
-        ///     Determines whether this instance can execute the specified can execute.
+        /// Determines whether this instance can execute the specified can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Sync Can Execute Command Builder.
+        /// </returns>
         ISyncCanExecuteBuilder<T> ISyncCommandBuilder<T>.CanExecute(Predicate<T> canExecute) =>
             this.CanExecute(canExecute);
 
         /// <summary>
-        ///     Builds this instance.
+        /// Builds this instance.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Sync Command.
+        /// </returns>
         ISyncCommand<T> ISyncCommandBuilder<T>.Build() => this.Build();
 
         /// <summary>
-        ///     Determines whether this instance can execute the specified can execute.
+        /// Determines whether this instance can execute the specified can execute.
         /// </summary>
         /// <param name="canExecute">The can execute.</param>
         /// <returns></returns>
@@ -307,13 +360,13 @@ namespace Anori.WinUI.Commands.Builder
         }
 
         /// <summary>
-        ///     Activatables this instance.
+        /// Activatables this instance.
         /// </summary>
         /// <returns></returns>
         private SyncCommandBuilder<T> Activatable() => this;
 
         /// <summary>
-        ///     Builds this instance.
+        /// Builds this instance.
         /// </summary>
         /// <returns></returns>
         /// <exception cref="NoCanExecuteException">No Can Execute Exception.</exception>

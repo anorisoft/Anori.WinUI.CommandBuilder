@@ -180,9 +180,8 @@ namespace Anori.WinUI.Commands.Commands
         /// </returns>
         protected sealed override bool CanExecute(object parameter) => this.CanExecute();
 
-
         /// <summary>
-        /// Handle the internal invocation of <see cref="ICommand.Execute(object)" />.
+        ///     Handle the internal invocation of <see cref="ICommand.Execute(object)" />.
         /// </summary>
         /// <param name="parameter">Command Parameter.</param>
         protected sealed override void Execute(object parameter) =>

@@ -12,8 +12,8 @@ namespace Anori.WinUI.Commands.Interfaces
     ///     Activatable Async Command Interface.
     /// </summary>
     /// <typeparam name="T">The parameter type.</typeparam>
-    /// <seealso cref="Anori.WinUI.Commands.Interfaces.IAsyncCommand{T}" />
-    /// <seealso cref="Anori.WinUI.Common.IActivatable{Anori.WinUI.Commands.Interfaces.IActivatableAsyncCommand{T}}" />
+    /// <seealso cref="IAsyncCommand{T}" />
+    /// <seealso cref="IActivatable{TSelf}" />
     public interface IActivatableAsyncCommand<in T> : IAsyncCommand<T>, IActivatable<IActivatableAsyncCommand<T>>
     {
     }

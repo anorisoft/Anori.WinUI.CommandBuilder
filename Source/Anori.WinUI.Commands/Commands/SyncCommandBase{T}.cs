@@ -17,7 +17,7 @@ namespace Anori.WinUI.Commands.Commands
     ///     A Command whose sole purpose is to relay its functionality to other objects by invoking delegates.
     ///     The default return value for the CanExecute method is 'true'.
     /// </summary>
-    /// <typeparam name="T">Parameter type</typeparam>
+    /// <typeparam name="T">Parameter type.</typeparam>
     /// <seealso cref="T:System.Windows.Input.ICommand" />
     internal abstract class SyncCommandBase<T> : CommandBase, ISyncCommand<T>
     {

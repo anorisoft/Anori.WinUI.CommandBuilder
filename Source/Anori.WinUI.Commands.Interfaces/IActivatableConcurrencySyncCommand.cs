@@ -11,8 +11,8 @@ namespace Anori.WinUI.Commands.Interfaces
     /// <summary>
     ///     Activatable Concurrency Sync Command Interface.
     /// </summary>
-    /// <seealso cref="Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand" />
-    /// <seealso cref="Anori.WinUI.Common.IActivatable{Anori.WinUI.Commands.Interfaces.IActivatableConcurrencySyncCommand}" />
+    /// <seealso cref="IConcurrencySyncCommand" />
+    /// <seealso cref="IActivatable{TSelf}" />
     public interface IActivatableConcurrencySyncCommand : IConcurrencySyncCommand,
                                                           IActivatable<IActivatableConcurrencySyncCommand>
     {

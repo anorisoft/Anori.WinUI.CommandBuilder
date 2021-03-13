@@ -82,6 +82,9 @@ namespace Anori.WinUI.Commands.Tests
             Assert.False(canExecuteChangedRaised);
         }
 
+        /// <summary>
+        /// Raises the can execute with exception changed no raise can execute changed.
+        /// </summary>
         [Test]
         public void RaiseCanExecuteWithExceptionChangedNoRaiseCanExecuteChanged()
         {

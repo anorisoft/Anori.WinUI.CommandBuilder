@@ -11,8 +11,8 @@ namespace Anori.WinUI.Commands.Interfaces
     /// <summary>
     ///     Activatable Async Command Interface.
     /// </summary>
-    /// <seealso cref="Anori.WinUI.Commands.Interfaces.IAsyncCommand" />
-    /// <seealso cref="Anori.WinUI.Common.IActivatable{Anori.WinUI.Commands.Interfaces.IActivatableAsyncCommand}" />
+    /// <seealso cref="IActivatable{TSelf}" />
+    /// <seealso cref="IAsyncCommand" />
     public interface IActivatableAsyncCommand : IAsyncCommand, IActivatable<IActivatableAsyncCommand>
     {
     }

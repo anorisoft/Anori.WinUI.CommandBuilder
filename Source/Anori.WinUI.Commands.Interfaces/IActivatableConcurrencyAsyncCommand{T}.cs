@@ -12,8 +12,8 @@ namespace Anori.WinUI.Commands.Interfaces
     ///     Activatable Concurrency Async Command Interface.
     /// </summary>
     /// <typeparam name="T">The parameter type.</typeparam>
-    /// <seealso cref="Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand{T}" />
-    /// <seealso cref="Anori.WinUI.Common.IActivatable{Anori.WinUI.Commands.Interfaces.IActivatableConcurrencyAsyncCommand{T}}" />
+    /// <seealso cref="IConcurrencyAsyncCommand{T}" />
+    /// <seealso cref="IActivatable{TSelf}" />
     public interface IActivatableConcurrencyAsyncCommand<in T> : IConcurrencyAsyncCommand<T>,
                                                                  IActivatable<IActivatableConcurrencyAsyncCommand<T>>
     {

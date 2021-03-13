@@ -12,8 +12,8 @@ namespace Anori.WinUI.Commands.Interfaces
     ///     Activatable Sync Command Interface.
     /// </summary>
     /// <typeparam name="T">The parameter type.</typeparam>
-    /// <seealso cref="Anori.WinUI.Commands.Interfaces.ISyncCommand{T}" />
-    /// <seealso cref="Anori.WinUI.Common.IActivatable{Anori.WinUI.Commands.Interfaces.IActivatableSyncCommand{T}}" />
+    /// <seealso cref="ISyncCommand{T}" />
+    /// <seealso cref="IActivatable{TSelf}" />
     public interface IActivatableSyncCommand<in T> : ISyncCommand<T>, IActivatable<IActivatableSyncCommand<T>>
     {
     }

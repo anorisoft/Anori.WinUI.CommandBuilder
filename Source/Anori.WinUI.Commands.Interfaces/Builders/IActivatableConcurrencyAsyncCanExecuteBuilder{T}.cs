@@ -16,7 +16,7 @@ namespace Anori.WinUI.Commands.Interfaces.Builders
     ///     The Activatable Concurrency Asynchronous Can Execute Builder interface.
     /// </summary>
     /// <typeparam name="T">Parameter tyoe.</typeparam>
-    public interface IActivatableConcurrencyAsyncCanExecuteBuilder<T>
+    public interface IActivatableConcurrencyAsyncCanExecuteBuilder<in T>
     {
         /// <summary>
         ///     Builds this instance.
