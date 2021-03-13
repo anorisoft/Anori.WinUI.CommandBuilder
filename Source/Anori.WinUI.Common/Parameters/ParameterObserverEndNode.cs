@@ -9,19 +9,19 @@ namespace Anori.WinUI.Common.Parameters
     using System;
 
     /// <summary>
-    ///     Parameter Observer End Node
+    ///     The Parameter Observer End Node class.
     /// </summary>
     /// <seealso cref="Anori.WinUI.Common.Parameters.IParameterObserverNode" />
     internal class ParameterObserverEndNode : IParameterObserverNode
 
     {
         /// <summary>
-        ///     The action
+        ///     The action.
         /// </summary>
         private readonly Action action;
 
         /// <summary>
-        ///     The notify property changed
+        ///     The notify property changed.
         /// </summary>
         private IReadOnlyParameter parameter;
 
@@ -57,7 +57,7 @@ namespace Anori.WinUI.Common.Parameters
         ///     Called when [value changed].
         /// </summary>
         /// <param name="sender">The sender.</param>
-        /// <param name="e">The <see cref="EventArgs{System.Object}" /> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs{object}" /> instance containing the event data.</param>
         private void OnValueChanged(object sender, EventArgs<object> e) => this.action.Raise();
     }
 }

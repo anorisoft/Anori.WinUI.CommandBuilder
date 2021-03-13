@@ -8,6 +8,11 @@ namespace Anori.WinUI.Common.Parameters
 {
     using System;
 
+    /// <summary>
+    /// The Parameter class.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <seealso cref="Anori.WinUI.Common.Parameters.IParameter{T}" />
     public class Parameter<T> : IParameter<T>
     {
         /// <summary>

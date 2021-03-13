@@ -16,7 +16,6 @@ namespace Anori.WinUI.Common
     /// </summary>
     public static partial class TaskExtensions
     {
-#pragma warning disable RECS0165 // Asynchronous methods should return a Task instead of void
 #pragma warning disable S3168 // "async" methods should not return "void"
 
         /// <summary>
@@ -26,7 +25,6 @@ namespace Anori.WinUI.Common
         /// <param name="error">The error.</param>
         public static async void FireAndForgetSafeAsync(this Task task, Action<Exception>? error = null)
 #pragma warning restore S3168 // "async" methods should not return "void"
-#pragma warning restore RECS0165 // Asynchronous methods should return a Task instead of void
         {
             try
             {
@@ -38,7 +36,6 @@ namespace Anori.WinUI.Common
             }
         }
 
-#pragma warning disable RECS0165 // Asynchronous methods should return a Task instead of void
 #pragma warning disable S3168 // "async" methods should not return "void"
 
         /// <summary>
@@ -59,7 +56,6 @@ namespace Anori.WinUI.Common
             Action? cancel = null,
             bool configureAwait = false)
 #pragma warning restore S3168 // "async" methods should not return "void"
-#pragma warning restore RECS0165 // Asynchronous methods should return a Task instead of void
         {
             if (task == null)
             {
