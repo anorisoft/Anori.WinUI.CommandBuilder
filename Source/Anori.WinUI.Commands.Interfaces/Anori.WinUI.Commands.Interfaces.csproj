@@ -7,10 +7,11 @@
     <LangVersion>8.0</LangVersion>
     <Nullable>enable</Nullable>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>Anorisoft.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\Anorisoft.snk</AssemblyOriginatorKeyFile>
     <Company>AnoriSoft</Company>
     <Authors>Martin Egli</Authors>
     <Description>WinUI Commands Interfaces</Description>
+      <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>

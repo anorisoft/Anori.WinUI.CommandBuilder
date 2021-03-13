@@ -4358,6 +4358,15 @@
                 Unsubscribes this instance.
             </summary>
         </member>
+        <member name="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1">
+            <summary>
+                Activatable Concurrency Async CanExecuteObserver Command.
+            </summary>
+            <typeparam name="T">Parameter Type.</typeparam>
+            <seealso cref="T:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase`1" />
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.IActivatableConcurrencyAsyncCommand`1" />
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver" />
+        </member>
         <member name="F:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.observers">
             <summary>
                 The observers
@@ -4426,10 +4435,9 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task})">
             <summary>
-                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableCanExecuteObserverCommand" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1" /> class.
             </summary>
             <param name="execute">The execute.</param>
-            <param name="observers">The observers.</param>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ActivatableConcurrencyAsyncCanExecuteObserverCommand`1.#ctor(System.Func{`0,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Threading.Tasks.Task},System.Func{System.Threading.Tasks.Task})">
             <summary>

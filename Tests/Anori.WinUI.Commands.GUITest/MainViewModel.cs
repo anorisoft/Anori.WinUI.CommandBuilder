@@ -25,8 +25,18 @@ namespace Anori.WinUI.Commands.GUITest
         {
  
             this.window = window;
-            this.DirectCommand = new DirectCommand(() =>new PropertyObservableTest().ShowDialog());
-            this.DirectCommand.RaiseCanExecuteChanged();
+            this.PropertyObservableConcurrencyAsyncTestCommand = new DirectCommand(() => new PropertyObservableConcurrencyAsyncTestView().ShowDialog());
+            this.PropertyObservableConcurrencyAsyncTestCommand.RaiseCanExecuteChanged();
+
+            this.PropertyObservableAsyncTestCommand = new DirectCommand(() => new PropertyObservableAsyncTestView().ShowDialog());
+            this.PropertyObservableAsyncTestCommand.RaiseCanExecuteChanged();
+
+            this.PropertyObservableConcurrencySyncTestCommand = new DirectCommand(() => new PropertyObservableConcurrencySyncTestView().ShowDialog());
+            this.PropertyObservableConcurrencySyncTestCommand.RaiseCanExecuteChanged();
+
+            this.PropertyObservableSyncTestCommand = new DirectCommand(() => new PropertyObservableSyncTestView().ShowDialog());
+            this.PropertyObservableSyncTestCommand.RaiseCanExecuteChanged();
+
             PropertyObservableNullReferenceCommand = new DirectCommand(() => new PropertyObservableNullReferenceTest().ShowDialog());
             ConcurrencyTestCommand = new DirectCommand(() => new General.MainWindow().ShowDialog());
         }
@@ -34,7 +44,10 @@ namespace Anori.WinUI.Commands.GUITest
         public DirectCommand ConcurrencyTestCommand { get; }
 
 
-        public DirectCommand DirectCommand { get; }
+        public DirectCommand PropertyObservableConcurrencyAsyncTestCommand { get; }
+        public DirectCommand PropertyObservableAsyncTestCommand { get; }
+        public DirectCommand PropertyObservableConcurrencySyncTestCommand { get; }
+        public DirectCommand PropertyObservableSyncTestCommand { get; }
 
         public DirectCommand PropertyObservableNullReferenceCommand { get; }
         public event PropertyChangedEventHandler PropertyChanged;
