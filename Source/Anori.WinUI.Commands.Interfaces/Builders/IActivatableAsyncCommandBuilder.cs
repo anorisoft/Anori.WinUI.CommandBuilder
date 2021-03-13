@@ -6,10 +6,9 @@
 
 namespace Anori.WinUI.Commands.Interfaces.Builders
 {
+    using JetBrains.Annotations;
     using System;
     using System.Linq.Expressions;
-
-    using JetBrains.Annotations;
 
     /// <summary>
     ///     Activatable Async Command Builder.

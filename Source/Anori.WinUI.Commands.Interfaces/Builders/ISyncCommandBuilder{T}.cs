@@ -1,9 +1,20 @@
-﻿using System;
-using System.Linq.Expressions;
-using JetBrains.Annotations;
+﻿// -----------------------------------------------------------------------
+// <copyright file="ISyncCommandBuilder{T}.cs" company="AnoriSoft">
+// Copyright (c) AnoriSoft. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 namespace Anori.WinUI.Commands.Interfaces.Builders
 {
+    using System;
+    using System.Linq.Expressions;
+
+    using JetBrains.Annotations;
+
+    /// <summary>
+    ///     The I Synchronize Command Builder interface.
+    /// </summary>
+    /// <typeparam name="T">Parameter type.</typeparam>
     public interface ISyncCommandBuilder<T>
     {
         [NotNull]

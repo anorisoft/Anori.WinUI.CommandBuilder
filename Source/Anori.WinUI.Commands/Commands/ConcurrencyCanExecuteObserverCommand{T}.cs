@@ -15,26 +15,30 @@ namespace Anori.WinUI.Commands.Commands
 
     using JetBrains.Annotations;
 
+    /// <summary>
+    /// The Concurrency Can Execute Observer Command class.
+    /// </summary>
+    /// <typeparam name="T">Parameter type.</typeparam>
+    /// <seealso cref="Anori.WinUI.Commands.Commands.ConcurrencyCommandBase{T}" />
+    /// <seealso cref="Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand{T}" />
+    /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver" />
     internal sealed class ConcurrencyCanExecuteObserverCommand<T> : ConcurrencyCommandBase<T>,
                                                                     IConcurrencySyncCommand<T>,
                                                                     ICanExecuteChangedObserver
     {
         /// <summary>
-        ///     The observers
+        ///     The observers.
         /// </summary>
         private readonly List<ICanExecuteChangedSubjectBase> observers = new List<ICanExecuteChangedSubjectBase>();
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
+        /// Initializes a new instance of the <see cref="ConcurrencyCanExecuteObserverCommand{T}"/> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
-        /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">
-        ///     observer
-        ///     or
-        ///     observer
-        /// </exception>
+        /// <exception cref="ArgumentNullException">observer
+        /// or
+        /// observer is null.</exception>
         public ConcurrencyCanExecuteObserverCommand(
             [NotNull] Action<T, CancellationToken> execute,
             [NotNull] [ItemNotNull] params ICanExecuteChangedSubject[] observers)
@@ -51,14 +55,14 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ConcurrencyCanExecuteObserverCommand{T}" /> class.
+        /// Initializes a new instance of the <see cref="ConcurrencyCanExecuteObserverCommand{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="completed">The completed.</param>
         /// <param name="error">The error.</param>
         /// <param name="cancel">The cancel.</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">observers</exception>
+        /// <exception cref="ArgumentNullException">observers is null.</exception>
         public ConcurrencyCanExecuteObserverCommand(
             [NotNull] Action<T, CancellationToken> execute,
             [CanBeNull] Action completed,
@@ -78,17 +82,14 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
+        /// Initializes a new instance of the <see cref="ConcurrencyCanExecuteObserverCommand{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
-        /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="canExecuteSubject">The can execute subject.</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">
-        ///     canExecuteSubject
-        ///     or
-        ///     observers
-        /// </exception>
+        /// <exception cref="ArgumentNullException">canExecuteSubject
+        /// or
+        /// observers is null.</exception>
         public ConcurrencyCanExecuteObserverCommand(
             [NotNull] Action<T, CancellationToken> execute,
             [NotNull] ICanExecuteSubject canExecuteSubject,
@@ -113,7 +114,7 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ConcurrencyCanExecuteObserverCommand{T}" /> class.
+        /// Initializes a new instance of the <see cref="ConcurrencyCanExecuteObserverCommand{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecuteSubject">The can execute subject.</param>
@@ -121,11 +122,9 @@ namespace Anori.WinUI.Commands.Commands
         /// <param name="error">The error.</param>
         /// <param name="cancel">The cancel.</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">
-        ///     canExecuteSubject
-        ///     or
-        ///     observers
-        /// </exception>
+        /// <exception cref="ArgumentNullException">canExecuteSubject
+        /// or
+        /// observers is null.</exception>
         public ConcurrencyCanExecuteObserverCommand(
             [NotNull] Action<T, CancellationToken> execute,
             [NotNull] ICanExecuteSubject canExecuteSubject,
@@ -153,13 +152,12 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ActivatableCanExecuteObserverCommand" /> class.
+        /// Initializes a new instance of the <see cref="ConcurrencyCanExecuteObserverCommand{T}"/> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
-        /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="canExecute">The can execute.</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">observers</exception>
+        /// <exception cref="ArgumentNullException">observers is null.</exception>
         public ConcurrencyCanExecuteObserverCommand(
             [NotNull] Action<T, CancellationToken> execute,
             [NotNull] Predicate<T> canExecute,
@@ -176,6 +174,16 @@ namespace Anori.WinUI.Commands.Commands
             this.Subscribe();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConcurrencyCanExecuteObserverCommand{T}"/> class.
+        /// </summary>
+        /// <param name="execute">The execute.</param>
+        /// <param name="canExecute">The can execute.</param>
+        /// <param name="completed">The completed.</param>
+        /// <param name="error">The error.</param>
+        /// <param name="cancel">The cancel.</param>
+        /// <param name="observers">The observers.</param>
+        /// <exception cref="ArgumentNullException">observers is null.</exception>
         public ConcurrencyCanExecuteObserverCommand(
             [NotNull] Action<T, CancellationToken> execute,
             [NotNull] Predicate<T> canExecute,

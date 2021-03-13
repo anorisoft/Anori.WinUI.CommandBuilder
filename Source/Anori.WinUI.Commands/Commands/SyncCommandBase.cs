@@ -20,13 +20,13 @@ namespace Anori.WinUI.Commands.Commands
     internal abstract class SyncCommandBase : CommandBase, ISyncCommand
     {
         /// <summary>
-        ///     The can execute
+        ///     The can execute.
         /// </summary>
         [CanBeNull]
         private readonly Func<bool> canExecute;
 
         /// <summary>
-        ///     The execute
+        ///     The execute.
         /// </summary>
         [NotNull]
         private readonly Action execute;
@@ -36,7 +36,7 @@ namespace Anori.WinUI.Commands.Commands
         ///     always be executed.
         /// </summary>
         /// <param name="execute">The execution logic.</param>
-        /// <exception cref="ArgumentNullException">execute</exception>
+        /// <exception cref="ArgumentNullException">execute is null.</exception>
         protected SyncCommandBase([NotNull] Action execute) =>
             this.execute = execute ?? throw new ArgumentNullException(nameof(execute));
 
@@ -45,7 +45,7 @@ namespace Anori.WinUI.Commands.Commands
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecute">The can execute.</param>
-        /// <exception cref="ArgumentNullException">canExecute</exception>
+        /// <exception cref="ArgumentNullException">canExecute is null.</exception>
         protected SyncCommandBase([NotNull] Action execute, [NotNull] Func<bool> canExecute)
             : this(execute) =>
             this.canExecute = canExecute ?? throw new ArgumentNullException(nameof(canExecute));
@@ -54,8 +54,8 @@ namespace Anori.WinUI.Commands.Commands
         ///     Initializes a new instance of the <see cref="SyncCommandBase" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
-        /// <param name="canExecute">The can execute.</param>
-        /// <exception cref="ArgumentNullException">canExecute</exception>
+        /// <param name="canExecuteSubject">The can execute subject.</param>
+        /// <exception cref="ArgumentNullException">canExecute is null.</exception>
         protected SyncCommandBase([NotNull] Action execute, [NotNull] ICanExecuteSubject canExecuteSubject)
             : this(execute)
         {
@@ -68,7 +68,7 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Gets or sets a value indicating whether this instance has can execute.
+        ///     Gets a value indicating whether this instance has can execute.
         /// </summary>
         /// <value>
         ///     <c>true</c> if this instance has can execute; otherwise, <c>false</c>.
@@ -98,13 +98,15 @@ namespace Anori.WinUI.Commands.Commands
         ///     Determines whether this instance can execute the specified parameter.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
-        /// <returns></returns>
+        /// <returns>
+        ///     <see langword="true" /> if this command can be executed; otherwise, <see langword="false" />.
+        /// </returns>
         protected sealed override bool CanExecute(object parameter) => this.CanExecute();
 
         /// <summary>
-        ///     Handle the internal invocation of <see cref="System.Windows.Input.ICommand.Execute" />
+        ///     Handle the internal invocation of <see cref="System.Windows.Input.ICommand.Execute" />.
         /// </summary>
-        /// <param name="parameter">Command Parameter</param>
+        /// <param name="parameter">Command Parameter.</param>
         protected sealed override void Execute(object parameter) => this.execute();
     }
 }

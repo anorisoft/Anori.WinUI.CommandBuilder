@@ -475,7 +475,7 @@ namespace Anori.WinUI.Commands.Builder
         ///     Builds this instance.
         /// </summary>
         /// <returns></returns>
-        /// <exception cref="NoCanExecuteException"></exception>
+        /// <exception cref="NoCanExecuteException">No Can Execute Exception.</exception>
         [NotNull]
         private ActivatableConcurrencyCanExecuteObserverCommand<T> BuildActivatable()
         {
@@ -542,7 +542,7 @@ namespace Anori.WinUI.Commands.Builder
         ///     Builds this instance.
         /// </summary>
         /// <returns></returns>
-        /// <exception cref="NoCanExecuteException"></exception>
+        /// <exception cref="NoCanExecuteException">No Can Execute Exception.</exception>
         [NotNull]
         private ConcurrencyCanExecuteObserverCommand<T> Build()
         {
@@ -722,7 +722,7 @@ namespace Anori.WinUI.Commands.Builder
         /// </summary>
         /// <param name="setCommand">The set command.</param>
         /// <returns></returns>
-        /// <exception cref="ArgumentNullException">setCommand</exception>
+        /// <exception cref="ArgumentNullException">setCommand is null.</exception>
         private ActivatableConcurrencyCanExecuteObserverCommand<T> BuildActivatable(
             [NotNull] Action<ActivatableConcurrencyCanExecuteObserverCommand<T>> setCommand)
         {
@@ -741,7 +741,7 @@ namespace Anori.WinUI.Commands.Builder
         /// </summary>
         /// <param name="setCommand">The set command.</param>
         /// <returns></returns>
-        /// <exception cref="ArgumentNullException">setCommand</exception>
+        /// <exception cref="ArgumentNullException">setCommand is null.</exception>
         private ConcurrencyCanExecuteObserverCommand<T> Build(
             [NotNull] Action<ConcurrencyCanExecuteObserverCommand<T>> setCommand)
         {

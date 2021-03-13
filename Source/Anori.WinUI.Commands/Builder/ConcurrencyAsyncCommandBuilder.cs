@@ -432,7 +432,7 @@ namespace Anori.WinUI.Commands.Builder
         /// </summary>
         /// <param name="setCommand">The set command.</param>
         /// <returns></returns>
-        /// <exception cref="ArgumentNullException">setCommand</exception>
+        /// <exception cref="ArgumentNullException">setCommand is null.</exception>
         [NotNull]
         private ActivatableConcurrencyAsyncCanExecuteObserverCommand BuildActivatable(
             [NotNull] Action<ActivatableConcurrencyAsyncCanExecuteObserverCommand> setCommand)
@@ -452,7 +452,7 @@ namespace Anori.WinUI.Commands.Builder
         /// </summary>
         /// <param name="setCommand">The set command.</param>
         /// <returns></returns>
-        /// <exception cref="ArgumentNullException">setCommand</exception>
+        /// <exception cref="ArgumentNullException">setCommand is null.</exception>
         [NotNull]
         private ConcurrencyAsyncCanExecuteObserverCommand Build(
             [NotNull] Action<ConcurrencyAsyncCanExecuteObserverCommand> setCommand)

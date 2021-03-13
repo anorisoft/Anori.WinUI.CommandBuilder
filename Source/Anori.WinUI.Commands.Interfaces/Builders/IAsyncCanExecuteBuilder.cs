@@ -11,6 +11,9 @@ namespace Anori.WinUI.Commands.Interfaces.Builders
 
     using JetBrains.Annotations;
 
+    /// <summary>
+    ///     The Asynchronous Can Execute Builder interface.
+    /// </summary>
     public interface IAsyncCanExecuteBuilder
     {
         /// <summary>

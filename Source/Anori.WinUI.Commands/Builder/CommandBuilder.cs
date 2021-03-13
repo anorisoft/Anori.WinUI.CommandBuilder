@@ -29,14 +29,14 @@ namespace Anori.WinUI.Commands.Builder
         public static ICommandBuilder Builder { get; } = new CommandBuilder();
 
         /// <summary>
-        ///     Commands the specified execute.
+        /// Commands the specified execute.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <returns></returns>
         public ISyncCommandBuilder Command(Action execute) => new SyncCommandBuilder(execute);
 
         /// <summary>
-        ///     Commands the specified execute.
+        /// Commands the specified execute.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecute">The can execute.</param>

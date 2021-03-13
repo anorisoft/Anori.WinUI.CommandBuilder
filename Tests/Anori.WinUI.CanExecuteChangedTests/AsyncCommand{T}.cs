@@ -56,7 +56,7 @@ namespace Anori.WinUI.CanExecuteChangedTests
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecute">The can execute.</param>
-        /// <exception cref="ArgumentNullException">canExecute</exception>
+        /// <exception cref="ArgumentNullException">canExecute is null.</exception>
         public AsyncCommand([NotNull] Func<T, Task> execute, [NotNull] Predicate<T> canExecute)
             : this(execute)
         {

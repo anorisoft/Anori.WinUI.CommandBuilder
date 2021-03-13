@@ -28,16 +28,13 @@ namespace Anori.WinUI.Commands.Commands
         private readonly List<ICanExecuteChangedSubjectBase> observers = new List<ICanExecuteChangedSubjectBase>();
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="CanExecuteObserverCommand" /> class.
+        /// Initializes a new instance of the <see cref="CanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
-        /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">
-        ///     observer
-        ///     or
-        ///     observer is null.
-        /// </exception>
+        /// <exception cref="ArgumentNullException">observer
+        /// or
+        /// observer is null.</exception>
         public CanExecuteObserverCommand(
             [NotNull] Action execute,
             [NotNull] [ItemNotNull] params ICanExecuteChangedSubject[] observers)
@@ -53,17 +50,14 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="CanExecuteObserverCommand" /> class.
+        /// Initializes a new instance of the <see cref="CanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
-        /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="canExecuteSubject">The can execute subject.</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">
-        ///     canExecuteSubject
-        ///     or
-        ///     observers is null.
-        /// </exception>
+        /// <exception cref="ArgumentNullException">canExecuteSubject
+        /// or
+        /// observers is null.</exception>
         public CanExecuteObserverCommand(
             [NotNull] Action execute,
             [NotNull] ICanExecuteSubject canExecuteSubject,
@@ -87,10 +81,9 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="CanExecuteObserverCommand" /> class.
+        /// Initializes a new instance of the <see cref="CanExecuteObserverCommand" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
-        /// <param name="autoActivate">if set to <c>true</c> [automatic activate].</param>
         /// <param name="canExecute">The can execute.</param>
         /// <param name="observers">The observers.</param>
         /// <exception cref="ArgumentNullException">observers is null.</exception>
