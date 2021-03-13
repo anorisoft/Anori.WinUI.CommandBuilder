@@ -15,7 +15,7 @@ namespace Anori.WinUI.Commands.Interfaces.Builders
     ///     The Asynchronous Can Execute Builder interface.
     /// </summary>
     /// <typeparam name="T">Parameter type.</typeparam>
-    public interface IAsyncCanExecuteBuilder<T>
+    public interface IAsyncCanExecuteBuilder<in T>
     {
         /// <summary>
         ///     Builds this instance.

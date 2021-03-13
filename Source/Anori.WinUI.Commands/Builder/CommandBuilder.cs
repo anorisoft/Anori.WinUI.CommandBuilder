@@ -17,7 +17,7 @@ namespace Anori.WinUI.Commands.Builder
     /// Command Builder.
     /// Class to create Command based on ICommand.
     /// </summary>
-    /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICommandBuilder" />
+    /// <seealso cref="ICommandBuilder" />
     public sealed class CommandBuilder : ICommandBuilder
     {
         /// <summary>

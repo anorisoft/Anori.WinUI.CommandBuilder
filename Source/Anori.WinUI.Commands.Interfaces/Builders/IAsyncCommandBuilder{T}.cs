@@ -12,7 +12,7 @@ namespace Anori.WinUI.Commands.Interfaces.Builders
     using JetBrains.Annotations;
 
     /// <summary>
-    /// The I Asynchronous Command Builder interface.
+    ///     The I Asynchronous Command Builder interface.
     /// </summary>
     /// <typeparam name="T">Parameter type.</typeparam>
     public interface IAsyncCommandBuilder<T>
