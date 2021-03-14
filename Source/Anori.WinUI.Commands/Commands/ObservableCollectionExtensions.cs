@@ -9,6 +9,7 @@ namespace Anori.WinUI.Commands.Commands
     using System;
     using System.Collections.Generic;
 
+    using Anori.WinUI.Commands.Exceptions;
     using Anori.WinUI.Commands.Interfaces;
     using Anori.WinUI.Commands.Resources;
 
@@ -18,7 +19,7 @@ namespace Anori.WinUI.Commands.Commands
     internal static class ObservableCollectionExtensions
     {
         /// <summary>
-        /// Adds if not contains.
+        ///     Adds if not contains.
         /// </summary>
         /// <param name="observers">The observers.</param>
         /// <param name="newItems">The new items.</param>
@@ -37,9 +38,8 @@ namespace Anori.WinUI.Commands.Commands
 
                 if (observers.Contains(propertyObserver))
                 {
-                    throw new ArgumentException(
-                        string.Format(ExceptionStrings.ObserverIsAlreadyBeingObserved, propertyObserver),
-                        nameof(propertyObserver));
+                    throw new CommandBuilderException(
+                        string.Format(ExceptionStrings.ObserverIsAlreadyBeingObserved, propertyObserver));
                 }
 
                 observers.Add(propertyObserver);

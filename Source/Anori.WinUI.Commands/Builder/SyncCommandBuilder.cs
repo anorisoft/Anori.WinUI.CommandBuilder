@@ -348,10 +348,29 @@ namespace Anori.WinUI.Commands.Builder
         }
 
         /// <summary>
-        /// Builds this instance.
+        ///     Builds the specified set command.
+        /// </summary>
+        /// <param name="setCommand">The set command.</param>
+        /// <returns>Activatable Can Execute Observer Command.</returns>
+        /// <exception cref="ArgumentNullException">setCommand is null.</exception>
+        private ActivatableCanExecuteObserverCommand BuildActivatable(
+            [NotNull] Action<ActivatableCanExecuteObserverCommand> setCommand)
+        {
+            if (setCommand == null)
+            {
+                throw new ArgumentNullException(nameof(setCommand));
+            }
+
+            var command = this.BuildActivatable();
+            setCommand(command);
+            return command;
+        }
+
+        /// <summary>
+        ///     Builds this instance.
         /// </summary>
         /// <returns>
-        /// Activatable Can Execute Observer Command.
+        ///     Activatable Can Execute Observer Command.
         /// </returns>
         /// <exception cref="NoCanExecuteException">No Can Execute Exception.</exception>
         [NotNull]
@@ -400,10 +419,10 @@ namespace Anori.WinUI.Commands.Builder
         }
 
         /// <summary>
-        /// Builds this instance.
+        ///     Builds this instance.
         /// </summary>
         /// <returns>
-        /// Can Execute Observer Command.
+        ///     Can Execute Observer Command.
         /// </returns>
         /// <exception cref="NoCanExecuteException">No Can Execute Exception.</exception>
         [NotNull]
@@ -438,25 +457,6 @@ namespace Anori.WinUI.Commands.Builder
             }
 
             return new CanExecuteObserverCommand(this.execute);
-        }
-
-        /// <summary>
-        ///     Builds the specified set command.
-        /// </summary>
-        /// <param name="setCommand">The set command.</param>
-        /// <returns>Activatable Can Execute Observer Command.</returns>
-        /// <exception cref="ArgumentNullException">setCommand is null.</exception>
-        private ActivatableCanExecuteObserverCommand BuildActivatable(
-            [NotNull] Action<ActivatableCanExecuteObserverCommand> setCommand)
-        {
-            if (setCommand == null)
-            {
-                throw new ArgumentNullException(nameof(setCommand));
-            }
-
-            var command = this.BuildActivatable();
-            setCommand(command);
-            return command;
         }
 
         /// <summary>

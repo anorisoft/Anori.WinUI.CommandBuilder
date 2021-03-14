@@ -22,7 +22,7 @@ namespace Anori.WinUI.Commands.Commands
     /// <summary>
     /// The Concurrency Asynchronous Command Base class.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">Parameter type.</typeparam>
     /// <seealso cref="Anori.WinUI.Commands.Commands.CommandBase" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand{T}" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.IExecutable" />
@@ -399,6 +399,7 @@ namespace Anori.WinUI.Commands.Commands
         /// </summary>
         /// <param name="parameter">The parameter.</param>
         /// <param name="token">The token.</param>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         public async Task ExecuteAsync(T parameter, CancellationToken token)
         {
             if (this.CanExecute(parameter))

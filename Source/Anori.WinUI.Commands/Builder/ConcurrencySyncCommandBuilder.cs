@@ -473,6 +473,25 @@ namespace Anori.WinUI.Commands.Builder
         }
 
         /// <summary>
+        ///     Builds the specified set command.
+        /// </summary>
+        /// <param name="setCommand">The set command.</param>
+        /// <returns>Activatable Concurrency Sync CanExecute Command.</returns>
+        /// <exception cref="ArgumentNullException">setCommand is null.</exception>
+        private ActivatableConcurrencyCanExecuteObserverCommand BuildActivatable(
+            [NotNull] Action<ActivatableConcurrencyCanExecuteObserverCommand> setCommand)
+        {
+            if (setCommand == null)
+            {
+                throw new ArgumentNullException(nameof(setCommand));
+            }
+
+            var command = this.BuildActivatable();
+            setCommand(command);
+            return command;
+        }
+
+        /// <summary>
         ///     Builds this instance.
         /// </summary>
         /// <returns>
@@ -539,6 +558,25 @@ namespace Anori.WinUI.Commands.Builder
                 this.completedAction,
                 this.errorAction,
                 this.cancelAction);
+        }
+
+        /// <summary>
+        ///     Builds the specified set command.
+        /// </summary>
+        /// <param name="setCommand">The set command.</param>
+        /// <returns>Concurrency Sync CanExecute Command.</returns>
+        /// <exception cref="ArgumentNullException">setCommand is null.</exception>
+        private ConcurrencyCanExecuteObserverCommand Build(
+            [NotNull] Action<ConcurrencyCanExecuteObserverCommand> setCommand)
+        {
+            if (setCommand == null)
+            {
+                throw new ArgumentNullException(nameof(setCommand));
+            }
+
+            var command = this.Build();
+            setCommand(command);
+            return command;
         }
 
         /// <summary>
@@ -614,44 +652,6 @@ namespace Anori.WinUI.Commands.Builder
         {
             this.isAutoActivate = false;
             return this;
-        }
-
-        /// <summary>
-        ///     Builds the specified set command.
-        /// </summary>
-        /// <param name="setCommand">The set command.</param>
-        /// <returns>Activatable Concurrency Sync CanExecute Command.</returns>
-        /// <exception cref="ArgumentNullException">setCommand is null.</exception>
-        private ActivatableConcurrencyCanExecuteObserverCommand BuildActivatable(
-            [NotNull] Action<ActivatableConcurrencyCanExecuteObserverCommand> setCommand)
-        {
-            if (setCommand == null)
-            {
-                throw new ArgumentNullException(nameof(setCommand));
-            }
-
-            var command = this.BuildActivatable();
-            setCommand(command);
-            return command;
-        }
-
-        /// <summary>
-        ///     Builds the specified set command.
-        /// </summary>
-        /// <param name="setCommand">The set command.</param>
-        /// <returns>Concurrency Sync CanExecute Command.</returns>
-        /// <exception cref="ArgumentNullException">setCommand is null.</exception>
-        private ConcurrencyCanExecuteObserverCommand Build(
-            [NotNull] Action<ConcurrencyCanExecuteObserverCommand> setCommand)
-        {
-            if (setCommand == null)
-            {
-                throw new ArgumentNullException(nameof(setCommand));
-            }
-
-            var command = this.Build();
-            setCommand(command);
-            return command;
         }
 
         /// <summary>

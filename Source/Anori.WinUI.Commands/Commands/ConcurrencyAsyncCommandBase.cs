@@ -20,8 +20,12 @@ namespace Anori.WinUI.Commands.Commands
     using JetBrains.Annotations;
 
     /// <summary>
-    ///     Asynchronous Relay Command
+    /// The Concurrency Asynchronous Command Base class.
     /// </summary>
+    /// <seealso cref="Anori.WinUI.Commands.Commands.CommandBase" />
+    /// <seealso cref="Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand" />
+    /// <seealso cref="Anori.WinUI.Commands.Interfaces.IExecutable" />
+    /// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
     /// <seealso cref="System.Windows.Input.ICommand" />
     /// <seealso cref="System.IDisposable" />
     internal abstract class ConcurrencyAsyncCommandBase : CommandBase,
@@ -387,6 +391,7 @@ namespace Anori.WinUI.Commands.Commands
         ///     Executes the asynchronous.
         /// </summary>
         /// <param name="token">The token.</param>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         public async Task ExecuteAsync(CancellationToken token)
         {
             if (this.CanExecute())
