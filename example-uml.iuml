@@ -1,10 +1,10 @@
 @startuml
 actor client
 node app
-node car
+node car1
 node tshirt
 
-car -> app
+car1 -> app
 app -> client
 client -> tshirt
 @enduml
