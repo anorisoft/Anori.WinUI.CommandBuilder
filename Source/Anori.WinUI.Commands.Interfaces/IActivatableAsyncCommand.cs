@@ -6,7 +6,7 @@
 
 namespace Anori.WinUI.Commands.Interfaces
 {
-    using Anori.WinUI.Common;
+    using Anori.Common;
 
     /// <summary>
     ///     Activatable Async Command Interface.

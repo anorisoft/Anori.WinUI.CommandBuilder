@@ -6,18 +6,17 @@
 
 namespace Anori.WinUI.CanExecuteChangedTests
 {
-    #region
 
     using System;
     using System.Diagnostics;
     using System.Windows.Input;
 
+    using Anori.Common;
+    using Anori.Extensions;
     using Anori.WinUI.Commands.Interfaces;
     using Anori.WinUI.Common;
 
     using JetBrains.Annotations;
-
-    #endregion
 
     /// <summary>
     ///     A Command whose sole purpose is to relay its functionality to other objects by invoking delegates.

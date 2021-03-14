@@ -2125,7 +2125,7 @@
             <summary>
                 Activatable Async Command Interface.
             </summary>
-            <seealso cref="T:Anori.WinUI.Common.IActivatable`1" />
+            <seealso cref="T:Anori.Common.IActivatable`1" />
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.IAsyncCommand" />
         </member>
         <member name="T:Anori.WinUI.Commands.Interfaces.IActivatableAsyncCommand`1">
@@ -2134,14 +2134,14 @@
             </summary>
             <typeparam name="T">The parameter type.</typeparam>
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.IAsyncCommand`1" />
-            <seealso cref="T:Anori.WinUI.Common.IActivatable`1" />
+            <seealso cref="T:Anori.Common.IActivatable" />
         </member>
         <member name="T:Anori.WinUI.Commands.Interfaces.IActivatableConcurrencyAsyncCommand">
             <summary>
                 Activatable Concurrency Async Command Interface.
             </summary>
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand" />
-            <seealso cref="T:Anori.WinUI.Common.IActivatable`1" />
+            <seealso cref="T:Anori.Common.IActivatable" />
         </member>
         <member name="M:Anori.WinUI.Commands.Interfaces.IActivatableConcurrencyAsyncCommand.Execute">
             <summary>
@@ -2154,14 +2154,14 @@
             </summary>
             <typeparam name="T">The parameter type.</typeparam>
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand`1" />
-            <seealso cref="T:Anori.WinUI.Common.IActivatable`1" />
+            <seealso cref="T:Anori.Common.IActivatable" />
         </member>
         <member name="T:Anori.WinUI.Commands.Interfaces.IActivatableConcurrencySyncCommand">
             <summary>
                 Activatable Concurrency Sync Command Interface.
             </summary>
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand" />
-            <seealso cref="T:Anori.WinUI.Common.IActivatable`1" />
+            <seealso cref="T:Anori.Common.IActivatable" />
         </member>
         <member name="T:Anori.WinUI.Commands.Interfaces.IActivatableConcurrencySyncCommand`1">
             <summary>
@@ -2169,14 +2169,14 @@
             </summary>
             <typeparam name="T">The parameter type.</typeparam>
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand`1" />
-            <seealso cref="T:Anori.WinUI.Common.IActivatable`1" />
+            <seealso cref="T:Anori.Common.IActivatable" />
         </member>
         <member name="T:Anori.WinUI.Commands.Interfaces.IActivatableSyncCommand">
             <summary>
                 Activatable Sync Command Interface.
             </summary>
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.ISyncCommand" />
-            <seealso cref="T:Anori.WinUI.Common.IActivatable`1" />
+            <seealso cref="T:Anori.Common.IActivatable" />
         </member>
         <member name="T:Anori.WinUI.Commands.Interfaces.IActivatableSyncCommand`1">
             <summary>
@@ -2184,7 +2184,7 @@
             </summary>
             <typeparam name="T">The parameter type.</typeparam>
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.ISyncCommand`1" />
-            <seealso cref="T:Anori.WinUI.Common.IActivatable`1" />
+            <seealso cref="T:Anori.Common.IActivatable" />
         </member>
         <member name="T:Anori.WinUI.Commands.Interfaces.IAsyncCommand">
             <summary>

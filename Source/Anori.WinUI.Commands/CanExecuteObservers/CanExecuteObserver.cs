@@ -11,6 +11,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
     using System.Linq.Expressions;
 
     using Anori.ExpressionObservers;
+    using Anori.Extensions;
     using Anori.WinUI.Common;
 
     using JetBrains.Annotations;

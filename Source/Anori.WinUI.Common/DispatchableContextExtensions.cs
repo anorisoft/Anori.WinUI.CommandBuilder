@@ -8,6 +8,9 @@ namespace Anori.WinUI.Common
 {
     using System;
 
+    using Anori.Common;
+    using Anori.Extensions;
+
     using JetBrains.Annotations;
 
     /// <summary>

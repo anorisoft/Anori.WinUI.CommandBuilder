@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Source\Anori.WinUI.Commands\Anori.WinUI.Commands.csproj" />
+    <ProjectReference Include="..\..\Submodules\Anori.Common\Source\Anori.Common\Anori.Common.csproj" />
+    <ProjectReference Include="..\..\Submodules\Anori.Extensions\Source\Anori.Extensions\Anori.Extensions.csproj" />
   </ItemGroup>
 
   <ItemGroup>

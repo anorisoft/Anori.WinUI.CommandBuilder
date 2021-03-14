@@ -12,6 +12,8 @@ namespace Anori.WinUI.CanExecuteChangedTests
     using System.Diagnostics;
     using System.Windows.Input;
 
+    using Anori.Common;
+    using Anori.Extensions;
     using Anori.WinUI.Common;
 
     using JetBrains.Annotations;

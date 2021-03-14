@@ -29,4 +29,9 @@
     </PackageReference>
     <PackageReference Include="System.Reactive" Version="5.0.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Submodules\Anori.Common\Source\Anori.Common\Anori.Common.csproj" />
+    <ProjectReference Include="..\..\Submodules\Anori.Extensions\Source\Anori.Extensions\Anori.Extensions.csproj" />
+  </ItemGroup>
 </Project>

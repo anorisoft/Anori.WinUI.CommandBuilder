@@ -6,6 +6,10 @@
 
 namespace Anori.WinUI.Commands.Commands
 {
+    using Anori.Extensions;
+    using Anori.WinUI.Commands.Interfaces;
+    using Anori.WinUI.Common;
+    using JetBrains.Annotations;
     using System;
     using System.ComponentModel;
     using System.Diagnostics;
@@ -13,11 +17,6 @@ namespace Anori.WinUI.Commands.Commands
     using System.Threading;
     using System.Threading.Tasks;
     using System.Windows.Input;
-
-    using Anori.WinUI.Commands.Interfaces;
-    using Anori.WinUI.Common;
-
-    using JetBrains.Annotations;
 
     /// <summary>
     ///     Asynchronous Relay Command.
@@ -308,6 +307,12 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
+        ///     Executes the specified token.
+        /// </summary>
+        /// <param name="token">The token.</param>
+        public void Execute(CancellationToken token) => this.execute(token);
+
+        /// <summary>
         /// Executes this instance.
         /// </summary>
         public void Execute()
@@ -378,12 +383,6 @@ namespace Anori.WinUI.Commands.Commands
         ///     Raises the can execute command.
         /// </summary>
         public abstract void RaiseCanExecuteCommand();
-
-        /// <summary>
-        ///     Executes the specified token.
-        /// </summary>
-        /// <param name="token">The token.</param>
-        public void Execute(CancellationToken token) => this.execute(token);
 
         /// <summary>
         /// Determines whether this instance can execute the specified parameter.

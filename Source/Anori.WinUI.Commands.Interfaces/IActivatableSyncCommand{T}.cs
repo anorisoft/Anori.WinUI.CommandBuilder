@@ -6,6 +6,7 @@
 
 namespace Anori.WinUI.Commands.Interfaces
 {
+    using Anori.Common;
     using Anori.WinUI.Common;
 
     /// <summary>
@@ -13,7 +14,7 @@ namespace Anori.WinUI.Commands.Interfaces
     /// </summary>
     /// <typeparam name="T">The parameter type.</typeparam>
     /// <seealso cref="ISyncCommand{T}" />
-    /// <seealso cref="IActivatable{TSelf}" />
+    /// <seealso cref="IActivatable" />
     public interface IActivatableSyncCommand<in T> : ISyncCommand<T>, IActivatable<IActivatableSyncCommand<T>>
     {
     }

@@ -9,6 +9,8 @@ namespace Anori.WinUI.Common.Parameters
     using System;
     using System.Linq.Expressions;
 
+    using Anori.Extensions;
+
     using JetBrains.Annotations;
 
     public sealed class ParameterEventObserver<TValue, TOwner> : ParameterObserverBase<TOwner>

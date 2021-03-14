@@ -8,6 +8,8 @@ namespace Anori.WinUI.Common.Parameters
 {
     using System;
 
+    using Anori.Common;
+
     /// <summary>
     /// The Parameter class.
     /// </summary>

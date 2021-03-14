@@ -10,6 +10,8 @@ namespace Anori.WinUI.Commands.Commands
     using System.Collections.Generic;
     using System.Threading;
 
+    using Anori.Common;
+    using Anori.Extensions;
     using Anori.WinUI.Commands.Interfaces;
     using Anori.WinUI.Common;
 
@@ -358,14 +360,14 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        ///     Notifies that the value for <see cref="P:Anori.WinUI.Common.IActivated.IsActive" /> property has changed.
-        /// </summary>
-        public event EventHandler<EventArgs<bool>> IsActiveChanged;
-
-        /// <summary>
         ///     Occurs when changes occur that affect whether or not the command should execute.
         /// </summary>
         public override event EventHandler CanExecuteChanged;
+
+        /// <summary>
+        ///     Notifies that the value for <see cref="P:Anori.WinUI.Common.IActivated.IsActive" /> property has changed.
+        /// </summary>
+        public event EventHandler<EventArgs<bool>> IsActiveChanged;
 
         /// <summary>
         ///     Gets a value indicating whether the object is active.

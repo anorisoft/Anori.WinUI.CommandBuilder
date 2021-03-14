@@ -6,13 +6,15 @@
 
 namespace Anori.WinUI.Common.Parameters
 {
-    using JetBrains.Annotations;
-
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Linq.Expressions;
     using System.Reflection;
+
+    using Anori.Extensions;
+
+    using JetBrains.Annotations;
 
     public sealed class ParameterObserver<TValue, TOwner> : ParameterObserverBase<TOwner>
     {
@@ -359,8 +361,8 @@ namespace Anori.WinUI.Common.Parameters
             else
             {
                 throw new InvalidOperationException(
-                  "Trying to subscribe PropertyChanged listener in object that "
-                  + $"owns '{rootPropertyInfo.Name}' property, but the object does not implements IReadOnlyParameter.");
+                    "Trying to subscribe PropertyChanged listener in object that "
+                    + $"owns '{rootPropertyInfo.Name}' property, but the object does not implements IReadOnlyParameter.");
             }
 
             var root = new ParameterObserverRootNode<object>(rootPropertyInfo, this.action, owner, parameter);

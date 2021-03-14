@@ -6,13 +6,14 @@
 
 namespace Anori.WinUI.Commands.Interfaces
 {
+    using Anori.Common;
     using Anori.WinUI.Common;
 
     /// <summary>
     ///     Activatable Concurrency Async Command Interface.
     /// </summary>
     /// <seealso cref="IConcurrencyAsyncCommand" />
-    /// <seealso cref="IActivatable{TSelf}" />
+    /// <seealso cref="IActivatable" />
     public interface IActivatableConcurrencyAsyncCommand : IConcurrencyAsyncCommand,
                                                            IActivatable<IActivatableConcurrencyAsyncCommand>
     {

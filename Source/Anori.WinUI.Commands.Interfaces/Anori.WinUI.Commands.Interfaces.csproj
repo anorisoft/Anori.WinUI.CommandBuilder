@@ -36,6 +36,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Submodules\Anori.Common\Source\Anori.Common\Anori.Common.csproj" />
     <ProjectReference Include="..\Anori.WinUI.Common\Anori.WinUI.Common.csproj" />
   </ItemGroup>
 </Project>

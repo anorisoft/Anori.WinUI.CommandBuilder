@@ -14,6 +14,7 @@ namespace Anori.WinUI.Commands.Commands
     using System.Threading.Tasks;
     using System.Windows.Input;
 
+    using Anori.Extensions;
     using Anori.WinUI.Commands.Interfaces;
     using Anori.WinUI.Common;
 
@@ -316,6 +317,13 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
+        ///     Executes the specified parameter.
+        /// </summary>
+        /// <param name="parameter">The parameter.</param>
+        /// <param name="token">The token.</param>
+        public void Execute(T parameter, CancellationToken token) => this.execute(parameter, token);
+
+        /// <summary>
         ///     Executes this instance.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
@@ -388,13 +396,6 @@ namespace Anori.WinUI.Commands.Commands
         ///     Raises the can execute command.
         /// </summary>
         public abstract void RaiseCanExecuteCommand();
-
-        /// <summary>
-        ///     Executes the specified parameter.
-        /// </summary>
-        /// <param name="parameter">The parameter.</param>
-        /// <param name="token">The token.</param>
-        public void Execute(T parameter, CancellationToken token) => this.execute(parameter, token);
 
         /// <summary>
         ///     Determines whether this instance can execute the specified parameter.
