@@ -18,6 +18,8 @@ namespace Anori.WinUI.Commands.Commands
     using System.Threading.Tasks;
     using System.Windows.Input;
 
+    using Anori.Common;
+
     /// <summary>
     ///     Asynchronous Relay Command.
     /// </summary>

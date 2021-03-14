@@ -10,6 +10,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
     using System.ComponentModel;
     using System.Linq.Expressions;
 
+    using Anori.Common;
     using Anori.ExpressionObservers;
     using Anori.Extensions;
     using Anori.WinUI.Common;
