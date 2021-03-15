@@ -1,0 +1,1296 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Anori.WinUI.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Anori.WinUI.Common.DispatchableContextExtensions">
+            <summary>
+                Dispatchable Context Extensions.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.Dispatch``1(``0,System.EventHandler)">
+            <summary>
+                Dispatches the specified sender.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <param name="context">The context.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.Dispatch``1(``0,System.Action{``0})">
+            <summary>
+                Dispatches the specified sender.
+            </summary>
+            <typeparam name="TContext">The type of the context context.</typeparam>
+            <param name="context">The context.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.Dispatch``1(``0,System.Action)">
+            <summary>
+            Dispatches the specified action.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <param name="context">The context.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.Dispatch``1(Anori.WinUI.Common.IDispatchableContext,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
+            <summary>
+            Dispatches the specified sender.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value">The value.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.Dispatch``2(``0,``1,System.Action{``1})">
+            <summary>
+            Dispatches the specified value.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <typeparam name="T">The type.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value">The value.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.Dispatch``3(``0,``1,``2,System.Action{``1,``2})">
+            <summary>
+                Dispatches the specified value1.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <typeparam name="T1">The type of the 1.</typeparam>
+            <typeparam name="T2">The type of the 2.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value1">The value1.</param>
+            <param name="value2">The value2.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.Dispatch``2(``0,``1,System.Action{``0,``1})">
+            <summary>
+            Dispatches the specified value.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <typeparam name="T">Th type.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value">The value.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.Dispatch``3(``0,``1,``2,System.Action{``0,``1,``2})">
+            <summary>
+            Dispatches the specified value1.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <typeparam name="T1">The type of the 1.</typeparam>
+            <typeparam name="T2">The type of the 2.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value1">The value1.</param>
+            <param name="value2">The value2.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="T:Anori.WinUI.Common.IDispatchable">
+            <summary>
+            Dispatcher Interface.
+            </summary>
+        </member>
+        <member name="P:Anori.WinUI.Common.IDispatchable.Dispatcher">
+            <summary>
+            Gets the dispatcher.
+            </summary>
+            <value>
+            The dispatcher.
+            </value>
+        </member>
+        <member name="T:Anori.WinUI.Common.IDispatchableContext">
+            <summary>
+            Dispatchable Context Interface.
+            </summary>
+        </member>
+        <member name="P:Anori.WinUI.Common.IDispatchableContext.SynchronizationContext">
+            <summary>
+            Gets the synchronization context.
+            </summary>
+            <value>
+            The synchronization context.
+            </value>
+        </member>
+        <member name="T:Anori.WinUI.Common.Parameters.IParameter">
+            <summary>
+            </summary>
+            <seealso cref="T:Anori.WinUI.Common.Parameters.IReadOnlyParameter`1" />
+            <seealso cref="T:Anori.WinUI.Common.Parameters.IParameter" />
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.IParameter.Value">
+            <summary>
+                Gets or sets the value.
+            </summary>
+            <value>
+                The value.
+            </value>
+        </member>
+        <member name="T:Anori.WinUI.Common.Parameters.IParameter`1">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <seealso cref="T:Anori.WinUI.Common.Parameters.IReadOnlyParameter`1" />
+            <seealso cref="T:Anori.WinUI.Common.Parameters.IParameter" />
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.IParameter`1.Value">
+            <summary>
+                Gets or sets the value.
+            </summary>
+            <value>
+                The value.
+            </value>
+        </member>
+        <member name="T:Anori.WinUI.Common.Parameters.IReadOnlyParameter">
+            <summary>
+            The I Read Only Parameter interface.
+            </summary>
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.IReadOnlyParameter.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="E:Anori.WinUI.Common.Parameters.IReadOnlyParameter.ValueChanged">
+            <summary>
+            Occurs when [value changed].
+            </summary>
+        </member>
+        <member name="T:Anori.WinUI.Common.Parameters.IReadOnlyParameter`1">
+            <summary>
+            The I Read Only Parameter interface.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <seealso cref="T:Anori.WinUI.Common.Parameters.IReadOnlyParameter" />
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.IReadOnlyParameter`1.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="E:Anori.WinUI.Common.Parameters.IReadOnlyParameter`1.ValueChanged">
+            <summary>
+            Occurs when [value changed].
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterEventObserver`2.propertyGetter">
+            <summary>
+                The property propertyGetter
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterEventObserver`2.#ctor(System.Linq.Expressions.Expression{System.Func{`0}})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver`2" /> class.
+            </summary>
+            <param name="propertyExpression">The property expression.</param>
+            <exception cref="T:System.ArgumentNullException">
+                action
+                or
+                propertyGetter
+            </exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterEventObserver`2.#ctor(`1,System.Linq.Expressions.Expression{System.Func{`1,`0}})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver`2" /> class.
+            </summary>
+            <param name="owner">The owner.</param>
+            <param name="propertyExpression">The property expression.</param>
+            <exception cref="T:System.ArgumentNullException">action</exception>
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.ParameterEventObserver`2.SubscribedLength">
+            <summary>
+                Gets the length of the subscribed.
+            </summary>
+            <value>
+                The length of the subscribed.
+            </value>
+        </member>
+        <member name="E:Anori.WinUI.Common.Parameters.ParameterEventObserver`2.ParameterChanged">
+            <summary>
+                The action
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterEventObserver`2.CallAction">
+            <summary>
+                Calls the action.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserver`2.action">
+            <summary>
+                The action
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserver`2.propertyGetter">
+            <summary>
+                The property propertyGetter
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver`2.#ctor(System.Linq.Expressions.Expression{System.Func{`0}},System.Action{`0})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver`2" /> class.
+            </summary>
+            <param name="propertyExpression">The property expression.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">
+                action
+                or
+                propertyGetter
+            </exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver`2.#ctor(`1,System.Linq.Expressions.Expression{System.Func{`1,`0}},System.Action{`0})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver`2" /> class.
+            </summary>
+            <param name="owner">The owner.</param>
+            <param name="propertyExpression">The property expression.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">action</exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver`2.CallAction">
+            <summary>
+                Calls the action.
+            </summary>
+        </member>
+        <member name="T:Anori.WinUI.Common.Parameters.ParameterObserver">
+            <summary>
+                Provide a way to observe property changes of INotifyPropertyChanged objects and invokes a
+                custom action when the PropertyChanged event is fired.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserver.OwnerString">
+            <summary>
+                The owner string
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserver.action">
+            <summary>
+                The action
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserver.parameterObserverRootNode">
+            <summary>
+                The parameterObserverRoot node
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserver.propertyExpression">
+            <summary>
+                The property expression
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver.#ctor(System.Linq.Expressions.Expression,System.Action)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver" /> class.
+            </summary>
+            <param name="propertyExpression">The property expression.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">
+                propertyExpression
+                or
+                action
+            </exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver.#ctor(System.Object,System.Linq.Expressions.Expression,System.Action)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver" /> class.
+            </summary>
+            <param name="owner">The owner.</param>
+            <param name="propertyExpression">The property expression.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">
+                propertyExpression
+                or
+                action
+                or
+                owner
+            </exception>
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.ParameterObserver.ExpressionString">
+            <summary>
+                Gets the expression string.
+            </summary>
+            <value>
+                The expression string.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.ParameterObserver.Owner">
+            <summary>
+                Gets the owner.
+            </summary>
+            <value>
+                The owner.
+            </value>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver.Dispose">
+            <summary>
+                Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver.Equals(Anori.WinUI.Common.Parameters.ParameterObserver)">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+                <see langword="true" /> if the current object is equal to the <paramref name="other" /> parameter; otherwise,
+                <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver.Observes``1(System.Linq.Expressions.Expression{System.Func{``0}},System.Action,System.Boolean)">
+            <summary>
+                Observes a property that implements INotifyPropertyChanged, and automatically calls a custom action on
+                property changed notifications. The given expression must be in this form: "() =&gt;
+                Prop.NestedProp.PropToObserve".
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="propertyExpression">
+                Expression representing property to be observed. Ex.: "() =&gt;
+                Prop.NestedProp.PropToObserve".
+            </param>
+            <param name="action">Action to be invoked when PropertyChanged event occours.</param>
+            <param name="isAutoSubscribe">if set to <c>true</c> [is automatic subscribe].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver.Observes``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Action,System.Boolean)">
+            <summary>
+                Observes the specified owner.
+            </summary>
+            <typeparam name="TOwner">The type of the owner.</typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="owner">The owner.</param>
+            <param name="propertyExpression">The property expression.</param>
+            <param name="action">The action.</param>
+            <param name="isAutoSubscribe">if set to <c>true</c> [is automatic subscribe].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver.Equals(System.Object)">
+            <summary>
+                Determines whether the specified <see cref="T:System.Object" />, is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with this instance.</param>
+            <returns>
+                <c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver.GetHashCode">
+            <summary>
+                Returns a hash code for this instance.
+            </summary>
+            <returns>
+                A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver.Subscribe">
+            <summary>
+                Subscribes this instance.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver.Unsubscribe">
+            <summary>
+                Unsubscribes this instance.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver.CreateChain">
+            <summary>
+                Creates the graph.
+            </summary>
+            <param name="expression">The expression.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException">
+                Operation not supported for the given expression type {expression.Type}. "
+                + "Only MemberExpression and ConstantExpression are currently supported.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+                Trying to subscribe PropertyChanged listener in object that "
+                + $"owns '{rootPropertyInfo.Name}' property, but the object does not implements INotifyPropertyChanged.
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+                Operation not supported for the given expression type. "
+                + "Only MemberExpression and ConstantExpression are currently supported.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+                Trying to subscribe PropertyChanged listener in object that "
+                + $"owns '{parameterObserverRootNode.PropertyInfo.Name}' property, but the object does not implements
+                INotifyPropertyChanged.
+            </exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver.CreateChain(System.Object)">
+            <summary>
+                Creates the chain.
+            </summary>
+            <param name="owner">The owner.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException">
+                Operation not supported for the given expression type {expression.Type}. "
+                + "Only MemberExpression and ConstantExpression are currently supported.
+            </exception>
+        </member>
+        <member name="T:Anori.WinUI.Common.Parameters.ParameterObserver2`1">
+            <summary>
+                Provide a way to observe property changes of INotifyPropertyChanged objects and invokes a
+                custom action when the PropertyChanged event is fired.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserver2`1.OwnerString">
+            <summary>
+                The owner string
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserver2`1.action">
+            <summary>
+                The action
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserver2`1.parameterObserverRootNode">
+            <summary>
+                The parameterObserverRoot node
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserver2`1.propertyExpression">
+            <summary>
+                The property expression
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserver2`1.propertyGetter">
+            <summary>
+                The property propertyGetter
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver2`1.#ctor(System.Linq.Expressions.Expression,System.Func{`0},System.Action{`0})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver" /> class.
+            </summary>
+            <param name="propertyExpression">The property expression.</param>
+            <param name="propertyGetter">The property propertyGetter.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">
+                propertyExpression
+                or
+                action
+            </exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver2`1.#ctor(System.Object,System.Linq.Expressions.Expression,System.Func{`0},System.Action{`0})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver" /> class.
+            </summary>
+            <param name="owner">The owner.</param>
+            <param name="propertyExpression">The property expression.</param>
+            <param name="propertyGetter">The propertyGetter.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">
+                owner
+                or
+                propertyExpression
+                or
+                action
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+                propertyExpression
+                or
+                action
+                or
+                owner
+            </exception>
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.ParameterObserver2`1.ExpressionString">
+            <summary>
+                Gets the expression string.
+            </summary>
+            <value>
+                The expression string.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.ParameterObserver2`1.Owner">
+            <summary>
+                Gets the owner.
+            </summary>
+            <value>
+                The owner.
+            </value>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver2`1.Dispose">
+            <summary>
+                Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver2`1.Equals(Anori.WinUI.Common.Parameters.ParameterObserver2{`0})">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+                <see langword="true" /> if the current object is equal to the <paramref name="other" /> parameter; otherwise,
+                <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver2`1.Observes``1(System.Linq.Expressions.Expression{System.Func{``0}},System.Action{``0},System.Boolean)">
+            <summary>
+                Observes a property that implements INotifyPropertyChanged, and automatically calls a custom action on
+                property changed notifications. The given expression must be in this form: "() =&gt;
+                Prop.NestedProp.PropToObserve".
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="propertyExpression">
+                Expression representing property to be observed. Ex.: "() =&gt;
+                Prop.NestedProp.PropToObserve".
+            </param>
+            <param name="action">Action to be invoked when PropertyChanged event occours.</param>
+            <param name="isAutoSubscribe">if set to <c>true</c> [is automatic subscribe].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver2`1.Observes``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Action{``1},System.Boolean)">
+            <summary>
+                Observes the specified owner.
+            </summary>
+            <typeparam name="TOwner">The type of the owner.</typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="owner">The owner.</param>
+            <param name="propertyExpression">The property expression.</param>
+            <param name="action">The action.</param>
+            <param name="isAutoSubscribe">if set to <c>true</c> [is automatic subscribe].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver2`1.Equals(System.Object)">
+            <summary>
+                Determines whether the specified <see cref="T:System.Object" />, is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with this instance.</param>
+            <returns>
+                <c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver2`1.GetHashCode">
+            <summary>
+                Returns a hash code for this instance.
+            </summary>
+            <returns>
+                A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver2`1.Subscribe">
+            <summary>
+                Subscribes this instance.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver2`1.Unsubscribe">
+            <summary>
+                Unsubscribes this instance.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver2`1.CallAction">
+            <summary>
+                Calls the action.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver2`1.CreateChain">
+            <summary>
+                Creates the graph.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException">
+                Operation not supported for the given expression type {expression.Type}. "
+                + "Only MemberExpression and ConstantExpression are currently supported.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+                Trying to subscribe PropertyChanged listener in object that "
+                + $"owns '{rootPropertyInfo.Name}' property, but the object does not implements INotifyPropertyChanged.
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+                Operation not supported for the given expression type. "
+                + "Only MemberExpression and ConstantExpression are currently supported.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+                Trying to subscribe PropertyChanged listener in object that "
+                + $"owns '{parameterObserverRootNode.PropertyInfo.Name}' property, but the object does not implements
+                INotifyPropertyChanged.
+            </exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver2`1.CreateChain(System.Object)">
+            <summary>
+                Creates the chain.
+            </summary>
+            <param name="owner">The owner.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException">
+                Operation not supported for the given expression type {expression.Type}. "
+                + "Only MemberExpression and ConstantExpression are currently supported.
+            </exception>
+            <exception cref="T:System.Exception">
+                No Parameter 3.
+                or
+                No Parameter.
+            </exception>
+        </member>
+        <member name="T:Anori.WinUI.Common.Parameters.ParameterObserverBase`1">
+            <summary>
+                Provide a way to observe property changes of INotifyPropertyChanged objects and invokes a
+                custom action when the PropertyChanged event is fired.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserverBase`1.OwnerString">
+            <summary>
+                The owner string
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserverBase`1.parameterObserverRootNode">
+            <summary>
+                The parameterObserverRoot node
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserverBase`1.propertyExpression">
+            <summary>
+                The property expression
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverBase`1.#ctor(System.Linq.Expressions.Expression)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver" /> class.
+            </summary>
+            <param name="propertyExpression">The property expression.</param>
+            <exception cref="T:System.ArgumentNullException">
+                propertyExpression
+                or
+                action
+            </exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverBase`1.#ctor(`0,System.Linq.Expressions.Expression)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver" /> class.
+            </summary>
+            <param name="owner">The owner.</param>
+            <param name="propertyExpression">The property expression.</param>
+            <exception cref="T:System.ArgumentNullException">
+                propertyExpression
+                or
+                owner
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+                propertyExpression
+                or
+                action
+                or
+                owner
+            </exception>
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.ParameterObserverBase`1.ExpressionString">
+            <summary>
+                Gets the expression string.
+            </summary>
+            <value>
+                The expression string.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.ParameterObserverBase`1.Owner">
+            <summary>
+                Gets the owner.
+            </summary>
+            <value>
+                The owner.
+            </value>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverBase`1.Equals(Anori.WinUI.Common.Parameters.ParameterObserverBase{`0})">
+            <summary>
+                Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+                <see langword="true" /> if the current object is equal to the <paramref name="other" /> parameter; otherwise,
+                <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverBase`1.Equals(System.Object)">
+            <summary>
+                Determines whether the specified <see cref="T:System.Object" />, is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with this instance.</param>
+            <returns>
+                <c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverBase`1.GetHashCode">
+            <summary>
+                Returns a hash code for this instance.
+            </summary>
+            <returns>
+                A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverBase`1.SubscribeListener">
+            <summary>
+                Subscribes this instance.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverBase`1.UnsubscribeListener">
+            <summary>
+                Unsubscribes this instance.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverBase`1.CallAction">
+            <summary>
+                Calls the action.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverBase`1.CreateChain">
+            <summary>
+                Creates the graph.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException">
+                Operation not supported for the given expression type {expression.Type}. "
+                + "Only MemberExpression and ConstantExpression are currently supported.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+                Trying to subscribe PropertyChanged listener in object that "
+                + $"owns '{rootPropertyInfo.Name}' property, but the object does not implements INotifyPropertyChanged.
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+                Operation not supported for the given expression type. "
+                + "Only MemberExpression and ConstantExpression are currently supported.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+                Trying to subscribe PropertyChanged listener in object that "
+                + $"owns '{parameterObserverRootNode.PropertyInfo.Name}' property, but the object does not implements
+                INotifyPropertyChanged.
+            </exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverBase`1.CreateChain(`0)">
+            <summary>
+                Creates the chain.
+            </summary>
+            <param name="owner">The owner.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException">
+                Operation not supported for the given expression type {expression.Type}. "
+                + "Only MemberExpression and ConstantExpression are currently supported.
+            </exception>
+        </member>
+        <member name="T:Anori.WinUI.Common.Parameters.ParameterObserverEndNode">
+            <summary>
+                The Parameter Observer End Node class.
+            </summary>
+            <seealso cref="T:Anori.WinUI.Common.Parameters.IParameterObserverNode" />
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserverEndNode.action">
+            <summary>
+                The action.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserverEndNode.parameter">
+            <summary>
+                The notify property changed.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverEndNode.#ctor(System.Action)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserverEndNode" /> class.
+            </summary>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">propertyInfo</exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverEndNode.SubscribeListenerFor(Anori.WinUI.Common.Parameters.IReadOnlyParameter)">
+            <summary>
+                Subscribes the listener for.
+            </summary>
+            <param name="parameter">The property changed.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverEndNode.UnsubscribeListener">
+            <summary>
+                Unsubscribes the listener.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverEndNode.OnValueChanged(System.Object,Anori.Common.EventArgs{System.Object})">
+            <summary>
+                Called when [value changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="!:EventArgs&lt;object&gt;" /> instance containing the event data.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverFactory.Observes``1(System.Linq.Expressions.Expression{System.Func{``0}},System.Action{``0},System.Boolean)">
+            <summary>
+                Observeses the specified property expression.
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="propertyExpression">The property expression.</param>
+            <param name="action">The action.</param>
+            <param name="isAutoSubscribe">if set to <c>true</c> [is automatic subscribe].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverFactory.Observes``2(``1,System.Linq.Expressions.Expression{System.Func{``1,``0}},System.Action{``0},System.Boolean)">
+            <summary>
+                Observes the specified owner.
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <typeparam name="TOwner">The type of the owner.</typeparam>
+            <param name="owner">The owner.</param>
+            <param name="propertyExpression">The property expression.</param>
+            <param name="action">The action.</param>
+            <param name="isAutoSubscribe">if set to <c>true</c> [is automatic subscribe].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverFactory.Observes``2(``1,System.Linq.Expressions.Expression{System.Func{``1,``0}},System.Boolean)">
+            <summary>
+                Observeses the specified owner.
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <typeparam name="TOwner">The type of the owner.</typeparam>
+            <param name="owner">The owner.</param>
+            <param name="propertyExpression">The property expression.</param>
+            <param name="isAutoSubscribe">if set to <c>true</c> [is automatic subscribe].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverFactory.Observes``1(System.Linq.Expressions.Expression{System.Func{``0}},System.Boolean)">
+            <summary>
+                Observeses the specified owner.
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="propertyExpression">The property expression.</param>
+            <param name="isAutoSubscribe">if set to <c>true</c> [is automatic subscribe].</param>
+            <returns></returns>
+        </member>
+        <member name="T:Anori.WinUI.Common.Parameters.ParameterObserverNode">
+            <summary>
+                Represents each node of nested properties expression and takes care of
+                subscribing/unsubscribing INotifyPropertyChanged.PropertyChanged listeners on it.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserverNode.action">
+            <summary>
+                The action
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.ParameterObserverNode.parameter">
+            <summary>
+                The notify property changed
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverNode.#ctor(System.Reflection.PropertyInfo,System.Action)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserverNode" /> class.
+            </summary>
+            <param name="propertyInfo">The property information.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">propertyInfo</exception>
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.ParameterObserverNode.Next">
+            <summary>
+                Gets or sets the next.
+            </summary>
+            <value>
+                The next.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.ParameterObserverNode.PropertyInfo">
+            <summary>
+                Gets the property information.
+            </summary>
+            <value>
+                The property information.
+            </value>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverNode.SubscribeListenerFor(Anori.WinUI.Common.Parameters.IReadOnlyParameter)">
+            <summary>
+                Subscribes the listener for.
+            </summary>
+            <param name="parameter">The property changed.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverNode.UnsubscribeListener">
+            <summary>
+                Unsubscribes the listener.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverNode.GenerateNextNode">
+            <summary>
+                Generates the next node.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+                Trying to subscribe ValueChanged listener in object that "
+                + $"owns '{this.Next.PropertyInfo.Name}' property, but the object does not implements IReadOnlyParameter.
+            </exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverNode.OnValueChanged(System.Object,Anori.Common.EventArgs{System.Object})">
+            <summary>
+                Called when [value changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:Anori.Common.EventArgs`1" /> instance containing the event data.</param>
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.ParameterObserverSingleNode`1.Parameter">
+            <summary>
+                Gets the parameter.
+            </summary>
+            <value>
+                The parameter.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.ParameterObserverSingleNode`1.Owner">
+            <summary>
+                Gets the owner.
+            </summary>
+            <value>
+                The owner.
+            </value>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverRootNode`1.#ctor(System.Reflection.PropertyInfo,System.Action,`0,Anori.WinUI.Common.Parameters.IReadOnlyParameter)">
+            <summary>
+                Initializes a new instance of the <see cref="!:RootPropertyObserverNode" /> class.
+            </summary>
+            <param name="propertyInfo">The property information.</param>
+            <param name="action">The action.</param>
+            <param name="owner">The owner.</param>
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.ParameterObserverRootNode`1.Parameter">
+            <summary>
+                Gets the parameter.
+            </summary>
+            <value>
+                The parameter.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.ParameterObserverRootNode`1.Owner">
+            <summary>
+                Gets the owner.
+            </summary>
+            <value>
+                The owner.
+            </value>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverRootNode`1.SubscribeListenerForOwner">
+            <summary>
+                Subscribes the listener for owner.
+            </summary>
+        </member>
+        <member name="T:Anori.WinUI.Common.Parameters.Parameter`1">
+            <summary>
+            The Parameter class.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <seealso cref="T:Anori.WinUI.Common.Parameters.IParameter`1" />
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.Parameter`1.value">
+            <summary>
+                The value.
+            </summary>
+        </member>
+        <member name="E:Anori.WinUI.Common.Parameters.Parameter`1.Anori#WinUI#Common#Parameters#IReadOnlyParameter#ValueChanged">
+            <summary>
+                Occurs when [value changed].
+            </summary>
+        </member>
+        <member name="E:Anori.WinUI.Common.Parameters.Parameter`1.ValueChanged">
+            <summary>
+                Occurs when [value changed].
+            </summary>
+        </member>
+        <member name="E:Anori.WinUI.Common.Parameters.Parameter`1.InternalValueChanged">
+            <summary>
+                Occurs when [internal value changed].
+            </summary>
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.Parameter`1.Anori#WinUI#Common#Parameters#IReadOnlyParameter#Value">
+            <summary>
+                Gets the value.
+            </summary>
+            <value>
+                The value.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.Parameter`1.Anori#WinUI#Common#Parameters#IParameter#Value">
+            <summary>
+                Gets or sets the value.
+            </summary>
+            <value>
+                The value.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.Parameter`1.Value">
+            <summary>
+                Gets or sets the value.
+            </summary>
+            <value>
+                The value.
+            </value>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Parameter`1.OnValueChanged(`0)">
+            <summary>
+                Called when [value changed].
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.Reactive.BehaviorParameterObserver`2.propertyGetter">
+            <summary>
+                The property propertyGetter
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.BehaviorParameterObserver`2.#ctor(System.Linq.Expressions.Expression{System.Func{`0}})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver`2" /> class.
+            </summary>
+            <param name="propertyExpression">The property expression.</param>
+            <exception cref="T:System.ArgumentNullException">
+                action
+                or
+                propertyGetter
+            </exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.BehaviorParameterObserver`2.#ctor(`1,System.Linq.Expressions.Expression{System.Func{`1,`0}})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver`2" /> class.
+            </summary>
+            <param name="owner">The owner.</param>
+            <param name="propertyExpression">The property expression.</param>
+            <exception cref="T:System.ArgumentNullException">action</exception>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.Reactive.BehaviorParameterObserver`2.subject">
+            <summary>
+            The subject
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.BehaviorParameterObserver`2.CallAction">
+            <summary>
+                Calls the action.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.BehaviorParameterObserver`2.Subscribe(System.IObserver{`0})">
+            <summary>
+            Notifies the provider that an observer is to receive notifications.
+            </summary>
+            <param name="observer">The object that is to receive notifications.</param>
+            <returns>
+            A reference to an interface that allows observers to stop receiving notifications before the provider has finished sending them.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.BehaviorParameterObserver`2.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.Reactive.ParameterObserver`2.propertyGetter">
+            <summary>
+                The property propertyGetter
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.Reactive.ParameterObserver`2.subject">
+            <summary>
+                The subject
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.ParameterObserver`2.#ctor(System.Linq.Expressions.Expression{System.Func{`0}})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver`2" /> class.
+            </summary>
+            <param name="propertyExpression">The property expression.</param>
+            <exception cref="T:System.ArgumentNullException">
+                action
+                or
+                propertyGetter
+            </exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.ParameterObserver`2.#ctor(`1,System.Linq.Expressions.Expression{System.Func{`1,`0}})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver`2" /> class.
+            </summary>
+            <param name="owner">The owner.</param>
+            <param name="propertyExpression">The property expression.</param>
+            <exception cref="T:System.ArgumentNullException">action</exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.ParameterObserver`2.Subscribe(System.IObserver{`0})">
+            <summary>
+                Notifies the provider that an observer is to receive notifications.
+            </summary>
+            <param name="observer">The object that is to receive notifications.</param>
+            <returns>
+                A reference to an interface that allows observers to stop receiving notifications before the provider has finished
+                sending them.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.ParameterObserver`2.CallAction">
+            <summary>
+                Calls the action.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.ParameterObserver`2.Dispose(System.Boolean)">
+            <summary>
+                Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing">
+                <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only
+                unmanaged resources.
+            </param>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.Reactive.ReplayParameterObserver`2.propertyGetter">
+            <summary>
+                The property propertyGetter
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Common.Parameters.Reactive.ReplayParameterObserver`2.subject">
+            <summary>
+                The subject
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.ReplayParameterObserver`2.#ctor(System.Linq.Expressions.Expression{System.Func{`0}})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver`2" /> class.
+            </summary>
+            <param name="propertyExpression">The property expression.</param>
+            <exception cref="T:System.ArgumentNullException">
+                action
+                or
+                propertyGetter
+            </exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.ReplayParameterObserver`2.#ctor(System.Linq.Expressions.Expression{System.Func{`0}},System.Int32)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.Reactive.ReplayParameterObserver`2" /> class.
+            </summary>
+            <param name="propertyExpression">The property expression.</param>
+            <param name="bufferSize">Size of the buffer.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.ReplayParameterObserver`2.#ctor(System.Linq.Expressions.Expression{System.Func{`0}},System.Int32,System.TimeSpan)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.Reactive.ReplayParameterObserver`2" /> class.
+            </summary>
+            <param name="propertyExpression">The property expression.</param>
+            <param name="bufferSize">Size of the buffer.</param>
+            <param name="window">The window.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.ReplayParameterObserver`2.#ctor(System.Linq.Expressions.Expression{System.Func{`0}},System.TimeSpan)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.Reactive.ReplayParameterObserver`2" /> class.
+            </summary>
+            <param name="propertyExpression">The property expression.</param>
+            <param name="window">The window.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.ReplayParameterObserver`2.#ctor(`1,System.Linq.Expressions.Expression{System.Func{`1,`0}})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver`2" /> class.
+            </summary>
+            <param name="owner">The owner.</param>
+            <param name="propertyExpression">The property expression.</param>
+            <exception cref="T:System.ArgumentNullException">action</exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.ReplayParameterObserver`2.Subscribe(System.IObserver{System.Nullable{`0}})">
+            <summary>
+                Notifies the provider that an observer is to receive notifications.
+            </summary>
+            <param name="observer">The object that is to receive notifications.</param>
+            <returns>
+                A reference to an interface that allows observers to stop receiving notifications before the provider has finished
+                sending them.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.ReplayParameterObserver`2.CallAction">
+            <summary>
+                Calls the action.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.ReplayParameterObserver`2.Dispose(System.Boolean)">
+            <summary>
+                Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing">
+                <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only
+                unmanaged resources.
+            </param>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.Reactive.ReplayParameterObserver`2.PropertyGetter(System.Func{`0})">
+            <summary>
+                Properties the getter.
+            </summary>
+            <param name="propertyExpression">The property expression.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Anori.WinUI.Common.SynchronizationContextExtensions">
+            <summary>
+                Synchronization Context Extensions.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Dispatch(System.Threading.SynchronizationContext,System.Action)">
+            <summary>
+                Dispatches the specified action.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Dispatch``1(System.Threading.SynchronizationContext,``0,System.Action{``0})">
+            <summary>
+                Dispatches the specified action.
+            </summary>
+            <typeparam name="TState">The type of the state.</typeparam>
+            <param name="context">The context.</param>
+            <param name="state">The state.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">
+                context
+                or
+                action is null.
+            </exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Dispatch(System.Threading.SynchronizationContext,System.EventHandler)">
+            <summary>
+                Dispatches the specified handler.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Dispatch(System.Threading.SynchronizationContext,System.Object,System.EventHandler)">
+            <summary>
+                Dispatches the specified sender.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sender">The sender.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Dispatch``1(System.Threading.SynchronizationContext,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
+            <summary>
+                Dispatches the specified value.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value">The value.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Dispatch``1(System.Threading.SynchronizationContext,System.Object,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
+            <summary>
+                Dispatches the specified sender.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="context">The context.</param>
+            <param name="sender">The sender.</param>
+            <param name="value">The value.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Dispatch``1(System.Threading.SynchronizationContext,System.Object,``0,System.EventHandler{System.EventArgs})">
+            <summary>
+            Dispatches the specified sender.
+            </summary>
+            <typeparam name="TEventArgs">The type of the event arguments.</typeparam>
+            <param name="context">The context.</param>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="!:TEventArgs" /> instance containing the event data.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Dispatch``1(System.Threading.SynchronizationContext,``0,System.EventHandler{System.EventArgs})">
+            <summary>
+            Dispatches the specified arguments.
+            </summary>
+            <typeparam name="TEventArgs">The type of the event arguments.</typeparam>
+            <param name="context">The context.</param>
+            <param name="args">The <see cref="!:TEventArgs"/> instance containing the event data.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+        </member>
+    </members>
+</doc>

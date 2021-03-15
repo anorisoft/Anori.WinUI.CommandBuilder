@@ -1,0 +1,2512 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Anori.WinUI.Commands.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCanExecuteBuilder">
+            <summary>
+                Activatable Async CanExecute Command Builder Interface.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCanExecuteBuilder.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>The Activatable Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCanExecuteBuilder.Build(System.Action{Anori.WinUI.Commands.Interfaces.IActivatableAsyncCommand})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>The Activatable Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCanExecuteBuilder.ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+                Observeses the property.
+            </summary>
+            <typeparam name="TType">The type of the type.</typeparam>
+            <param name="expression">The expression.</param>
+            <returns>The Activatable Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCanExecuteBuilder.Observes(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject)">
+            <summary>
+                Observeses the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+            <returns>The Activatable Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCanExecuteBuilder.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>The Activatable Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCanExecuteBuilder.AutoActivate">
+            <summary>
+                Automatic activate.
+            </summary>
+            <returns>The Activatable Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCanExecuteBuilder`1">
+            <summary>
+                Activatable Async CanExecute Command Builder Interface.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCanExecuteBuilder`1.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>The Activatable Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCanExecuteBuilder`1.Build(System.Action{Anori.WinUI.Commands.Interfaces.IActivatableAsyncCommand{`0}})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>The Activatable Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCanExecuteBuilder`1.ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+                Observeses the property.
+            </summary>
+            <typeparam name="TType">The type of the type.</typeparam>
+            <param name="expression">The expression.</param>
+            <returns>The Activatable Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCanExecuteBuilder`1.Observes(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject)">
+            <summary>
+                Observeses the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+            <returns>The Activatable Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCanExecuteBuilder`1.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>The Activatable Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCanExecuteBuilder`1.AutoActivate">
+            <summary>
+                Automatics the activate.
+            </summary>
+            <returns>The Activatable Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder">
+            <summary>
+                Activatable Async Command Builder.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Activatable Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder.Build(System.Action{Anori.WinUI.Commands.Interfaces.IActivatableAsyncCommand})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Activatable Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder.CanExecute(System.Func{System.Boolean})">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>The Activatable Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder.CanExecute(Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>The Activatable Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>The Activatable Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}},System.Boolean)">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <param name="fallback">if set to <c>true</c> [fallback].</param>
+            <returns>The Activatable Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder.AutoActivate">
+            <summary>
+                Automatics the activate.
+            </summary>
+            <returns>The Activatable Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder`1">
+            <summary>
+                Activatable Async Command Builder Interface.
+            </summary>
+            <typeparam name="T">The parameter type.</typeparam>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder`1.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Activatable Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder`1.Build(System.Action{Anori.WinUI.Commands.Interfaces.IActivatableAsyncCommand{`0}})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Activatable Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder`1.CanExecute(System.Predicate{`0})">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Async CanExecute Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder`1.CanExecute(Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Async CanExecute Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder`1.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>
+                Result of ObservesCanExecute as IActivatableAsyncCanExecuteBuilder&lt;T&gt;.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder`1.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}},System.Boolean)">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <param name="fallback">if set to <c>true</c> [fallback].</param>
+            <returns>
+                Result of ObservesCanExecute as IActivatableAsyncCanExecuteBuilder&lt;T&gt;.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableAsyncCommandBuilder`1.AutoActivate">
+            <summary>
+                Automatics the activate.
+            </summary>
+            <returns>
+                Result of AutoActivate as IActivatableAsyncCanExecuteBuilder&lt;T&gt;.
+            </returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder">
+            <summary>
+                The Activatable Concurrency Asynchronous Can Execute Builder interface.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Activatable Concurrency Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder.Build(System.Action{Anori.WinUI.Commands.Interfaces.IActivatableConcurrencyAsyncCommand})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Activatable Concurrency Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder.ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+                Observeses the property.
+            </summary>
+            <typeparam name="TType">The type of the type.</typeparam>
+            <param name="expression">The expression.</param>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder.Observes(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject)">
+            <summary>
+                Observeses the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder.AutoActivate">
+            <summary>
+                Automatics the activate.
+            </summary>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder.OnError(System.Func{System.Exception,System.Threading.Tasks.Task})">
+            <summary>
+                Called when [error].
+            </summary>
+            <param name="error">The error.</param>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder.OnCompleted(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+                Called when [completed].
+            </summary>
+            <param name="completed">The completed.</param>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder.OnCancel(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+                Called when [cancel].
+            </summary>
+            <param name="cancel">The cancel.</param>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder`1">
+            <summary>
+                The Activatable Concurrency Asynchronous Can Execute Builder interface.
+            </summary>
+            <typeparam name="T">Parameter tyoe.</typeparam>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder`1.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Activatable Concurrency Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder`1.Build(System.Action{Anori.WinUI.Commands.Interfaces.IActivatableConcurrencyAsyncCommand{`0}})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Activatable Concurrency Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder`1.ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+                Observeses the property.
+            </summary>
+            <typeparam name="TType">The type of the type.</typeparam>
+            <param name="expression">The expression.</param>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder`1.Observes(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject)">
+            <summary>
+                Observeses the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder`1.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder`1.AutoActivate">
+            <summary>
+                Automatics the activate.
+            </summary>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder`1.OnError(System.Func{System.Exception,System.Threading.Tasks.Task})">
+            <summary>
+                Called when [error].
+            </summary>
+            <param name="error">The error.</param>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder`1.OnCompleted(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+                Called when [completed].
+            </summary>
+            <param name="completed">The completed.</param>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCanExecuteBuilder`1.OnCancel(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+                Called when [cancel].
+            </summary>
+            <param name="cancel">The cancel.</param>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder">
+            <summary>
+                The I Activatable Concurrency Asynchronous Command Builder interface.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder.Build">
+            <summary>
+            Builds this instance.
+            </summary>
+            <returns>Activatable Concurrency Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder.Build(System.Action{Anori.WinUI.Commands.Interfaces.IActivatableConcurrencyAsyncCommand})">
+            <summary>
+            Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Activatable Concurrency Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder.CanExecute(System.Func{System.Boolean})">
+            <summary>
+            Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder.CanExecute(Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
+            <summary>
+            Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
+            <summary>
+            Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}},System.Boolean)">
+            <summary>
+            Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <param name="fallback">if set to <c>true</c> [fallback].</param>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder.AutoActivate">
+            <summary>
+            Automatics the activate.
+            </summary>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder.OnError(System.Func{System.Exception,System.Threading.Tasks.Task})">
+            <summary>
+            Called when [error].
+            </summary>
+            <param name="error">The error.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder.OnCompleted(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Called when [completed].
+            </summary>
+            <param name="completed">The completed.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder.OnCancel(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Called when [cancel].
+            </summary>
+            <param name="cancel">The cancel.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder`1">
+            <summary>
+                The I Activatable Concurrency Asynchronous Command Builder interface.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder`1.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Activatable Concurrency Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder`1.Build(System.Action{Anori.WinUI.Commands.Interfaces.IActivatableConcurrencyAsyncCommand{`0}})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Activatable Concurrency Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder`1.CanExecute(System.Predicate{`0})">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder`1.CanExecute(Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder`1.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder`1.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}},System.Boolean)">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <param name="fallback">if set to <c>true</c> [fallback].</param>
+            <returns>
+                Activatable Concurrency Async Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder`1.AutoActivate">
+            <summary>
+                Automatics the activate.
+            </summary>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder`1.OnError(System.Func{System.Exception,System.Threading.Tasks.Task})">
+            <summary>
+                Called when [error].
+            </summary>
+            <param name="error">The error.</param>
+            <returns>Activatable Concurrency Async Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder`1.OnCompleted(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+                Called when [completed].
+            </summary>
+            <param name="completed">The completed.</param>
+            <returns>Activatable Concurrency Async Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder`1.OnCancel(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+                Called when [cancel].
+            </summary>
+            <param name="cancel">The cancel.</param>
+            <returns>Activatable Concurrency Async Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder">
+            <summary>
+                The I Activatable Concurrency Synchronize Can Execute Builder interface.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Activatable Concurrency Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder.Build(System.Action{Anori.WinUI.Commands.Interfaces.IActivatableConcurrencySyncCommand})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Activatable Concurrency Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder.ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+                Observeses the property.
+            </summary>
+            <typeparam name="TType">The type of the type.</typeparam>
+            <param name="expression">The expression.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder.Observes(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject)">
+            <summary>
+                Observeses the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder.AutoActivate">
+            <summary>
+                Automatics the activate.
+            </summary>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder.OnError(System.Action{System.Exception})">
+            <summary>
+                Called when [error].
+            </summary>
+            <param name="error">The error.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder.OnCompleted(System.Action)">
+            <summary>
+                Called when [completed].
+            </summary>
+            <param name="completed">The completed.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder.OnCancel(System.Action)">
+            <summary>
+                Called when [cancel].
+            </summary>
+            <param name="cancel">The cancel.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder`1">
+            <summary>
+                The Activatable Concurrency Synchronize Can Execute Builder interface.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder`1.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Activatable Concurrency Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder`1.Build(System.Action{Anori.WinUI.Commands.Interfaces.IActivatableConcurrencySyncCommand{`0}})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Activatable Concurrency Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder`1.ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+                Observeses the property.
+            </summary>
+            <typeparam name="TType">The type of the type.</typeparam>
+            <param name="expression">The expression.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder`1.Observes(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject)">
+            <summary>
+                Observeses the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder`1.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder`1.AutoActivate">
+            <summary>
+                Automatics the activate.
+            </summary>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder`1.OnError(System.Action{System.Exception})">
+            <summary>
+                Called when [error].
+            </summary>
+            <param name="error">The error.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder`1.OnCompleted(System.Action)">
+            <summary>
+                Called when [completed].
+            </summary>
+            <param name="completed">The completed.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCanExecuteBuilder`1.OnCancel(System.Action)">
+            <summary>
+                Called when [cancel].
+            </summary>
+            <param name="cancel">The cancel.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder">
+            <summary>
+                The Activatable Concurrency Synchronize Command Builder interface.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Activatable Concurrency Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder.Build(System.Action{Anori.WinUI.Commands.Interfaces.IActivatableConcurrencySyncCommand})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Activatable Concurrency Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder.CanExecute(System.Func{System.Boolean})">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder.CanExecute(Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}},System.Boolean)">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <param name="fallback">if set to <c>true</c> [fallback].</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder.AutoActivate">
+            <summary>
+                Automatics the activate.
+            </summary>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder.OnError(System.Action{System.Exception})">
+            <summary>
+                Called when [error].
+            </summary>
+            <param name="error">The error.</param>
+            <returns>Activatable Concurrency Sync Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder.OnCompleted(System.Action)">
+            <summary>
+                Called when [completed].
+            </summary>
+            <param name="completed">The completed.</param>
+            <returns>Activatable Concurrency Sync Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder.OnCancel(System.Action)">
+            <summary>
+                Called when [cancel].
+            </summary>
+            <param name="cancel">The cancel.</param>
+            <returns>Activatable Concurrency Sync Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder`1">
+            <summary>
+                The Activatable Concurrency Synchronize Command Builder interface.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder`1.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Activatable Concurrency Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder`1.Build(System.Action{Anori.WinUI.Commands.Interfaces.IActivatableConcurrencySyncCommand{`0}})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Activatable Concurrency Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder`1.CanExecute(System.Predicate{`0})">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder`1.CanExecute(Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder`1.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder`1.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}},System.Boolean)">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <param name="fallback">if set to <c>true</c> [fallback].</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder`1.AutoActivate">
+            <summary>
+                Automatics the activate.
+            </summary>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder`1.OnError(System.Action{System.Exception})">
+            <summary>
+                Called when [error].
+            </summary>
+            <param name="error">The error.</param>
+            <returns>Activatable Concurrency Sync Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder`1.OnCompleted(System.Action)">
+            <summary>
+                Called when [completed].
+            </summary>
+            <param name="completed">The completed.</param>
+            <returns>Activatable Concurrency Sync Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencySyncCommandBuilder`1.OnCancel(System.Action)">
+            <summary>
+                Called when [cancel].
+            </summary>
+            <param name="cancel">The cancel.</param>
+            <returns>Activatable Concurrency Sync Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCanExecuteBuilder">
+            <summary>
+                The Activatable Synchronize Can Execute Builder interface.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCanExecuteBuilder.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Activatable Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCanExecuteBuilder.Build(System.Action{Anori.WinUI.Commands.Interfaces.IActivatableSyncCommand})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Activatable Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCanExecuteBuilder.ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+                Observeses the property.
+            </summary>
+            <typeparam name="TType">The type of the type.</typeparam>
+            <param name="expression">The expression.</param>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCanExecuteBuilder.Observes(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject)">
+            <summary>
+                Observeses the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCanExecuteBuilder.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCanExecuteBuilder.AutoActivate">
+            <summary>
+                Automatics the activate.
+            </summary>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCanExecuteBuilder`1">
+            <summary>
+                The I Activatable Synchronize Can Execute Builder interface.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCanExecuteBuilder`1.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Activatable Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCanExecuteBuilder`1.Build(System.Action{Anori.WinUI.Commands.Interfaces.IActivatableSyncCommand{`0}})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Activatable Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCanExecuteBuilder`1.ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+                Observeses the property.
+            </summary>
+            <typeparam name="TType">The type of the type.</typeparam>
+            <param name="expression">The expression.</param>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCanExecuteBuilder`1.Observes(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject)">
+            <summary>
+                Observeses the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCanExecuteBuilder`1.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCanExecuteBuilder`1.AutoActivate">
+            <summary>
+                Automatics the activate.
+            </summary>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCommandBuilder">
+            <summary>
+                The Activatable Synchronize Command Builder interface.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCommandBuilder.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Activatable Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCommandBuilder.Build(System.Action{Anori.WinUI.Commands.Interfaces.IActivatableSyncCommand})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Activatable Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCommandBuilder.CanExecute(System.Func{System.Boolean})">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCommandBuilder.CanExecute(Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCommandBuilder.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCommandBuilder.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}},System.Boolean)">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <param name="fallback">if set to <c>true</c> [fallback].</param>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCommandBuilder.AutoActivate">
+            <summary>
+                Automatics the activate.
+            </summary>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCommandBuilder`1">
+            <summary>
+                The Activatable Synchronize Command Builder interface.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCommandBuilder`1.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Activatable Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCommandBuilder`1.Build(System.Action{Anori.WinUI.Commands.Interfaces.IActivatableSyncCommand{`0}})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Activatable Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCommandBuilder`1.CanExecute(System.Predicate{`0})">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCommandBuilder`1.CanExecute(Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCommandBuilder`1.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCommandBuilder`1.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}},System.Boolean)">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <param name="fallback">if set to <c>true</c> [fallback].</param>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IActivatableSyncCommandBuilder`1.AutoActivate">
+            <summary>
+                Automatics the activate.
+            </summary>
+            <returns>Activatable Sync Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder">
+            <summary>
+                The Asynchronous Can Execute Builder interface.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>
+                The Async Command.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder.Build(System.Action{Anori.WinUI.Commands.Interfaces.IAsyncCommand})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>
+                The Async Command.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder.ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+                Observeses the property.
+            </summary>
+            <typeparam name="TType">The type of the type.</typeparam>
+            <param name="canExecute">The can execute.</param>
+            <returns>
+                Async CanExecute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder.Observes(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject)">
+            <summary>
+                Observeses the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+            <returns>
+                Async CanExecute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>
+                Async CanExecute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder.Activatable">
+            <summary>
+                Activatables this instance.
+            </summary>
+            <returns>
+                Activatable Async CanExecute Command Builder.
+            </returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder`1">
+            <summary>
+                The Asynchronous Can Execute Builder interface.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder`1.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder`1.Build(System.Action{Anori.WinUI.Commands.Interfaces.IAsyncCommand{`0}})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder`1.ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+                Observeses the property.
+            </summary>
+            <typeparam name="TType">The type of the type.</typeparam>
+            <param name="canExecute">The can execute.</param>
+            <returns>
+                Async Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder`1.Observes(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject)">
+            <summary>
+                Observeses the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+            <returns>
+                Async Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder`1.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>
+                Async Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCanExecuteBuilder`1.Activatable">
+            <summary>
+                Activatables this instance.
+            </summary>
+            <returns>Activatable Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder">
+            <summary>
+                Async Command Builder.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>The Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder.Build(System.Action{Anori.WinUI.Commands.Interfaces.IAsyncCommand})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>The Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder.CanExecute(System.Func{System.Boolean})">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>The Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder.CanExecute(Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>The Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>The Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>The Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder.Activatable">
+            <summary>
+                Activatables this instance.
+            </summary>
+            <returns>The Async CanExecute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder`1">
+            <summary>
+                The I Asynchronous Command Builder interface.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder`1.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder`1.Build(System.Action{Anori.WinUI.Commands.Interfaces.IAsyncCommand{`0}})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder`1.CanExecute(System.Predicate{`0})">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>
+                Async Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder`1.CanExecute(Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>
+                Async Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder`1.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>
+                Async Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder`1.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>
+                Async Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IAsyncCommandBuilder`1.Activatable">
+            <summary>
+                Activatables this instance.
+            </summary>
+            <returns>
+                Activatable Async Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.ICommandBuilder">
+            <summary>
+                The Command Builder interface.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ICommandBuilder.Command(System.Action)">
+            <summary>
+                Commands the specified execute.
+            </summary>
+            <param name="execute">The execute.</param>
+            <returns>Sync Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ICommandBuilder.Command``1(System.Action{``0})">
+            <summary>
+                Commands the specified execute.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+            <param name="execute">The execute.</param>
+            <returns>Sync Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ICommandBuilder.Command(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+                Commands the specified execute.
+            </summary>
+            <param name="execute">The execute.</param>
+            <returns>Async Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ICommandBuilder.Command``1(System.Func{``0,System.Threading.Tasks.Task})">
+            <summary>
+                Commands the specified execute.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+            <param name="execute">The execute.</param>
+            <returns>Async Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ICommandBuilder.Command(System.Action,System.Func{System.Boolean})">
+            <summary>
+                Commands the specified execute.
+            </summary>
+            <param name="execute">The execute.</param>
+            <param name="canExecute">The can execute.</param>
+            <returns>Sync Can Excecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ICommandBuilder.Command``1(System.Action{``0},System.Predicate{``0})">
+            <summary>
+                Commands the specified execute.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+            <param name="execute">The execute.</param>
+            <param name="canExecute">The can execute.</param>
+            <returns>Sync Can Excecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ICommandBuilder.Command(System.Func{System.Threading.Tasks.Task},System.Func{System.Boolean})">
+            <summary>
+                Commands the specified execute.
+            </summary>
+            <param name="execute">The execute.</param>
+            <param name="canExecute">The can execute.</param>
+            <returns>Async Can Excecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ICommandBuilder.Command``1(System.Func{``0,System.Threading.Tasks.Task},System.Predicate{``0})">
+            <summary>
+                Commands the specified execute.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+            <param name="execute">The execute.</param>
+            <param name="canExecute">The can execute.</param>
+            <returns>Async Can Excecute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ICommandBuilder.Command(System.Action{System.Threading.CancellationToken})">
+            <summary>
+                Commands the specified execute.
+            </summary>
+            <param name="execute">The execute.</param>
+            <returns>Concurrency Sync Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ICommandBuilder.Command``1(System.Action{``0,System.Threading.CancellationToken})">
+            <summary>
+                Commands the specified execute.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+            <param name="execute">The execute.</param>
+            <returns>Concurrency Sync Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ICommandBuilder.Command(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})">
+            <summary>
+                Commands the specified execute.
+            </summary>
+            <param name="execute">The execute.</param>
+            <returns>Concurrency Async Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ICommandBuilder.Command``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task})">
+            <summary>
+                Commands the specified execute.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+            <param name="execute">The execute.</param>
+            <returns>Concurrency Async Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ICommandBuilder.Command(System.Action{System.Threading.CancellationToken},System.Func{System.Boolean})">
+            <summary>
+                Commands the specified execute.
+            </summary>
+            <param name="execute">The execute.</param>
+            <param name="canExecute">The can execute.</param>
+            <returns>Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ICommandBuilder.Command``1(System.Action{``0,System.Threading.CancellationToken},System.Predicate{``0})">
+            <summary>
+                Commands the specified execute.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+            <param name="execute">The execute.</param>
+            <param name="canExecute">The can execute.</param>
+            <returns>Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ICommandBuilder.Command(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Func{System.Boolean})">
+            <summary>
+                Commands the specified execute.
+            </summary>
+            <param name="execute">The execute.</param>
+            <param name="canExecute">The can execute.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ICommandBuilder.Command``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Predicate{``0})">
+            <summary>
+                Commands the specified execute.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+            <param name="execute">The execute.</param>
+            <param name="canExecute">The can execute.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder">
+            <summary>
+                The I Concurrency Asynchronous Can Execute Builder interface.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Concurrency Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder.Build(System.Action{Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Concurrency Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder.ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+                Observeses the property.
+            </summary>
+            <typeparam name="TType">The type of the type.</typeparam>
+            <param name="expression">The expression.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder.Observes(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject)">
+            <summary>
+                Observeses the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder.Activatable">
+            <summary>
+                Activatables this instance.
+            </summary>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder.OnError(System.Func{System.Exception,System.Threading.Tasks.Task})">
+            <summary>
+                Called when [error].
+            </summary>
+            <param name="error">The error.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder.OnCompleted(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+                Called when [completed].
+            </summary>
+            <param name="completed">The completed.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder.OnCancel(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+                Called when [cancel].
+            </summary>
+            <param name="cancel">The cancel.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder`1">
+            <summary>
+                The I Concurrency Asynchronous Can Execute Builder interface.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder`1.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Concurrency Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder`1.Build(System.Action{Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand{`0}})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Concurrency Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder`1.ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+                Observeses the property.
+            </summary>
+            <typeparam name="TType">The type of the type.</typeparam>
+            <param name="expression">The expression.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder`1.Observes(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject)">
+            <summary>
+                Observeses the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder`1.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder`1.Activatable">
+            <summary>
+                Activatables this instance.
+            </summary>
+            <returns>
+                Activatable Concurrency Async Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder`1.OnError(System.Func{System.Exception,System.Threading.Tasks.Task})">
+            <summary>
+                Called when [error].
+            </summary>
+            <param name="error">The error.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder`1.OnCompleted(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+                Called when [completed].
+            </summary>
+            <param name="completed">The completed.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder`1.OnCancel(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+                Called when [cancel].
+            </summary>
+            <param name="cancel">The cancel.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder">
+            <summary>
+                The Concurrency Asynchronous Command Builder interface.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Concurrency Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder.Build(System.Action{Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Concurrency Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder.CanExecute(System.Func{System.Boolean})">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder.CanExecute(Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}},System.Boolean)">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <param name="fallback">if set to <c>true</c> [fallback].</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder.Activatable">
+            <summary>
+                Activatables this instance.
+            </summary>
+            <returns>Activatable Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder.OnError(System.Func{System.Exception,System.Threading.Tasks.Task})">
+            <summary>
+                Called when [error].
+            </summary>
+            <param name="error">The error.</param>
+            <returns>Concurrency Async Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder.OnCompleted(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+                Called when [completed].
+            </summary>
+            <param name="completed">The completed.</param>
+            <returns>Concurrency Async Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder.OnCancel(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+                Called when [cancel].
+            </summary>
+            <param name="cancel">The cancel.</param>
+            <returns>Concurrency Async Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder`1">
+            <summary>
+                The I Concurrency Asynchronous Command Builder interface.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder`1.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Concurrency Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder`1.Build(System.Action{Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand{`0}})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Concurrency Async Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder`1.CanExecute(System.Predicate{`0})">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Concurrency Async Command Can Execute Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder`1.CanExecute(Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Concurrency Async Command vBuilder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder`1.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder`1.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}},System.Boolean)">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <param name="fallback">if set to <c>true</c> [fallback].</param>
+            <returns>Concurrency Async Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder`1.Activatable">
+            <summary>
+                Activatables this instance.
+            </summary>
+            <returns>Activatable Concurrency Async Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder`1.OnError(System.Func{System.Exception,System.Threading.Tasks.Task})">
+            <summary>
+                Called when [error].
+            </summary>
+            <param name="error">The error.</param>
+            <returns>Concurrency Async Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder`1.OnCompleted(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+                Called when [completed].
+            </summary>
+            <param name="completed">The completed.</param>
+            <returns>Concurrency Async Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder`1.OnCancel(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+                Called when [cancel].
+            </summary>
+            <param name="cancel">The cancel.</param>
+            <returns>Concurrency Async Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder">
+            <summary>
+                The Concurrency Synchronize Can Execute Builder interface.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Concurrency Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder.Build(System.Action{Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Concurrency Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder.Activatable">
+            <summary>
+                Activatables this instance.
+            </summary>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder.ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+                Observeses the property.
+            </summary>
+            <typeparam name="TType">The type of the type.</typeparam>
+            <param name="expression">The expression.</param>
+            <returns>Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder.Observes(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject)">
+            <summary>
+                Observeses the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+            <returns>Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder.OnError(System.Action{System.Exception})">
+            <summary>
+                Called when [error].
+            </summary>
+            <param name="error">The error.</param>
+            <returns>
+                Concurrency Sync Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder.OnCompleted(System.Action)">
+            <summary>
+                Called when [completed].
+            </summary>
+            <param name="completed">The completed.</param>
+            <returns>
+                Concurrency Sync Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder.OnCancel(System.Action)">
+            <summary>
+                Called when [cancel].
+            </summary>
+            <param name="cancel">The cancel.</param>
+            <returns>Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder`1">
+            <summary>
+                The I Concurrency Synchronize Can Execute Builder interface.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder`1.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Concurrency Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder`1.Build(System.Action{Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand{`0}})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Concurrency Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder`1.ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+                Observeses the property.
+            </summary>
+            <typeparam name="TType">The type of the type.</typeparam>
+            <param name="expression">The expression.</param>
+            <returns>Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder`1.Observes(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject)">
+            <summary>
+                Observeses the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+            <returns>Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder`1.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>Concurrency Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder`1.Activatable">
+            <summary>
+                Activatables this instance.
+            </summary>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder`1.OnError(System.Action{System.Exception})">
+            <summary>
+                Called when [error].
+            </summary>
+            <param name="error">The error.</param>
+            <returns>Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder`1.OnCompleted(System.Action)">
+            <summary>
+                Called when [completed].
+            </summary>
+            <param name="completed">The completed.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCanExecuteBuilder`1.OnCancel(System.Action)">
+            <summary>
+                Called when [cancel].
+            </summary>
+            <param name="cancel">The cancel.</param>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder">
+            <summary>
+                The I Concurrency Synchronize Command Builder interface.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Concurrency Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder.Build(System.Action{Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Concurrency Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder.CanExecute(System.Func{System.Boolean})">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder.CanExecute(Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}},System.Boolean)">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <param name="fallback">if set to <c>true</c> [fallback].</param>
+            <returns>Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder.Activatable">
+            <summary>
+                Activatables this instance.
+            </summary>
+            <returns>Activatable Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder.OnError(System.Action{System.Exception})">
+            <summary>
+                Called when [error].
+            </summary>
+            <param name="error">The error.</param>
+            <returns>Concurrency Sync Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder.OnCompleted(System.Action)">
+            <summary>
+                Called when [completed].
+            </summary>
+            <param name="completed">The completed.</param>
+            <returns>Concurrency Sync Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder.OnCancel(System.Action)">
+            <summary>
+                Called when [cancel].
+            </summary>
+            <param name="cancel">The cancel.</param>
+            <returns>Concurrency Sync Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder`1">
+            <summary>
+                The I Concurrency Synchronize Command Builder interface.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder`1.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Concurrency Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder`1.Build(System.Action{Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand{`0}})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Concurrency Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder`1.CanExecute(System.Predicate{`0})">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder`1.CanExecute(Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder`1.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder`1.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}},System.Boolean)">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <param name="fallback">if set to <c>true</c> [fallback].</param>
+            <returns>Concurrency Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder`1.Activatable">
+            <summary>
+                Activatables this instance.
+            </summary>
+            <returns>Activatable Concurrency Sync Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder`1.OnError(System.Action{System.Exception})">
+            <summary>
+                Called when [error].
+            </summary>
+            <param name="error">The error.</param>
+            <returns>Concurrency Sync Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder`1.OnCompleted(System.Action)">
+            <summary>
+                Called when [completed].
+            </summary>
+            <param name="completed">The completed.</param>
+            <returns>Concurrency Sync Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencySyncCommandBuilder`1.OnCancel(System.Action)">
+            <summary>
+                Called when [cancel].
+            </summary>
+            <param name="cancel">The cancel.</param>
+            <returns>Concurrency Sync Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.ISyncCanExecuteBuilder">
+            <summary>
+                The Synchronize Can Execute Builder interface.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCanExecuteBuilder.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>
+                Sync Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCanExecuteBuilder.Build(System.Action{Anori.WinUI.Commands.Interfaces.ISyncCommand})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>
+                Sync Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCanExecuteBuilder.ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+                Observeses the property.
+            </summary>
+            <typeparam name="TType">The type of the type.</typeparam>
+            <param name="expression">The expression.</param>
+            <returns>
+                Sync Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCanExecuteBuilder.Observes(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject)">
+            <summary>
+                Observeses the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+            <returns>
+                Sync Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCanExecuteBuilder.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>
+                Sync Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCanExecuteBuilder.Activatable">
+            <summary>
+                Activatables this instance.
+            </summary>
+            <returns>
+                Activatable Sync Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.ISyncCanExecuteBuilder`1">
+            <summary>
+                The I Synchronize Can Execute Builder interface.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCanExecuteBuilder`1.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCanExecuteBuilder`1.Build(System.Action{Anori.WinUI.Commands.Interfaces.ISyncCommand{`0}})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCanExecuteBuilder`1.ObservesProperty``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+                Observeses the property.
+            </summary>
+            <typeparam name="TType">The type of the type.</typeparam>
+            <param name="canExecute">The can execute.</param>
+            <returns>Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCanExecuteBuilder`1.Observes(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject)">
+            <summary>
+                Observeses the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+            <returns>Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCanExecuteBuilder`1.ObservesCommandManager">
+            <summary>
+                Observeses the command manager.
+            </summary>
+            <returns>Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCanExecuteBuilder`1.Activatable">
+            <summary>
+                Activatables this instance.
+            </summary>
+            <returns>Activatable Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.ISyncCommandBuilder">
+            <summary>
+                The Synchronize Command Builder interface.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCommandBuilder.Build">
+            <summary>
+                Builds this instance.
+            </summary>
+            <returns>
+                Sync Command.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCommandBuilder.Build(System.Action{Anori.WinUI.Commands.Interfaces.ISyncCommand})">
+            <summary>
+                Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>
+                Sync Command.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCommandBuilder.CanExecute(System.Func{System.Boolean})">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>
+                Sync Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCommandBuilder.CanExecute(Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
+            <summary>
+                Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>
+                Sync Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCommandBuilder.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>
+                Sync Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCommandBuilder.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}},System.Boolean)">
+            <summary>
+                Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <param name="fallback">if set to <c>true</c> [fallback].</param>
+            <returns>
+                Sync Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCommandBuilder.Activatable">
+            <summary>
+                Activatables this instance.
+            </summary>
+            <returns>
+                Activatable Sync Can Execute Command Builder.
+            </returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.Builders.ISyncCommandBuilder`1">
+            <summary>
+                The I Synchronize Command Builder interface.
+            </summary>
+            <typeparam name="T">Parameter type.</typeparam>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCommandBuilder`1.Build">
+            <summary>
+            Builds this instance.
+            </summary>
+            <returns>Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCommandBuilder`1.Build(System.Action{Anori.WinUI.Commands.Interfaces.ISyncCommand{`0}})">
+            <summary>
+            Builds the specified set command.
+            </summary>
+            <param name="setCommand">The set command.</param>
+            <returns>Sync Command.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCommandBuilder`1.CanExecute(System.Predicate{`0})">
+            <summary>
+            Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCommandBuilder`1.CanExecute(Anori.WinUI.Commands.Interfaces.ICanExecuteSubject)">
+            <summary>
+            Determines whether this instance can execute the specified can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCommandBuilder`1.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}})">
+            <summary>
+            Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <returns>Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCommandBuilder`1.ObservesCanExecute(System.Linq.Expressions.Expression{System.Func{System.Boolean}},System.Boolean)">
+            <summary>
+            Observeses the can execute.
+            </summary>
+            <param name="canExecute">The can execute.</param>
+            <param name="fallback">if set to <c>true</c> [fallback].</param>
+            <returns>Sync Can Execute Command Builder.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.Builders.ISyncCommandBuilder`1.Activatable">
+            <summary>
+            Activatables this instance.
+            </summary>
+            <returns>Activatable Sync Command Builder.</returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.IActivatableAsyncCommand">
+            <summary>
+                Activatable Async Command Interface.
+            </summary>
+            <seealso cref="T:Anori.Common.IActivatable`1" />
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.IAsyncCommand" />
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.IActivatableAsyncCommand`1">
+            <summary>
+                Activatable Async Command Interface.
+            </summary>
+            <typeparam name="T">The parameter type.</typeparam>
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.IAsyncCommand`1" />
+            <seealso cref="T:Anori.Common.IActivatable" />
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.IActivatableConcurrencyAsyncCommand">
+            <summary>
+                Activatable Concurrency Async Command Interface.
+            </summary>
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand" />
+            <seealso cref="T:Anori.Common.IActivatable" />
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.IActivatableConcurrencyAsyncCommand.Execute">
+            <summary>
+                Executes this instance.
+            </summary>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.IActivatableConcurrencyAsyncCommand`1">
+            <summary>
+                Activatable Concurrency Async Command Interface.
+            </summary>
+            <typeparam name="T">The parameter type.</typeparam>
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand`1" />
+            <seealso cref="T:Anori.Common.IActivatable" />
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.IActivatableConcurrencySyncCommand">
+            <summary>
+                Activatable Concurrency Sync Command Interface.
+            </summary>
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand" />
+            <seealso cref="T:Anori.Common.IActivatable" />
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.IActivatableConcurrencySyncCommand`1">
+            <summary>
+                Activatable Concurrency Sync Command Interface.
+            </summary>
+            <typeparam name="T">The parameter type.</typeparam>
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand`1" />
+            <seealso cref="T:Anori.Common.IActivatable" />
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.IActivatableSyncCommand">
+            <summary>
+                Activatable Sync Command Interface.
+            </summary>
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.ISyncCommand" />
+            <seealso cref="T:Anori.Common.IActivatable" />
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.IActivatableSyncCommand`1">
+            <summary>
+                Activatable Sync Command Interface.
+            </summary>
+            <typeparam name="T">The parameter type.</typeparam>
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.ISyncCommand`1" />
+            <seealso cref="T:Anori.Common.IActivatable" />
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.IAsyncCommand">
+            <summary>
+                Async Command Interface.
+            </summary>
+            <seealso cref="T:System.Windows.Input.ICommand" />
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.IAsyncCommand.ExecuteAsync">
+            <summary>
+                Executes the asynchronous.
+            </summary>
+            <returns>Async task result.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.IAsyncCommand.CanExecute">
+            <summary>
+                Determines whether this instance can execute.
+            </summary>
+            <returns>
+                <c>true</c> if this instance can execute; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.IAsyncCommand`1">
+            <summary>
+                Async Command Interface.
+            </summary>
+            <typeparam name="T">The parameter type.</typeparam>
+            <seealso cref="T:System.Windows.Input.ICommand" />
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.IAsyncCommand`1.ExecuteAsync(`0)">
+            <summary>
+                Executes the asynchronous.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The async taskresult.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.IAsyncCommand`1.CanExecute(`0)">
+            <summary>
+                Determines whether this instance can execute the specified parameter.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <returns>
+                <c>true</c> if this instance can execute the specified parameter; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.ICanExecute">
+            <summary>
+                CanExecute Interface.
+            </summary>
+        </member>
+        <member name="P:Anori.WinUI.Commands.Interfaces.ICanExecute.CanExecute">
+            <summary>
+                Gets the can execute.
+            </summary>
+            <value>
+                The can execute.
+            </value>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver">
+            <summary>
+            CanExecute Changed Observer Interface.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver.RaisePropertyChanged">
+            <summary>
+            Called when [can execute changed].
+            </summary>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject">
+            <summary>
+            CanExecute Changed Subject Interface.
+            </summary>
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubjectBase" />
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubjectBase">
+            <summary>
+                Interface Can Execute Updater.
+            </summary>
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubjectBase.Add(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver)">
+            <summary>
+                Adds the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubjectBase.Remove(Anori.WinUI.Commands.Interfaces.ICanExecuteChangedObserver)">
+            <summary>
+                Removes the specified observer.
+            </summary>
+            <param name="observer">The observer.</param>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.ICanExecuteObserver">
+            <summary>
+                CanExecute Observer Interface.
+            </summary>
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.ICanExecuteSubject" />
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.ICanExecuteSubject">
+            <summary>
+                CanExecute Subject Interface.
+            </summary>
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubjectBase" />
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.ICanExecute" />
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand">
+            <summary>
+                Concurrency Async Command Interface.
+            </summary>
+            <seealso cref="T:System.Windows.Input.ICommand" />
+        </member>
+        <member name="P:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand.IsExecuting">
+            <summary>
+                Gets a value indicating whether this instance is executing.
+            </summary>
+            <value>
+                The is executing.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand.CancelCommand">
+            <summary>
+                Gets the cancel command.
+            </summary>
+            <value>
+                The cancel command.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand.WasCanceled">
+            <summary>
+                Gets a value indicating whether [was canceled].
+            </summary>
+            <value>
+                <c>true</c> if [was canceled]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand.WasSuccessfuly">
+            <summary>
+                Gets a value indicating whether [was successfuly].
+            </summary>
+            <value>
+                <c>true</c> if [was successfuly]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand.WasFaulty">
+            <summary>
+                Gets a value indicating whether [was faulty].
+            </summary>
+            <value>
+                <c>true</c> if [was faulty]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>
+                Executes the asynchronous.
+            </summary>
+            <param name="token">The token.</param>
+            <returns>The async task.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand.CanExecute">
+            <summary>
+                Determines whether this instance can execute.
+            </summary>
+            <returns>
+                <c>true</c> if this instance can execute; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand`1">
+            <summary>
+                Concurrency Async Command Interface.
+            </summary>
+            <typeparam name="T">The Type.</typeparam>
+            <seealso cref="T:System.Windows.Input.ICommand" />
+        </member>
+        <member name="P:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand`1.IsExecuting">
+            <summary>
+                Gets a value indicating whether this instance is executing.
+            </summary>
+            <value>
+                <c>true</c> if this instance is executing; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand`1.CancelCommand">
+            <summary>
+                Gets the cancel command.
+            </summary>
+            <value>
+                The cancel command.
+            </value>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand`1.ExecuteAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+                Executes the asynchronous.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <param name="token">The token.</param>
+            <returns>The Task.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand`1.CanExecute(`0)">
+            <summary>
+                Determines whether this instance can execute.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <returns>
+                <c>true</c> if this instance can execute; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand">
+            <summary>
+                Concurrency Sync Command Interface.
+            </summary>
+            <seealso cref="T:System.Windows.Input.ICommand" />
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand.Execute(System.Threading.CancellationToken)">
+            <summary>
+                Executes the asynchronous.
+            </summary>
+            <param name="token">The token.</param>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand.Execute">
+            <summary>
+                Executes this instance.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand.CanExecute">
+            <summary>
+                Determines whether this instance can execute.
+            </summary>
+            <returns>
+                <c>true</c> if this instance can execute; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand`1">
+            <summary>
+                Concurrency Sync Command Interface.
+            </summary>
+            <typeparam name="T">The parameter type.</typeparam>
+            <seealso cref="T:System.Windows.Input.ICommand" />
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand`1.Execute(`0,System.Threading.CancellationToken)">
+            <summary>
+                Executes the asynchronous.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <param name="token">The token.</param>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.IConcurrencySyncCommand`1.CanExecute(`0)">
+            <summary>
+                Determines whether this instance can execute.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <returns>
+                <c>true</c> if this instance can execute; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.IExecutable">
+            <summary>
+                Executable Interface.
+            </summary>
+        </member>
+        <member name="P:Anori.WinUI.Commands.Interfaces.IExecutable.IsExecuting">
+            <summary>
+                Gets a value indicating whether this instance is executing.
+            </summary>
+            <value>
+                <c>true</c> if this instance is executing; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.IPropertyObserver">
+            <summary>
+                PropertyObserver Interface.
+            </summary>
+            <seealso cref="T:Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject" />
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.IRaiseCanExecuteCommand">
+            <summary>
+                Raise CanExecute Command Interface.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.IRaiseCanExecuteCommand.RaiseCanExecuteChanged">
+            <summary>
+                Called when [can execute changed].
+            </summary>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.ISyncCommand">
+            <summary>
+                Sync Command Interface.
+            </summary>
+            <seealso cref="T:System.Windows.Input.ICommand" />
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.ISyncCommand.CanExecute">
+            <summary>
+                Determines whether this instance can execute.
+            </summary>
+            <returns>
+                <c>true</c> if this instance can execute; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.ISyncCommand.Execute">
+            <summary>
+                Executes this instance.
+            </summary>
+        </member>
+        <member name="T:Anori.WinUI.Commands.Interfaces.ISyncCommand`1">
+            <summary>
+                Sync Command.
+            </summary>
+            <typeparam name="T">Parameter Type.</typeparam>
+            <seealso cref="T:System.Windows.Input.ICommand" />
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.ISyncCommand`1.CanExecute(`0)">
+            <summary>
+                Determines whether this instance can execute the specified parameter.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <returns>
+                <c>true</c> if this instance can execute the specified parameter; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.ISyncCommand`1.Execute(`0)">
+            <summary>
+                Executes the specified parameter.
+            </summary>
+            <param name="parameter">The parameter.</param>
+        </member>
+    </members>
+</doc>
