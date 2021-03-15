@@ -48,6 +48,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anori.Extensions", "..\Subm
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anori.Common", "..\Submodules\Anori.Common\Source\Anori.Common\Anori.Common.csproj", "{E615E0A0-6573-46A6-A3AA-900E485179F2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anori.Parameters", "..\Submodules\Anori.Common\Source\Anori.Parameters\Anori.Parameters.csproj", "{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug Submodules|Any CPU = Debug Submodules|Any CPU
@@ -144,6 +146,14 @@ Global
 		{E615E0A0-6573-46A6-A3AA-900E485179F2}.Release Submodules|Any CPU.Build.0 = Release Submodules|Any CPU
 		{E615E0A0-6573-46A6-A3AA-900E485179F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E615E0A0-6573-46A6-A3AA-900E485179F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}.Debug Submodules|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}.Debug Submodules|Any CPU.Build.0 = Debug|Any CPU
+		{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}.Release Submodules|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}.Release Submodules|Any CPU.Build.0 = Release|Any CPU
+		{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -160,6 +170,7 @@ Global
 		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D} = {8D7F4C38-52C0-44F4-AD23-2C427C7D360E}
 		{F83E2942-DE03-466F-B5A6-74C9FD5AB751} = {8D7F4C38-52C0-44F4-AD23-2C427C7D360E}
 		{E615E0A0-6573-46A6-A3AA-900E485179F2} = {8D7F4C38-52C0-44F4-AD23-2C427C7D360E}
+		{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E} = {8D7F4C38-52C0-44F4-AD23-2C427C7D360E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5C71111A-2F2C-4368-B7B3-3E575874F610}
