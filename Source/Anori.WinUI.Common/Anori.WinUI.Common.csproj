@@ -7,9 +7,30 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Anorisoft.snk</AssemblyOriginatorKeyFile>
     <IsPackable>false</IsPackable>
+    <Configurations>Debug;Release;Debug Submodules;Release Submodules</Configurations>
   </PropertyGroup>
 
-  <ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>Anori.WinUI.Commands.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>Anori.WinUI.Commands.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Submodules|AnyCPU'">
+    <DocumentationFile>Anori.WinUI.Commands.xml</DocumentationFile>
+  </PropertyGroup>
+
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Submodules|AnyCPU'">
+    <DocumentationFile>Anori.WinUI.Commands.xml</DocumentationFile>
+  </PropertyGroup>
+    <ItemGroup>
     <Compile Remove="NotifyPropertyChangedObservers\**" />
     <EmbeddedResource Remove="NotifyPropertyChangedObservers\**" />
     <None Remove="NotifyPropertyChangedObservers\**" />
@@ -33,10 +54,13 @@
   <ItemGroup Condition="!($(Configuration.Contains('Submodules')))">
     <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0007" />
     <PackageReference Include="Anori.Extensions" Version="1.0.0-alpha0008" />
+    <PackageReference Include="Anori.Common" Version="1.0.0-alpha0002" />
   </ItemGroup>
 
   <ItemGroup Condition="($(Configuration.Contains('Submodules')))">
     <ProjectReference Include="$(SolutionDir)..\Submodules\Anori.ExpressionObservers\Source\Anori.ExpressionObservers\Anori.ExpressionObservers.csproj" />
     <ProjectReference Include="$(SolutionDir)..\Submodules\Anori.Extensions\Source\Anori.Extensions\Anori.Extensions.csproj" />
+    <ProjectReference Include="$(SolutionDir)..\Submodules\Anori.Common\Source\Anori.Common\Anori.Common.csproj" />
   </ItemGroup>
+
 </Project>

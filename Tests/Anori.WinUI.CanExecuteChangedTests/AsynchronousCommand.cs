@@ -13,6 +13,8 @@ namespace Anori.WinUI.CanExecuteChangedTests
     using System.Threading.Tasks;
     using System.Windows.Input;
 
+    using Anori.Common;
+    using Anori.Extensions;
     using Anori.WinUI.Common;
 
     #endregion

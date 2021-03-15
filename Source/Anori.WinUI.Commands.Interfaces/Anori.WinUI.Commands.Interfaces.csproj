@@ -11,15 +11,24 @@
     <Company>AnoriSoft</Company>
     <Authors>Martin Egli</Authors>
     <Description>WinUI Commands Interfaces</Description>
-      <IsPackable>false</IsPackable>
+    <IsPackable>false</IsPackable>
+    <Configurations>Debug;Release;Debug Submodules</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>.\Anori.WinUI.Commands.Interfaces.xml</DocumentationFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>Anori.WinUI.Commands.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>.\Anori.WinUI.Commands.Interfaces.xml</DocumentationFile>
+    <DocumentationFile>Anori.WinUI.Commands.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Submodules|AnyCPU'">
+    <DocumentationFile>Anori.WinUI.Commands.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -38,11 +47,13 @@
   <ItemGroup Condition="!($(Configuration.Contains('Submodules')))">
     <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0007" />
     <PackageReference Include="Anori.Extensions" Version="1.0.0-alpha0008" />
+    <PackageReference Include="Anori.Common" Version="1.0.0-alpha0002" />
   </ItemGroup>
 
   <ItemGroup Condition="($(Configuration.Contains('Submodules')))">
     <ProjectReference Include="$(SolutionDir)..\Submodules\Anori.ExpressionObservers\Source\Anori.ExpressionObservers\Anori.ExpressionObservers.csproj" />
     <ProjectReference Include="$(SolutionDir)..\Submodules\Anori.Extensions\Source\Anori.Extensions\Anori.Extensions.csproj" />
+    <ProjectReference Include="$(SolutionDir)..\Submodules\Anori.Common\Source\Anori.Common\Anori.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -10,6 +10,7 @@ namespace Anori.WinUI.Commands.Tests
     using System.Collections.Generic;
     using System.Reflection;
 
+    using Anori.Extensions;
     using Anori.WinUI.Common;
 
     using NUnit.Framework;
