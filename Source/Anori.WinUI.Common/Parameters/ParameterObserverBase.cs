@@ -6,13 +6,15 @@
 
 namespace Anori.WinUI.Common.Parameters
 {
-    using JetBrains.Annotations;
-
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Linq.Expressions;
     using System.Reflection;
+
+    using Anori.Parameters;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     ///     Provide a way to observe property changes of INotifyPropertyChanged objects and invokes a
@@ -368,7 +370,7 @@ namespace Anori.WinUI.Common.Parameters
 
         public void Dispose()
         {
-            Dispose(true);
+            this.Dispose(true);
             GC.SuppressFinalize(this);
         }
     }

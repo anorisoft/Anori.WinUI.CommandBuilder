@@ -61,6 +61,8 @@
     <ProjectReference Include="$(SolutionDir)..\Submodules\Anori.ExpressionObservers\Source\Anori.ExpressionObservers\Anori.ExpressionObservers.csproj" />
     <ProjectReference Include="$(SolutionDir)..\Submodules\Anori.Extensions\Source\Anori.Extensions\Anori.Extensions.csproj" />
     <ProjectReference Include="$(SolutionDir)..\Submodules\Anori.Common\Source\Anori.Common\Anori.Common.csproj" />
+    <ProjectReference Include="$(SolutionDir)..\Submodules\Anori.Common\Source\Anori.Parameters\Anori.Parameters.csproj" />
   </ItemGroup>
+
 
 </Project>

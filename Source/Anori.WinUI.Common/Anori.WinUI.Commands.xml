@@ -116,72 +116,49 @@
             The synchronization context.
             </value>
         </member>
-        <member name="T:Anori.WinUI.Common.Parameters.IParameter">
+        <member name="T:Anori.WinUI.Common.Parameters.IParameterObserverNode">
             <summary>
+            The Parameter Observer Node interface.
             </summary>
-            <seealso cref="T:Anori.WinUI.Common.Parameters.IReadOnlyParameter`1" />
-            <seealso cref="T:Anori.WinUI.Common.Parameters.IParameter" />
         </member>
-        <member name="P:Anori.WinUI.Common.Parameters.IParameter.Value">
+        <member name="M:Anori.WinUI.Common.Parameters.IParameterObserverNode.UnsubscribeListener">
             <summary>
-                Gets or sets the value.
+            Unsubscribes the listener.
+            </summary>
+        </member>
+        <member name="M:Anori.WinUI.Common.Parameters.IParameterObserverNode.SubscribeListenerFor(Anori.Parameters.IReadOnlyParameter)">
+            <summary>
+            Subscribes the listener for.
+            </summary>
+            <param name="parameter">The parameter.</param>
+        </member>
+        <member name="T:Anori.WinUI.Common.Parameters.IParameterObserverRootNode`1">
+            <summary>
+            The Parameter Observer Root Node interface.
+            </summary>
+            <typeparam name="TOwner">The type of the owner.</typeparam>
+            <seealso cref="T:Anori.WinUI.Common.Parameters.IParameterObserverNode" />
+        </member>
+        <member name="P:Anori.WinUI.Common.Parameters.IParameterObserverRootNode`1.Owner">
+            <summary>
+            Gets the owner.
             </summary>
             <value>
-                The value.
+            The owner.
             </value>
         </member>
-        <member name="T:Anori.WinUI.Common.Parameters.IParameter`1">
+        <member name="M:Anori.WinUI.Common.Parameters.IParameterObserverRootNode`1.SubscribeListenerForOwner">
             <summary>
-            </summary>
-            <typeparam name="T"></typeparam>
-            <seealso cref="T:Anori.WinUI.Common.Parameters.IReadOnlyParameter`1" />
-            <seealso cref="T:Anori.WinUI.Common.Parameters.IParameter" />
-        </member>
-        <member name="P:Anori.WinUI.Common.Parameters.IParameter`1.Value">
-            <summary>
-                Gets or sets the value.
-            </summary>
-            <value>
-                The value.
-            </value>
-        </member>
-        <member name="T:Anori.WinUI.Common.Parameters.IReadOnlyParameter">
-            <summary>
-            The I Read Only Parameter interface.
+            Subscribes the listener for owner.
             </summary>
         </member>
-        <member name="P:Anori.WinUI.Common.Parameters.IReadOnlyParameter.Value">
+        <member name="T:Anori.WinUI.Common.Parameters.ParameterEventObserver`2">
             <summary>
-            Gets the value.
+                The Parameter Event Observer class.
             </summary>
-            <value>
-            The value.
-            </value>
-        </member>
-        <member name="E:Anori.WinUI.Common.Parameters.IReadOnlyParameter.ValueChanged">
-            <summary>
-            Occurs when [value changed].
-            </summary>
-        </member>
-        <member name="T:Anori.WinUI.Common.Parameters.IReadOnlyParameter`1">
-            <summary>
-            The I Read Only Parameter interface.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <seealso cref="T:Anori.WinUI.Common.Parameters.IReadOnlyParameter" />
-        </member>
-        <member name="P:Anori.WinUI.Common.Parameters.IReadOnlyParameter`1.Value">
-            <summary>
-            Gets the value.
-            </summary>
-            <value>
-            The value.
-            </value>
-        </member>
-        <member name="E:Anori.WinUI.Common.Parameters.IReadOnlyParameter`1.ValueChanged">
-            <summary>
-            Occurs when [value changed].
-            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <typeparam name="TOwner">The type of the owner.</typeparam>
+            <seealso cref="T:Anori.WinUI.Common.Parameters.ParameterObserverBase`1" />
         </member>
         <member name="F:Anori.WinUI.Common.Parameters.ParameterEventObserver`2.propertyGetter">
             <summary>
@@ -190,22 +167,25 @@
         </member>
         <member name="M:Anori.WinUI.Common.Parameters.ParameterEventObserver`2.#ctor(System.Linq.Expressions.Expression{System.Func{`0}})">
             <summary>
-                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver`2" /> class.
+            Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver`2" /> class.
             </summary>
             <param name="propertyExpression">The property expression.</param>
-            <exception cref="T:System.ArgumentNullException">
-                action
-                or
-                propertyGetter
-            </exception>
+            <exception cref="T:System.ArgumentNullException">action
+            or
+            propertyGetter</exception>
         </member>
         <member name="M:Anori.WinUI.Common.Parameters.ParameterEventObserver`2.#ctor(`1,System.Linq.Expressions.Expression{System.Func{`1,`0}})">
             <summary>
-                Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver`2" /> class.
+            Initializes a new instance of the <see cref="T:Anori.WinUI.Common.Parameters.ParameterObserver`2" /> class.
             </summary>
             <param name="owner">The owner.</param>
             <param name="propertyExpression">The property expression.</param>
             <exception cref="T:System.ArgumentNullException">action</exception>
+        </member>
+        <member name="E:Anori.WinUI.Common.Parameters.ParameterEventObserver`2.ParameterChanged">
+            <summary>
+                The action
+            </summary>
         </member>
         <member name="P:Anori.WinUI.Common.Parameters.ParameterEventObserver`2.SubscribedLength">
             <summary>
@@ -215,24 +195,27 @@
                 The length of the subscribed.
             </value>
         </member>
-        <member name="E:Anori.WinUI.Common.Parameters.ParameterEventObserver`2.ParameterChanged">
-            <summary>
-                The action
-            </summary>
-        </member>
         <member name="M:Anori.WinUI.Common.Parameters.ParameterEventObserver`2.CallAction">
             <summary>
                 Calls the action.
             </summary>
         </member>
+        <member name="T:Anori.WinUI.Common.Parameters.ParameterObserver`2">
+            <summary>
+            The Parameter Observer class.
+            </summary>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <typeparam name="TOwner">The type of the owner.</typeparam>
+            <seealso cref="T:Anori.WinUI.Common.Parameters.ParameterObserverBase`1" />
+        </member>
         <member name="F:Anori.WinUI.Common.Parameters.ParameterObserver`2.action">
             <summary>
-                The action
+                The action.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Common.Parameters.ParameterObserver`2.propertyGetter">
             <summary>
-                The property propertyGetter
+                The property propertyGetter.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver`2.#ctor(System.Linq.Expressions.Expression{System.Func{`0}},System.Action{`0})">
@@ -244,7 +227,7 @@
             <exception cref="T:System.ArgumentNullException">
                 action
                 or
-                propertyGetter
+                propertyGetter is null.
             </exception>
         </member>
         <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver`2.#ctor(`1,System.Linq.Expressions.Expression{System.Func{`1,`0}},System.Action{`0})">
@@ -425,14 +408,17 @@
         </member>
         <member name="M:Anori.WinUI.Common.Parameters.ParameterObserver.CreateChain(System.Object)">
             <summary>
-                Creates the chain.
+            Creates the chain.
             </summary>
             <param name="owner">The owner.</param>
             <returns></returns>
-            <exception cref="T:System.NotSupportedException">
-                Operation not supported for the given expression type {expression.Type}. "
-                + "Only MemberExpression and ConstantExpression are currently supported.
-            </exception>
+            <exception cref="T:System.NotSupportedException">Operation not supported for the given expression type {expression.Type}. "
+            + "Only MemberExpression and ConstantExpression are currently supported.</exception>
+            <exception cref="T:System.Exception">No Parameter.
+            or
+            No Parameter 3.</exception>
+            <exception cref="T:System.NotSupportedException">Operation not supported for the given expression type {expression.Type}. "
+            + "Only MemberExpression and ConstantExpression are currently supported.</exception>
         </member>
         <member name="T:Anori.WinUI.Common.Parameters.ParameterObserver2`1">
             <summary>
@@ -796,7 +782,7 @@
             <param name="action">The action.</param>
             <exception cref="T:System.ArgumentNullException">propertyInfo</exception>
         </member>
-        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverEndNode.SubscribeListenerFor(Anori.WinUI.Common.Parameters.IReadOnlyParameter)">
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverEndNode.SubscribeListenerFor(Anori.Parameters.IReadOnlyParameter)">
             <summary>
                 Subscribes the listener for.
             </summary>
@@ -813,6 +799,11 @@
             </summary>
             <param name="sender">The sender.</param>
             <param name="e">The <see cref="!:EventArgs&lt;object&gt;" /> instance containing the event data.</param>
+        </member>
+        <member name="T:Anori.WinUI.Common.Parameters.ParameterObserverFactory">
+            <summary>
+            The Parameter Observer Factory class.
+            </summary>
         </member>
         <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverFactory.Observes``1(System.Linq.Expressions.Expression{System.Func{``0}},System.Action{``0},System.Boolean)">
             <summary>
@@ -896,7 +887,7 @@
                 The property information.
             </value>
         </member>
-        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverNode.SubscribeListenerFor(Anori.WinUI.Common.Parameters.IReadOnlyParameter)">
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverNode.SubscribeListenerFor(Anori.Parameters.IReadOnlyParameter)">
             <summary>
                 Subscribes the listener for.
             </summary>
@@ -939,7 +930,7 @@
                 The owner.
             </value>
         </member>
-        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverRootNode`1.#ctor(System.Reflection.PropertyInfo,System.Action,`0,Anori.WinUI.Common.Parameters.IReadOnlyParameter)">
+        <member name="M:Anori.WinUI.Common.Parameters.ParameterObserverRootNode`1.#ctor(System.Reflection.PropertyInfo,System.Action,`0,Anori.Parameters.IReadOnlyParameter)">
             <summary>
                 Initializes a new instance of the <see cref="!:RootPropertyObserverNode" /> class.
             </summary>
@@ -967,63 +958,6 @@
             <summary>
                 Subscribes the listener for owner.
             </summary>
-        </member>
-        <member name="T:Anori.WinUI.Common.Parameters.Parameter`1">
-            <summary>
-            The Parameter class.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <seealso cref="T:Anori.WinUI.Common.Parameters.IParameter`1" />
-        </member>
-        <member name="F:Anori.WinUI.Common.Parameters.Parameter`1.value">
-            <summary>
-                The value.
-            </summary>
-        </member>
-        <member name="E:Anori.WinUI.Common.Parameters.Parameter`1.Anori#WinUI#Common#Parameters#IReadOnlyParameter#ValueChanged">
-            <summary>
-                Occurs when [value changed].
-            </summary>
-        </member>
-        <member name="E:Anori.WinUI.Common.Parameters.Parameter`1.ValueChanged">
-            <summary>
-                Occurs when [value changed].
-            </summary>
-        </member>
-        <member name="E:Anori.WinUI.Common.Parameters.Parameter`1.InternalValueChanged">
-            <summary>
-                Occurs when [internal value changed].
-            </summary>
-        </member>
-        <member name="P:Anori.WinUI.Common.Parameters.Parameter`1.Anori#WinUI#Common#Parameters#IReadOnlyParameter#Value">
-            <summary>
-                Gets the value.
-            </summary>
-            <value>
-                The value.
-            </value>
-        </member>
-        <member name="P:Anori.WinUI.Common.Parameters.Parameter`1.Anori#WinUI#Common#Parameters#IParameter#Value">
-            <summary>
-                Gets or sets the value.
-            </summary>
-            <value>
-                The value.
-            </value>
-        </member>
-        <member name="P:Anori.WinUI.Common.Parameters.Parameter`1.Value">
-            <summary>
-                Gets or sets the value.
-            </summary>
-            <value>
-                The value.
-            </value>
-        </member>
-        <member name="M:Anori.WinUI.Common.Parameters.Parameter`1.OnValueChanged(`0)">
-            <summary>
-                Called when [value changed].
-            </summary>
-            <param name="value">The value.</param>
         </member>
         <member name="F:Anori.WinUI.Common.Parameters.Reactive.BehaviorParameterObserver`2.propertyGetter">
             <summary>

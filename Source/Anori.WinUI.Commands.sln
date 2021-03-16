@@ -50,6 +50,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anori.Common", "..\Submodul
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anori.Parameters", "..\Submodules\Anori.Common\Source\Anori.Parameters\Anori.Parameters.csproj", "{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anori.ParameterObservers.UnitTests", "..\Tests\Anori.ParameterObservers.UnitTests\Anori.ParameterObservers.UnitTests.csproj", "{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug Submodules|Any CPU = Debug Submodules|Any CPU
@@ -125,7 +127,6 @@ Global
 		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Debug Submodules|Any CPU.ActiveCfg = Debug Submodules|Any CPU
 		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Debug Submodules|Any CPU.Build.0 = Debug Submodules|Any CPU
 		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Release Submodules|Any CPU.ActiveCfg = Release|Any CPU
 		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Release Submodules|Any CPU.Build.0 = Release|Any CPU
 		{E0553030-5BFF-4FCE-BAFF-3B19C77CAF1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -133,7 +134,6 @@ Global
 		{F83E2942-DE03-466F-B5A6-74C9FD5AB751}.Debug Submodules|Any CPU.ActiveCfg = Debug Submodules|Any CPU
 		{F83E2942-DE03-466F-B5A6-74C9FD5AB751}.Debug Submodules|Any CPU.Build.0 = Debug Submodules|Any CPU
 		{F83E2942-DE03-466F-B5A6-74C9FD5AB751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F83E2942-DE03-466F-B5A6-74C9FD5AB751}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F83E2942-DE03-466F-B5A6-74C9FD5AB751}.Release Submodules|Any CPU.ActiveCfg = Release|Any CPU
 		{F83E2942-DE03-466F-B5A6-74C9FD5AB751}.Release Submodules|Any CPU.Build.0 = Release|Any CPU
 		{F83E2942-DE03-466F-B5A6-74C9FD5AB751}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -141,7 +141,6 @@ Global
 		{E615E0A0-6573-46A6-A3AA-900E485179F2}.Debug Submodules|Any CPU.ActiveCfg = Debug Submodules|Any CPU
 		{E615E0A0-6573-46A6-A3AA-900E485179F2}.Debug Submodules|Any CPU.Build.0 = Debug Submodules|Any CPU
 		{E615E0A0-6573-46A6-A3AA-900E485179F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E615E0A0-6573-46A6-A3AA-900E485179F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E615E0A0-6573-46A6-A3AA-900E485179F2}.Release Submodules|Any CPU.ActiveCfg = Release Submodules|Any CPU
 		{E615E0A0-6573-46A6-A3AA-900E485179F2}.Release Submodules|Any CPU.Build.0 = Release Submodules|Any CPU
 		{E615E0A0-6573-46A6-A3AA-900E485179F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -149,11 +148,18 @@ Global
 		{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}.Debug Submodules|Any CPU.ActiveCfg = Debug|Any CPU
 		{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}.Debug Submodules|Any CPU.Build.0 = Debug|Any CPU
 		{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}.Release Submodules|Any CPU.ActiveCfg = Release|Any CPU
 		{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}.Release Submodules|Any CPU.Build.0 = Release|Any CPU
 		{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCC4B1EB-6BC7-4F22-8F93-57C1494CBF5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}.Debug Submodules|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}.Debug Submodules|Any CPU.Build.0 = Debug|Any CPU
+		{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}.Release Submodules|Any CPU.ActiveCfg = Release|Any CPU
+		{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}.Release Submodules|Any CPU.Build.0 = Release|Any CPU
+		{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

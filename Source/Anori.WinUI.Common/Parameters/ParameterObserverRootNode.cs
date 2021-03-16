@@ -9,6 +9,8 @@ namespace Anori.WinUI.Common.Parameters
     using System;
     using System.Reflection;
 
+    using Anori.Parameters;
+
     internal class ParameterObserverSingleNode<TOwner> : ParameterObserverEndNode, IParameterObserverRootNode<TOwner>
     {
         public ParameterObserverSingleNode(Action action, TOwner owner, IReadOnlyParameter parameter)

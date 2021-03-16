@@ -11,6 +11,7 @@ namespace Anori.WinUI.Commands.Tests
     using System;
     using System.Linq.Expressions;
 
+    using Anori.Parameters;
     using Anori.WinUI.Common.Parameters;
 
     using NUnit.Framework;

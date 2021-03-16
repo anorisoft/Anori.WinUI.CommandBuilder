@@ -9,6 +9,9 @@ namespace Anori.WinUI.Common.Parameters
     using System;
     using System.Linq.Expressions;
 
+    /// <summary>
+    /// The Parameter Observer Factory class.
+    /// </summary>
     public static class ParameterObserverFactory
     {
         /// <summary>

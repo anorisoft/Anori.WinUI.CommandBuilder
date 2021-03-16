@@ -14,18 +14,25 @@ namespace Anori.WinUI.Common.Parameters
 
     using Anori.Common;
     using Anori.Extensions;
+    using Anori.Parameters;
 
     using JetBrains.Annotations;
 
+    /// <summary>
+    /// The Parameter Observer class.
+    /// </summary>
+    /// <typeparam name="TValue">The type of the value.</typeparam>
+    /// <typeparam name="TOwner">The type of the owner.</typeparam>
+    /// <seealso cref="Anori.WinUI.Common.Parameters.ParameterObserverBase{TOwner}" />
     public sealed class ParameterObserver<TValue, TOwner> : ParameterObserverBase<TOwner>
     {
         /// <summary>
-        ///     The action
+        ///     The action.
         /// </summary>
         private readonly Action<TValue> action;
 
         /// <summary>
-        ///     The property propertyGetter
+        ///     The property propertyGetter.
         /// </summary>
         private readonly Func<TValue> propertyGetter;
 
@@ -37,7 +44,7 @@ namespace Anori.WinUI.Common.Parameters
         /// <exception cref="ArgumentNullException">
         ///     action
         ///     or
-        ///     propertyGetter
+        ///     propertyGetter is null.
         /// </exception>
         internal ParameterObserver(
             [NotNull] Expression<Func<TValue>> propertyExpression,
@@ -379,14 +386,17 @@ namespace Anori.WinUI.Common.Parameters
         }
 
         /// <summary>
-        ///     Creates the chain.
+        /// Creates the chain.
         /// </summary>
         /// <param name="owner">The owner.</param>
         /// <returns></returns>
-        /// <exception cref="NotSupportedException">
-        ///     Operation not supported for the given expression type {expression.Type}. "
-        ///     + "Only MemberExpression and ConstantExpression are currently supported.
-        /// </exception>
+        /// <exception cref="System.NotSupportedException">Operation not supported for the given expression type {expression.Type}. "
+        /// + "Only MemberExpression and ConstantExpression are currently supported.</exception>
+        /// <exception cref="System.Exception">No Parameter.
+        /// or
+        /// No Parameter 3.</exception>
+        /// <exception cref="NotSupportedException">Operation not supported for the given expression type {expression.Type}. "
+        /// + "Only MemberExpression and ConstantExpression are currently supported.</exception>
         private (IParameterObserverRootNode<object>, string) CreateChain(object owner)
         {
             var expression = this.propertyExpression;

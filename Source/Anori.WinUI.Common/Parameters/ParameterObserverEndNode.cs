@@ -10,6 +10,7 @@ namespace Anori.WinUI.Common.Parameters
 
     using Anori.Common;
     using Anori.Extensions;
+    using Anori.Parameters;
 
     /// <summary>
     ///     The Parameter Observer End Node class.

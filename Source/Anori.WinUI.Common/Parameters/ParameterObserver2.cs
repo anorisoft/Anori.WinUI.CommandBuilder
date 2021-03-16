@@ -14,6 +14,8 @@ namespace Anori.WinUI.Common.Parameters
     using System.Linq.Expressions;
     using System.Reflection;
 
+    using Anori.Parameters;
+
     /// <summary>
     ///     Provide a way to observe property changes of INotifyPropertyChanged objects and invokes a
     ///     custom action when the PropertyChanged event is fired.

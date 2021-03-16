@@ -8,6 +8,7 @@ namespace Anori.WinUI.Commands.Tests
 {
     using System;
 
+    using Anori.Parameters;
     using Anori.WinUI.Common.Parameters;
 
     using JetBrains.Annotations;
