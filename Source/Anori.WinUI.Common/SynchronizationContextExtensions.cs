@@ -161,7 +161,7 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        /// Dispatches the specified sender.
+        ///     Dispatches the specified sender.
         /// </summary>
         /// <typeparam name="TEventArgs">The type of the event arguments.</typeparam>
         /// <param name="context">The context.</param>
@@ -191,11 +191,11 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        /// Dispatches the specified arguments.
+        ///     Dispatches the specified arguments.
         /// </summary>
         /// <typeparam name="TEventArgs">The type of the event arguments.</typeparam>
         /// <param name="context">The context.</param>
-        /// <param name="args">The <see cref="TEventArgs"/> instance containing the event data.</param>
+        /// <param name="args">The <see cref="TEventArgs" /> instance containing the event data.</param>
         /// <param name="handler">The handler.</param>
         /// <exception cref="System.ArgumentNullException">context is null.</exception>
         public static void Dispatch<TEventArgs>(
