@@ -50,13 +50,13 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
             }
 
             this.Parameter = parameter;
-            var observesAndGet = PropertyValueObserver.ObservesAndGet(
+            var observesAndGet = PropertyObserver.Observes(
                 parameter,
                 canExecuteExpression,
                 () => this.Update.Raise(),
                 false);
             this.Observer = observesAndGet;
-            this.CanExecute = () => observesAndGet.GetValue();
+            this.CanExecute = () => observesAndGet.Value;
         }
 
         /// <summary>

@@ -22,7 +22,7 @@ namespace Anori.WinUI.Commands.GUITest
                 .Build();
             TestAndCommand.Activate();
 
-            var getter = ExpressionGetter.CreateValueGetter(() => this.Condition1.Condition || this.Condition2.Condition, false);
+            var getter = ExpressionGetter.CreateGetter(() => this.Condition1.Condition || this.Condition2.Condition, false);
             TestOrCommand = CommandBuilder.Builder
                 .Command(() => { })
                 .CanExecute(getter)

@@ -51,12 +51,11 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
                 throw new ArgumentNullException(nameof(propertyExpression));
             }
 
-            this.Observer = PropertyObserver.Observes(
+            this.Observer = PropertyObserver.Observes<TParameter1, TParameter2, TResult>(
                 parameter1,
                 parameter2,
                 propertyExpression,
-                () => this.Update.Raise(),
-                false);
+                () => this.Update.Raise());
             this.PropertyExpression = this.Observer.ExpressionString;
         }
 

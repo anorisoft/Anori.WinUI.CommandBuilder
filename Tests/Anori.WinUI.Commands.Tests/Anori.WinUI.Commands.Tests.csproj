@@ -6,7 +6,7 @@
     <IsPackable>false</IsPackable>
 
     <LangVersion>8</LangVersion>
-    <Configurations>Debug;Release;Debug Submodules</Configurations>
+    <Configurations>Debug;Release;Debug Submodules;Release Submodules</Configurations>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Anorisoft.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
@@ -16,6 +16,8 @@
     <Compile Remove="DelegateCommandFixture.cs" />
     <Compile Remove="DelegateCommandOfTFixture.cs" />
     <Compile Remove="ErrorHandler.cs" />
+    <Compile Remove="ObservesParameterOfTFixture.cs" />
+    <Compile Remove="ParameterTestObject.cs" />
     <Compile Remove="RelayCommandOfTFixture.cs" />
   </ItemGroup>
 
@@ -28,9 +30,20 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Source\Anori.WinUI.Commands\Anori.WinUI.Commands.csproj" />
     <ProjectReference Include="..\..\Source\Anori.WinUI.Common\Anori.WinUI.Common.csproj" />
-    <ProjectReference Include="$(SolutionDir)..\Submodules\Anori.Common\Source\Anori.Common\Anori.Common.csproj" />
-    <ProjectReference Include="$(SolutionDir)..\Submodules\Anori.Extensions\Source\Anori.Extensions\Anori.Extensions.csproj" />
     <ProjectReference Include="..\Anori.WinUI.CanExecuteChangedTests\Anori.WinUI.CanExecuteChangedTests.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup Condition="!($(Configuration.Contains('Submodules')))">
+    <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0011" />
+    <PackageReference Include="Anori.Extensions" Version="1.0.0-alpha0011" />
+    <PackageReference Include="Anori.Common" Version="1.0.0-alpha0005" />
+  </ItemGroup>
+
+  <ItemGroup Condition="($(Configuration.Contains('Submodules')))">
+    <ProjectReference Include="$(SolutionDir)..\Submodules\Anori.ExpressionObservers\Source\Anori.ExpressionObservers\Anori.ExpressionObservers.csproj" />
+    <ProjectReference Include="$(SolutionDir)..\Submodules\Anori.Extensions\Source\Anori.Extensions\Anori.Extensions.csproj" />
+    <ProjectReference Include="$(SolutionDir)..\Submodules\Anori.Common\Source\Anori.Common\Anori.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>

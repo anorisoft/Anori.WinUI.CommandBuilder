@@ -35,12 +35,12 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
                 throw new ArgumentNullException(nameof(canExecuteExpression));
             }
 
-            var observesAndGet = PropertyValueObserver.ObservesAndGet(
+            var observesAndGet = PropertyObserver.Observes(
                 canExecuteExpression,
                 () => { this.Update.Raise(); },
                 false);
             this.Observer = observesAndGet;
-            this.CanExecute = observesAndGet.GetValue;
+            this.CanExecute = () => observesAndGet.Value;
         }
 
         /// <summary>
@@ -56,12 +56,12 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
                 throw new ArgumentNullException(nameof(canExecuteExpression));
             }
 
-            var observesAndGet = PropertyValueObserver.ObservesAndGet(
+            var observesAndGet = PropertyObserver.Observes(
                 canExecuteExpression,
                 () => this.Update.Raise(),
                 fallback);
             this.Observer = observesAndGet;
-            this.CanExecute = observesAndGet.GetValue;
+            this.CanExecute = () => observesAndGet.Value;
         }
 
         /// <summary>

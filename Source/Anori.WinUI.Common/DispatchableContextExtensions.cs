@@ -68,7 +68,7 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        /// Dispatches the specified action.
+        ///     Dispatches the specified action.
         /// </summary>
         /// <typeparam name="TContext">The type of the context.</typeparam>
         /// <param name="context">The context.</param>
@@ -86,7 +86,7 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        /// Dispatches the specified sender.
+        ///     Dispatches the specified sender.
         /// </summary>
         /// <typeparam name="T">The type.</typeparam>
         /// <param name="context">The context.</param>
@@ -112,7 +112,7 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        /// Dispatches the specified value.
+        ///     Dispatches the specified value.
         /// </summary>
         /// <typeparam name="TContext">The type of the context.</typeparam>
         /// <typeparam name="T">The type.</typeparam>
@@ -146,7 +146,7 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        /// Dispatches the specified value.
+        ///     Dispatches the specified value.
         /// </summary>
         /// <typeparam name="TContext">The type of the context.</typeparam>
         /// <typeparam name="T">Th type.</typeparam>
@@ -163,7 +163,7 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        /// Dispatches the specified value1.
+        ///     Dispatches the specified value1.
         /// </summary>
         /// <typeparam name="TContext">The type of the context.</typeparam>
         /// <typeparam name="T1">The type of the 1.</typeparam>

@@ -4,14 +4,9 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace Anori.WinUI.Commands.Tests
+namespace Anori.ParameterObservers.UnitTests
 {
-    using System;
-
-    //using Anori.Parameters;
-    //using Anori.WinUI.Common.Parameters;
-
-    using JetBrains.Annotations;
+    using Anori.Parameters;
 
     public class ComplexType : TestPurposeBindableBase
     {
@@ -32,10 +27,10 @@ namespace Anori.WinUI.Commands.Tests
         }
     }
 
-    //public class ComplexParameterType
-    //{
-    //    public IParameter<ComplexParameterType> InnerComplexProperty { get; } = new Parameter<ComplexParameterType>();
+    public class ComplexParameterType
+    {
+        public IParameter<ComplexParameterType> InnerComplexProperty { get; } = new Parameter<ComplexParameterType>();
 
-    //    public IParameter<int> IntProperty { get; } = new Parameter<int>();
-    //}
+        public IParameter<int> IntProperty { get; } = new Parameter<int>();
+    }
 }

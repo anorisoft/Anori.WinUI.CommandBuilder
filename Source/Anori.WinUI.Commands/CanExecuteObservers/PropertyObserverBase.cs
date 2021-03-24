@@ -42,7 +42,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         ///     The observer.
         /// </value>
         [NotNull]
-        protected virtual ExpressionObservers.Observers.PropertyObserverBase Observer { get; set; } = null!;
+        protected virtual ExpressionObservers.Base.PropertyObserverBase Observer { get; set; } = null!;
 
         /// <summary>
         ///     Gets the observables.

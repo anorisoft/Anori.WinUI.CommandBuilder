@@ -209,8 +209,8 @@ Assert.False(actionRaised);
             var actionRaised = false;
             var notifyPropertyChangedTestObject = new NotifyPropertyChangedTestObject();
             using var observer = PropertyObserver.Observes(
-                notifyPropertyChangedTestObject.IntPropertyExpression,
-                () => actionRaised = true, false);
+                notifyPropertyChangedTestObject.IntPropertyExpression, false,
+                () => actionRaised = true);
             Assert.False(actionRaised);
             notifyPropertyChangedTestObject.IntProperty = 2;
             Assert.False(actionRaised);
@@ -222,8 +222,8 @@ Assert.False(actionRaised);
             var actionRaisedCount = 0;
             var notifyPropertyChangedTestObject = new NotifyPropertyChangedTestObject { IntProperty = 1 };
             using var observer = PropertyObserver.Observes(
-                notifyPropertyChangedTestObject.IntPropertyExpression,
-                () => actionRaisedCount++, false);
+                notifyPropertyChangedTestObject.IntPropertyExpression, false,
+                () => actionRaisedCount++);
             Assert.AreEqual(0, actionRaisedCount);
             notifyPropertyChangedTestObject.IntProperty = 2;
             Assert.AreEqual(0, actionRaisedCount);
