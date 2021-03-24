@@ -14,7 +14,6 @@ namespace Anori.WinUI.Commands.Commands
     using System.Threading.Tasks;
     using System.Windows.Input;
 
-    using Anori.Common;
     using Anori.Extensions;
     using Anori.WinUI.Commands.Interfaces;
     using Anori.WinUI.Common;
@@ -22,7 +21,7 @@ namespace Anori.WinUI.Commands.Commands
     using JetBrains.Annotations;
 
     /// <summary>
-    /// The Concurrency Asynchronous Command Base class.
+    ///     The Concurrency Asynchronous Command Base class.
     /// </summary>
     /// <seealso cref="Anori.WinUI.Commands.Commands.CommandBase" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand" />
@@ -96,6 +95,11 @@ namespace Anori.WinUI.Commands.Commands
         private readonly TaskScheduler taskScheduler = TaskScheduler.Default;
 
         /// <summary>
+        ///     The can cancel.
+        /// </summary>
+        private bool canCancel;
+
+        /// <summary>
         ///     The cancellation token source.
         /// </summary>
         [CanBeNull]
@@ -153,7 +157,7 @@ namespace Anori.WinUI.Commands.Commands
             this.completed = completed;
             this.error = error;
             this.cancel = cancel;
-            this.cancelCommand = new DirectCommand(this.Cancel, () => this.IsExecuting);
+            this.cancelCommand = new DirectCommand(this.Cancel, () => this.CanCancel);
         }
 
         /// <summary>
@@ -211,6 +215,22 @@ namespace Anori.WinUI.Commands.Commands
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
+        ///     Gets or sets a value indicating whether this instance can cancel.
+        /// </summary>
+        /// <value>
+        ///     <c>true</c> if this instance can cancel; otherwise, <c>false</c>.
+        /// </value>
+        public bool CanCancel
+        {
+            get => this.canCancel;
+            set
+            {
+                this.SetProperty(ref this.canCancel, value);
+                this.cancelCommand.RaiseCanExecuteChanged();
+            }
+        }
+
+        /// <summary>
         ///     Gets the cancel command.
         /// </summary>
         /// <value>
@@ -251,7 +271,11 @@ namespace Anori.WinUI.Commands.Commands
         public bool IsExecuting
         {
             get => this.isExecuting;
-            private set => this.SetProperty(ref this.isExecuting, value);
+            private set
+            {
+                this.SetProperty(ref this.isExecuting, value);
+                this.RaiseCanExecuteCancelCommand();
+            }
         }
 
         /// <summary>
@@ -339,7 +363,7 @@ namespace Anori.WinUI.Commands.Commands
             catch (TaskCanceledException ex)
             {
                 this.OnFinally();
-                Debug.WriteLine(ex);
+                Debug.WriteLine("1: " + ex);
             }
             catch (AggregateException ex)
             {
@@ -377,7 +401,11 @@ namespace Anori.WinUI.Commands.Commands
         /// <summary>
         ///     Cancels this instance.
         /// </summary>
-        public void Cancel() => this.cancellationTokenSource?.Cancel();
+        public void Cancel()
+        {
+            this.DispatchAsync(() => this.CanCancel = false).FireAndForgetSafeAsync(ex => { });
+            this.cancellationTokenSource?.Cancel();
+        }
 
         /// <summary>
         ///     Raises the can execute cancel command.
@@ -393,7 +421,7 @@ namespace Anori.WinUI.Commands.Commands
         ///     Executes the asynchronous.
         /// </summary>
         /// <param name="token">The token.</param>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <returns>A <see cref="Task" /> representing the asynchronous operation.</returns>
         public async Task ExecuteAsync(CancellationToken token)
         {
             if (this.CanExecute())
@@ -407,6 +435,7 @@ namespace Anori.WinUI.Commands.Commands
                 finally
                 {
                     this.IsExecuting = false;
+                    await Task.Yield();
                 }
             }
         }
@@ -483,7 +512,10 @@ namespace Anori.WinUI.Commands.Commands
         ///     Called when [execute].
         /// </summary>
         /// <param name="token">The token.</param>
-        private async Task OnAction(CancellationToken token) => await this.execute(token);
+        private async Task OnAction(CancellationToken token)
+        {
+            await this.execute(token);
+        }
 
         /// <summary>
         ///     Called when [begin].
@@ -500,6 +532,7 @@ namespace Anori.WinUI.Commands.Commands
             this.IsExecuting = true;
             this.RaiseCanExecuteCancelCommand();
             this.RaiseCanExecuteCommand();
+            this.CanCancel = true;
         }
 
         /// <summary>

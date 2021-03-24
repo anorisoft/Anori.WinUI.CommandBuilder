@@ -105,6 +105,10 @@ namespace Anori.WinUI.Commands.GUITest.Thiriet
                     this._isExecuting = true;
                     await this._execute();
                 }
+                catch (Exception)
+                {
+
+                }
                 finally
                 {
                     this._isExecuting = false;

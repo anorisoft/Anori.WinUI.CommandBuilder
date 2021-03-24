@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="DispatchableContextExtensions.cs" company="AnoriSoft">
+// <copyright file="DispatchableExtensions.cs" company="AnoriSoft">
 // Copyright (c) AnoriSoft. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -17,7 +17,7 @@ namespace Anori.WinUI.Common
     /// <summary>
     ///     Dispatchable Context Extensions.
     /// </summary>
-    public static class DispatchableContextExtensions
+    public static class DispatchableExtensions
     {
         /// <summary>
         ///     Dispatches the specified sender.
@@ -27,7 +27,7 @@ namespace Anori.WinUI.Common
         /// <param name="handler">The handler.</param>
         /// <exception cref="ArgumentNullException">context is null.</exception>
         public static void Dispatch<TContext>([NotNull] this TContext context, EventHandler? handler)
-            where TContext : IDispatchableContext
+            where TContext : IDispatchable
         {
             if (context == null)
             {
@@ -39,7 +39,7 @@ namespace Anori.WinUI.Common
                 return;
             }
 
-            var synchronizationContext = context.SynchronizationContext;
+            var synchronizationContext = context.Dispatcher;
             if (synchronizationContext == null)
             {
                 handler.RaiseEmpty(context);
@@ -56,9 +56,9 @@ namespace Anori.WinUI.Common
         /// <typeparam name="TContext">The type of the context.</typeparam>
         /// <param name="context">The context.</param>
         /// <param name="handler">The handler.</param>
-        /// <exception cref="ArgumentNullException">context is null.</exception>
+        /// <exception cref="ArgumentNullException">context</exception>
         public static async Task DispatchAsync<TContext>([NotNull] this TContext context, EventHandler? handler)
-            where TContext : IDispatchableContext
+            where TContext : IDispatchable
         {
             if (context == null)
             {
@@ -70,7 +70,7 @@ namespace Anori.WinUI.Common
                 return;
             }
 
-            var synchronizationContext = context.SynchronizationContext;
+            var synchronizationContext = context.Dispatcher;
             if (synchronizationContext == null)
             {
                 handler.RaiseEmpty(context);
@@ -89,14 +89,14 @@ namespace Anori.WinUI.Common
         /// <param name="action">The action.</param>
         /// <exception cref="ArgumentNullException">context is null.</exception>
         public static void Dispatch<TContext>([NotNull] this TContext context, [NotNull] Action<TContext> action)
-            where TContext : IDispatchableContext
+            where TContext : IDispatchable
         {
             if (context == null)
             {
                 throw new ArgumentNullException(nameof(context));
             }
 
-            context.SynchronizationContext.Dispatch(context, action);
+            context.Dispatcher.Dispatch(context, action);
         }
 
         /// <summary>
@@ -105,18 +105,18 @@ namespace Anori.WinUI.Common
         /// <typeparam name="TContext">The type of the context.</typeparam>
         /// <param name="context">The context.</param>
         /// <param name="action">The action.</param>
-        /// <exception cref="ArgumentNullException">context is null.</exception>
+        /// <exception cref="ArgumentNullException">context</exception>
         public static async Task DispatchAsync<TContext>(
             [NotNull] this TContext context,
             [NotNull] Action<TContext> action)
-            where TContext : IDispatchableContext
+            where TContext : IDispatchable
         {
             if (context == null)
             {
                 throw new ArgumentNullException(nameof(context));
             }
 
-            await context.SynchronizationContext.DispatchAsync(context, action);
+            await context.Dispatcher.DispatchAsync(context, action);
         }
 
         /// <summary>
@@ -127,14 +127,32 @@ namespace Anori.WinUI.Common
         /// <param name="action">The action.</param>
         /// <exception cref="System.ArgumentNullException">context is null.</exception>
         public static void Dispatch<TContext>([NotNull] this TContext context, [NotNull] Action action)
-            where TContext : IDispatchableContext
+            where TContext : IDispatchable
         {
             if (context == null)
             {
                 throw new ArgumentNullException(nameof(context));
             }
 
-            context.SynchronizationContext.Dispatch(action);
+            context.Dispatcher.Dispatch(action);
+        }
+
+        /// <summary>
+        ///     Dises the dispatch asynchronouspatch.
+        /// </summary>
+        /// <typeparam name="TContext">The type of the context.</typeparam>
+        /// <param name="context">The context.</param>
+        /// <param name="action">The action.</param>
+        /// <exception cref="ArgumentNullException">context</exception>
+        public static async Task DisDispatchAsync<TContext>([NotNull] this TContext context, [NotNull] Action action)
+            where TContext : IDispatchable
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            await context.Dispatcher.DispatchAsync(action);
         }
 
         /// <summary>
@@ -146,14 +164,14 @@ namespace Anori.WinUI.Common
         /// <exception cref="ArgumentNullException">context</exception>
         /// <exception cref="System.ArgumentNullException">context is null.</exception>
         public static async Task DispatchAsync<TContext>([NotNull] this TContext context, [NotNull] Action action)
-            where TContext : IDispatchableContext
+            where TContext : IDispatchable
         {
             if (context == null)
             {
                 throw new ArgumentNullException(nameof(context));
             }
 
-            await context.SynchronizationContext.DispatchAsync(action);
+            await context.Dispatcher.DispatchAsync(action);
         }
 
         /// <summary>
@@ -165,7 +183,7 @@ namespace Anori.WinUI.Common
         /// <param name="handler">The handler.</param>
         /// <exception cref="ArgumentNullException">context is null.</exception>
         public static void Dispatch<T>(
-            [NotNull] this IDispatchableContext context,
+            [NotNull] this IDispatchable context,
             T value,
             EventHandler<EventArgs<T>>? handler)
         {
@@ -179,7 +197,7 @@ namespace Anori.WinUI.Common
                 return;
             }
 
-            context.SynchronizationContext.Dispatch(context, value, handler);
+            context.Dispatcher.Dispatch(context, value, handler);
         }
 
         /// <summary>
@@ -189,9 +207,9 @@ namespace Anori.WinUI.Common
         /// <param name="context">The context.</param>
         /// <param name="value">The value.</param>
         /// <param name="handler">The handler.</param>
-        /// <exception cref="ArgumentNullException">context is null.</exception>
+        /// <exception cref="ArgumentNullException">context</exception>
         public static async Task DispatchAsync<T>(
-            [NotNull] this IDispatchableContext context,
+            [NotNull] this IDispatchable context,
             T value,
             EventHandler<EventArgs<T>>? handler)
         {
@@ -205,7 +223,7 @@ namespace Anori.WinUI.Common
                 return;
             }
 
-            await context.SynchronizationContext.DispatchAsync(context, value, handler);
+            await context.Dispatcher.DispatchAsync(context, value, handler);
         }
 
         /// <summary>
@@ -217,9 +235,9 @@ namespace Anori.WinUI.Common
         /// <param name="value">The value.</param>
         /// <param name="action">The action.</param>
         public static void Dispatch<TContext, T>([NotNull] this TContext context, T value, [NotNull] Action<T> action)
-            where TContext : IDispatchableContext
+            where TContext : IDispatchable
         {
-            context.SynchronizationContext.Dispatch(value, v => action.Raise(v));
+            context.Dispatcher.Dispatch(value, v => action.Raise(v));
         }
 
         /// <summary>
@@ -234,9 +252,9 @@ namespace Anori.WinUI.Common
             [NotNull] this TContext context,
             T value,
             [NotNull] Action<T> action)
-            where TContext : IDispatchableContext
+            where TContext : IDispatchable
         {
-            await context.SynchronizationContext.DispatchAsync(value, v => action.Raise(v));
+            await context.Dispatcher.DispatchAsync(value, v => action.Raise(v));
         }
 
         /// <summary>
@@ -254,9 +272,9 @@ namespace Anori.WinUI.Common
             T1 value1,
             T2 value2,
             [NotNull] Action<T1, T2> action)
-            where TContext : IDispatchableContext
+            where TContext : IDispatchable
         {
-            context.SynchronizationContext.Dispatch((value1, value2), v => action.Raise(v.value1, v.value2));
+            context.Dispatcher.Dispatch((value1, value2), v => action.Raise(v.value1, v.value2));
         }
 
         /// <summary>
@@ -274,16 +292,16 @@ namespace Anori.WinUI.Common
             T1 value1,
             T2 value2,
             [NotNull] Action<T1, T2> action)
-            where TContext : IDispatchableContext
+            where TContext : IDispatchable
         {
-            await context.SynchronizationContext.DispatchAsync((value1, value2), v => action.Raise(v.value1, v.value2));
+            await context.Dispatcher.DispatchAsync((value1, value2), v => action.Raise(v.value1, v.value2));
         }
 
         /// <summary>
         ///     Dispatches the specified value.
         /// </summary>
         /// <typeparam name="TContext">The type of the context.</typeparam>
-        /// <typeparam name="T">Th type.</typeparam>
+        /// <typeparam name="T">The type.</typeparam>
         /// <param name="context">The context.</param>
         /// <param name="value">The value.</param>
         /// <param name="action">The action.</param>
@@ -291,9 +309,9 @@ namespace Anori.WinUI.Common
             [NotNull] this TContext context,
             T value,
             [NotNull] Action<TContext, T> action)
-            where TContext : IDispatchableContext
+            where TContext : IDispatchable
         {
-            context.SynchronizationContext.Dispatch((context, value), v => action.Raise(v.context, v.value));
+            context.Dispatcher.Dispatch((context, value), v => action.Raise(v.context, v.value));
         }
 
         /// <summary>
@@ -308,9 +326,9 @@ namespace Anori.WinUI.Common
             [NotNull] this TContext context,
             T value,
             [NotNull] Action<TContext, T> action)
-            where TContext : IDispatchableContext
+            where TContext : IDispatchable
         {
-            await context.SynchronizationContext.DispatchAsync((context, value), v => action.Raise(v.context, v.value));
+            await context.Dispatcher.DispatchAsync((context, value), v => action.Raise(v.context, v.value));
         }
 
         /// <summary>
@@ -328,11 +346,9 @@ namespace Anori.WinUI.Common
             T1 value1,
             T2 value2,
             [NotNull] Action<TContext, T1, T2> action)
-            where TContext : IDispatchableContext
+            where TContext : IDispatchable
         {
-            context.SynchronizationContext.Dispatch(
-                (context, value1, value2),
-                v => action.Raise(v.context, v.value1, v.value2));
+            context.Dispatcher.Dispatch((context, value1, value2), v => action.Raise(v.context, v.value1, v.value2));
         }
 
         /// <summary>
@@ -350,9 +366,9 @@ namespace Anori.WinUI.Common
             T1 value1,
             T2 value2,
             [NotNull] Action<TContext, T1, T2> action)
-            where TContext : IDispatchableContext
+            where TContext : IDispatchable
         {
-            await context.SynchronizationContext.DispatchAsync(
+            await context.Dispatcher.DispatchAsync(
                 (context, value1, value2),
                 v => action.Raise(v.context, v.value1, v.value2));
         }

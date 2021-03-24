@@ -819,7 +819,6 @@ namespace Anori.WinUI.Commands.Tests
             using var waitHandle = new EventWaitHandle(false, EventResetMode.AutoReset);
             //handlers.PropertyChanged += (sender, args) =>
             //    {
-
             //    };
 
             handlers.ObservableBoolean = false;
@@ -1367,7 +1366,6 @@ namespace Anori.WinUI.Commands.Tests
                 .Build();
             command.CanExecuteChanged += (sender, args) => ((ICommand)command).CanExecute(1);
 
-
             handlers.CanExecuteReturnValue = true;
             var actual = command.CanExecute(0);
             Assert.True(actual);
@@ -1717,7 +1715,7 @@ namespace Anori.WinUI.Commands.Tests
                 .Build();
             command.CanExecuteChanged += (sender, args) =>
             {
-                ((ICommand) command).CanExecute(null);
+                ((ICommand)command).CanExecute(null);
                 waitHandleCanExecute.Set();
             };
 
@@ -1735,7 +1733,7 @@ namespace Anori.WinUI.Commands.Tests
             Assert.AreEqual(1, handlers.CanExecuteCount);
             Assert.AreEqual(1, handlers.ExecuteCount);
             Assert.True(command.CancelCommand.CanExecute());
-            
+
             command.CancelCommand.Execute();
             waitHandleExecuted.WaitOne(100);
             Assert.AreEqual(1, handlers.CanExecuteCount);

@@ -6,10 +6,6 @@
 
 namespace Anori.WinUI.Commands.Commands
 {
-    using Anori.Extensions;
-    using Anori.WinUI.Commands.Interfaces;
-    using Anori.WinUI.Common;
-    using JetBrains.Annotations;
     using System;
     using System.ComponentModel;
     using System.Diagnostics;
@@ -18,7 +14,10 @@ namespace Anori.WinUI.Commands.Commands
     using System.Threading.Tasks;
     using System.Windows.Input;
 
-    using Anori.Common;
+    using Anori.Extensions;
+    using Anori.WinUI.Commands.Interfaces;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     ///     Asynchronous Relay Command.
@@ -125,7 +124,7 @@ namespace Anori.WinUI.Commands.Commands
         private bool wasSuccessfuly;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConcurrencyCommandBase" /> class.
+        ///     Initializes a new instance of the <see cref="ConcurrencyCommandBase" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecute">The can execute.</param>
@@ -202,10 +201,10 @@ namespace Anori.WinUI.Commands.Commands
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        /// Gets the cancel command.
+        ///     Gets the cancel command.
         /// </summary>
         /// <value>
-        /// The cancel command.
+        ///     The cancel command.
         /// </value>
         public ISyncCommand CancelCommand => this.cancelCommand;
 
@@ -315,7 +314,7 @@ namespace Anori.WinUI.Commands.Commands
         public void Execute(CancellationToken token) => this.execute(token);
 
         /// <summary>
-        /// Executes this instance.
+        ///     Executes this instance.
         /// </summary>
         public void Execute()
         {
@@ -387,11 +386,11 @@ namespace Anori.WinUI.Commands.Commands
         public abstract void RaiseCanExecuteCommand();
 
         /// <summary>
-        /// Determines whether this instance can execute the specified parameter.
+        ///     Determines whether this instance can execute the specified parameter.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
         /// <returns>
-        ///   <see langword="true" /> if this command can be executed; otherwise, <see langword="false" />.
+        ///     <see langword="true" /> if this command can be executed; otherwise, <see langword="false" />.
         /// </returns>
         protected sealed override bool CanExecute(object parameter) => this.CanExecute();
 
@@ -421,7 +420,7 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        /// Handle the internal invocation of <see cref="ICommand.Execute(object)" />.
+        ///     Handle the internal invocation of <see cref="ICommand.Execute(object)" />.
         /// </summary>
         /// <param name="parameter">Command Parameter.</param>
         protected sealed override void Execute(object parameter) => this.Execute();
@@ -434,17 +433,20 @@ namespace Anori.WinUI.Commands.Commands
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         /// <summary>
-        /// Sets the property.
+        ///     Sets the property.
         /// </summary>
         /// <typeparam name="TValue">The type of the value.</typeparam>
         /// <param name="storage">The storage.</param>
         /// <param name="value">The value.</param>
         /// <param name="propertyName">Name of the property.</param>
         /// <returns>
-        /// Property is set.
+        ///     Property is set.
         /// </returns>
         [NotifyPropertyChangedInvocator]
-        protected bool SetProperty<TValue>(ref TValue storage, TValue value, [CallerMemberName] string propertyName = null)
+        protected bool SetProperty<TValue>(
+            ref TValue storage,
+            TValue value,
+            [CallerMemberName] string propertyName = null)
         {
             if (Equals(storage, value))
             {

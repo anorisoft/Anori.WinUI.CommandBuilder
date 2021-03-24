@@ -16,7 +16,6 @@
             <commands:InverseBooleanConverter x:Key="InverseBooleanConverter" />
         </StackPanel.Resources>
         <Button Command="{Binding DirectCommand}">Direct Command</Button>
-        <Button Command="{Binding RelayCommand}">Relay Command</Button>
         <Button Command="{Binding AsyncCommand}">I/O Bound Async Command</Button>
         <Button Command="{Binding ConcurrencyCommand}">CPU Bound Async Command</Button>
         <Button Command="{Binding ConcurrencyCommand.CancelCommand}">Cancel CPU Bound Async Command</Button>

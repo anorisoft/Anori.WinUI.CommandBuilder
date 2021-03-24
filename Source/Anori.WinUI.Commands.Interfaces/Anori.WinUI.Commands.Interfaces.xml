@@ -2311,7 +2311,8 @@
                 The cancel command.
             </value>
         </member>
-        <member name="P:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand.WasCanceled">
+        <member name="P:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand.
+                celed">
             <summary>
                 Gets a value indicating whether [was canceled].
             </summary>

@@ -21,9 +21,7 @@ namespace Anori.WinUI.Commands.Builder
 
     using JetBrains.Annotations;
 
-    /// <summary>
-    ///     The Concurrency Asynchronous Command Builder class.
-    /// </summary>
+    /// <summary>The Concurrency Asynchronous Command Builder class.</summary>
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder" />

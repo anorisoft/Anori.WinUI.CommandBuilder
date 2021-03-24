@@ -41,7 +41,7 @@ namespace Anori.WinUI.Commands.GUITest.General
                 async () => await this.ExecuteAsync().ConfigureAwait(false),
                 this.CanExecute);
 
-            this.ConcurrencyCommand = CommandBuilder.Builder.Command(this.ExecuteWithToken, this.CanExecute).Build();
+            this.ConcurrencyCommand = CommandBuilder.Builder.Command(async t => await this.ExecuteWithTokenAsync(t), this.CanExecute).Build();
             ConcurrencyCommand.CanExecuteChanged += ConcurrencyCommandOnCanExecuteChanged;
         }
 
@@ -67,7 +67,7 @@ namespace Anori.WinUI.Commands.GUITest.General
 
         public AsyncCommand AsyncCommand { get; }
 
-        public IConcurrencySyncCommand ConcurrencyCommand { get; }
+        public IConcurrencyAsyncCommand ConcurrencyCommand { get; }
 
         public DirectCommand DirectCommand { get; }
 
@@ -112,6 +112,26 @@ namespace Anori.WinUI.Commands.GUITest.General
             }
 
             var cancelled = token.WaitHandle.WaitOne(TimeSpan.FromSeconds(5));
+            if (cancelled)
+            {
+                token.ThrowIfCancellationRequested();
+            }
+
+            //throw new Exception("Test Ex");
+            //Thread.Sleep(TimeSpan.FromSeconds(5));
+        }
+
+
+        private async Task ExecuteWithTokenAsync(CancellationToken token)
+        {
+            await Task.Yield();
+
+            if (ThrowException)
+            {
+                throw new Exception("Test Exception");
+            }
+
+            var cancelled = token.WaitHandle.WaitOne(TimeSpan.FromSeconds(10));
             if (cancelled)
             {
                 token.ThrowIfCancellationRequested();

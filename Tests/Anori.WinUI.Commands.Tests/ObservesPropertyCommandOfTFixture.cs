@@ -25,7 +25,9 @@ using Anori.WinUI.Commands.Commands;    using Anori.WinUI.Commands.CanExecuteObs
 
     using System;
 
-    using ICommand = System.Windows.Input.ICommand;
+using Anori.WinUI.Commands.Exceptions;
+
+using ICommand = System.Windows.Input.ICommand;
 
     internal class DummyObserver : PropertyObserverBase<DummyObserver>, IPropertyObserver
     {
@@ -256,11 +258,11 @@ using Anori.WinUI.Commands.Commands;    using Anori.WinUI.Commands.CanExecuteObs
             var observer1 = factory.ObservesProperty(commandTestObject.IntPropertyExpression);
             var observer2 = factory.ObservesProperty(commandTestObject.IntPropertyExpression);
 
-            Assert.Throws<ArgumentException>(
-                () =>
-                    {
-                        var command = new ActivatableCanExecuteObserverCommand<object>(o => { }, observer1, observer2);
-                    });
+            Assert.Throws<CommandBuilderException > (
+                                                         () =>
+                                                             {
+                                                                 var command = new ActivatableCanExecuteObserverCommand<object>(o => { }, observer1, observer2);
+                                                             });
         }
 
         [Test]
@@ -272,7 +274,7 @@ using Anori.WinUI.Commands.Commands;    using Anori.WinUI.Commands.CanExecuteObs
             var observer1 = factory.ObservesProperty(commandTestObject, o => o.IntProperty);
             var observer2 = factory.ObservesProperty(commandTestObject, o => o.IntProperty);
 
-            Assert.Throws<ArgumentException>(
+            Assert.Throws<CommandBuilderException>(
                 () =>
                     {
                         var command = new ActivatableCanExecuteObserverCommand<object>(o => { }, observer1, observer2);

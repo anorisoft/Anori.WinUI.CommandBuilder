@@ -5,9 +5,18 @@
     <LangVersion>9</LangVersion>
     <Nullable>enable</Nullable>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>Anorisoft.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\Anorisoft.snk</AssemblyOriginatorKeyFile>
     <IsPackable>false</IsPackable>
     <Configurations>Debug;Release;Debug Submodules;Release Submodules</Configurations>
+    <PackageIcon>..\Anorisoft.png</PackageIcon>
+    <Description>Anori WinUI Common</Description>
+    <Company>AnoriSoft</Company>
+    <Authors>Martin Egli</Authors>
+    <PackageTags>Extensions</PackageTags>
+    <Copyright>Copyright (c) AnoriSoft</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

@@ -77,7 +77,7 @@ namespace Anori.WinUI.Commands.Tests
             var notifyPropertyChangedTestObject = new NotifyPropertyChangedTestObject();
             using var observer = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject.IntPropertyExpression,
-                () => actionRaised = true);
+                () => actionRaised = true).Subscribe(true);
             Assert.False(actionRaised);
             notifyPropertyChangedTestObject.IntProperty = 2;
             Assert.True(actionRaised);
@@ -92,11 +92,11 @@ namespace Anori.WinUI.Commands.Tests
                 new NotifyPropertyChangedTestObject { IntProperty = 1, BoolProperty = false };
             using var integerObserver = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject.IntPropertyExpression,
-                () => actionIntegerRaised = true);
+                () => actionIntegerRaised = true).Subscribe(true); 
 
             using var booleanObserver = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject.BoolPropertyExpression,
-                () => actionBooleanRaised = true);
+                () => actionBooleanRaised = true).Subscribe(true); 
 
             Assert.False(actionIntegerRaised);
             Assert.False(actionBooleanRaised);
@@ -132,14 +132,14 @@ namespace Anori.WinUI.Commands.Tests
             };
             using var observer1 = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject.ComplexPropertyIntPropertyExpression,
-                () => canExecuteChangedRaiseCount++);
+                () => canExecuteChangedRaiseCount++).Subscribe(true);
             using var observer2 = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject.ComplexPropertyInnerComplexPropertyIntPropertyExpression,
-                () => canExecuteChangedRaiseCount++);
+                () => canExecuteChangedRaiseCount++).Subscribe(true);
             using var observer3 = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject
                     .ComplexPropertyInnerComplexPropertyInnerComplexPropertyIntPropertyExpression,
-                () => canExecuteChangedRaiseCount++);
+                () => canExecuteChangedRaiseCount++).Subscribe(true);
 
             Assert.AreEqual(0, canExecuteChangedRaiseCount);
             notifyPropertyChangedTestObject.ComplexProperty.IntProperty = 2;
@@ -197,8 +197,8 @@ namespace Anori.WinUI.Commands.Tests
             var notifyPropertyChangedTestObject = new NotifyPropertyChangedTestObject();
             using var observer = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject.IntPropertyExpression,
-                () => actionRaised = true);
-Assert.False(actionRaised);
+                () => actionRaised = true).Subscribe(true);
+            Assert.False(actionRaised);
             notifyPropertyChangedTestObject.IntProperty = 2;
             Assert.True(actionRaised);
         }
@@ -247,7 +247,7 @@ Assert.False(actionRaised);
             using var observer = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject,
                 o => o.IntProperty,
-                () => actionRaised = true);
+                () => actionRaised = true).Subscribe(true);
             Assert.False(actionRaised);
             notifyPropertyChangedTestObject.IntProperty = 2;
             Assert.True(actionRaised);
@@ -265,12 +265,12 @@ Assert.False(actionRaised);
             using var integerObserver = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject,
                 o => o.IntProperty,
-                () => actionIntegerRaised = true);
+                () => actionIntegerRaised = true).Subscribe(true);
 
             using var booleanObserver = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject,
                 o => o.BoolProperty,
-                () => actionBooleanRaised = true);
+                () => actionBooleanRaised = true).Subscribe(true);
 
             Assert.False(actionIntegerRaised);
             Assert.False(actionBooleanRaised);
@@ -307,15 +307,15 @@ Assert.False(actionRaised);
             using var observer1 = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject,
                 o => o.ComplexProperty.IntProperty,
-                () => canExecuteChangedRaiseCount++);
+                () => canExecuteChangedRaiseCount++).Subscribe(true);
             using var observer2 = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject,
                 o => o.ComplexProperty.InnerComplexProperty.IntProperty,
-                () => canExecuteChangedRaiseCount++);
+                () => canExecuteChangedRaiseCount++).Subscribe(true);
             using var observer3 = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject,
                 o => o.ComplexProperty.InnerComplexProperty.InnerComplexProperty.IntProperty,
-                () => canExecuteChangedRaiseCount++);
+                () => canExecuteChangedRaiseCount++).Subscribe(true);
 
             Assert.AreEqual(0, canExecuteChangedRaiseCount);
             notifyPropertyChangedTestObject.ComplexProperty.IntProperty = 2;

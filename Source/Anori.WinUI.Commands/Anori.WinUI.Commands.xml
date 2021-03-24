@@ -896,9 +896,7 @@
             </returns>
         </member>
         <member name="T:Anori.WinUI.Commands.Builder.ConcurrencyAsyncCommandBuilder">
-            <summary>
-                The Concurrency Asynchronous Command Builder class.
-            </summary>
+            <summary>The Concurrency Asynchronous Command Builder class.</summary>
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder" />
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCanExecuteBuilder" />
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.Builders.IActivatableConcurrencyAsyncCommandBuilder" />
@@ -6673,7 +6671,7 @@
         </member>
         <member name="T:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase">
             <summary>
-            The Concurrency Asynchronous Command Base class.
+                The Concurrency Asynchronous Command Base class.
             </summary>
             <seealso cref="T:Anori.WinUI.Commands.Commands.CommandBase" />
             <seealso cref="T:Anori.WinUI.Commands.Interfaces.IConcurrencyAsyncCommand" />
@@ -6730,6 +6728,11 @@
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.taskScheduler">
             <summary>
                 The actions task scheduler.
+            </summary>
+        </member>
+        <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.canCancel">
+            <summary>
+                The can cancel.
             </summary>
         </member>
         <member name="F:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.cancellationTokenSource">
@@ -6801,6 +6804,14 @@
             <summary>
                 Occurs when a property value changes.
             </summary>
+        </member>
+        <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.CanCancel">
+            <summary>
+                Gets or sets a value indicating whether this instance can cancel.
+            </summary>
+            <value>
+                <c>true</c> if this instance can cancel; otherwise, <c>false</c>.
+            </value>
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.CancelCommand">
             <summary>
@@ -6897,7 +6908,7 @@
                 Executes the asynchronous.
             </summary>
             <param name="token">The token.</param>
-            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+            <returns>A <see cref="T:System.Threading.Tasks.Task" /> representing the asynchronous operation.</returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase.CanExecute(System.Object)">
             <summary>
@@ -7615,7 +7626,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.#ctor(System.Action{System.Threading.CancellationToken},System.Func{System.Boolean},System.Action,System.Action{System.Exception},System.Action)">
             <summary>
-            Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase" /> class.
+                Initializes a new instance of the <see cref="T:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase" /> class.
             </summary>
             <param name="execute">The execute.</param>
             <param name="canExecute">The can execute.</param>
@@ -7650,10 +7661,10 @@
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.CancelCommand">
             <summary>
-            Gets the cancel command.
+                Gets the cancel command.
             </summary>
             <value>
-            The cancel command.
+                The cancel command.
             </value>
         </member>
         <member name="P:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.Exception">
@@ -7720,7 +7731,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.Execute">
             <summary>
-            Executes this instance.
+                Executes this instance.
             </summary>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.Dispose">
@@ -7746,11 +7757,11 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.CanExecute(System.Object)">
             <summary>
-            Determines whether this instance can execute the specified parameter.
+                Determines whether this instance can execute the specified parameter.
             </summary>
             <param name="parameter">The parameter.</param>
             <returns>
-              <see langword="true" /> if this command can be executed; otherwise, <see langword="false" />.
+                <see langword="true" /> if this command can be executed; otherwise, <see langword="false" />.
             </returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.Dispose(System.Boolean)">
@@ -7763,7 +7774,7 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.Execute(System.Object)">
             <summary>
-            Handle the internal invocation of <see cref="M:System.Windows.Input.ICommand.Execute(System.Object)" />.
+                Handle the internal invocation of <see cref="M:System.Windows.Input.ICommand.Execute(System.Object)" />.
             </summary>
             <param name="parameter">Command Parameter.</param>
         </member>
@@ -7775,14 +7786,14 @@
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.SetProperty``1(``0@,``0,System.String)">
             <summary>
-            Sets the property.
+                Sets the property.
             </summary>
             <typeparam name="TValue">The type of the value.</typeparam>
             <param name="storage">The storage.</param>
             <param name="value">The value.</param>
             <param name="propertyName">Name of the property.</param>
             <returns>
-            Property is set.
+                Property is set.
             </returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Commands.ConcurrencyCommandBase.OnAction(System.Threading.CancellationToken)">
