@@ -6,18 +6,20 @@
 
 namespace Anori.WinUI.Commands.Builder
 {
-    using Anori.WinUI.Commands.CanExecuteObservers;
-    using Anori.WinUI.Commands.Commands;
-    using Anori.WinUI.Commands.Exceptions;
-    using Anori.WinUI.Commands.Interfaces;
-    using Anori.WinUI.Commands.Interfaces.Builders;
-    using JetBrains.Annotations;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Linq.Expressions;
     using System.Threading;
     using System.Threading.Tasks;
+
+    using Anori.WinUI.Commands.CanExecuteObservers;
+    using Anori.WinUI.Commands.Commands;
+    using Anori.WinUI.Commands.Exceptions;
+    using Anori.WinUI.Commands.Interfaces;
+    using Anori.WinUI.Commands.Interfaces.Builders;
+
+    using JetBrains.Annotations;
 
     /// <summary>The Concurrency Asynchronous Command Builder class.</summary>
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.Builders.IConcurrencyAsyncCommandBuilder" />
@@ -78,51 +80,56 @@ namespace Anori.WinUI.Commands.Builder
             this.execute = execute ?? throw new ArgumentNullException(nameof(execute));
 
         /// <summary>
-        ///     Builds the specified set command.
+        ///     Determines whether this instance can execute the specified can execute.
         /// </summary>
-        /// <param name="setCommand">The set command.</param>
-        /// <returns>
-        ///     Activatable Concurrency Async Command.
-        /// </returns>
-        IActivatableConcurrencyAsyncCommand IActivatableConcurrencyAsyncCanExecuteBuilder.Build(
-            Action<IActivatableConcurrencyAsyncCommand> setCommand) =>
-            this.BuildActivatable(setCommand);
-
-        /// <summary>
-        ///     Observeses the property.
-        /// </summary>
-        /// <typeparam name="TType">The type of the type.</typeparam>
-        /// <param name="expression">The expression.</param>
-        /// <returns>
-        ///     Activatable Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCanExecuteBuilder.
-            ObservesProperty<TType>(Expression<Func<TType>> expression) =>
-            this.ObservesProperty(expression);
-
-        /// <summary>
-        ///     Observeses the specified observer.
-        /// </summary>
-        /// <param name="observer">The observer.</param>
-        /// <returns>
-        ///     Activatable Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCanExecuteBuilder.Observes(
-            ICanExecuteChangedSubject observer)
+        /// <param name="canExecute">The can execute.</param>
+        /// <returns>Concurrency Async Command Builder.</returns>
+        /// <exception cref="CommandBuilderException">
+        ///     Command Builder Exception.
+        /// </exception>
+        /// <exception cref="ArgumentNullException">canExecute is null.</exception>
+        [NotNull]
+        public ConcurrencyAsyncCommandBuilder CanExecute([NotNull] Func<bool> canExecute)
         {
-            this.observes.Add(observer);
+            if (this.canExecuteFunction != null)
+            {
+                throw new CanExecuteFunctionAlreadyDefinedException(
+                    Resources.ExceptionStrings.CanExecuteFunctionAlreadyDefined);
+            }
+
+            if (this.canExecuteSubject != null)
+            {
+                throw new CanExecuteFunctionAlreadyDefinedException(
+                    Resources.ExceptionStrings.CanExecuteExpressionAlreadyDefined);
+            }
+
+            this.canExecuteFunction = canExecute ?? throw new ArgumentNullException(nameof(canExecute));
             return this;
         }
 
         /// <summary>
-        ///     Observeses the command manager.
+        ///     Activatables this instance.
         /// </summary>
         /// <returns>
         ///     Activatable Concurrency Async Can Execute Command Builder.
         /// </returns>
-        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCanExecuteBuilder.
-            ObservesCommandManager() =>
-            this.ObservesCommandManager();
+        IActivatableConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCanExecuteBuilder.Activatable() =>
+            this.Activatable();
+
+        /// <summary>
+        ///     Activatables this instance.
+        /// </summary>
+        /// <returns>
+        ///     Activatable Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IActivatableConcurrencyAsyncCommandBuilder IConcurrencyAsyncCommandBuilder.Activatable() => this.Activatable();
+
+        /// <summary>
+        ///     Activatables this instance.
+        /// </summary>
+        /// <returns>Concurrency Async Command Builder.</returns>
+        [NotNull]
+        private ConcurrencyAsyncCommandBuilder Activatable() => this;
 
         /// <summary>
         ///     Automatics the activate.
@@ -134,37 +141,35 @@ namespace Anori.WinUI.Commands.Builder
             this.AutoActivate();
 
         /// <summary>
-        ///     Called when [error].
+        ///     Automatics the activate.
         /// </summary>
-        /// <param name="error">The error.</param>
         /// <returns>
         ///     Activatable Concurrency Async Can Execute Command Builder.
         /// </returns>
-        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCanExecuteBuilder.OnError(
-            Func<Exception, Task> error) =>
-            this.OnError(error);
+        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCommandBuilder.AutoActivate() =>
+            this.AutoActivate();
 
         /// <summary>
-        ///     Called when [completed].
+        ///     Automatics the activate.
         /// </summary>
-        /// <param name="completed">The completed.</param>
-        /// <returns>
-        ///     Activatable Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCanExecuteBuilder.OnCompleted(
-            Func<Task> completed) =>
-            this.OnCompleted(completed);
+        /// <returns>Concurrency Async Command Builder.</returns>
+        [NotNull]
+        private ConcurrencyAsyncCommandBuilder AutoActivate()
+        {
+            this.isAutoActiate = true;
+            return this;
+        }
 
         /// <summary>
-        ///     Called when [cancel].
+        ///     Builds the specified set command.
         /// </summary>
-        /// <param name="cancel">The cancel.</param>
+        /// <param name="setCommand">The set command.</param>
         /// <returns>
-        ///     Activatable Concurrency Async Can Execute Command Builder.
+        ///     Activatable Concurrency Async Command.
         /// </returns>
-        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCanExecuteBuilder.OnCancel(
-            Func<Task> cancel) =>
-            this.OnCancel(cancel);
+        IActivatableConcurrencyAsyncCommand IActivatableConcurrencyAsyncCanExecuteBuilder.Build(
+            Action<IActivatableConcurrencyAsyncCommand> setCommand) =>
+            this.BuildActivatable(setCommand);
 
         /// <summary>
         ///     Builds this instance.
@@ -174,39 +179,6 @@ namespace Anori.WinUI.Commands.Builder
         /// </returns>
         IActivatableConcurrencyAsyncCommand IActivatableConcurrencyAsyncCanExecuteBuilder.Build() =>
             this.BuildActivatable();
-
-        /// <summary>
-        ///     Called when [error].
-        /// </summary>
-        /// <param name="error">The error.</param>
-        /// <returns>
-        ///     Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IActivatableConcurrencyAsyncCommandBuilder IActivatableConcurrencyAsyncCommandBuilder.OnError(
-            Func<Exception, Task> error) =>
-            this.OnError(error);
-
-        /// <summary>
-        ///     Called when [completed].
-        /// </summary>
-        /// <param name="completed">The completed.</param>
-        /// <returns>
-        ///     Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IActivatableConcurrencyAsyncCommandBuilder IActivatableConcurrencyAsyncCommandBuilder.OnCompleted(
-            Func<Task> completed) =>
-            this.OnCompleted(completed);
-
-        /// <summary>
-        ///     Called when [cancel].
-        /// </summary>
-        /// <param name="cancel">The cancel.</param>
-        /// <returns>
-        ///     Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IActivatableConcurrencyAsyncCommandBuilder IActivatableConcurrencyAsyncCommandBuilder.OnCancel(
-            Func<Task> cancel) =>
-            this.OnCancel(cancel);
 
         /// <summary>
         ///     Builds this instance.
@@ -229,78 +201,6 @@ namespace Anori.WinUI.Commands.Builder
             this.BuildActivatable(setCommand);
 
         /// <summary>
-        ///     Determines whether this instance can execute the specified can execute.
-        /// </summary>
-        /// <param name="canExecute">The can execute.</param>
-        /// <returns>
-        ///     Activatable Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCommandBuilder.CanExecute(
-            Func<bool> canExecute) =>
-            this.CanExecute(canExecute);
-
-        /// <summary>
-        ///     Determines whether this instance can execute the specified can execute.
-        /// </summary>
-        /// <param name="canExecute">The can execute.</param>
-        /// <returns>
-        ///     Activatable Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCommandBuilder.CanExecute(
-            ICanExecuteSubject canExecute)
-        {
-            this.canExecuteSubject = canExecute;
-            return this;
-        }
-
-        /// <summary>
-        ///     Observeses the can execute.
-        /// </summary>
-        /// <param name="canExecute">The can execute.</param>
-        /// <returns>
-        ///     Activatable Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCommandBuilder.ObservesCanExecute(
-            Expression<Func<bool>> canExecute) =>
-            this.ObservesCanExecute(canExecute);
-
-        /// <summary>
-        ///     Observeses the can execute.
-        /// </summary>
-        /// <param name="canExecute">The can execute.</param>
-        /// <param name="fallback">if set to <c>true</c> [fallback].</param>
-        /// <returns>
-        ///     Activatable Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCommandBuilder.ObservesCanExecute(
-            Expression<Func<bool>> canExecute,
-            bool fallback) =>
-            this.ObservesCanExecute(canExecute, fallback);
-
-        /// <summary>
-        ///     Automatics the activate.
-        /// </summary>
-        /// <returns>
-        ///     Activatable Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCommandBuilder.AutoActivate() =>
-            this.AutoActivate();
-
-        /// <summary>
-        ///     Observeses the specified observer.
-        /// </summary>
-        /// <param name="observer">The observer.</param>
-        /// <returns>
-        ///     Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCanExecuteBuilder.Observes(
-            ICanExecuteChangedSubject observer)
-        {
-            this.observes.Add(observer);
-            return this;
-        }
-
-        /// <summary>
         ///     Builds the specified set command.
         /// </summary>
         /// <param name="setCommand">The set command.</param>
@@ -312,115 +212,12 @@ namespace Anori.WinUI.Commands.Builder
             this.Build(setCommand);
 
         /// <summary>
-        ///     Observeses the property.
-        /// </summary>
-        /// <typeparam name="TType">The type of the type.</typeparam>
-        /// <param name="expression">The expression.</param>
-        /// <returns>
-        ///     Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCanExecuteBuilder.ObservesProperty<TType>(
-            Expression<Func<TType>> expression) =>
-            this.ObservesProperty(expression);
-
-        /// <summary>
-        ///     Observeses the command manager.
-        /// </summary>
-        /// <returns>
-        ///     Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCanExecuteBuilder.ObservesCommandManager() =>
-            this.ObservesCommandManager();
-
-        /// <summary>
-        ///     Activatables this instance.
-        /// </summary>
-        /// <returns>
-        ///     Activatable Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IActivatableConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCanExecuteBuilder.Activatable() =>
-            this.Activatable();
-
-        /// <summary>
-        ///     Called when [error].
-        /// </summary>
-        /// <param name="error">The error.</param>
-        /// <returns>
-        ///     Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCanExecuteBuilder.OnError(Func<Exception, Task> error) =>
-            this.OnError(error);
-
-        /// <summary>
-        ///     Called when [completed].
-        /// </summary>
-        /// <param name="completed">The completed.</param>
-        /// <returns>
-        ///     Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCanExecuteBuilder.OnCompleted(Func<Task> completed) =>
-            this.OnCompleted(completed);
-
-        /// <summary>
-        ///     Called when [cancel].
-        /// </summary>
-        /// <param name="cancel">The cancel.</param>
-        /// <returns>
-        ///     Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCanExecuteBuilder.OnCancel(Func<Task> cancel) =>
-            this.OnCancel(cancel);
-
-        /// <summary>
         ///     Builds this instance.
         /// </summary>
         /// <returns>
         ///     Concurrency Async Command.
         /// </returns>
         IConcurrencyAsyncCommand IConcurrencyAsyncCanExecuteBuilder.Build() => this.Build();
-
-        /// <summary>
-        ///     Determines whether this instance can execute the specified can execute.
-        /// </summary>
-        /// <param name="canExecute">The can execute.</param>
-        /// <returns>
-        ///     Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCommandBuilder.CanExecute(ICanExecuteSubject canExecute)
-        {
-            this.canExecuteSubject = canExecute;
-            return this;
-        }
-
-        /// <summary>
-        ///     Called when [error].
-        /// </summary>
-        /// <param name="error">The error.</param>
-        /// <returns>
-        ///     Concurrency Async Command Builder.
-        /// </returns>
-        IConcurrencyAsyncCommandBuilder IConcurrencyAsyncCommandBuilder.OnError(Func<Exception, Task> error) =>
-            this.OnError(error);
-
-        /// <summary>
-        ///     Called when [completed].
-        /// </summary>
-        /// <param name="completed">The completed.</param>
-        /// <returns>
-        ///     Concurrency Async Command Builder.
-        /// </returns>
-        IConcurrencyAsyncCommandBuilder IConcurrencyAsyncCommandBuilder.OnCompleted(Func<Task> completed) =>
-            this.OnCompleted(completed);
-
-        /// <summary>
-        ///     Called when [cancel].
-        /// </summary>
-        /// <param name="cancel">The cancel.</param>
-        /// <returns>
-        ///     Concurrency Async Command Builder.
-        /// </returns>
-        IConcurrencyAsyncCommandBuilder IConcurrencyAsyncCommandBuilder.OnCancel(Func<Task> cancel) =>
-            this.OnCancel(cancel);
 
         /// <summary>
         ///     Builds this instance.
@@ -441,71 +238,86 @@ namespace Anori.WinUI.Commands.Builder
             this.Build(setCommand);
 
         /// <summary>
-        ///     Determines whether this instance can execute the specified can execute.
+        ///     Builds the specified set command.
         /// </summary>
-        /// <param name="canExecute">The can execute.</param>
+        /// <param name="setCommand">The set command.</param>
         /// <returns>
-        ///     Concurrency Async Can Execute Command Builder.
+        ///     Concurrency Async Can Execute Observer Command.
         /// </returns>
-        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCommandBuilder.CanExecute(Func<bool> canExecute) =>
-            this.CanExecute(canExecute);
-
-        /// <summary>
-        ///     Observeses the can execute.
-        /// </summary>
-        /// <param name="canExecute">The can execute.</param>
-        /// <returns>
-        ///     Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCommandBuilder.ObservesCanExecute(
-            Expression<Func<bool>> canExecute) =>
-            this.ObservesCanExecute(canExecute);
-
-        /// <summary>
-        ///     Observeses the can execute.
-        /// </summary>
-        /// <param name="canExecute">The can execute.</param>
-        /// <param name="fallback">if set to <c>true</c> [fallback].</param>
-        /// <returns>
-        ///     Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCommandBuilder.ObservesCanExecute(
-            Expression<Func<bool>> canExecute,
-            bool fallback) =>
-            this.ObservesCanExecute(canExecute, fallback);
-
-        /// <summary>
-        ///     Activatables this instance.
-        /// </summary>
-        /// <returns>
-        ///     Activatable Concurrency Async Can Execute Command Builder.
-        /// </returns>
-        IActivatableConcurrencyAsyncCommandBuilder IConcurrencyAsyncCommandBuilder.Activatable() => this.Activatable();
-
-        /// <summary>
-        ///     Determines whether this instance can execute the specified can execute.
-        /// </summary>
-        /// <param name="canExecute">The can execute.</param>
-        /// <returns>Concurrency Async Command Builder.</returns>
-        /// <exception cref="CommandBuilderException">
-        ///     Command Builder Exception.
-        /// </exception>
-        /// <exception cref="ArgumentNullException">canExecute is null.</exception>
+        /// <exception cref="ArgumentNullException">setCommand is null.</exception>
         [NotNull]
-        public ConcurrencyAsyncCommandBuilder CanExecute([NotNull] Func<bool> canExecute)
+        private ConcurrencyAsyncCanExecuteObserverCommand Build(
+            [NotNull] Action<ConcurrencyAsyncCanExecuteObserverCommand> setCommand)
         {
+            if (setCommand == null)
+            {
+                throw new ArgumentNullException(nameof(setCommand));
+            }
+
+            var command = this.Build();
+            setCommand(command);
+            return command;
+        }
+
+        /// <summary>
+        ///     Builds this instance.
+        /// </summary>
+        /// <returns>Concurrency Async Can Execute Observer Command.</returns>
+        [NotNull]
+        private ConcurrencyAsyncCanExecuteObserverCommand Build()
+        {
+            if (this.observes.Any())
+            {
+                if (this.canExecuteFunction != null)
+                {
+                    return new ConcurrencyAsyncCanExecuteObserverCommand(
+                        this.execute,
+                        this.canExecuteFunction,
+                        this.completedAction,
+                        this.errorAction,
+                        this.cancelAction,
+                        this.observes.ToArray());
+                }
+
+                if (this.canExecuteSubject != null)
+                {
+                    return new ConcurrencyAsyncCanExecuteObserverCommand(
+                        this.execute,
+                        this.canExecuteSubject,
+                        this.completedAction,
+                        this.errorAction,
+                        this.cancelAction,
+                        this.observes.ToArray());
+                }
+
+                throw new NoCanExecuteException();
+            }
+
             if (this.canExecuteFunction != null)
             {
-                throw new CanExecuteFunctionAlreadyDefinedException(Resources.ExceptionStrings.CanExecuteFunctionAlreadyDefined);
+                return new ConcurrencyAsyncCanExecuteObserverCommand(
+                    this.execute,
+                    this.canExecuteFunction,
+                    this.completedAction,
+                    this.errorAction,
+                    this.cancelAction);
             }
 
             if (this.canExecuteSubject != null)
             {
-                throw new CanExecuteFunctionAlreadyDefinedException(Resources.ExceptionStrings.CanExecuteExpressionAlreadyDefined);
+                return new ConcurrencyAsyncCanExecuteObserverCommand(
+                    this.execute,
+                    this.canExecuteSubject,
+                    this.completedAction,
+                    this.errorAction,
+                    this.cancelAction);
             }
 
-            this.canExecuteFunction = canExecute ?? throw new ArgumentNullException(nameof(canExecute));
-            return this;
+            return new ConcurrencyAsyncCanExecuteObserverCommand(
+                this.execute,
+                this.completedAction,
+                this.errorAction,
+                this.cancelAction);
         }
 
         /// <summary>
@@ -598,105 +410,128 @@ namespace Anori.WinUI.Commands.Builder
         }
 
         /// <summary>
-        ///     Builds the specified set command.
+        ///     Determines whether this instance can execute the specified can execute.
         /// </summary>
-        /// <param name="setCommand">The set command.</param>
+        /// <param name="canExecute">The can execute.</param>
         /// <returns>
-        ///     Concurrency Async Can Execute Observer Command.
+        ///     Activatable Concurrency Async Can Execute Command Builder.
         /// </returns>
-        /// <exception cref="ArgumentNullException">setCommand is null.</exception>
-        [NotNull]
-        private ConcurrencyAsyncCanExecuteObserverCommand Build(
-            [NotNull] Action<ConcurrencyAsyncCanExecuteObserverCommand> setCommand)
-        {
-            if (setCommand == null)
-            {
-                throw new ArgumentNullException(nameof(setCommand));
-            }
-
-            var command = this.Build();
-            setCommand(command);
-            return command;
-        }
+        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCommandBuilder.CanExecute(
+            Func<bool> canExecute) =>
+            this.CanExecute(canExecute);
 
         /// <summary>
-        ///     Builds this instance.
+        ///     Determines whether this instance can execute the specified can execute.
         /// </summary>
-        /// <returns>Concurrency Async Can Execute Observer Command.</returns>
-        [NotNull]
-        private ConcurrencyAsyncCanExecuteObserverCommand Build()
+        /// <param name="canExecute">The can execute.</param>
+        /// <returns>
+        ///     Activatable Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCommandBuilder.CanExecute(
+            ICanExecuteSubject canExecute)
         {
-            if (this.observes.Any())
-            {
-                if (this.canExecuteFunction != null)
-                {
-                    return new ConcurrencyAsyncCanExecuteObserverCommand(
-                        this.execute,
-                        this.canExecuteFunction,
-                        this.completedAction,
-                        this.errorAction,
-                        this.cancelAction,
-                        this.observes.ToArray());
-                }
-
-                if (this.canExecuteSubject != null)
-                {
-                    return new ConcurrencyAsyncCanExecuteObserverCommand(
-                        this.execute,
-                        this.canExecuteSubject,
-                        this.completedAction,
-                        this.errorAction,
-                        this.cancelAction,
-                        this.observes.ToArray());
-                }
-
-                throw new NoCanExecuteException();
-            }
-
-            if (this.canExecuteFunction != null)
-            {
-                return new ConcurrencyAsyncCanExecuteObserverCommand(
-                    this.execute,
-                    this.canExecuteFunction,
-                    this.completedAction,
-                    this.errorAction,
-                    this.cancelAction);
-            }
-
-            if (this.canExecuteSubject != null)
-            {
-                return new ConcurrencyAsyncCanExecuteObserverCommand(
-                    this.execute,
-                    this.canExecuteSubject,
-                    this.completedAction,
-                    this.errorAction,
-                    this.cancelAction);
-            }
-
-            return new ConcurrencyAsyncCanExecuteObserverCommand(
-                this.execute,
-                this.completedAction,
-                this.errorAction,
-                this.cancelAction);
-        }
-
-        /// <summary>
-        ///     Observeses the property.
-        /// </summary>
-        /// <typeparam name="TType">The type of the type.</typeparam>
-        /// <param name="expression">The expression.</param>
-        /// <returns>Concurrency Async Command Builder.</returns>
-        [NotNull]
-        private ConcurrencyAsyncCommandBuilder ObservesProperty<TType>([NotNull] Expression<Func<TType>> expression)
-        {
-            if (expression == null)
-            {
-                throw new ArgumentNullException(nameof(expression));
-            }
-
-            this.observes.Add(new PropertyObserverFactory().ObservesProperty(expression));
+            this.canExecuteSubject = canExecute;
             return this;
         }
+
+        /// <summary>
+        ///     Determines whether this instance can execute the specified can execute.
+        /// </summary>
+        /// <param name="canExecute">The can execute.</param>
+        /// <returns>
+        ///     Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCommandBuilder.CanExecute(ICanExecuteSubject canExecute)
+        {
+            this.canExecuteSubject = canExecute;
+            return this;
+        }
+
+        /// <summary>
+        ///     Determines whether this instance can execute the specified can execute.
+        /// </summary>
+        /// <param name="canExecute">The can execute.</param>
+        /// <returns>
+        ///     Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCommandBuilder.CanExecute(Func<bool> canExecute) =>
+            this.CanExecute(canExecute);
+
+        /// <summary>
+        ///     Observeses the specified observer.
+        /// </summary>
+        /// <param name="observer">The observer.</param>
+        /// <returns>
+        ///     Activatable Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCanExecuteBuilder.Observes(
+            ICanExecuteChangedSubject observer)
+        {
+            this.observes.Add(observer);
+            return this;
+        }
+
+        /// <summary>
+        ///     Observeses the specified observer.
+        /// </summary>
+        /// <param name="observer">The observer.</param>
+        /// <returns>
+        ///     Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCanExecuteBuilder.Observes(
+            ICanExecuteChangedSubject observer)
+        {
+            this.observes.Add(observer);
+            return this;
+        }
+
+        /// <summary>
+        ///     Observeses the can execute.
+        /// </summary>
+        /// <param name="canExecute">The can execute.</param>
+        /// <returns>
+        ///     Activatable Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCommandBuilder.ObservesCanExecute(
+            Expression<Func<bool>> canExecute) =>
+            this.ObservesCanExecute(canExecute);
+
+        /// <summary>
+        ///     Observeses the can execute.
+        /// </summary>
+        /// <param name="canExecute">The can execute.</param>
+        /// <param name="fallback">if set to <c>true</c> [fallback].</param>
+        /// <returns>
+        ///     Activatable Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCommandBuilder.ObservesCanExecute(
+            Expression<Func<bool>> canExecute,
+            bool fallback) =>
+            this.ObservesCanExecute(canExecute, fallback);
+
+        /// <summary>
+        ///     Observeses the can execute.
+        /// </summary>
+        /// <param name="canExecute">The can execute.</param>
+        /// <returns>
+        ///     Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCommandBuilder.ObservesCanExecute(
+            Expression<Func<bool>> canExecute) =>
+            this.ObservesCanExecute(canExecute);
+
+        /// <summary>
+        ///     Observeses the can execute.
+        /// </summary>
+        /// <param name="canExecute">The can execute.</param>
+        /// <param name="fallback">if set to <c>true</c> [fallback].</param>
+        /// <returns>
+        ///     Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCommandBuilder.ObservesCanExecute(
+            Expression<Func<bool>> canExecute,
+            bool fallback) =>
+            this.ObservesCanExecute(canExecute, fallback);
 
         /// <summary>
         ///     Observeses the can execute.
@@ -717,12 +552,14 @@ namespace Anori.WinUI.Commands.Builder
 
             if (this.canExecuteSubject != null)
             {
-                throw new CanExecuteFunctionAlreadyDefinedException(Resources.ExceptionStrings.CanExecuteExpressionAlreadyDefined);
+                throw new CanExecuteFunctionAlreadyDefinedException(
+                    Resources.ExceptionStrings.CanExecuteExpressionAlreadyDefined);
             }
 
             if (this.canExecuteFunction != null)
             {
-                throw new CanExecuteFunctionAlreadyDefinedException(Resources.ExceptionStrings.CanExecuteFunctionAlreadyDefined);
+                throw new CanExecuteFunctionAlreadyDefinedException(
+                    Resources.ExceptionStrings.CanExecuteFunctionAlreadyDefined);
             }
 
             this.canExecuteSubject = CanExecuteObserver.Create(canExecute);
@@ -751,17 +588,38 @@ namespace Anori.WinUI.Commands.Builder
 
             if (this.canExecuteSubject != null)
             {
-                throw new CanExecuteFunctionAlreadyDefinedException(Resources.ExceptionStrings.CanExecuteExpressionAlreadyDefined);
+                throw new CanExecuteFunctionAlreadyDefinedException(
+                    Resources.ExceptionStrings.CanExecuteExpressionAlreadyDefined);
             }
 
             if (this.canExecuteFunction != null)
             {
-                throw new CanExecuteFunctionAlreadyDefinedException(Resources.ExceptionStrings.CanExecuteFunctionAlreadyDefined);
+                throw new CanExecuteFunctionAlreadyDefinedException(
+                    Resources.ExceptionStrings.CanExecuteFunctionAlreadyDefined);
             }
 
             this.canExecuteSubject = CanExecuteObserver.Create(canExecute, fallback);
             return this;
         }
+
+        /// <summary>
+        ///     Observeses the command manager.
+        /// </summary>
+        /// <returns>
+        ///     Activatable Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCanExecuteBuilder.
+            ObservesCommandManager() =>
+            this.ObservesCommandManager();
+
+        /// <summary>
+        ///     Observeses the command manager.
+        /// </summary>
+        /// <returns>
+        ///     Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCanExecuteBuilder.ObservesCommandManager() =>
+            this.ObservesCommandManager();
 
         /// <summary>
         ///     Observeses the command manager.
@@ -773,7 +631,8 @@ namespace Anori.WinUI.Commands.Builder
         {
             if (this.observes.Contains(CommandManagerObserver.Observer))
             {
-                throw new CanExecuteFunctionAlreadyDefinedException(Resources.ExceptionStrings.CanExecuteFunctionAlreadyDefined);
+                throw new CanExecuteFunctionAlreadyDefinedException(
+                    Resources.ExceptionStrings.CanExecuteFunctionAlreadyDefined);
             }
 
             this.observes.Add(CommandManagerObserver.Observer);
@@ -781,33 +640,141 @@ namespace Anori.WinUI.Commands.Builder
         }
 
         /// <summary>
-        ///     Activatables this instance.
+        ///     Observeses the property.
         /// </summary>
-        /// <returns>Concurrency Async Command Builder.</returns>
-        [NotNull]
-        private ConcurrencyAsyncCommandBuilder Activatable() => this;
+        /// <typeparam name="TType">The type of the type.</typeparam>
+        /// <param name="expression">The expression.</param>
+        /// <returns>
+        ///     Activatable Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCanExecuteBuilder.
+            ObservesProperty<TType>(Expression<Func<TType>> expression) =>
+            this.ObservesProperty(expression);
 
         /// <summary>
-        ///     Automatics the activate.
+        ///     Observeses the property.
         /// </summary>
+        /// <typeparam name="TType">The type of the type.</typeparam>
+        /// <param name="expression">The expression.</param>
+        /// <returns>
+        ///     Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCanExecuteBuilder.ObservesProperty<TType>(
+            Expression<Func<TType>> expression) =>
+            this.ObservesProperty(expression);
+
+        /// <summary>
+        ///     Observeses the property.
+        /// </summary>
+        /// <typeparam name="TType">The type of the type.</typeparam>
+        /// <param name="expression">The expression.</param>
         /// <returns>Concurrency Async Command Builder.</returns>
         [NotNull]
-        private ConcurrencyAsyncCommandBuilder AutoActivate()
+        private ConcurrencyAsyncCommandBuilder ObservesProperty<TType>([NotNull] Expression<Func<TType>> expression)
         {
-            this.isAutoActiate = true;
+            if (expression == null)
+            {
+                throw new ArgumentNullException(nameof(expression));
+            }
+
+            this.observes.Add(new PropertyObserverFactory().ObservesProperty(expression));
             return this;
         }
 
         /// <summary>
-        ///     Called when [error].
+        ///     Called when [cancel].
         /// </summary>
-        /// <param name="error">The error.</param>
+        /// <param name="cancel">The cancel.</param>
+        /// <returns>
+        ///     Activatable Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCanExecuteBuilder.OnCancel(
+            Func<Task> cancel) =>
+            this.OnCancel(cancel);
+
+        /// <summary>
+        ///     Called when [cancel].
+        /// </summary>
+        /// <param name="cancel">The cancel.</param>
+        /// <returns>
+        ///     Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IActivatableConcurrencyAsyncCommandBuilder IActivatableConcurrencyAsyncCommandBuilder.OnCancel(
+            Func<Task> cancel) =>
+            this.OnCancel(cancel);
+
+        /// <summary>
+        ///     Called when [cancel].
+        /// </summary>
+        /// <param name="cancel">The cancel.</param>
+        /// <returns>
+        ///     Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCanExecuteBuilder.OnCancel(Func<Task> cancel) =>
+            this.OnCancel(cancel);
+
+        /// <summary>
+        ///     Called when [cancel].
+        /// </summary>
+        /// <param name="cancel">The cancel.</param>
+        /// <returns>
+        ///     Concurrency Async Command Builder.
+        /// </returns>
+        IConcurrencyAsyncCommandBuilder IConcurrencyAsyncCommandBuilder.OnCancel(Func<Task> cancel) =>
+            this.OnCancel(cancel);
+
+        /// <summary>
+        ///     Called when [cancel].
+        /// </summary>
+        /// <param name="cancel">The cancel.</param>
         /// <returns>Concurrency Async Command Builder.</returns>
-        private ConcurrencyAsyncCommandBuilder OnError(Func<Exception, Task> error)
+        private ConcurrencyAsyncCommandBuilder OnCancel(Func<Task> cancel)
         {
-            this.errorAction = error;
+            this.cancelAction = cancel;
             return this;
         }
+
+        /// <summary>
+        ///     Called when [completed].
+        /// </summary>
+        /// <param name="completed">The completed.</param>
+        /// <returns>
+        ///     Activatable Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCanExecuteBuilder.OnCompleted(
+            Func<Task> completed) =>
+            this.OnCompleted(completed);
+
+        /// <summary>
+        ///     Called when [completed].
+        /// </summary>
+        /// <param name="completed">The completed.</param>
+        /// <returns>
+        ///     Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IActivatableConcurrencyAsyncCommandBuilder IActivatableConcurrencyAsyncCommandBuilder.OnCompleted(
+            Func<Task> completed) =>
+            this.OnCompleted(completed);
+
+        /// <summary>
+        ///     Called when [completed].
+        /// </summary>
+        /// <param name="completed">The completed.</param>
+        /// <returns>
+        ///     Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCanExecuteBuilder.OnCompleted(Func<Task> completed) =>
+            this.OnCompleted(completed);
+
+        /// <summary>
+        ///     Called when [completed].
+        /// </summary>
+        /// <param name="completed">The completed.</param>
+        /// <returns>
+        ///     Concurrency Async Command Builder.
+        /// </returns>
+        IConcurrencyAsyncCommandBuilder IConcurrencyAsyncCommandBuilder.OnCompleted(Func<Task> completed) =>
+            this.OnCompleted(completed);
 
         /// <summary>
         ///     Called when [completed].
@@ -821,13 +788,55 @@ namespace Anori.WinUI.Commands.Builder
         }
 
         /// <summary>
-        ///     Called when [cancel].
+        ///     Called when [error].
         /// </summary>
-        /// <param name="cancel">The cancel.</param>
+        /// <param name="error">The error.</param>
+        /// <returns>
+        ///     Activatable Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IActivatableConcurrencyAsyncCanExecuteBuilder IActivatableConcurrencyAsyncCanExecuteBuilder.OnError(
+            Func<Exception, Task> error) =>
+            this.OnError(error);
+
+        /// <summary>
+        ///     Called when [error].
+        /// </summary>
+        /// <param name="error">The error.</param>
+        /// <returns>
+        ///     Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IActivatableConcurrencyAsyncCommandBuilder IActivatableConcurrencyAsyncCommandBuilder.OnError(
+            Func<Exception, Task> error) =>
+            this.OnError(error);
+
+        /// <summary>
+        ///     Called when [error].
+        /// </summary>
+        /// <param name="error">The error.</param>
+        /// <returns>
+        ///     Concurrency Async Can Execute Command Builder.
+        /// </returns>
+        IConcurrencyAsyncCanExecuteBuilder IConcurrencyAsyncCanExecuteBuilder.OnError(Func<Exception, Task> error) =>
+            this.OnError(error);
+
+        /// <summary>
+        ///     Called when [error].
+        /// </summary>
+        /// <param name="error">The error.</param>
+        /// <returns>
+        ///     Concurrency Async Command Builder.
+        /// </returns>
+        IConcurrencyAsyncCommandBuilder IConcurrencyAsyncCommandBuilder.OnError(Func<Exception, Task> error) =>
+            this.OnError(error);
+
+        /// <summary>
+        ///     Called when [error].
+        /// </summary>
+        /// <param name="error">The error.</param>
         /// <returns>Concurrency Async Command Builder.</returns>
-        private ConcurrencyAsyncCommandBuilder OnCancel(Func<Task> cancel)
+        private ConcurrencyAsyncCommandBuilder OnError(Func<Exception, Task> error)
         {
-            this.cancelAction = cancel;
+            this.errorAction = error;
             return this;
         }
     }

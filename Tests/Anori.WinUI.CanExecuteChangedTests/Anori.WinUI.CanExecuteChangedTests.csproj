@@ -20,9 +20,9 @@
   </ItemGroup>
 
   <ItemGroup Condition="!($(Configuration.Contains('Submodules')))">
-    <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0011" />
-    <PackageReference Include="Anori.Extensions" Version="1.0.0-alpha0011" />
-    <PackageReference Include="Anori.Common" Version="1.0.0-alpha0005" />
+    <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0012" />
+    <PackageReference Include="Anori.Extensions" Version="1.0.0-alpha0012" />
+    <PackageReference Include="Anori.Common" Version="1.0.0-alpha0006" />
   </ItemGroup>
 
   <ItemGroup Condition="($(Configuration.Contains('Submodules')))">

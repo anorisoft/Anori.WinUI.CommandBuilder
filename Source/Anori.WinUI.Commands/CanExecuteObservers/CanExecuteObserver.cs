@@ -6,12 +6,14 @@
 
 namespace Anori.WinUI.Commands.CanExecuteObservers
 {
-    using Anori.ExpressionObservers;
-    using Anori.Extensions;
-    using JetBrains.Annotations;
     using System;
     using System.Diagnostics;
     using System.Linq.Expressions;
+
+    using Anori.ExpressionObservers;
+    using Anori.Extensions;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     ///     CanExecute Observer.
@@ -31,10 +33,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
                 throw new ArgumentNullException(nameof(canExecuteExpression));
             }
 
-            var observesAndGet = PropertyObserver.Observes(
-                canExecuteExpression,
-                () => { this.Update.Raise(); },
-                false);
+            var observesAndGet = PropertyObserver.Observes(canExecuteExpression, () => { this.Update.Raise(); }, false);
             this.Observer = observesAndGet;
             this.CanExecute = () => observesAndGet.Value;
         }
@@ -52,10 +51,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
                 throw new ArgumentNullException(nameof(canExecuteExpression));
             }
 
-            var observesAndGet = PropertyObserver.Observes(
-                canExecuteExpression,
-                () => this.Update.Raise(),
-                fallback);
+            var observesAndGet = PropertyObserver.Observes(canExecuteExpression, () => this.Update.Raise(), fallback);
             this.Observer = observesAndGet;
             this.CanExecute = () => observesAndGet.Value;
         }

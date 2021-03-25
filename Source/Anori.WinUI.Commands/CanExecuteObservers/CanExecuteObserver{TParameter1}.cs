@@ -6,12 +6,14 @@
 
 namespace Anori.WinUI.Commands.CanExecuteObservers
 {
-    using Anori.ExpressionObservers;
-    using Anori.Extensions;
-    using JetBrains.Annotations;
     using System;
     using System.ComponentModel;
     using System.Linq.Expressions;
+
+    using Anori.ExpressionObservers;
+    using Anori.Extensions;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     ///     CanExecute Observer with one parameters.

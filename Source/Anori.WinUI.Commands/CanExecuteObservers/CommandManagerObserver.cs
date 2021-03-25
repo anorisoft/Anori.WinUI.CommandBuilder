@@ -6,33 +6,34 @@
 
 namespace Anori.WinUI.Commands.CanExecuteObservers
 {
-    using Anori.WinUI.Commands.Interfaces;
     using System;
     using System.Collections.Generic;
     using System.Windows.Input;
 
+    using Anori.WinUI.Commands.Interfaces;
+
     /// <summary>
-    /// Command Manager Observer.
+    ///     Command Manager Observer.
     /// </summary>
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubject" />
     internal class CommandManagerObserver : ICanExecuteChangedSubject
     {
         /// <summary>
-        /// The dictionary.
+        ///     The dictionary.
         /// </summary>
         private readonly IDictionary<ICanExecuteChangedObserver, EventHandler> dictionary =
             new Dictionary<ICanExecuteChangedObserver, EventHandler>();
 
         /// <summary>
-        /// Gets the observer.
+        ///     Gets the observer.
         /// </summary>
         /// <value>
-        /// The observer.
+        ///     The observer.
         /// </value>
         public static ICanExecuteChangedSubject Observer { get; } = new CommandManagerObserver();
 
         /// <summary>
-        /// Adds the specified observer.
+        ///     Adds the specified observer.
         /// </summary>
         /// <param name="observer">The observer.</param>
         /// <exception cref="ArgumentNullException">observer is null.</exception>

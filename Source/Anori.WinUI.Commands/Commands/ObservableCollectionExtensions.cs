@@ -23,7 +23,6 @@ namespace Anori.WinUI.Commands.Commands
         /// </summary>
         /// <param name="observers">The observers.</param>
         /// <param name="newItems">The new items.</param>
-        /// <exception cref="ObserverIsAlreadyBeingObservedException"></exception>
         /// <exception cref="ArgumentNullException">observers - Observable item.</exception>
         /// <exception cref="ArgumentException">propertyObserver is null.</exception>
         public static void AddIfNotContains(
@@ -39,7 +38,9 @@ namespace Anori.WinUI.Commands.Commands
 
                 if (observers.Contains(propertyObserver))
                 {
-                    throw new ObserverIsAlreadyBeingObservedException(ExceptionStrings.ObserverIsAlreadyBeingObserved, propertyObserver);
+                    throw new ObserverIsAlreadyBeingObservedException(
+                        ExceptionStrings.ObserverIsAlreadyBeingObserved,
+                        propertyObserver);
                 }
 
                 observers.Add(propertyObserver);

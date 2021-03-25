@@ -6,12 +6,14 @@
 
 namespace Anori.WinUI.Commands.CanExecuteObservers
 {
-    using Anori.ExpressionObservers;
-    using Anori.Extensions;
-    using JetBrains.Annotations;
     using System;
     using System.ComponentModel;
     using System.Linq.Expressions;
+
+    using Anori.ExpressionObservers;
+    using Anori.Extensions;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     ///     CanExecute Observer with two parameters.
@@ -82,7 +84,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         public TParameter2 Parameter2 { get; }
 
         /// <summary>
-        /// Creates the specified owner.
+        ///     Creates the specified owner.
         /// </summary>
         /// <param name="parameter1">The owner.</param>
         /// <param name="parameter2">The parameter2.</param>

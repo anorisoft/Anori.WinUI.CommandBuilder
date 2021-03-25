@@ -6,16 +6,18 @@
 
 namespace Anori.WinUI.Commands.CanExecuteObservers
 {
-    using Anori.ExpressionObservers;
-    using Anori.Extensions;
-    using Anori.WinUI.Commands.Interfaces;
-    using JetBrains.Annotations;
     using System;
     using System.ComponentModel;
     using System.Linq.Expressions;
 
+    using Anori.ExpressionObservers;
+    using Anori.Extensions;
+    using Anori.WinUI.Commands.Interfaces;
+
+    using JetBrains.Annotations;
+
     /// <summary>
-    /// Property Observer.
+    ///     Property Observer.
     /// </summary>
     /// <typeparam name="TParameter1">The type of the parameter.</typeparam>
     /// <typeparam name="TResult">The type of the result.</typeparam>
@@ -25,12 +27,12 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         where TParameter1 : INotifyPropertyChanged
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PropertyObserver{TParameter,TResult}" /> class.
+        ///     Initializes a new instance of the <see cref="PropertyObserver{TParameter,TResult}" /> class.
         /// </summary>
         /// <param name="parameter">The owner.</param>
         /// <param name="propertyExpression">The property expression.</param>
         /// <exception cref="ArgumentNullException">
-        /// parameter1 or propertyExpression is null.
+        ///     parameter1 or propertyExpression is null.
         /// </exception>
         public PropertyObserver(TParameter1 parameter, Expression<Func<TParameter1, TResult>> propertyExpression)
         {
@@ -50,7 +52,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         }
 
         /// <summary>
-        /// Occurs when [can execute changed].
+        ///     Occurs when [can execute changed].
         /// </summary>
         public override event Action Update;
 
@@ -63,7 +65,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         public TParameter1 Parameter { get; }
 
         /// <summary>
-        /// Creates the specified owner.
+        ///     Creates the specified owner.
         /// </summary>
         /// <param name="owner">The owner.</param>
         /// <param name="propertyExpression">The property expression.</param>

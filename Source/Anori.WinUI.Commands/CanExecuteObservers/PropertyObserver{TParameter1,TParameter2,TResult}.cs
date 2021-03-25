@@ -6,13 +6,15 @@
 
 namespace Anori.WinUI.Commands.CanExecuteObservers
 {
-    using Anori.ExpressionObservers;
-    using Anori.Extensions;
-    using Anori.WinUI.Commands.Interfaces;
-    using JetBrains.Annotations;
     using System;
     using System.ComponentModel;
     using System.Linq.Expressions;
+
+    using Anori.ExpressionObservers;
+    using Anori.Extensions;
+    using Anori.WinUI.Commands.Interfaces;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     ///     Property Observer.
@@ -23,7 +25,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
     /// <seealso cref="Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase{TResult}" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.IPropertyObserver" />
     internal sealed class PropertyObserver<TParameter1, TParameter2, TResult> : PropertyObserverBase<TResult>,
-                                                                                IPropertyObserver
+        IPropertyObserver
         where TParameter1 : INotifyPropertyChanged
         where TParameter2 : INotifyPropertyChanged
     {
@@ -47,7 +49,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
                 throw new ArgumentNullException(nameof(propertyExpression));
             }
 
-            this.Observer = PropertyObserver.Observes<TParameter1, TParameter2, TResult>(
+            this.Observer = PropertyObserver.Observes(
                 parameter1,
                 parameter2,
                 propertyExpression,
@@ -77,13 +79,13 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         public TParameter2 Parameter2 { get; }
 
         /// <summary>
-        /// Creates the specified owner.
+        ///     Creates the specified owner.
         /// </summary>
         /// <param name="parameter1">The parameter1.</param>
         /// <param name="parameter2">The parameter2.</param>
         /// <param name="propertyExpression">The property expression.</param>
         /// <returns>
-        /// The Property Observer.
+        ///     The Property Observer.
         /// </returns>
         public static PropertyObserver<TParameter1, TParameter2, TResult> Create(
             [NotNull] TParameter1 parameter1,

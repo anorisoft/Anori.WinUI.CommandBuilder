@@ -6,8 +6,9 @@
 
 namespace Anori.WinUI.Commands.CanExecuteObservers
 {
-    using Anori.WinUI.Commands.Interfaces;
     using System;
+
+    using Anori.WinUI.Commands.Interfaces;
 
     /// <summary>
     ///     CanExecute Observer Base.
