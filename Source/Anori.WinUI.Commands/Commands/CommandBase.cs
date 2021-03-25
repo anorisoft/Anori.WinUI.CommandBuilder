@@ -49,6 +49,21 @@ namespace Anori.WinUI.Commands.Commands
         protected abstract bool HasCanExecute { get; }
 
         /// <summary>
+        ///     Determines whether this instance can execute the specified parameter.
+        /// </summary>
+        /// <param name="parameter">The parameter.</param>
+        /// <returns>
+        ///     <see langword="true" /> if this command can be executed; otherwise, <see langword="false" />.
+        /// </returns>
+        protected abstract bool CanExecute([CanBeNull] object parameter);
+
+        /// <summary>
+        ///     Handle the internal invocation of <see cref="ICommand.Execute(object)" />.
+        /// </summary>
+        /// <param name="parameter">Command Parameter.</param>
+        protected abstract void Execute([CanBeNull] object parameter);
+
+        /// <summary>
         ///     Defines the method that determines whether the command can execute in its current state.
         /// </summary>
         /// <param name="parameter">
@@ -70,20 +85,5 @@ namespace Anori.WinUI.Commands.Commands
         ///     be set to <see langword="null" />.
         /// </param>
         void ICommand.Execute([CanBeNull] object parameter) => this.Execute(parameter);
-
-        /// <summary>
-        ///     Determines whether this instance can execute the specified parameter.
-        /// </summary>
-        /// <param name="parameter">The parameter.</param>
-        /// <returns>
-        ///     <see langword="true" /> if this command can be executed; otherwise, <see langword="false" />.
-        /// </returns>
-        protected abstract bool CanExecute([CanBeNull] object parameter);
-
-        /// <summary>
-        ///     Handle the internal invocation of <see cref="ICommand.Execute(object)" />.
-        /// </summary>
-        /// <param name="parameter">Command Parameter.</param>
-        protected abstract void Execute([CanBeNull] object parameter);
     }
 }

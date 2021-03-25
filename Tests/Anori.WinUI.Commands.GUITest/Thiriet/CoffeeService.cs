@@ -48,12 +48,7 @@ namespace Anori.WinUI.Commands.GUITest.Thiriet
             // Asynchronously prepare an awesome coffee
             var start = DateTime.Now;
             var end = start.AddSeconds(2);
-            //await Task.Run(
-            //    LoadAction(token, end),
-            //    token);
 
-            //start = DateTime.Now;
-            //end = start.AddSeconds(2);
             await new TaskFactory(TaskScheduler.Default).StartNew(t => LoadAction((CancellationToken)t, end), token, TaskCreationOptions.DenyChildAttach);
         }
 

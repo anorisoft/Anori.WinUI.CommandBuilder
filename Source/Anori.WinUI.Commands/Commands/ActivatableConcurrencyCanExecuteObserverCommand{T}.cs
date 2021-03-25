@@ -13,12 +13,11 @@ namespace Anori.WinUI.Commands.Commands
     using Anori.Common;
     using Anori.Extensions;
     using Anori.WinUI.Commands.Interfaces;
-    using Anori.WinUI.Common;
 
     using JetBrains.Annotations;
 
     /// <summary>
-    /// Activatable Concurrency CanExecute Observer Command.
+    ///     Activatable Concurrency CanExecute Observer Command.
     /// </summary>
     /// <typeparam name="T">Parameter Type.</typeparam>
     /// <seealso cref="Anori.WinUI.Commands.Commands.ConcurrencyCommandBase{T}" />
@@ -401,29 +400,6 @@ namespace Anori.WinUI.Commands.Commands
         /// <summary>
         ///     Activates this instance.
         /// </summary>
-        /// <returns>
-        ///     Activatable Concurrency Sync Command.
-        /// </returns>
-        IActivatableConcurrencySyncCommand<T> IActivatable<IActivatableConcurrencySyncCommand<T>>.Activate() =>
-            this.Activate();
-
-        /// <summary>
-        ///     Deactivates this instance.
-        /// </summary>
-        /// <returns>
-        ///     Activatable Concurrency Sync Command.
-        /// </returns>
-        IActivatableConcurrencySyncCommand<T> IActivatable<IActivatableConcurrencySyncCommand<T>>.Deactivate() =>
-            this.Deactivate();
-
-        /// <summary>
-        ///     Called when [can execute changed].
-        /// </summary>
-        public void RaisePropertyChanged() => this.CanExecuteChanged.RaiseEmpty(this);
-
-        /// <summary>
-        ///     Activates this instance.
-        /// </summary>
         /// <returns>Activatable Concurrency CanExecute Observer Command.</returns>
         public ActivatableConcurrencyCanExecuteObserverCommand<T> Activate()
         {
@@ -438,7 +414,7 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        /// Deactivates this instance.
+        ///     Deactivates this instance.
         /// </summary>
         /// <returns>Activatable Concurrency CanExecute Observer Command.</returns>
         public ActivatableConcurrencyCanExecuteObserverCommand<T> Deactivate()
@@ -459,6 +435,11 @@ namespace Anori.WinUI.Commands.Commands
         public override void RaiseCanExecuteCommand() => this.RaisePropertyChanged();
 
         /// <summary>
+        ///     Called when [can execute changed].
+        /// </summary>
+        public void RaisePropertyChanged() => this.CanExecuteChanged.RaiseEmpty(this);
+
+        /// <summary>
         ///     Releases unmanaged and - optionally - managed resources.
         /// </summary>
         /// <param name="disposing">
@@ -473,6 +454,24 @@ namespace Anori.WinUI.Commands.Commands
                 this.Unsubscribe();
             }
         }
+
+        /// <summary>
+        ///     Activates this instance.
+        /// </summary>
+        /// <returns>
+        ///     Activatable Concurrency Sync Command.
+        /// </returns>
+        IActivatableConcurrencySyncCommand<T> IActivatable<IActivatableConcurrencySyncCommand<T>>.Activate() =>
+            this.Activate();
+
+        /// <summary>
+        ///     Deactivates this instance.
+        /// </summary>
+        /// <returns>
+        ///     Activatable Concurrency Sync Command.
+        /// </returns>
+        IActivatableConcurrencySyncCommand<T> IActivatable<IActivatableConcurrencySyncCommand<T>>.Deactivate() =>
+            this.Deactivate();
 
         /// <summary>
         ///     Subscribes this instance.

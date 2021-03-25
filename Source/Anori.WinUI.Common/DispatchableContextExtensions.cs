@@ -51,37 +51,6 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        ///     Dispatches the asynchronous.
-        /// </summary>
-        /// <typeparam name="TContext">The type of the context.</typeparam>
-        /// <param name="context">The context.</param>
-        /// <param name="handler">The handler.</param>
-        /// <exception cref="ArgumentNullException">context is null.</exception>
-        public static async Task DispatchAsync<TContext>([NotNull] this TContext context, EventHandler? handler)
-            where TContext : IDispatchableContext
-        {
-            if (context == null)
-            {
-                throw new ArgumentNullException(nameof(context));
-            }
-
-            if (handler == null)
-            {
-                return;
-            }
-
-            var synchronizationContext = context.SynchronizationContext;
-            if (synchronizationContext == null)
-            {
-                handler.RaiseEmpty(context);
-            }
-            else
-            {
-                await synchronizationContext.DispatchAsync(context, handler);
-            }
-        }
-
-        /// <summary>
         ///     Dispatches the specified sender.
         /// </summary>
         /// <typeparam name="TContext">The type of the context context.</typeparam>
@@ -100,26 +69,6 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        ///     Dispatches the asynchronous.
-        /// </summary>
-        /// <typeparam name="TContext">The type of the context.</typeparam>
-        /// <param name="context">The context.</param>
-        /// <param name="action">The action.</param>
-        /// <exception cref="ArgumentNullException">context is null.</exception>
-        public static async Task DispatchAsync<TContext>(
-            [NotNull] this TContext context,
-            [NotNull] Action<TContext> action)
-            where TContext : IDispatchableContext
-        {
-            if (context == null)
-            {
-                throw new ArgumentNullException(nameof(context));
-            }
-
-            await context.SynchronizationContext.DispatchAsync(context, action);
-        }
-
-        /// <summary>
         ///     Dispatches the specified action.
         /// </summary>
         /// <typeparam name="TContext">The type of the context.</typeparam>
@@ -135,25 +84,6 @@ namespace Anori.WinUI.Common
             }
 
             context.SynchronizationContext.Dispatch(action);
-        }
-
-        /// <summary>
-        ///     Dispatches the specified action.
-        /// </summary>
-        /// <typeparam name="TContext">The type of the context.</typeparam>
-        /// <param name="context">The context.</param>
-        /// <param name="action">The action.</param>
-        /// <exception cref="ArgumentNullException">context</exception>
-        /// <exception cref="System.ArgumentNullException">context is null.</exception>
-        public static async Task DispatchAsync<TContext>([NotNull] this TContext context, [NotNull] Action action)
-            where TContext : IDispatchableContext
-        {
-            if (context == null)
-            {
-                throw new ArgumentNullException(nameof(context));
-            }
-
-            await context.SynchronizationContext.DispatchAsync(action);
         }
 
         /// <summary>
@@ -183,32 +113,6 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        ///     Dispatches the asynchronous.
-        /// </summary>
-        /// <typeparam name="T">The type.</typeparam>
-        /// <param name="context">The context.</param>
-        /// <param name="value">The value.</param>
-        /// <param name="handler">The handler.</param>
-        /// <exception cref="ArgumentNullException">context is null.</exception>
-        public static async Task DispatchAsync<T>(
-            [NotNull] this IDispatchableContext context,
-            T value,
-            EventHandler<EventArgs<T>>? handler)
-        {
-            if (context == null)
-            {
-                throw new ArgumentNullException(nameof(context));
-            }
-
-            if (handler == null)
-            {
-                return;
-            }
-
-            await context.SynchronizationContext.DispatchAsync(context, value, handler);
-        }
-
-        /// <summary>
         ///     Dispatches the specified value.
         /// </summary>
         /// <typeparam name="TContext">The type of the context.</typeparam>
@@ -220,23 +124,6 @@ namespace Anori.WinUI.Common
             where TContext : IDispatchableContext
         {
             context.SynchronizationContext.Dispatch(value, v => action.Raise(v));
-        }
-
-        /// <summary>
-        ///     Dispatches the asynchronous.
-        /// </summary>
-        /// <typeparam name="TContext">The type of the context.</typeparam>
-        /// <typeparam name="T">The type.</typeparam>
-        /// <param name="context">The context.</param>
-        /// <param name="value">The value.</param>
-        /// <param name="action">The action.</param>
-        public static async Task DispatchAsync<TContext, T>(
-            [NotNull] this TContext context,
-            T value,
-            [NotNull] Action<T> action)
-            where TContext : IDispatchableContext
-        {
-            await context.SynchronizationContext.DispatchAsync(value, v => action.Raise(v));
         }
 
         /// <summary>
@@ -260,26 +147,6 @@ namespace Anori.WinUI.Common
         }
 
         /// <summary>
-        ///     Dispatches the asynchronous.
-        /// </summary>
-        /// <typeparam name="TContext">The type of the context.</typeparam>
-        /// <typeparam name="T1">The type of the 1.</typeparam>
-        /// <typeparam name="T2">The type of the 2.</typeparam>
-        /// <param name="context">The context.</param>
-        /// <param name="value1">The value1.</param>
-        /// <param name="value2">The value2.</param>
-        /// <param name="action">The action.</param>
-        public static async Task DispatchAsync<TContext, T1, T2>(
-            [NotNull] this TContext context,
-            T1 value1,
-            T2 value2,
-            [NotNull] Action<T1, T2> action)
-            where TContext : IDispatchableContext
-        {
-            await context.SynchronizationContext.DispatchAsync((value1, value2), v => action.Raise(v.value1, v.value2));
-        }
-
-        /// <summary>
         ///     Dispatches the specified value.
         /// </summary>
         /// <typeparam name="TContext">The type of the context.</typeparam>
@@ -294,23 +161,6 @@ namespace Anori.WinUI.Common
             where TContext : IDispatchableContext
         {
             context.SynchronizationContext.Dispatch((context, value), v => action.Raise(v.context, v.value));
-        }
-
-        /// <summary>
-        ///     Dispatches the asynchronous.
-        /// </summary>
-        /// <typeparam name="TContext">The type of the context.</typeparam>
-        /// <typeparam name="T">The type.</typeparam>
-        /// <param name="context">The context.</param>
-        /// <param name="value">The value.</param>
-        /// <param name="action">The action.</param>
-        public static async Task DispatchAsync<TContext, T>(
-            [NotNull] this TContext context,
-            T value,
-            [NotNull] Action<TContext, T> action)
-            where TContext : IDispatchableContext
-        {
-            await context.SynchronizationContext.DispatchAsync((context, value), v => action.Raise(v.context, v.value));
         }
 
         /// <summary>
@@ -339,12 +189,149 @@ namespace Anori.WinUI.Common
         ///     Dispatches the asynchronous.
         /// </summary>
         /// <typeparam name="TContext">The type of the context.</typeparam>
+        /// <param name="context">The context.</param>
+        /// <param name="handler">The handler.</param>
+        /// <exception cref="ArgumentNullException">context is null.</exception>
+        /// <returns>A task object that can be awaited.</returns>
+        public static Task DispatchAsync<TContext>([NotNull] this TContext context, EventHandler? handler)
+            where TContext : IDispatchableContext
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            return context.SynchronizationContext.DispatchAsync(context, handler);
+        }
+
+        /// <summary>
+        ///     Dispatches the asynchronous.
+        /// </summary>
+        /// <typeparam name="TContext">The type of the context.</typeparam>
+        /// <param name="context">The context.</param>
+        /// <param name="action">The action.</param>
+        /// <exception cref="ArgumentNullException">context is null.</exception>
+        /// <returns>A task object that can be awaited.</returns>
+        public static Task DispatchAsync<TContext>([NotNull] this TContext context, [NotNull] Action<TContext> action)
+            where TContext : IDispatchableContext
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            return context.SynchronizationContext.DispatchAsync(context, action);
+        }
+
+        /// <summary>
+        ///     Dispatches the specified action.
+        /// </summary>
+        /// <typeparam name="TContext">The type of the context.</typeparam>
+        /// <param name="context">The context.</param>
+        /// <param name="action">The action.</param>
+        /// <exception cref="ArgumentNullException">context is null.</exception>
+        /// <returns>A task object that can be awaited.</returns>
+        public static Task DispatchAsync<TContext>([NotNull] this TContext context, [NotNull] Action action)
+            where TContext : IDispatchableContext
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            return context.SynchronizationContext.DispatchAsync(action);
+        }
+
+        /// <summary>
+        ///     Dispatches the asynchronous.
+        /// </summary>
+        /// <typeparam name="T">The type.</typeparam>
+        /// <param name="context">The context.</param>
+        /// <param name="value">The value.</param>
+        /// <param name="handler">The handler.</param>
+        /// <exception cref="ArgumentNullException">context is null.</exception>
+        /// <returns>A task object that can be awaited.</returns>
+        public static Task DispatchAsync<T>(
+            [NotNull] this IDispatchableContext context,
+            T value,
+            EventHandler<EventArgs<T>>? handler)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            return context.SynchronizationContext.DispatchAsync(context, value, handler);
+        }
+
+        /// <summary>
+        ///     Dispatches the asynchronous.
+        /// </summary>
+        /// <typeparam name="TContext">The type of the context.</typeparam>
+        /// <typeparam name="T">The type.</typeparam>
+        /// <param name="context">The context.</param>
+        /// <param name="value">The value.</param>
+        /// <param name="action">The action.</param>
+        /// <returns>A task object that can be awaited.</returns>
+        public static async Task DispatchAsync<TContext, T>(
+            [NotNull] this TContext context,
+            T value,
+            [NotNull] Action<T> action)
+            where TContext : IDispatchableContext
+        {
+            await context.SynchronizationContext.DispatchAsync(value, v => action.Raise(v));
+        }
+
+        /// <summary>
+        ///     Dispatches the asynchronous.
+        /// </summary>
+        /// <typeparam name="TContext">The type of the context.</typeparam>
         /// <typeparam name="T1">The type of the 1.</typeparam>
         /// <typeparam name="T2">The type of the 2.</typeparam>
         /// <param name="context">The context.</param>
         /// <param name="value1">The value1.</param>
         /// <param name="value2">The value2.</param>
         /// <param name="action">The action.</param>
+        /// <returns>A task object that can be awaited.</returns>
+        public static async Task DispatchAsync<TContext, T1, T2>(
+            [NotNull] this TContext context,
+            T1 value1,
+            T2 value2,
+            [NotNull] Action<T1, T2> action)
+            where TContext : IDispatchableContext
+        {
+            await context.SynchronizationContext.DispatchAsync((value1, value2), v => action.Raise(v.value1, v.value2));
+        }
+
+        /// <summary>
+        ///     Dispatches the asynchronous.
+        /// </summary>
+        /// <typeparam name="TContext">The type of the context.</typeparam>
+        /// <typeparam name="T">The type.</typeparam>
+        /// <param name="context">The context.</param>
+        /// <param name="value">The value.</param>
+        /// <param name="action">The action.</param>
+        /// <returns>A task object that can be awaited.</returns>
+        public static async Task DispatchAsync<TContext, T>(
+            [NotNull] this TContext context,
+            T value,
+            [NotNull] Action<TContext, T> action)
+            where TContext : IDispatchableContext
+        {
+            await context.SynchronizationContext.DispatchAsync((context, value), v => action.Raise(v.context, v.value));
+        }
+
+        /// <summary>
+        ///     Dispatches the asynchronous.
+        /// </summary>
+        /// <typeparam name="TContext">The type of the context.</typeparam>
+        /// <typeparam name="T1">The type of the 1.</typeparam>
+        /// <typeparam name="T2">The type of the 2.</typeparam>
+        /// <param name="context">The context.</param>
+        /// <param name="value1">The value1.</param>
+        /// <param name="value2">The value2.</param>
+        /// <param name="action">The action.</param>
+        /// <returns>A task object that can be awaited.</returns>
         public static async Task DispatchAsync<TContext, T1, T2>(
             [NotNull] this TContext context,
             T1 value1,

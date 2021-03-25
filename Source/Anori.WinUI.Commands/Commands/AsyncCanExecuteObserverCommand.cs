@@ -10,10 +10,8 @@ namespace Anori.WinUI.Commands.Commands
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
-    using Anori.Common;
     using Anori.Extensions;
     using Anori.WinUI.Commands.Interfaces;
-    using Anori.WinUI.Common;
 
     using JetBrains.Annotations;
 
@@ -131,11 +129,6 @@ namespace Anori.WinUI.Commands.Commands
         public override event EventHandler CanExecuteChanged;
 
         /// <summary>
-        ///     Called when [can execute changed].
-        /// </summary>
-        public void RaisePropertyChanged() => this.CanExecuteChanged.RaiseEmpty(this);
-
-        /// <summary>
         ///     Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
         public void Dispose()
@@ -148,6 +141,11 @@ namespace Anori.WinUI.Commands.Commands
         ///     Raises the can execute changed.
         /// </summary>
         public override void RaiseCanExecuteChanged() => this.CanExecuteChanged.RaiseEmpty(this);
+
+        /// <summary>
+        ///     Called when [can execute changed].
+        /// </summary>
+        public void RaisePropertyChanged() => this.CanExecuteChanged.RaiseEmpty(this);
 
         /// <summary>
         ///     Releases unmanaged and - optionally - managed resources.

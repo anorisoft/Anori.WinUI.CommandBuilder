@@ -2192,12 +2192,6 @@
             </summary>
             <seealso cref="T:System.Windows.Input.ICommand" />
         </member>
-        <member name="M:Anori.WinUI.Commands.Interfaces.IAsyncCommand.ExecuteAsync">
-            <summary>
-                Executes the asynchronous.
-            </summary>
-            <returns>Async task result.</returns>
-        </member>
         <member name="M:Anori.WinUI.Commands.Interfaces.IAsyncCommand.CanExecute">
             <summary>
                 Determines whether this instance can execute.
@@ -2206,19 +2200,18 @@
                 <c>true</c> if this instance can execute; otherwise, <c>false</c>.
             </returns>
         </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.IAsyncCommand.ExecuteAsync">
+            <summary>
+                Executes the asynchronous.
+            </summary>
+            <returns>Async task result.</returns>
+        </member>
         <member name="T:Anori.WinUI.Commands.Interfaces.IAsyncCommand`1">
             <summary>
                 Async Command Interface.
             </summary>
             <typeparam name="T">The parameter type.</typeparam>
             <seealso cref="T:System.Windows.Input.ICommand" />
-        </member>
-        <member name="M:Anori.WinUI.Commands.Interfaces.IAsyncCommand`1.ExecuteAsync(`0)">
-            <summary>
-                Executes the asynchronous.
-            </summary>
-            <param name="parameter">The parameter.</param>
-            <returns>The async taskresult.</returns>
         </member>
         <member name="M:Anori.WinUI.Commands.Interfaces.IAsyncCommand`1.CanExecute(`0)">
             <summary>
@@ -2228,6 +2221,13 @@
             <returns>
                 <c>true</c> if this instance can execute the specified parameter; otherwise, <c>false</c>.
             </returns>
+        </member>
+        <member name="M:Anori.WinUI.Commands.Interfaces.IAsyncCommand`1.ExecuteAsync(`0)">
+            <summary>
+                Executes the asynchronous.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <returns>The async taskresult.</returns>
         </member>
         <member name="T:Anori.WinUI.Commands.Interfaces.ICanExecute">
             <summary>

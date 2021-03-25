@@ -10,10 +10,8 @@ namespace Anori.WinUI.Commands.Commands
     using System.Collections.Generic;
     using System.Threading;
 
-    using Anori.Common;
     using Anori.Extensions;
     using Anori.WinUI.Commands.Interfaces;
-    using Anori.WinUI.Common;
 
     using JetBrains.Annotations;
 
@@ -210,14 +208,14 @@ namespace Anori.WinUI.Commands.Commands
         public override event EventHandler CanExecuteChanged;
 
         /// <summary>
-        ///     Called when [can execute changed].
-        /// </summary>
-        public void RaisePropertyChanged() => this.CanExecuteChanged.RaiseEmpty(this);
-
-        /// <summary>
         ///     Raises the can execute command.
         /// </summary>
         public override void RaiseCanExecuteCommand() => this.RaisePropertyChanged();
+
+        /// <summary>
+        ///     Called when [can execute changed].
+        /// </summary>
+        public void RaisePropertyChanged() => this.CanExecuteChanged.RaiseEmpty(this);
 
         /// <summary>
         ///     Releases unmanaged and - optionally - managed resources.

@@ -311,6 +311,15 @@ namespace Anori.WinUI.Commands.Commands
         protected override bool HasCanExecute => this.canExecute != null;
 
         /// <summary>
+        ///     Cancels this instance.
+        /// </summary>
+        public void Cancel()
+        {
+            this.DispatchAsync(() => this.CanCancel = false).FireAndForgetSafeAsync(ex => { });
+            this.cancellationTokenSource?.Cancel();
+        }
+
+        /// <summary>
         ///     Determines whether this instance can execute.
         /// </summary>
         /// <returns>
@@ -339,6 +348,16 @@ namespace Anori.WinUI.Commands.Commands
             }
 
             return false;
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        ///     Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         /// <summary>
@@ -388,35 +407,6 @@ namespace Anori.WinUI.Commands.Commands
             }
         }
 
-        /// <inheritdoc />
-        /// <summary>
-        ///     Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            this.Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        /// <summary>
-        ///     Cancels this instance.
-        /// </summary>
-        public void Cancel()
-        {
-            this.DispatchAsync(() => this.CanCancel = false).FireAndForgetSafeAsync(ex => { });
-            this.cancellationTokenSource?.Cancel();
-        }
-
-        /// <summary>
-        ///     Raises the can execute cancel command.
-        /// </summary>
-        public void RaiseCanExecuteCancelCommand() => this.cancelCommand.RaiseCanExecuteChanged();
-
-        /// <summary>
-        ///     Raises the can execute command.
-        /// </summary>
-        public abstract void RaiseCanExecuteCommand();
-
         /// <summary>
         ///     Executes the asynchronous.
         /// </summary>
@@ -439,6 +429,16 @@ namespace Anori.WinUI.Commands.Commands
                 }
             }
         }
+
+        /// <summary>
+        ///     Raises the can execute cancel command.
+        /// </summary>
+        public void RaiseCanExecuteCancelCommand() => this.cancelCommand.RaiseCanExecuteChanged();
+
+        /// <summary>
+        ///     Raises the can execute command.
+        /// </summary>
+        public abstract void RaiseCanExecuteCommand();
 
         /// <summary>
         ///     Determines whether this instance can execute the specified parameter.

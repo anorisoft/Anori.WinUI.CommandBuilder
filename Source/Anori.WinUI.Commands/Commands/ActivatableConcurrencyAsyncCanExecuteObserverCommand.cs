@@ -14,7 +14,6 @@ namespace Anori.WinUI.Commands.Commands
     using Anori.Common;
     using Anori.Extensions;
     using Anori.WinUI.Commands.Interfaces;
-    using Anori.WinUI.Common;
 
     using JetBrains.Annotations;
 
@@ -426,6 +425,22 @@ namespace Anori.WinUI.Commands.Commands
         public void RaisePropertyChanged() => this.CanExecuteChanged.RaiseEmpty(this);
 
         /// <summary>
+        ///     Releases unmanaged and - optionally - managed resources.
+        /// </summary>
+        /// <param name="disposing">
+        ///     <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only
+        ///     unmanaged resources.
+        /// </param>
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            if (disposing)
+            {
+                this.Unsubscribe();
+            }
+        }
+
+        /// <summary>
         ///     Activates this instance.
         /// </summary>
         /// <returns>
@@ -442,22 +457,6 @@ namespace Anori.WinUI.Commands.Commands
         /// </returns>
         IActivatableConcurrencyAsyncCommand IActivatable<IActivatableConcurrencyAsyncCommand>.Deactivate() =>
             this.Deactivate();
-
-        /// <summary>
-        ///     Releases unmanaged and - optionally - managed resources.
-        /// </summary>
-        /// <param name="disposing">
-        ///     <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only
-        ///     unmanaged resources.
-        /// </param>
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-            if (disposing)
-            {
-                this.Unsubscribe();
-            }
-        }
 
         /// <summary>
         ///     Subscribes this instance.

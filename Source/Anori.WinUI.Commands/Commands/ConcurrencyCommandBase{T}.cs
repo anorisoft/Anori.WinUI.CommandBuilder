@@ -14,10 +14,8 @@ namespace Anori.WinUI.Commands.Commands
     using System.Threading.Tasks;
     using System.Windows.Input;
 
-    using Anori.Common;
     using Anori.Extensions;
     using Anori.WinUI.Commands.Interfaces;
-    using Anori.WinUI.Common;
 
     using JetBrains.Annotations;
 
@@ -286,6 +284,11 @@ namespace Anori.WinUI.Commands.Commands
         protected override bool HasCanExecute => this.canExecute != null;
 
         /// <summary>
+        ///     Cancels this instance.
+        /// </summary>
+        public void Cancel() => this.cancellationTokenSource?.Cancel();
+
+        /// <summary>
         ///     Determines whether this instance can execute.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
@@ -315,6 +318,16 @@ namespace Anori.WinUI.Commands.Commands
             }
 
             return false;
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        ///     Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         /// <summary>
@@ -372,21 +385,6 @@ namespace Anori.WinUI.Commands.Commands
                 throw;
             }
         }
-
-        /// <inheritdoc />
-        /// <summary>
-        ///     Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            this.Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        /// <summary>
-        ///     Cancels this instance.
-        /// </summary>
-        public void Cancel() => this.cancellationTokenSource?.Cancel();
 
         /// <summary>
         ///     Raises the can execute cancel command.

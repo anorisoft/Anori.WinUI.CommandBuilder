@@ -6,18 +6,16 @@
 
 namespace Anori.WinUI.Commands.Builder
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Linq.Expressions;
-
     using Anori.WinUI.Commands.CanExecuteObservers;
     using Anori.WinUI.Commands.Commands;
     using Anori.WinUI.Commands.Exceptions;
     using Anori.WinUI.Commands.Interfaces;
     using Anori.WinUI.Commands.Interfaces.Builders;
-
     using JetBrains.Annotations;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Linq.Expressions;
 
     /// <summary>
     ///     The Synchronize Command Builder class.
@@ -348,12 +346,12 @@ namespace Anori.WinUI.Commands.Builder
         {
             if (this.canExecuteFunction != null)
             {
-                throw new CommandBuilderException(Resources.ExceptionStrings.CanExecuteFunctionAlreadyDefined);
+                throw new CanExecuteFunctionAlreadyDefinedException(Resources.ExceptionStrings.CanExecuteFunctionAlreadyDefined);
             }
 
             if (this.canExecuteSubject != null)
             {
-                throw new CommandBuilderException(Resources.ExceptionStrings.CanExecuteExpressionAlreadyDefined);
+                throw new CanExecuteFunctionAlreadyDefinedException(Resources.ExceptionStrings.CanExecuteExpressionAlreadyDefined);
             }
 
             this.canExecuteFunction = canExecute ?? throw new ArgumentNullException(nameof(canExecute));
@@ -535,12 +533,12 @@ namespace Anori.WinUI.Commands.Builder
 
             if (this.canExecuteSubject != null)
             {
-                throw new CommandBuilderException(Resources.ExceptionStrings.CanExecuteExpressionAlreadyDefined);
+                throw new CanExecuteFunctionAlreadyDefinedException(Resources.ExceptionStrings.CanExecuteExpressionAlreadyDefined);
             }
 
             if (this.canExecuteFunction != null)
             {
-                throw new CommandBuilderException(Resources.ExceptionStrings.CanExecuteFunctionAlreadyDefined);
+                throw new CanExecuteFunctionAlreadyDefinedException(Resources.ExceptionStrings.CanExecuteFunctionAlreadyDefined);
             }
 
             this.canExecuteSubject = CanExecuteObserver.Create(canExecute);
@@ -567,12 +565,12 @@ namespace Anori.WinUI.Commands.Builder
 
             if (this.canExecuteSubject != null)
             {
-                throw new CommandBuilderException(Resources.ExceptionStrings.CanExecuteExpressionAlreadyDefined);
+                throw new CanExecuteFunctionAlreadyDefinedException(Resources.ExceptionStrings.CanExecuteExpressionAlreadyDefined);
             }
 
             if (this.canExecuteFunction != null)
             {
-                throw new CommandBuilderException(Resources.ExceptionStrings.CanExecuteFunctionAlreadyDefined);
+                throw new CanExecuteFunctionAlreadyDefinedException(Resources.ExceptionStrings.CanExecuteFunctionAlreadyDefined);
             }
 
             this.canExecuteSubject = CanExecuteObserver.Create(canExecute, fallback);
@@ -589,7 +587,7 @@ namespace Anori.WinUI.Commands.Builder
         {
             if (this.observes.Contains(CommandManagerObserver.Observer))
             {
-                throw new CommandBuilderException(Resources.ExceptionStrings.CanExecuteFunctionAlreadyDefined);
+                throw new CanExecuteFunctionAlreadyDefinedException(Resources.ExceptionStrings.CanExecuteFunctionAlreadyDefined);
             }
 
             this.observes.Add(CommandManagerObserver.Observer);

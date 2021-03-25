@@ -6,11 +6,10 @@
 
 namespace Anori.WinUI.Commands.Builder
 {
+    using Anori.WinUI.Commands.Interfaces.Builders;
     using System;
     using System.Threading;
     using System.Threading.Tasks;
-
-    using Anori.WinUI.Commands.Interfaces.Builders;
 
     /// <summary>
     ///     Command Builder.

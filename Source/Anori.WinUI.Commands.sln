@@ -112,8 +112,8 @@ Global
 		{E0DB5A90-51A7-42A6-88CD-1F914161E526}.Release Submodules|Any CPU.Build.0 = Release|Any CPU
 		{E0DB5A90-51A7-42A6-88CD-1F914161E526}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0DB5A90-51A7-42A6-88CD-1F914161E526}.Release|Any CPU.Build.0 = Release|Any CPU
-		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Debug Submodules|Any CPU.ActiveCfg = Debug|Any CPU
-		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Debug Submodules|Any CPU.Build.0 = Debug|Any CPU
+		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Debug Submodules|Any CPU.ActiveCfg = Debug Submodules|Any CPU
+		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Debug Submodules|Any CPU.Build.0 = Debug Submodules|Any CPU
 		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{157DF1C6-60EF-4DBA-AA89-7B6921463AA7}.Release Submodules|Any CPU.ActiveCfg = Release|Any CPU

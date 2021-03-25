@@ -6,17 +6,13 @@
 
 namespace Anori.WinUI.Commands.CanExecuteObservers
 {
-    using System;
-    using System.ComponentModel;
-    using System.Linq.Expressions;
-
-    using Anori.Common;
     using Anori.ExpressionObservers;
     using Anori.Extensions;
     using Anori.WinUI.Commands.Interfaces;
-    using Anori.WinUI.Common;
-
     using JetBrains.Annotations;
+    using System;
+    using System.ComponentModel;
+    using System.Linq.Expressions;
 
     /// <summary>
     ///     Property Observer.

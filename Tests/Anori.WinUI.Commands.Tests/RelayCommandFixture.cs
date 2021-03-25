@@ -108,7 +108,7 @@ namespace Anori.WinUI.Commands.Tests
             command.CanExecuteChanged += delegate { canExecuteChangedRaised = true; };
 
             CommandManager.InvalidateRequerySuggested();
-            Dispatcher.CurrentDispatcher.Invoke(DispatcherPriority.Background, new Action(() => { }));
+            System.Windows.Threading.Dispatcher.CurrentDispatcher.Invoke(DispatcherPriority.Background, new Action(() => { }));
 
             Assert.True(canExecuteChangedRaised);
         }

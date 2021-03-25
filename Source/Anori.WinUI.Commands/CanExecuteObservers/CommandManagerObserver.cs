@@ -6,13 +6,10 @@
 
 namespace Anori.WinUI.Commands.CanExecuteObservers
 {
+    using Anori.WinUI.Commands.Interfaces;
     using System;
     using System.Collections.Generic;
     using System.Windows.Input;
-
-    using Anori.WinUI.Commands.Interfaces;
-
-    using JetBrains.Annotations;
 
     /// <summary>
     /// Command Manager Observer.

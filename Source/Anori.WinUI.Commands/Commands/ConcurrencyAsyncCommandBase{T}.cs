@@ -14,15 +14,13 @@ namespace Anori.WinUI.Commands.Commands
     using System.Threading.Tasks;
     using System.Windows.Input;
 
-    using Anori.Common;
     using Anori.Extensions;
     using Anori.WinUI.Commands.Interfaces;
-    using Anori.WinUI.Common;
 
     using JetBrains.Annotations;
 
     /// <summary>
-    /// The Concurrency Asynchronous Command Base class.
+    ///     The Concurrency Asynchronous Command Base class.
     /// </summary>
     /// <typeparam name="T">Parameter type.</typeparam>
     /// <seealso cref="Anori.WinUI.Commands.Commands.CommandBase" />
@@ -289,6 +287,11 @@ namespace Anori.WinUI.Commands.Commands
         protected override bool HasCanExecute => this.canExecute != null;
 
         /// <summary>
+        ///     Cancels this instance.
+        /// </summary>
+        public void Cancel() => this.cancellationTokenSource?.Cancel();
+
+        /// <summary>
         ///     Determines whether this instance can execute.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
@@ -318,6 +321,16 @@ namespace Anori.WinUI.Commands.Commands
             }
 
             return false;
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        ///     Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         /// <summary>
@@ -371,37 +384,12 @@ namespace Anori.WinUI.Commands.Commands
             }
         }
 
-        /// <inheritdoc />
-        /// <summary>
-        ///     Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            this.Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        /// <summary>
-        ///     Cancels this instance.
-        /// </summary>
-        public void Cancel() => this.cancellationTokenSource?.Cancel();
-
-        /// <summary>
-        ///     Raises the can execute cancel command.
-        /// </summary>
-        public void RaiseCanExecuteCancelCommand() => this.cancelCommand.RaiseCanExecuteChanged();
-
-        /// <summary>
-        ///     Raises the can execute command.
-        /// </summary>
-        public abstract void RaiseCanExecuteCommand();
-
         /// <summary>
         ///     Executes the asynchronous.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
         /// <param name="token">The token.</param>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <returns>A <see cref="Task" /> representing the asynchronous operation.</returns>
         public async Task ExecuteAsync(T parameter, CancellationToken token)
         {
             if (this.CanExecute(parameter))
@@ -418,6 +406,16 @@ namespace Anori.WinUI.Commands.Commands
                 }
             }
         }
+
+        /// <summary>
+        ///     Raises the can execute cancel command.
+        /// </summary>
+        public void RaiseCanExecuteCancelCommand() => this.cancelCommand.RaiseCanExecuteChanged();
+
+        /// <summary>
+        ///     Raises the can execute command.
+        /// </summary>
+        public abstract void RaiseCanExecuteCommand();
 
         /// <summary>
         ///     Determines whether this instance can execute the specified parameter.
@@ -465,14 +463,14 @@ namespace Anori.WinUI.Commands.Commands
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         /// <summary>
-        /// Sets the property.
+        ///     Sets the property.
         /// </summary>
         /// <typeparam name="TProperty">The type of the property.</typeparam>
         /// <param name="storage">The storage.</param>
         /// <param name="value">The value.</param>
         /// <param name="propertyName">Name of the property.</param>
         /// <returns>
-        /// Is set.
+        ///     Is set.
         /// </returns>
         [NotifyPropertyChangedInvocator]
         protected bool SetProperty<TProperty>(

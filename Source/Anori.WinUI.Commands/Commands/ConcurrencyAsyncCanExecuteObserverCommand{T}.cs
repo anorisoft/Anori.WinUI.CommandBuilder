@@ -11,15 +11,13 @@ namespace Anori.WinUI.Commands.Commands
     using System.Threading;
     using System.Threading.Tasks;
 
-    using Anori.Common;
     using Anori.Extensions;
     using Anori.WinUI.Commands.Interfaces;
-    using Anori.WinUI.Common;
 
     using JetBrains.Annotations;
 
     /// <summary>
-    /// The Concurrency Asynchronous Can Execute Observer Command class.
+    ///     The Concurrency Asynchronous Can Execute Observer Command class.
     /// </summary>
     /// <typeparam name="T">Parameter type.</typeparam>
     /// <seealso cref="Anori.WinUI.Commands.Commands.ConcurrencyAsyncCommandBase{T}" />
@@ -33,13 +31,15 @@ namespace Anori.WinUI.Commands.Commands
         private readonly List<ICanExecuteChangedSubjectBase> observers = new List<ICanExecuteChangedSubjectBase>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConcurrencyAsyncCanExecuteObserverCommand{T}" /> class.
+        ///     Initializes a new instance of the <see cref="ConcurrencyAsyncCanExecuteObserverCommand{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">observer
-        /// or
-        /// observer is null.</exception>
+        /// <exception cref="ArgumentNullException">
+        ///     observer
+        ///     or
+        ///     observer is null.
+        /// </exception>
         public ConcurrencyAsyncCanExecuteObserverCommand(
             [NotNull] Func<T, CancellationToken, Task> execute,
             [NotNull] [ItemNotNull] params ICanExecuteChangedSubject[] observers)
@@ -83,14 +83,16 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConcurrencyAsyncCanExecuteObserverCommand{T}"/> class.
+        ///     Initializes a new instance of the <see cref="ConcurrencyAsyncCanExecuteObserverCommand{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecuteSubject">The can execute subject.</param>
         /// <param name="observers">The observers.</param>
-        /// <exception cref="ArgumentNullException">canExecuteSubject
-        /// or
-        /// observers is null.</exception>
+        /// <exception cref="ArgumentNullException">
+        ///     canExecuteSubject
+        ///     or
+        ///     observers is null.
+        /// </exception>
         public ConcurrencyAsyncCanExecuteObserverCommand(
             [NotNull] Func<T, CancellationToken, Task> execute,
             [NotNull] ICanExecuteSubject canExecuteSubject,
@@ -155,7 +157,7 @@ namespace Anori.WinUI.Commands.Commands
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConcurrencyAsyncCanExecuteObserverCommand{T}"/> class.
+        ///     Initializes a new instance of the <see cref="ConcurrencyAsyncCanExecuteObserverCommand{T}" /> class.
         /// </summary>
         /// <param name="execute">The execute.</param>
         /// <param name="canExecute">The can execute.</param>
@@ -212,14 +214,14 @@ namespace Anori.WinUI.Commands.Commands
         public override event EventHandler CanExecuteChanged;
 
         /// <summary>
-        ///     Called when [can execute changed].
-        /// </summary>
-        public void RaisePropertyChanged() => this.CanExecuteChanged.RaiseEmpty(this);
-
-        /// <summary>
         ///     Raises the can execute command.
         /// </summary>
         public override void RaiseCanExecuteCommand() => this.RaisePropertyChanged();
+
+        /// <summary>
+        ///     Called when [can execute changed].
+        /// </summary>
+        public void RaisePropertyChanged() => this.CanExecuteChanged.RaiseEmpty(this);
 
         /// <summary>
         ///     Releases unmanaged and - optionally - managed resources.

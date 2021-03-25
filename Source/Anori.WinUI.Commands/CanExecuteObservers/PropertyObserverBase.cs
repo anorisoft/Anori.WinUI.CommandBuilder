@@ -6,12 +6,10 @@
 
 namespace Anori.WinUI.Commands.CanExecuteObservers
 {
+    using Anori.WinUI.Commands.Interfaces;
+    using JetBrains.Annotations;
     using System;
     using System.Collections.Generic;
-
-    using Anori.WinUI.Commands.Interfaces;
-
-    using JetBrains.Annotations;
 
     /// <summary>
     ///     Property Observer Base.

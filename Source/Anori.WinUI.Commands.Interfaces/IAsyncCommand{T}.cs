@@ -16,13 +16,6 @@ namespace Anori.WinUI.Commands.Interfaces
     public interface IAsyncCommand<in T> : System.Windows.Input.ICommand
     {
         /// <summary>
-        ///     Executes the asynchronous.
-        /// </summary>
-        /// <param name="parameter">The parameter.</param>
-        /// <returns>The async taskresult.</returns>
-        Task ExecuteAsync(T parameter);
-
-        /// <summary>
         ///     Determines whether this instance can execute the specified parameter.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
@@ -30,5 +23,12 @@ namespace Anori.WinUI.Commands.Interfaces
         ///     <c>true</c> if this instance can execute the specified parameter; otherwise, <c>false</c>.
         /// </returns>
         bool CanExecute(T parameter);
+
+        /// <summary>
+        ///     Executes the asynchronous.
+        /// </summary>
+        /// <param name="parameter">The parameter.</param>
+        /// <returns>The async taskresult.</returns>
+        Task ExecuteAsync(T parameter);
     }
 }

@@ -17,38 +17,12 @@
             <param name="handler">The handler.</param>
             <exception cref="T:System.ArgumentNullException">context is null.</exception>
         </member>
-        <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.DispatchAsync(System.Windows.DependencyObject,System.EventHandler)">
-            <summary>
-                Dispatches the asynchronous.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="handler">The handler.</param>
-            <exception cref="T:System.ArgumentNullException">context</exception>
-        </member>
         <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.Dispatch(System.Windows.DependencyObject,System.Action)">
             <summary>
                 Dispatches the specified action.
             </summary>
             <param name="context">The context.</param>
             <param name="action">The action.</param>
-            <exception cref="T:System.ArgumentNullException">context</exception>
-            <exception cref="T:System.ArgumentNullException">context is null.</exception>
-        </member>
-        <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.DisDispatchAsync(System.Windows.DependencyObject,System.Action)">
-            <summary>
-                Dises the dispatch asynchronouspatch.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="action">The action.</param>
-            <exception cref="T:System.ArgumentNullException">context is null.</exception>
-        </member>
-        <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.DispatchAsync(System.Windows.DependencyObject,System.Action)">
-            <summary>
-                Dispatches the specified action.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="action">The action.</param>
-            <exception cref="T:System.ArgumentNullException">context</exception>
             <exception cref="T:System.ArgumentNullException">context is null.</exception>
         </member>
         <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.Dispatch``1(Anori.WinUI.Common.IDispatchable,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
@@ -61,28 +35,9 @@
             <param name="handler">The handler.</param>
             <exception cref="T:System.ArgumentNullException">context is null.</exception>
         </member>
-        <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.DispatchAsync``1(Anori.WinUI.Common.IDispatchable,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
-            <summary>
-                Dispatches the asynchronous.
-            </summary>
-            <typeparam name="T">The type.</typeparam>
-            <param name="context">The context.</param>
-            <param name="value">The value.</param>
-            <param name="handler">The handler.</param>
-            <exception cref="T:System.ArgumentNullException">context</exception>
-        </member>
         <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.Dispatch``1(System.Windows.DependencyObject,``0,System.Action{``0})">
             <summary>
                 Dispatches the specified value.
-            </summary>
-            <typeparam name="T">The type.</typeparam>
-            <param name="context">The context.</param>
-            <param name="value">The value.</param>
-            <param name="action">The action.</param>
-        </member>
-        <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.DispatchAsync``1(System.Windows.DependencyObject,``0,System.Action{``0})">
-            <summary>
-                Dispatches the asynchronous.
             </summary>
             <typeparam name="T">The type.</typeparam>
             <param name="context">The context.</param>
@@ -100,9 +55,9 @@
             <param name="value2">The value2.</param>
             <param name="action">The action.</param>
         </member>
-        <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.DispatchAsync``2(System.Windows.DependencyObject,``0,``1,System.Action{``0,``1})">
+        <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.Dispatch``2(System.Windows.DependencyObject,``0,``1,System.Action{System.Windows.DependencyObject,``0,``1})">
             <summary>
-                Dispatches the asynchronous.
+                Dispatches the specified value1.
             </summary>
             <typeparam name="T1">The type of the 1.</typeparam>
             <typeparam name="T2">The type of the 2.</typeparam>
@@ -120,6 +75,39 @@
             <param name="value">The value.</param>
             <param name="action">The action.</param>
         </member>
+        <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.DispatchAsync``1(Anori.WinUI.Common.IDispatchable,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value">The value.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.DispatchAsync``1(System.Windows.DependencyObject,``0,System.Action{``0})">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value">The value.</param>
+            <param name="action">The action.</param>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.DispatchAsync``2(System.Windows.DependencyObject,``0,``1,System.Action{``0,``1})">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <typeparam name="T1">The type of the 1.</typeparam>
+            <typeparam name="T2">The type of the 2.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value1">The value1.</param>
+            <param name="value2">The value2.</param>
+            <param name="action">The action.</param>
+            <returns>A task object that can be awaited.</returns>
+        </member>
         <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.DispatchAsync``1(System.Windows.DependencyObject,``0,System.Action{System.Windows.DependencyObject,``0})">
             <summary>
                 Dispatches the asynchronous.
@@ -128,17 +116,7 @@
             <param name="context">The context.</param>
             <param name="value">The value.</param>
             <param name="action">The action.</param>
-        </member>
-        <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.Dispatch``2(System.Windows.DependencyObject,``0,``1,System.Action{System.Windows.DependencyObject,``0,``1})">
-            <summary>
-                Dispatches the specified value1.
-            </summary>
-            <typeparam name="T1">The type of the 1.</typeparam>
-            <typeparam name="T2">The type of the 2.</typeparam>
-            <param name="context">The context.</param>
-            <param name="value1">The value1.</param>
-            <param name="value2">The value2.</param>
-            <param name="action">The action.</param>
+            <returns>A task object that can be awaited.</returns>
         </member>
         <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.DispatchAsync``2(System.Windows.DependencyObject,``0,``1,System.Action{System.Windows.DependencyObject,``0,``1})">
             <summary>
@@ -150,6 +128,48 @@
             <param name="value1">The value1.</param>
             <param name="value2">The value2.</param>
             <param name="action">The action.</param>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.DispatchAsync(System.Windows.DependencyObject,System.EventHandler)">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.DispatchAsync(System.Windows.DependencyObject,System.Action)">
+            <summary>
+                Dispatches the specified action.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.InternalDispatchAsync(System.Windows.DependencyObject,System.Action)">
+            <summary>
+                Internals the dispatch asynchronous.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.InternalDispatchAsync(System.Windows.DependencyObject,System.EventHandler)">
+            <summary>
+                Internals the dispatch asynchronous.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.DependencyObjectExtensions.InternalDispatchAsync``1(Anori.WinUI.Common.IDispatchable,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
+            <summary>
+                Internals the dispatch asynchronous.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value">The value.</param>
+            <param name="handler">The handler.</param>
         </member>
         <member name="T:Anori.WinUI.Common.DispatchableContextExtensions">
             <summary>
@@ -165,29 +185,11 @@
             <param name="handler">The handler.</param>
             <exception cref="T:System.ArgumentNullException">context is null.</exception>
         </member>
-        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.DispatchAsync``1(``0,System.EventHandler)">
-            <summary>
-                Dispatches the asynchronous.
-            </summary>
-            <typeparam name="TContext">The type of the context.</typeparam>
-            <param name="context">The context.</param>
-            <param name="handler">The handler.</param>
-            <exception cref="T:System.ArgumentNullException">context is null.</exception>
-        </member>
         <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.Dispatch``1(``0,System.Action{``0})">
             <summary>
                 Dispatches the specified sender.
             </summary>
             <typeparam name="TContext">The type of the context context.</typeparam>
-            <param name="context">The context.</param>
-            <param name="action">The action.</param>
-            <exception cref="T:System.ArgumentNullException">context is null.</exception>
-        </member>
-        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.DispatchAsync``1(``0,System.Action{``0})">
-            <summary>
-                Dispatches the asynchronous.
-            </summary>
-            <typeparam name="TContext">The type of the context.</typeparam>
             <param name="context">The context.</param>
             <param name="action">The action.</param>
             <exception cref="T:System.ArgumentNullException">context is null.</exception>
@@ -201,16 +203,6 @@
             <param name="action">The action.</param>
             <exception cref="T:System.ArgumentNullException">context is null.</exception>
         </member>
-        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.DispatchAsync``1(``0,System.Action)">
-            <summary>
-                Dispatches the specified action.
-            </summary>
-            <typeparam name="TContext">The type of the context.</typeparam>
-            <param name="context">The context.</param>
-            <param name="action">The action.</param>
-            <exception cref="T:System.ArgumentNullException">context</exception>
-            <exception cref="T:System.ArgumentNullException">context is null.</exception>
-        </member>
         <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.Dispatch``1(Anori.WinUI.Common.IDispatchableContext,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
             <summary>
                 Dispatches the specified sender.
@@ -221,29 +213,9 @@
             <param name="handler">The handler.</param>
             <exception cref="T:System.ArgumentNullException">context is null.</exception>
         </member>
-        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.DispatchAsync``1(Anori.WinUI.Common.IDispatchableContext,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
-            <summary>
-                Dispatches the asynchronous.
-            </summary>
-            <typeparam name="T">The type.</typeparam>
-            <param name="context">The context.</param>
-            <param name="value">The value.</param>
-            <param name="handler">The handler.</param>
-            <exception cref="T:System.ArgumentNullException">context is null.</exception>
-        </member>
         <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.Dispatch``2(``0,``1,System.Action{``1})">
             <summary>
                 Dispatches the specified value.
-            </summary>
-            <typeparam name="TContext">The type of the context.</typeparam>
-            <typeparam name="T">The type.</typeparam>
-            <param name="context">The context.</param>
-            <param name="value">The value.</param>
-            <param name="action">The action.</param>
-        </member>
-        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.DispatchAsync``2(``0,``1,System.Action{``1})">
-            <summary>
-                Dispatches the asynchronous.
             </summary>
             <typeparam name="TContext">The type of the context.</typeparam>
             <typeparam name="T">The type.</typeparam>
@@ -263,34 +235,12 @@
             <param name="value2">The value2.</param>
             <param name="action">The action.</param>
         </member>
-        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.DispatchAsync``3(``0,``1,``2,System.Action{``1,``2})">
-            <summary>
-                Dispatches the asynchronous.
-            </summary>
-            <typeparam name="TContext">The type of the context.</typeparam>
-            <typeparam name="T1">The type of the 1.</typeparam>
-            <typeparam name="T2">The type of the 2.</typeparam>
-            <param name="context">The context.</param>
-            <param name="value1">The value1.</param>
-            <param name="value2">The value2.</param>
-            <param name="action">The action.</param>
-        </member>
         <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.Dispatch``2(``0,``1,System.Action{``0,``1})">
             <summary>
                 Dispatches the specified value.
             </summary>
             <typeparam name="TContext">The type of the context.</typeparam>
             <typeparam name="T">Th type.</typeparam>
-            <param name="context">The context.</param>
-            <param name="value">The value.</param>
-            <param name="action">The action.</param>
-        </member>
-        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.DispatchAsync``2(``0,``1,System.Action{``0,``1})">
-            <summary>
-                Dispatches the asynchronous.
-            </summary>
-            <typeparam name="TContext">The type of the context.</typeparam>
-            <typeparam name="T">The type.</typeparam>
             <param name="context">The context.</param>
             <param name="value">The value.</param>
             <param name="action">The action.</param>
@@ -307,6 +257,82 @@
             <param name="value2">The value2.</param>
             <param name="action">The action.</param>
         </member>
+        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.DispatchAsync``1(``0,System.EventHandler)">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <param name="context">The context.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.DispatchAsync``1(``0,System.Action{``0})">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <param name="context">The context.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.DispatchAsync``1(``0,System.Action)">
+            <summary>
+                Dispatches the specified action.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <param name="context">The context.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.DispatchAsync``1(Anori.WinUI.Common.IDispatchableContext,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value">The value.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.DispatchAsync``2(``0,``1,System.Action{``1})">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <typeparam name="T">The type.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value">The value.</param>
+            <param name="action">The action.</param>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.DispatchAsync``3(``0,``1,``2,System.Action{``1,``2})">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <typeparam name="T1">The type of the 1.</typeparam>
+            <typeparam name="T2">The type of the 2.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value1">The value1.</param>
+            <param name="value2">The value2.</param>
+            <param name="action">The action.</param>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.DispatchAsync``2(``0,``1,System.Action{``0,``1})">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <typeparam name="T">The type.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value">The value.</param>
+            <param name="action">The action.</param>
+            <returns>A task object that can be awaited.</returns>
+        </member>
         <member name="M:Anori.WinUI.Common.DispatchableContextExtensions.DispatchAsync``3(``0,``1,``2,System.Action{``0,``1,``2})">
             <summary>
                 Dispatches the asynchronous.
@@ -318,6 +344,7 @@
             <param name="value1">The value1.</param>
             <param name="value2">The value2.</param>
             <param name="action">The action.</param>
+            <returns>A task object that can be awaited.</returns>
         </member>
         <member name="T:Anori.WinUI.Common.DispatchableExtensions">
             <summary>
@@ -333,15 +360,6 @@
             <param name="handler">The handler.</param>
             <exception cref="T:System.ArgumentNullException">context is null.</exception>
         </member>
-        <member name="M:Anori.WinUI.Common.DispatchableExtensions.DispatchAsync``1(``0,System.EventHandler)">
-            <summary>
-                Dispatches the asynchronous.
-            </summary>
-            <typeparam name="TContext">The type of the context.</typeparam>
-            <param name="context">The context.</param>
-            <param name="handler">The handler.</param>
-            <exception cref="T:System.ArgumentNullException">context</exception>
-        </member>
         <member name="M:Anori.WinUI.Common.DispatchableExtensions.Dispatch``1(``0,System.Action{``0})">
             <summary>
                 Dispatches the specified sender.
@@ -351,15 +369,6 @@
             <param name="action">The action.</param>
             <exception cref="T:System.ArgumentNullException">context is null.</exception>
         </member>
-        <member name="M:Anori.WinUI.Common.DispatchableExtensions.DispatchAsync``1(``0,System.Action{``0})">
-            <summary>
-                Dispatches the asynchronous.
-            </summary>
-            <typeparam name="TContext">The type of the context.</typeparam>
-            <param name="context">The context.</param>
-            <param name="action">The action.</param>
-            <exception cref="T:System.ArgumentNullException">context</exception>
-        </member>
         <member name="M:Anori.WinUI.Common.DispatchableExtensions.Dispatch``1(``0,System.Action)">
             <summary>
                 Dispatches the specified action.
@@ -367,25 +376,6 @@
             <typeparam name="TContext">The type of the context.</typeparam>
             <param name="context">The context.</param>
             <param name="action">The action.</param>
-            <exception cref="T:System.ArgumentNullException">context is null.</exception>
-        </member>
-        <member name="M:Anori.WinUI.Common.DispatchableExtensions.DisDispatchAsync``1(``0,System.Action)">
-            <summary>
-                Dises the dispatch asynchronouspatch.
-            </summary>
-            <typeparam name="TContext">The type of the context.</typeparam>
-            <param name="context">The context.</param>
-            <param name="action">The action.</param>
-            <exception cref="T:System.ArgumentNullException">context</exception>
-        </member>
-        <member name="M:Anori.WinUI.Common.DispatchableExtensions.DispatchAsync``1(``0,System.Action)">
-            <summary>
-                Dispatches the specified action.
-            </summary>
-            <typeparam name="TContext">The type of the context.</typeparam>
-            <param name="context">The context.</param>
-            <param name="action">The action.</param>
-            <exception cref="T:System.ArgumentNullException">context</exception>
             <exception cref="T:System.ArgumentNullException">context is null.</exception>
         </member>
         <member name="M:Anori.WinUI.Common.DispatchableExtensions.Dispatch``1(Anori.WinUI.Common.IDispatchable,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
@@ -398,29 +388,9 @@
             <param name="handler">The handler.</param>
             <exception cref="T:System.ArgumentNullException">context is null.</exception>
         </member>
-        <member name="M:Anori.WinUI.Common.DispatchableExtensions.DispatchAsync``1(Anori.WinUI.Common.IDispatchable,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
-            <summary>
-                Dispatches the asynchronous.
-            </summary>
-            <typeparam name="T">The type.</typeparam>
-            <param name="context">The context.</param>
-            <param name="value">The value.</param>
-            <param name="handler">The handler.</param>
-            <exception cref="T:System.ArgumentNullException">context</exception>
-        </member>
         <member name="M:Anori.WinUI.Common.DispatchableExtensions.Dispatch``2(``0,``1,System.Action{``1})">
             <summary>
                 Dispatches the specified value.
-            </summary>
-            <typeparam name="TContext">The type of the context.</typeparam>
-            <typeparam name="T">The type.</typeparam>
-            <param name="context">The context.</param>
-            <param name="value">The value.</param>
-            <param name="action">The action.</param>
-        </member>
-        <member name="M:Anori.WinUI.Common.DispatchableExtensions.DispatchAsync``2(``0,``1,System.Action{``1})">
-            <summary>
-                Dispatches the asynchronous.
             </summary>
             <typeparam name="TContext">The type of the context.</typeparam>
             <typeparam name="T">The type.</typeparam>
@@ -440,31 +410,9 @@
             <param name="value2">The value2.</param>
             <param name="action">The action.</param>
         </member>
-        <member name="M:Anori.WinUI.Common.DispatchableExtensions.DispatchAsync``3(``0,``1,``2,System.Action{``1,``2})">
-            <summary>
-                Dispatches the asynchronous.
-            </summary>
-            <typeparam name="TContext">The type of the context.</typeparam>
-            <typeparam name="T1">The type of the 1.</typeparam>
-            <typeparam name="T2">The type of the 2.</typeparam>
-            <param name="context">The context.</param>
-            <param name="value1">The value1.</param>
-            <param name="value2">The value2.</param>
-            <param name="action">The action.</param>
-        </member>
         <member name="M:Anori.WinUI.Common.DispatchableExtensions.Dispatch``2(``0,``1,System.Action{``0,``1})">
             <summary>
                 Dispatches the specified value.
-            </summary>
-            <typeparam name="TContext">The type of the context.</typeparam>
-            <typeparam name="T">The type.</typeparam>
-            <param name="context">The context.</param>
-            <param name="value">The value.</param>
-            <param name="action">The action.</param>
-        </member>
-        <member name="M:Anori.WinUI.Common.DispatchableExtensions.DispatchAsync``2(``0,``1,System.Action{``0,``1})">
-            <summary>
-                Dispatches the asynchronous.
             </summary>
             <typeparam name="TContext">The type of the context.</typeparam>
             <typeparam name="T">The type.</typeparam>
@@ -484,6 +432,82 @@
             <param name="value2">The value2.</param>
             <param name="action">The action.</param>
         </member>
+        <member name="M:Anori.WinUI.Common.DispatchableExtensions.DispatchAsync``1(``0,System.EventHandler)">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <param name="context">The context.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableExtensions.DispatchAsync``1(``0,System.Action{``0})">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <param name="context">The context.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableExtensions.DispatchAsync``1(``0,System.Action)">
+            <summary>
+                Dispatches the specified action.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <param name="context">The context.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableExtensions.DispatchAsync``1(Anori.WinUI.Common.IDispatchable,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value">The value.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableExtensions.DispatchAsync``2(``0,``1,System.Action{``1})">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <typeparam name="T">The type.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value">The value.</param>
+            <param name="action">The action.</param>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableExtensions.DispatchAsync``3(``0,``1,``2,System.Action{``1,``2})">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <typeparam name="T1">The type of the 1.</typeparam>
+            <typeparam name="T2">The type of the 2.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value1">The value1.</param>
+            <param name="value2">The value2.</param>
+            <param name="action">The action.</param>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableExtensions.DispatchAsync``2(``0,``1,System.Action{``0,``1})">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <typeparam name="T">The type.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value">The value.</param>
+            <param name="action">The action.</param>
+            <returns>A task object that can be awaited.</returns>
+        </member>
         <member name="M:Anori.WinUI.Common.DispatchableExtensions.DispatchAsync``3(``0,``1,``2,System.Action{``0,``1,``2})">
             <summary>
                 Dispatches the asynchronous.
@@ -495,6 +519,15 @@
             <param name="value1">The value1.</param>
             <param name="value2">The value2.</param>
             <param name="action">The action.</param>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatchableExtensions.InternalDispatchAsync``1(``0,System.EventHandler)">
+            <summary>
+                Internals the dispatch asynchronous.
+            </summary>
+            <typeparam name="TContext">The type of the context.</typeparam>
+            <param name="context">The context.</param>
+            <param name="handler">The handler.</param>
         </member>
         <member name="T:Anori.WinUI.Common.DispatcherExtensions">
             <summary>
@@ -508,35 +541,9 @@
             <param name="dispatcher">The dispatcher.</param>
             <param name="action">The action.</param>
         </member>
-        <member name="M:Anori.WinUI.Common.DispatcherExtensions.DispatchAsync(System.Windows.Threading.Dispatcher,System.Action)">
-            <summary>
-                Dispatches the asyncronous.
-            </summary>
-            <param name="dispatcher">The dispatcher.</param>
-            <param name="action">The action.</param>
-            <exception cref="T:System.ArgumentNullException">
-                dispatcher
-                or
-                action is null.
-            </exception>
-        </member>
         <member name="M:Anori.WinUI.Common.DispatcherExtensions.Dispatch``1(System.Windows.Threading.Dispatcher,``0,System.Action{``0})">
             <summary>
                 Dispatches the specified action.
-            </summary>
-            <typeparam name="TState">The type of the state.</typeparam>
-            <param name="dispatcher">The dispatcher.</param>
-            <param name="state">The state.</param>
-            <param name="action">The action.</param>
-            <exception cref="T:System.ArgumentNullException">
-                dispatcher
-                or
-                action is null.
-            </exception>
-        </member>
-        <member name="M:Anori.WinUI.Common.DispatcherExtensions.DispatchAsync``1(System.Windows.Threading.Dispatcher,``0,System.Action{``0})">
-            <summary>
-                Dispatches the asynchronous.
             </summary>
             <typeparam name="TState">The type of the state.</typeparam>
             <param name="dispatcher">The dispatcher.</param>
@@ -556,14 +563,6 @@
             <param name="handler">The handler.</param>
             <exception cref="T:System.ArgumentNullException">dispatcher is null.</exception>
         </member>
-        <member name="M:Anori.WinUI.Common.DispatcherExtensions.DispatchAsync(System.Windows.Threading.Dispatcher,System.EventHandler)">
-            <summary>
-                Dispatches the asynchronous.
-            </summary>
-            <param name="dispatcher">The dispatcher.</param>
-            <param name="handler">The handler.</param>
-            <exception cref="T:System.ArgumentNullException">dispatcher is null.</exception>
-        </member>
         <member name="M:Anori.WinUI.Common.DispatcherExtensions.Dispatch(System.Windows.Threading.Dispatcher,System.Object,System.EventHandler)">
             <summary>
                 Dispatches the specified sender.
@@ -572,15 +571,6 @@
             <param name="sender">The sender.</param>
             <param name="handler">The handler.</param>
             <exception cref="T:System.ArgumentNullException">dispatcher is null.</exception>
-        </member>
-        <member name="M:Anori.WinUI.Common.DispatcherExtensions.DispatchAsync(System.Windows.Threading.Dispatcher,System.Object,System.EventHandler)">
-            <summary>
-                Dispatches the asynchronous.
-            </summary>
-            <param name="dispatcher">The dispatcher.</param>
-            <param name="sender">The sender.</param>
-            <param name="handler">The handler.</param>
-            <exception cref="T:System.ArgumentNullException">dispatcher the type.</exception>
         </member>
         <member name="M:Anori.WinUI.Common.DispatcherExtensions.Dispatch``1(System.Windows.Threading.Dispatcher,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
             <summary>
@@ -591,32 +581,11 @@
             <param name="value">The value.</param>
             <param name="handler">The handler.</param>
         </member>
-        <member name="M:Anori.WinUI.Common.DispatcherExtensions.DispatchAsync``1(System.Windows.Threading.Dispatcher,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
-            <summary>
-                Dispatches the asyncronous.
-            </summary>
-            <typeparam name="T">The type.</typeparam>
-            <param name="dispatcher">The dispatcher.</param>
-            <param name="value">The value.</param>
-            <param name="handler">The handler.</param>
-            <exception cref="T:System.ArgumentNullException">dispatcher is null.</exception>
-        </member>
         <member name="M:Anori.WinUI.Common.DispatcherExtensions.Dispatch``1(System.Windows.Threading.Dispatcher,System.Object,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
             <summary>
                 Dispatches the specified sender.
             </summary>
             <typeparam name="T">The type.</typeparam>
-            <param name="dispatcher">The dispatcher.</param>
-            <param name="sender">The sender.</param>
-            <param name="value">The value.</param>
-            <param name="handler">The handler.</param>
-            <exception cref="T:System.ArgumentNullException">dispatcher is null.</exception>
-        </member>
-        <member name="M:Anori.WinUI.Common.DispatcherExtensions.DispatchAsync``1(System.Windows.Threading.Dispatcher,System.Object,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
-            <summary>
-                Dispatches the asyncronous.
-            </summary>
-            <typeparam name="T">The type</typeparam>
             <param name="dispatcher">The dispatcher.</param>
             <param name="sender">The sender.</param>
             <param name="value">The value.</param>
@@ -630,18 +599,7 @@
             <typeparam name="TEventArgs">The type of the event arguments.</typeparam>
             <param name="dispatcher">The dispatcher.</param>
             <param name="sender">The sender.</param>
-            <param name="args">The <see cref="!:TEventArgs" /> instance containing the event data.</param>
-            <param name="handler">The handler.</param>
-            <exception cref="T:System.ArgumentNullException">dispatcher is null.</exception>
-        </member>
-        <member name="M:Anori.WinUI.Common.DispatcherExtensions.DispatchAsync``1(System.Windows.Threading.Dispatcher,System.Object,``0,System.EventHandler{System.EventArgs})">
-            <summary>
-                Dispatches the asyncronous.
-            </summary>
-            <typeparam name="TEventArgs">The type of the event arguments.</typeparam>
-            <param name="dispatcher">The dispatcher.</param>
-            <param name="sender">The sender.</param>
-            <param name="args">The <see cref="!:TEventArgs" /> instance containing the event data.</param>
+            <param name="args">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
             <param name="handler">The handler.</param>
             <exception cref="T:System.ArgumentNullException">dispatcher is null.</exception>
         </member>
@@ -651,9 +609,91 @@
             </summary>
             <typeparam name="TEventArgs">The type of the event arguments.</typeparam>
             <param name="dispatcher">The dispatcher.</param>
-            <param name="args">The <see cref="!:TEventArgs" /> instance containing the event data.</param>
+            <param name="args">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
             <param name="handler">The handler.</param>
             <exception cref="T:System.ArgumentNullException">dispatcher is null.</exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatcherExtensions.DispatchAsync(System.Windows.Threading.Dispatcher,System.Action)">
+            <summary>
+                Dispatches the asyncronous.
+            </summary>
+            <param name="dispatcher">The dispatcher.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">
+                dispatcher
+                or
+                action is null.
+            </exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatcherExtensions.DispatchAsync``1(System.Windows.Threading.Dispatcher,``0,System.Action{``0})">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <typeparam name="TState">The type of the state.</typeparam>
+            <param name="dispatcher">The dispatcher.</param>
+            <param name="state">The state.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">
+                dispatcher
+                or
+                action is null.
+            </exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatcherExtensions.DispatchAsync(System.Windows.Threading.Dispatcher,System.EventHandler)">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <param name="dispatcher">The dispatcher.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">dispatcher is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatcherExtensions.DispatchAsync(System.Windows.Threading.Dispatcher,System.Object,System.EventHandler)">
+            <summary>
+                Dispatches the asynchronous.
+            </summary>
+            <param name="dispatcher">The dispatcher.</param>
+            <param name="sender">The sender.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">dispatcher the type.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatcherExtensions.DispatchAsync``1(System.Windows.Threading.Dispatcher,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
+            <summary>
+                Dispatches the asyncronous.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="dispatcher">The dispatcher.</param>
+            <param name="value">The value.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">dispatcher is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatcherExtensions.DispatchAsync``1(System.Windows.Threading.Dispatcher,System.Object,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
+            <summary>
+                Dispatches the asyncronous.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="dispatcher">The dispatcher.</param>
+            <param name="sender">The sender.</param>
+            <param name="value">The value.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">dispatcher is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatcherExtensions.DispatchAsync``1(System.Windows.Threading.Dispatcher,System.Object,``0,System.EventHandler{System.EventArgs})">
+            <summary>
+                Dispatches the asyncronous.
+            </summary>
+            <typeparam name="TEventArgs">The type of the event arguments.</typeparam>
+            <param name="dispatcher">The dispatcher.</param>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">dispatcher is null.</exception>
+            <returns>A task object that can be awaited.</returns>
         </member>
         <member name="M:Anori.WinUI.Common.DispatcherExtensions.DispatchAsync``1(System.Windows.Threading.Dispatcher,``0,System.EventHandler{System.EventArgs})">
             <summary>
@@ -661,9 +701,79 @@
             </summary>
             <typeparam name="TEventArgs">The type of the event arguments.</typeparam>
             <param name="dispatcher">The dispatcher.</param>
-            <param name="args">The <see cref="!:TEventArgs" /> instance containing the event data.</param>
+            <param name="args">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
             <param name="handler">The handler.</param>
             <exception cref="T:System.ArgumentNullException">dispatcher is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatcherExtensions.InternalDispatchAsync``1(System.Windows.Threading.Dispatcher,``0,System.EventHandler{System.EventArgs})">
+            <summary>
+                Internals the dispatch asynchronous.
+            </summary>
+            <typeparam name="TEventArgs">The type of the event arguments.</typeparam>
+            <param name="dispatcher">The dispatcher.</param>
+            <param name="args">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatcherExtensions.InternalDispatchAsync``1(System.Windows.Threading.Dispatcher,System.Object,``0,System.EventHandler{System.EventArgs})">
+            <summary>
+                Internals the dispatch asynchronous.
+            </summary>
+            <typeparam name="TEventArgs">The type of the event arguments.</typeparam>
+            <param name="dispatcher">The dispatcher.</param>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatcherExtensions.InternalDispatchAsync``1(System.Windows.Threading.Dispatcher,System.Object,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
+            <summary>
+                Internals the dispatch asynchronous.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="dispatcher">The dispatcher.</param>
+            <param name="sender">The sender.</param>
+            <param name="value">The value.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatcherExtensions.InternalDispatchAsync``1(System.Windows.Threading.Dispatcher,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
+            <summary>
+                Internals the dispatch asynchronous.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="dispatcher">The dispatcher.</param>
+            <param name="value">The value.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatcherExtensions.InternalDispatchAsync(System.Windows.Threading.Dispatcher,System.Object,System.EventHandler)">
+            <summary>
+                Internals the dispatch asynchronous.
+            </summary>
+            <param name="dispatcher">The dispatcher.</param>
+            <param name="sender">The sender.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatcherExtensions.InternalDispatchAsync(System.Windows.Threading.Dispatcher,System.EventHandler)">
+            <summary>
+                Internals the dispatch asynchronous.
+            </summary>
+            <param name="dispatcher">The dispatcher.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatcherExtensions.InternalDispatchAsync``1(System.Windows.Threading.Dispatcher,``0,System.Action{``0})">
+            <summary>
+                Internals the dispatch asynchronous.
+            </summary>
+            <typeparam name="TState">The type of the state.</typeparam>
+            <param name="dispatcher">The dispatcher.</param>
+            <param name="state">The state.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.DispatcherExtensions.InternalDispatchAsync(System.Windows.Threading.Dispatcher,System.Action)">
+            <summary>
+                Internals the dispatch asynchronous.
+            </summary>
+            <param name="dispatcher">The dispatcher.</param>
+            <param name="action">The action.</param>
         </member>
         <member name="T:Anori.WinUI.Common.IDispatchable">
             <summary>
@@ -702,99 +812,11 @@
             </summary>
             <param name="context">The context.</param>
             <param name="action">The action.</param>
-            <exception cref="T:System.ArgumentNullException">
-                context
-                or
-                actionis null.
-            </exception>
-        </member>
-        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.SendAsync(System.Threading.SynchronizationContext,System.Threading.SendOrPostCallback,System.Object)">
-            <summary>
-            </summary>
-            <param name="context">The context.</param>
-            <param name="d">The d.</param>
-            <param name="state">The state.</param>
-        </member>
-        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Send``2(System.Threading.SynchronizationContext,System.Action{``0,``1},``0,``1)">
-            <summary>
-                Sends the specified action.
-            </summary>
-            <typeparam name="T1">The type of the 1.</typeparam>
-            <typeparam name="T2">The type of the 2.</typeparam>
-            <param name="context">The context.</param>
-            <param name="action">The action.</param>
-            <param name="arg1">The arg1.</param>
-            <param name="arg2">The arg2.</param>
-        </member>
-        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.SendAsync``2(System.Threading.SynchronizationContext,System.Action{``0,``1},``0,``1)">
-            <summary>
-            </summary>
-            <typeparam name="T1">The type of the 1.</typeparam>
-            <typeparam name="T2">The type of the 2.</typeparam>
-            <param name="context">The context.</param>
-            <param name="action">The action.</param>
-            <param name="arg1">The arg1.</param>
-            <param name="arg2">The arg2.</param>
-        </member>
-        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.SendAsync``1(System.Threading.SynchronizationContext,System.Action{``0},``0)">
-            <summary>
-            </summary>
-            <typeparam name="T">The type.</typeparam>
-            <param name="context">The context.</param>
-            <param name="action">The action.</param>
-            <param name="arg">The state.</param>
-        </member>
-        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Send``1(System.Threading.SynchronizationContext,System.Action{``0},``0)">
-            <summary>
-                Sends the specified action.
-            </summary>
-            <typeparam name="T">The argument.</typeparam>
-            <param name="context">The context.</param>
-            <param name="action">The action.</param>
-            <param name="arg">The argument.</param>
-        </member>
-        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Send(System.Threading.SynchronizationContext,System.Action)">
-            <summary>
-                Sends the specified action.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="action">The action.</param>
-        </member>
-        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.SendAsync(System.Threading.SynchronizationContext,System.Action)">
-            <summary>
-            </summary>
-            <param name="context">The context.</param>
-            <param name="action">The action.</param>
-        </member>
-        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.DispatchAsync(System.Threading.SynchronizationContext,System.Action)">
-            <summary>
-                Dispatches the asyncronous.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="action">The action.</param>
-            <exception cref="T:System.ArgumentNullException">
-                context
-                or
-                action is null.
-            </exception>
+            <exception cref="T:System.ArgumentNullException">context or actionis null.</exception>
         </member>
         <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Dispatch``1(System.Threading.SynchronizationContext,``0,System.Action{``0})">
             <summary>
                 Dispatches the specified action.
-            </summary>
-            <typeparam name="TState">The type of the state.</typeparam>
-            <param name="context">The context.</param>
-            <param name="state">The state.</param>
-            <param name="action">The action.</param>
-            <exception cref="T:System.ArgumentNullException">
-                context
-                or
-                action is null.
-            </exception>
-        </member>
-        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.DispatchAsync``1(System.Threading.SynchronizationContext,``0,System.Action{``0})">
-            <summary>
-                Dispatches the asynchronous.
             </summary>
             <typeparam name="TState">The type of the state.</typeparam>
             <param name="context">The context.</param>
@@ -814,14 +836,6 @@
             <param name="handler">The handler.</param>
             <exception cref="T:System.ArgumentNullException">context is null.</exception>
         </member>
-        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.DispatchAsync(System.Threading.SynchronizationContext,System.EventHandler)">
-            <summary>
-                Dispatches the asynchronous.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="handler">The handler.</param>
-            <exception cref="T:System.ArgumentNullException">context is null.</exception>
-        </member>
         <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Dispatch(System.Threading.SynchronizationContext,System.Object,System.EventHandler)">
             <summary>
                 Dispatches the specified sender.
@@ -830,15 +844,6 @@
             <param name="sender">The sender.</param>
             <param name="handler">The handler.</param>
             <exception cref="T:System.ArgumentNullException">context is null.</exception>
-        </member>
-        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.DispatchAsync(System.Threading.SynchronizationContext,System.Object,System.EventHandler)">
-            <summary>
-                Dispatches the asynchronous.
-            </summary>
-            <param name="context">The context.</param>
-            <param name="sender">The sender.</param>
-            <param name="handler">The handler.</param>
-            <exception cref="T:System.ArgumentNullException">context the type.</exception>
         </member>
         <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Dispatch``1(System.Threading.SynchronizationContext,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
             <summary>
@@ -849,32 +854,11 @@
             <param name="value">The value.</param>
             <param name="handler">The handler.</param>
         </member>
-        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.DispatchAsync``1(System.Threading.SynchronizationContext,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
-            <summary>
-                Dispatches the asyncronous.
-            </summary>
-            <typeparam name="T">The type.</typeparam>
-            <param name="context">The context.</param>
-            <param name="value">The value.</param>
-            <param name="handler">The handler.</param>
-            <exception cref="T:System.ArgumentNullException">context is null.</exception>
-        </member>
         <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Dispatch``1(System.Threading.SynchronizationContext,System.Object,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
             <summary>
                 Dispatches the specified sender.
             </summary>
             <typeparam name="T">The type.</typeparam>
-            <param name="context">The context.</param>
-            <param name="sender">The sender.</param>
-            <param name="value">The value.</param>
-            <param name="handler">The handler.</param>
-            <exception cref="T:System.ArgumentNullException">context is null.</exception>
-        </member>
-        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.DispatchAsync``1(System.Threading.SynchronizationContext,System.Object,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
-            <summary>
-                Dispatches the asyncronous.
-            </summary>
-            <typeparam name="T">The type</typeparam>
             <param name="context">The context.</param>
             <param name="sender">The sender.</param>
             <param name="value">The value.</param>
@@ -888,18 +872,7 @@
             <typeparam name="TEventArgs">The type of the event arguments.</typeparam>
             <param name="context">The context.</param>
             <param name="sender">The sender.</param>
-            <param name="args">The <see cref="!:TEventArgs" /> instance containing the event data.</param>
-            <param name="handler">The handler.</param>
-            <exception cref="T:System.ArgumentNullException">context is null.</exception>
-        </member>
-        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.DispatchAsync``1(System.Threading.SynchronizationContext,System.Object,``0,System.EventHandler{System.EventArgs})">
-            <summary>
-                Dispatches the asyncronous.
-            </summary>
-            <typeparam name="TEventArgs">The type of the event arguments.</typeparam>
-            <param name="context">The context.</param>
-            <param name="sender">The sender.</param>
-            <param name="args">The <see cref="!:TEventArgs" /> instance containing the event data.</param>
+            <param name="args">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
             <param name="handler">The handler.</param>
             <exception cref="T:System.ArgumentNullException">context is null.</exception>
         </member>
@@ -909,19 +882,170 @@
             </summary>
             <typeparam name="TEventArgs">The type of the event arguments.</typeparam>
             <param name="context">The context.</param>
-            <param name="args">The <see cref="!:TEventArgs" /> instance containing the event data.</param>
+            <param name="args">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
             <param name="handler">The handler.</param>
             <exception cref="T:System.ArgumentNullException">context is null.</exception>
         </member>
-        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.DispatchAsync``1(System.Threading.SynchronizationContext,``0,System.EventHandler{System.EventArgs})">
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.DispatchAsync(System.Threading.SynchronizationContext,System.Action)">
             <summary>
-                Dispatches the asyncronous.
+                Dispatches asyncronous.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">
+                context
+                or
+                action is null.
+            </exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.DispatchAsync``1(System.Threading.SynchronizationContext,``0,System.Action{``0})">
+            <summary>
+                Dispatches asyncronous.
+            </summary>
+            <typeparam name="TState">The type of the state.</typeparam>
+            <param name="context">The context.</param>
+            <param name="state">The state.</param>
+            <param name="action">The action.</param>
+            <exception cref="T:System.ArgumentNullException">
+                context
+                or
+                action is null.
+            </exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.DispatchAsync(System.Threading.SynchronizationContext,System.EventHandler)">
+            <summary>
+                Dispatches asyncronous.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.DispatchAsync(System.Threading.SynchronizationContext,System.Object,System.EventHandler)">
+            <summary>
+                Dispatches asyncronous.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sender">The sender.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">context the type.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.DispatchAsync``1(System.Threading.SynchronizationContext,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
+            <summary>
+                Dispatches asyncronous.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="context">The context.</param>
+            <param name="value">The value.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.DispatchAsync``1(System.Threading.SynchronizationContext,System.Object,``0,System.EventHandler{Anori.Common.EventArgs{``0}})">
+            <summary>
+                Dispatches asyncronous.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="context">The context.</param>
+            <param name="sender">The sender.</param>
+            <param name="value">The value.</param>
+            <param name="handler">The handler.</param>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.DispatchAsync``1(System.Threading.SynchronizationContext,System.Object,``0,System.EventHandler{System.EventArgs})">
+            <summary>
+                Dispatches asyncronous.
             </summary>
             <typeparam name="TEventArgs">The type of the event arguments.</typeparam>
             <param name="context">The context.</param>
-            <param name="args">The <see cref="!:TEventArgs" /> instance containing the event data.</param>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
             <param name="handler">The handler.</param>
             <exception cref="T:System.ArgumentNullException">context is null.</exception>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.DispatchAsync``1(System.Threading.SynchronizationContext,``0,System.EventHandler{System.EventArgs})">
+            <summary>
+                Dispatches asyncronous.
+            </summary>
+            <typeparam name="TEventArgs">The type of the event arguments.</typeparam>
+            <param name="context">The context.</param>
+            <param name="args">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+            <param name="handler">The handler.</param>
+            <returns>
+                A task object that can be awaited.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">context is null.</exception>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Send``2(System.Threading.SynchronizationContext,System.Action{``0,``1},``0,``1)">
+            <summary>
+                Dispatches asyncronous.
+            </summary>
+            <typeparam name="T1">The type of the 1.</typeparam>
+            <typeparam name="T2">The type of the 2.</typeparam>
+            <param name="context">The context.</param>
+            <param name="action">The action.</param>
+            <param name="arg1">The arg1.</param>
+            <param name="arg2">The arg2.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Send``1(System.Threading.SynchronizationContext,System.Action{``0},``0)">
+            <summary>
+                Sends the specified action.
+            </summary>
+            <typeparam name="T">The argument.</typeparam>
+            <param name="context">The context.</param>
+            <param name="action">The action.</param>
+            <param name="arg">The arg.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.Send(System.Threading.SynchronizationContext,System.Action)">
+            <summary>
+                Sends the specified action.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.SendAsync(System.Threading.SynchronizationContext,System.Threading.SendOrPostCallback,System.Object)">
+            <summary>
+                Sends the specified action.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="d">The d.</param>
+            <param name="state">The state.</param>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.SendAsync``2(System.Threading.SynchronizationContext,System.Action{``0,``1},``0,``1)">
+            <summary>
+                Sends the specified action.
+            </summary>
+            <typeparam name="T1">The type of the 1.</typeparam>
+            <typeparam name="T2">The type of the 2.</typeparam>
+            <param name="context">The context.</param>
+            <param name="action">The action.</param>
+            <param name="arg1">The arg1.</param>
+            <param name="arg2">The arg2.</param>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.SendAsync``1(System.Threading.SynchronizationContext,System.Action{``0},``0)">
+            <summary>
+                Sends the specified action.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="context">The context.</param>
+            <param name="action">The action.</param>
+            <param name="arg">The state.</param>
+            <returns>A task object that can be awaited.</returns>
+        </member>
+        <member name="M:Anori.WinUI.Common.SynchronizationContextExtensions.SendAsync(System.Threading.SynchronizationContext,System.Action)">
+            <summary>
+                Sends the specified action.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="action">The action.</param>
+            <returns>A task object that can be awaited.</returns>
         </member>
     </members>
 </doc>

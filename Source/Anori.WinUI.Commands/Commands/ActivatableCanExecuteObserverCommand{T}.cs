@@ -23,7 +23,6 @@ namespace Anori.WinUI.Commands.Commands
     using Anori.Common;
     using Anori.Extensions;
     using Anori.WinUI.Commands.Interfaces;
-    using Anori.WinUI.Common;
 
     using JetBrains.Annotations;
 
