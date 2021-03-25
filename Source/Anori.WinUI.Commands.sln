@@ -48,8 +48,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anori.Extensions", "..\Subm
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anori.Common", "..\Submodules\Anori.Common\Source\Anori.Common\Anori.Common.csproj", "{E615E0A0-6573-46A6-A3AA-900E485179F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anori.ParameterObservers.UnitTests", "..\Tests\Anori.ParameterObservers.UnitTests\Anori.ParameterObservers.UnitTests.csproj", "{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug Submodules|Any CPU = Debug Submodules|Any CPU
@@ -143,14 +141,6 @@ Global
 		{E615E0A0-6573-46A6-A3AA-900E485179F2}.Release Submodules|Any CPU.Build.0 = Release Submodules|Any CPU
 		{E615E0A0-6573-46A6-A3AA-900E485179F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E615E0A0-6573-46A6-A3AA-900E485179F2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}.Debug Submodules|Any CPU.ActiveCfg = Debug|Any CPU
-		{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}.Debug Submodules|Any CPU.Build.0 = Debug|Any CPU
-		{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}.Release Submodules|Any CPU.ActiveCfg = Release|Any CPU
-		{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}.Release Submodules|Any CPU.Build.0 = Release|Any CPU
-		{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FFAE12D6-0836-4A5C-A175-99BF38B83B7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
