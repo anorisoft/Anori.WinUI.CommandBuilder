@@ -13,6 +13,14 @@
     <AssemblyOriginatorKeyFile>Anorisoft.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Submodules|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\..\Source\Anori.WinUI.Commands.Interfaces\Anori.WinUI.Commands.Interfaces.csproj" />
     <ProjectReference Include="..\..\Source\Anori.WinUI.Commands\Anori.WinUI.Commands.csproj" />
@@ -20,9 +28,9 @@
   </ItemGroup>
 
   <ItemGroup Condition="!($(Configuration.Contains('Submodules')))">
-    <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0017" />
-    <PackageReference Include="Anori.Extensions" Version="1.0.0-alpha0015" />
-    <PackageReference Include="Anori.Common" Version="1.0.0-alpha0007" />
+    <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0021" />
+    <PackageReference Include="Anori.Extensions" Version="1.0.0-alpha0018" />
+    <PackageReference Include="Anori.Common" Version="1.0.0-alpha0009" />
   </ItemGroup>
 
   <ItemGroup Condition="($(Configuration.Contains('Submodules')))">

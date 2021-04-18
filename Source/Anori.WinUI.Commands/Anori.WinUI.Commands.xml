@@ -3860,10 +3860,11 @@
         </member>
         <member name="T:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase`2">
             <summary>
-                Property Observer Base.
+            Property Observer Base.
             </summary>
+            <typeparam name="TPropertyObserver">The type of the property observer.</typeparam>
             <typeparam name="TResult">The type of the result.</typeparam>
-            <seealso cref="!:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase" />
+            <seealso cref="T:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase`1" />
         </member>
         <member name="M:Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase`2.Equals(Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase{`1},Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase{`1})">
             <summary>

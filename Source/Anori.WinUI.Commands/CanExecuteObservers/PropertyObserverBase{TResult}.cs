@@ -8,11 +8,14 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
 {
     using System;
 
+    using Anori.ExpressionObservers.Interfaces;
+
     /// <summary>
-    ///     Property Observer Base.
+    /// Property Observer Base.
     /// </summary>
+    /// <typeparam name="TPropertyObserver">The type of the property observer.</typeparam>
     /// <typeparam name="TResult">The type of the result.</typeparam>
-    /// <seealso cref="Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase" />
+    /// <seealso cref="Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase{TPropertyObserver}" />
     internal abstract class PropertyObserverBase<TPropertyObserver, TResult> : PropertyObserverBase<TPropertyObserver>,
                                                                              IEquatable<PropertyObserverBase<TPropertyObserver,TResult>>
     {
@@ -77,7 +80,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
             return this.Observer.Equals(other.Observer);
         }
 
-        /// <summary>
+       /// <summary>
         ///     Determines whether the specified <see cref="object" />, is equal to this instance.
         /// </summary>
         /// <param name="obj">The <see cref="object" /> to compare with this instance.</param>

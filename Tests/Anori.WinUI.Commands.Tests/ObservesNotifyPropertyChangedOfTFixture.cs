@@ -71,7 +71,7 @@ namespace Anori.WinUI.Commands.Tests
                 () => { });
             TestContext.Out.WriteLine(observer2.ExpressionString);
 
-            Assert.True(observer1 == observer2);
+            Assert.True(observer1.Equals(observer2));
         }
 
         [Test]
@@ -380,7 +380,8 @@ namespace Anori.WinUI.Commands.Tests
             using var observer2 = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject.IntPropertyExpression,
                 () => { });
-            Assert.True(observer1 == observer2);
+            Assert.True(observer1.Equals(observer2));
+         //   Assert.True(observer1 == observer2);
         }
 
         [Test]
@@ -393,7 +394,8 @@ namespace Anori.WinUI.Commands.Tests
             using var observer2 = PropertyObserver.Observes(
                 notifyPropertyChangedTestObject.IntPropertyExpression,
                 () => { });
-            Assert.False(observer1 != observer2);
+            Assert.False(!observer1.Equals(observer2));
+//            Assert.False(observer1 != observer2);
         }
     }
 }
