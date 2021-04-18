@@ -15,8 +15,8 @@ namespace Anori.WinUI.Commands.Commands
     using System.Windows.Input;
 
     using Anori.Extensions;
+    using Anori.Extensions.Threading;
     using Anori.WinUI.Commands.Interfaces;
-    using Anori.WinUI.Common;
 
     using JetBrains.Annotations;
 

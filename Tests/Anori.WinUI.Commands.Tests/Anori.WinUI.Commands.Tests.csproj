@@ -24,7 +24,7 @@
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.13.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,9 +35,9 @@
 
 
   <ItemGroup Condition="!($(Configuration.Contains('Submodules')))">
-    <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0012" />
-    <PackageReference Include="Anori.Extensions" Version="1.0.0-alpha0012" />
-    <PackageReference Include="Anori.Common" Version="1.0.0-alpha0006" />
+    <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0017" />
+    <PackageReference Include="Anori.Extensions" Version="1.0.0-alpha0015" />
+    <PackageReference Include="Anori.Common" Version="1.0.0-alpha0007" />
   </ItemGroup>
 
   <ItemGroup Condition="($(Configuration.Contains('Submodules')))">

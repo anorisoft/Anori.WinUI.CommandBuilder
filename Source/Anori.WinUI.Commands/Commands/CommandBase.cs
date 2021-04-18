@@ -11,6 +11,7 @@ namespace Anori.WinUI.Commands.Commands
     using System.Threading;
     using System.Windows.Input;
 
+    using Anori.Extensions.Threading;
     using Anori.WinUI.Common;
 
     using JetBrains.Annotations;
@@ -19,7 +20,7 @@ namespace Anori.WinUI.Commands.Commands
     ///     Command Base.
     /// </summary>
     /// <seealso cref="System.Windows.Input.ICommand" />
-    /// <seealso cref="Anori.WinUI.Common.IDispatchableContext" />
+    /// <seealso cref="IDispatchableContext" />
     internal abstract class CommandBase : ICommand, IDispatchableContext
     {
         /// <summary>

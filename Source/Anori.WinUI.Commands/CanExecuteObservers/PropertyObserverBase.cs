@@ -9,17 +9,19 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
     using System;
     using System.Collections.Generic;
 
+    using Anori.Common;
+    using Anori.ExpressionObservers.Interfaces;
     using Anori.WinUI.Commands.Interfaces;
 
     using JetBrains.Annotations;
 
     /// <summary>
-    ///     Property Observer Base.
+    /// Property Observer Base.
     /// </summary>
+    /// <typeparam name="TPropertyObserver">The type of the property observer.</typeparam>
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteChangedSubjectBase" />
     /// <seealso cref="ICanExecuteChangedSubject" />
-    /// <seealso cref="System.Collections.Generic.IEqualityComparer{T}" />
-    internal abstract class PropertyObserverBase : ICanExecuteChangedSubjectBase
+    internal abstract class PropertyObserverBase<TPropertyObserver> : ICanExecuteChangedSubjectBase
     {
         /// <summary>
         ///     Occurs when [can execute changed].
@@ -42,7 +44,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         ///     The observer.
         /// </value>
         [NotNull]
-        protected virtual ExpressionObservers.Base.PropertyObserverBase Observer { get; set; } = null!;
+        protected virtual IPropertyObserverBase<TPropertyObserver> Observer { get; set; } = null!;
 
         /// <summary>
         ///     Gets the observables.
@@ -141,11 +143,11 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         /// <summary>
         ///     Subscribes this instance.
         /// </summary>
-        protected void Subscribe() => this.Observer.Subscribe(true);
+        protected void Subscribe() => this.Observer.Activate(true);
 
         /// <summary>
         ///     Unsubscribes this instance.
         /// </summary>
-        protected void Unsubscribe() => this.Observer.Unsubscribe();
+        protected void Unsubscribe() => this.Observer.Deactivate();
     }
 }

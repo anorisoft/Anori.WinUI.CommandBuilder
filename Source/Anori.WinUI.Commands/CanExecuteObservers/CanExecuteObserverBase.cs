@@ -8,14 +8,16 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
 {
     using System;
 
+    using Anori.ExpressionObservers.Interfaces;
     using Anori.WinUI.Commands.Interfaces;
 
     /// <summary>
-    ///     CanExecute Observer Base.
+    /// CanExecute Observer Base.
     /// </summary>
-    /// <seealso cref="Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase" />
+    /// <typeparam name="TPropertyObserver">The type of the property observer.</typeparam>
+    /// <seealso cref="Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase{TPropertyObserver}" />
     /// <seealso cref="Anori.WinUI.Commands.Interfaces.ICanExecuteObserver" />
-    internal abstract class CanExecuteObserverBase : PropertyObserverBase, ICanExecuteObserver
+    internal abstract class CanExecuteObserverBase<TPropertyObserver> : PropertyObserverBase<TPropertyObserver>, ICanExecuteObserver
     {
         /// <summary>
         ///     Gets or sets the can execute.

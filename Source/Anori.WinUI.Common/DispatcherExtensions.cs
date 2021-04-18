@@ -37,7 +37,7 @@ namespace Anori.WinUI.Common
                 throw new ArgumentNullException(nameof(action));
             }
 
-            dispatcher.Invoke(() => action());
+            dispatcher.Invoke(action);
         }
 
         /// <summary>

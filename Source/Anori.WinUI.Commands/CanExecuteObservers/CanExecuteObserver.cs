@@ -11,6 +11,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
     using System.Linq.Expressions;
 
     using Anori.ExpressionObservers;
+    using Anori.ExpressionObservers.Interfaces;
     using Anori.Extensions;
 
     using JetBrains.Annotations;
@@ -19,7 +20,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
     ///     CanExecute Observer.
     /// </summary>
     /// <seealso cref="Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserverBase" />
-    internal sealed class CanExecuteObserver : CanExecuteObserverBase
+    internal sealed class CanExecuteObserver : CanExecuteObserverBase<IPropertyObserverWithGetterAndFallback<bool>>
     {
         /// <summary>
         ///     Initializes a new instance of the <see cref="CanExecuteObserver" /> class.

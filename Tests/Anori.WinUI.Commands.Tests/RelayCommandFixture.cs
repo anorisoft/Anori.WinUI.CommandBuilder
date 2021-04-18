@@ -105,7 +105,10 @@ namespace Anori.WinUI.Commands.Tests
             var handlers = new DelegateHandlers();
             var command = new CanExecuteObserverCommand(handlers.Execute, () => false);
 
-            command.CanExecuteChanged += delegate { canExecuteChangedRaised = true; };
+            command.CanExecuteChanged += delegate
+                {
+                    canExecuteChangedRaised = true;
+                };
 
             CommandManager.InvalidateRequerySuggested();
             System.Windows.Threading.Dispatcher.CurrentDispatcher.Invoke(DispatcherPriority.Background, new Action(() => { }));

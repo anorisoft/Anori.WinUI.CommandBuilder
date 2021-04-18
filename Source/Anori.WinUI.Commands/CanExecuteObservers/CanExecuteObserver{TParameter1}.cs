@@ -11,6 +11,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
     using System.Linq.Expressions;
 
     using Anori.ExpressionObservers;
+    using Anori.ExpressionObservers.Interfaces;
     using Anori.Extensions;
 
     using JetBrains.Annotations;
@@ -20,7 +21,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
     /// </summary>
     /// <typeparam name="TParameter1">The type of the parameter.</typeparam>
     /// <seealso cref="Anori.WinUI.Commands.CanExecuteObservers.CanExecuteObserverBase" />
-    internal sealed class CanExecuteObserver<TParameter1> : CanExecuteObserverBase
+    internal sealed class CanExecuteObserver<TParameter1> : CanExecuteObserverBase<IPropertyObserverWithGetterAndFallback<bool>>
         where TParameter1 : INotifyPropertyChanged
     {
         /// <summary>

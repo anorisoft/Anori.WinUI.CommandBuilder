@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="2021.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,9 +17,9 @@
   </ItemGroup>
 
   <ItemGroup Condition="!($(Configuration.Contains('Submodules')))">
-    <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0012" />
-    <PackageReference Include="Anori.Extensions" Version="1.0.0-alpha0012" />
-    <PackageReference Include="Anori.Common" Version="1.0.0-alpha0006" />
+    <PackageReference Include="Anori.ExpressionObservers" Version="1.0.0-alpha0017" />
+    <PackageReference Include="Anori.Extensions" Version="1.0.0-alpha0015" />
+    <PackageReference Include="Anori.Common" Version="1.0.0-alpha0007" />
   </ItemGroup>
 
   <ItemGroup Condition="($(Configuration.Contains('Submodules')))">

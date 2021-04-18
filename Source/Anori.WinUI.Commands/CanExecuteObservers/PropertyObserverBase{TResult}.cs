@@ -13,8 +13,8 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
     /// </summary>
     /// <typeparam name="TResult">The type of the result.</typeparam>
     /// <seealso cref="Anori.WinUI.Commands.CanExecuteObservers.PropertyObserverBase" />
-    internal abstract class PropertyObserverBase<TResult> : PropertyObserverBase,
-                                                            IEquatable<PropertyObserverBase<TResult>>
+    internal abstract class PropertyObserverBase<TPropertyObserver, TResult> : PropertyObserverBase<TPropertyObserver>,
+                                                                             IEquatable<PropertyObserverBase<TPropertyObserver,TResult>>
     {
         /// <summary>
         ///     Determines whether the specified objects are equal.
@@ -57,7 +57,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         ///     <see langword="true" /> if the current object is equal to the <paramref name="other" /> parameter; otherwise,
         ///     <see langword="false" />.
         /// </returns>
-        public bool Equals(PropertyObserverBase<TResult> other)
+        public bool Equals(PropertyObserverBase<TPropertyObserver, TResult> other)
         {
             if (other is null)
             {
@@ -101,7 +101,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
                 return false;
             }
 
-            return this.Equals((PropertyObserverBase<TResult>)obj);
+            return this.Equals((PropertyObserverBase<TPropertyObserver, TResult>)obj);
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Anori.WinUI.Commands.CanExecuteObservers
         /// <returns>
         ///     A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
         /// </returns>
-        public int GetHashCode(PropertyObserverBase<TResult> obj)
+        public int GetHashCode(PropertyObserverBase<TPropertyObserver, TResult> obj)
         {
             unchecked
             {
